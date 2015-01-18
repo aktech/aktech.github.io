@@ -12,6 +12,7 @@ plugins:          ./_plugins
 title:            Amit Kumar
 tagline:          ': #OpenSource #Maths #aktech'
 description:      'Developer · Learner · Student'
+message:          '#RandomThoughts'
 url:              aktech.github.io
 paginate:         1
 
