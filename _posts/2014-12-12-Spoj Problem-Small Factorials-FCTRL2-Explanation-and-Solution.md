@@ -68,7 +68,7 @@ Now, we add 1 % 10 to the array so the array becomes (5, 6, 6, 1) and we divide 
 >For finding the factorial, we need to carry out this exact multiplication operation at every step as we loop from 1 to N. At the end of the Nth iteration, our array will contain
 the answer and the value of m will be the number of digits in the answer. We can then just print the array from the Most significant digit to the least for the answer.
 
-![Multiply 45 * 37]({{ site.url }}/assets/fctrl2/fctrl2.png)
+![Multiply 45 * 37](/assets/fctrl2/fctrl2.png)
 
 ##Code in C++
 
