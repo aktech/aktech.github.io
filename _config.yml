@@ -10,9 +10,9 @@ plugins:          ./_plugins
 
 # Setup
 title:            Amit Kumar
-tagline:          ': #OpenSource #Maths #aktech'
+tagline:          ': #aktech #OpenSource, #dtu, #Mathematics'
 description:      'Developer · Learner · Student'
-message:          'Some Random & Some Arranged Toughts.'
+message:          '#RandomThoughts'
 url:              aktech.github.io
 paginate:         1
 
