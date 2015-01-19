@@ -102,10 +102,10 @@ h1, h2, h3, h4, h5, h6 {
 .masthead-title {
   margin-top: 0;
   margin-bottom: 0;
-  color: #242D36;
+  color: #505050;
 }
 .masthead-title a {
-  color: #242D36;
+  color: #505050;
 }
 .masthead-title small {
   font-size: 75%;
@@ -213,7 +213,7 @@ a.sidebar-nav-item:focus {
   display: block;
   width: 2.2rem;
   padding: .5rem .65rem;
-  color: #242D36;
+  color: #505050;
   background-color: #fff;
   border-radius: 4px;
   cursor: pointer;
@@ -235,7 +235,7 @@ a.sidebar-nav-item:focus {
 .sidebar-toggle:active,
 #sidebar-checkbox:checked ~ .sidebar-toggle {
   color: #fff;
-  background-color: #242D36;
+  background-color: #505050;
 }
 
 @media (min-width: 30.1rem) {
