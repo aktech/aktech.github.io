@@ -1,10 +1,10 @@
 ---
 layout: post
-title: Spoj Problem-Small Factorials FCTRL2 Explanation and Solution
+title: Spoj FCTRL2 Explanation and Solution
 tags:
   - Spoj
   - Competitive Coding
-  - Code
+  - Coding
 permalink: /Spoj-Problem-Small-Factorials-FCTRL2-Explanation-and-Solution
 ---
 
