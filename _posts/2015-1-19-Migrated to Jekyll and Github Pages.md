@@ -9,7 +9,7 @@ permalink: /Migrated-to-Jekyll-and-Github-Pages
 ---
 
 
-I have been procastinating for this for a long time, but finally I made this transition from [Wordress](http://wordpress.com/) to [Jekyll](http://jekyllrb.com/) yesterday, though it doesn't requires you to be a ninja but you need to patiently learn the things for once atleast.
+I have been procrastinating for this for a long time, but finally I made this transition from [Wordress](http://wordpress.com/) to [Jekyll](http://jekyllrb.com/) yesterday, though it doesn't requires you to be a ninja but you need to patiently learn the things for once atleast.
 
 ---
 
