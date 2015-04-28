@@ -15,7 +15,7 @@ Yay! the much awaited results of [Google Summer Of Code](http://www.google-melan
 
 ### For those who don't know about GSoC
 
-> Google Summer of Code is a global program that offers students stipends to write code for open source projects.
+> **[Google Summer of Code](http://en.wikipedia.org/wiki/Google_Summer_of_Code)** is a global program that offers students stipends to write code for open source projects.
 
 ### A bit about SymPy
 
