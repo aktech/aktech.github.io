@@ -9,4 +9,4 @@ To visit my Website [Click here](http://iamit.in).
 
 # RSS Feed  ![alt tag](https://github.com/aktech/aktech.github.io/blob/master/rss.png?raw=true)
 
-Link to RSS Feed: http://blog.iamit.in/feed.xml
+Link to RSS Feed: http://blog.iamit.in/feeds/atom.xml
