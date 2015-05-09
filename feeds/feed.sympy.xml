@@ -7,7 +7,7 @@
 		<description>Posts categorized as 'sympy'</description>
 		<link>{{ site.url }}</link>
 		<atom:link href="{{ site.url }}/feeds/feed.sympy.xml" rel="self" type="application/rss+xml" />
-		{% for post in site.tags.sympy limit:10 %}
+		{% for post in site.tags.SymPy limit:10 %}
 			<item>
 				<title>{{ post.title | xml_escape }}</title>
 				{% if post.excerpt %}
