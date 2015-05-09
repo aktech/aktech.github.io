@@ -1,24 +1,26 @@
 ---
+layout: null
 ---
 <?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-	<channel>
-		<title>{{ site.name | xml_escape }} - SymPy</title>
-		<description>Posts categorized as 'sympy'</description>
-		<link>{{ site.url }}</link>
-		<atom:link href="{{ site.url }}/feeds/feed.sympy.xml" rel="self" type="application/rss+xml" />
-		{% for post in site.tags.SymPy limit:10 %}
-			<item>
-				<title>{{ post.title | xml_escape }}</title>
-				{% if post.excerpt %}
-					<description>{{ post.excerpt | xml_escape }}</description>
-				{% else %}
-					<description>{{ post.content | xml_escape }}</description>
-				{% endif %}
-				<pubDate>{{ post.date | date: "%a, %d %b %Y %H:%M:%S %z" }}</pubDate>
-				<link>{{ site.url }}{{ post.url }}</link>
-				<guid isPermaLink="true">{{ site.url }}{{ post.url }}</guid>
-			</item>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+		 <title>{{ site.title }}</title>
+		 <link href="{{ site.url }}/atom.xml" rel="self"/>
+		 <link href="{{ site.url }}/"/>
+		 <updated>{{ site.time | date_to_xmlschema }}</updated>
+		 <id>{{ site.url }}</id>
+		 <author>
+		   <name>{{ site.author.name }}</name>
+		   <email>{{ site.author.email }}</email>
+		 </author>
+		
+		{% for post in site.tags.SymPy limit:20 %}
+		 <entry>
+		   <title>{{ post.title }}</title>
+		   <link href="{{ site.url }}{{ post.url }}"/>
+		   <updated>{{ post.date | date_to_xmlschema }}</updated>
+		   <id>{{ site.url }}{{ post.id }}</id>
+		   <content type="html">{{ post.content | xml_escape }}</content>
+		 </entry>
 		{% endfor %}
-	</channel>
-</rss>
+</feed>
