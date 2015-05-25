@@ -39,6 +39,6 @@ Though, most of the CAS suport only one input format. This feature would be quit
 * List Of Equations Form
 * Input A & b Matrix Form (from `Ax = b`)
 
-It would be great have all three input formats supported in the Public API `linsolve` Method.
+It would be great to have all three input formats supported in the Public API `linsolve` Method.
 
 Looking forward for Coding Period, that's all for now.
