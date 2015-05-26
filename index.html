@@ -1,37 +1,311 @@
----
-layout: default
-title: Blog
----
-<div class="posts">
-  {% for post in site.posts %}
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="keywords" content="aktech, amit kumar, dtu, maths, python, github">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Blog &middot; Amit Kumar
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+
+  </head>
+
+
+  <body>
+
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p>Programmer · Developer · Learner</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="http://iamit.in">HomePage</a>
+
+    
+
+    
+    
+      
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/about/">About</a>
+        
+      
+    
+      
+    
+      
+    
+      
+        
+      
+    
+      
+    
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+
+    <a class="sidebar-nav-item" href="">Source</a>
+    <a class="sidebar-nav-item" href="http://blog.iamit.in/timeline">Archive</a>
+
+    <span class="sidebar-nav-item">Contact</span>
+    <a class="sidebar-nav-item" href="https://github.com/aktech">GitHub</a>
+    <a class="sidebar-nav-item" href="https://twitter.com/iaktech">Twitter</a>
+    <a class="sidebar-nav-item" href="mailto:dtu.amit@gmail.com">Gmail</a>
+    <a class="sidebar-nav-item" href="http://quora.com/">Quora</a>
+  </nav>
+
+  <div class="sidebar-item">
+    <p>
+      &copy; 2015. AMiT Kumar.
+    </p>
+  </div>
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Amit Kumar</a>
+            <small>: Life Is Learning!</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+        <div class="posts">
+  
   <div class="index-post">
     <span class="post-date">
-      <a href="{{ site.baseurl }}timeline" class="timeline">
-        {{ post.date | date_to_string }}
+      <a href="/timeline" class="timeline">
+        24 May 2015
       </a>
     </span>
 
     <h2 class="post-title">
-      <a href="{{ post.url }}">
-        {{ post.title }}
+      <a href="/GSoC-Getting-Up-For-the-Coding-Period">
+        GSoC &#58; Getting Up For the Coding Period
       </a>
     </h2>
 
     <span class="post-tag">
-      {% for tag in post.tags %}
-        {% if tag == post.tags.last %}
-          <a href="{{ site.baseurl }}tags/#{{tag}}">
-            {{ tag }}
-          </a>
-
-        {% else %}
-          <a href="{{ site.baseurl }}tags/#{{tag}}">
-            {{ tag }}
+      
+        
+          <a href="/tags/#Open Source">
+            Open Source
           </a>
           &middot;
-        {% endif %}
-      {% endfor %}
+        
+      
+        
+          <a href="/tags/#GSoC">
+            GSoC
+          </a>
+          &middot;
+        
+      
+        
+          <a href="/tags/#SymPy">
+            SymPy
+          </a>
+
+        
+      
     </span>
   </div>
-  {% endfor %}
+  
+  <div class="index-post">
+    <span class="post-date">
+      <a href="/timeline" class="timeline">
+        28 Apr 2015
+      </a>
+    </span>
+
+    <h2 class="post-title">
+      <a href="/Google-Summer-Of-Code-with-SymPy">
+        Google Summer Of Code with SymPy
+      </a>
+    </h2>
+
+    <span class="post-tag">
+      
+        
+          <a href="/tags/#Open Source">
+            Open Source
+          </a>
+          &middot;
+        
+      
+        
+          <a href="/tags/#GSoC">
+            GSoC
+          </a>
+          &middot;
+        
+      
+        
+          <a href="/tags/#SymPy">
+            SymPy
+          </a>
+
+        
+      
+    </span>
+  </div>
+  
+  <div class="index-post">
+    <span class="post-date">
+      <a href="/timeline" class="timeline">
+        09 Feb 2015
+      </a>
+    </span>
+
+    <h2 class="post-title">
+      <a href="/Higher-order-functions-in-Python-sorted-map-reduce-filter">
+        Higher order functions in Python &#58; sorted, map, reduce, filter
+      </a>
+    </h2>
+
+    <span class="post-tag">
+      
+        
+          <a href="/tags/#Python">
+            Python
+          </a>
+
+        
+      
+    </span>
+  </div>
+  
+  <div class="index-post">
+    <span class="post-date">
+      <a href="/timeline" class="timeline">
+        19 Jan 2015
+      </a>
+    </span>
+
+    <h2 class="post-title">
+      <a href="/Migrated-to-Jekyll-and-Github-Pages">
+        Migrated to Jekyll and Github Pages
+      </a>
+    </h2>
+
+    <span class="post-tag">
+      
+        
+          <a href="/tags/#Jekyll">
+            Jekyll
+          </a>
+          &middot;
+        
+      
+        
+          <a href="/tags/#Github">
+            Github
+          </a>
+
+        
+      
+    </span>
+  </div>
+  
+  <div class="index-post">
+    <span class="post-date">
+      <a href="/timeline" class="timeline">
+        12 Dec 2014
+      </a>
+    </span>
+
+    <h2 class="post-title">
+      <a href="/Spoj-Problem-Small-Factorials-FCTRL2-Explanation-and-Solution">
+        Spoj FCTRL2 Explanation and Solution
+      </a>
+    </h2>
+
+    <span class="post-tag">
+      
+        
+          <a href="/tags/#Spoj">
+            Spoj
+          </a>
+          &middot;
+        
+      
+        
+          <a href="/tags/#Competitive Coding">
+            Competitive Coding
+          </a>
+
+        
+      
+    </span>
+  </div>
+  
 </div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <!-- Google Analytics -->
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-33694283-4', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  </body>
+</html>

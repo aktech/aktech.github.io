@@ -11,7 +11,7 @@
 
   <title>
     
-      Migrated to Jekyll and Github Pages &middot; Amit Kumar
+      GSoC &#58; Getting Up For the Coding Period &middot; Amit Kumar
     
   </title>
 
@@ -63,19 +63,13 @@
       
     
       
-        
-      
     
       
         
       
     
       
-        
-      
     
-      
-        
       
     
       
@@ -120,7 +114,7 @@
         <div class="container">
           <h3 class="masthead-title">
             <a href="/" title="Home">Amit Kumar</a>
-            <small>: #aktech #OpenSource, #Mathematics</small>
+            <small>: Life Is Learning!</small>
           </h3>
         </div>
       </div>
@@ -129,22 +123,29 @@
         <div class="post">
   <span class="post-date">
     <a href="/timeline" class="timeline">
-      19 Jan 2015
+      24 May 2015
     </a>
   </span>
-  <h1 class="post-title">Migrated to Jekyll and Github Pages</h1>
+  <h1 class="post-title">GSoC &#58; Getting Up For the Coding Period</h1>
   <span class="post-tag">
       
         
-          <a href="/tags/#Jekyll">
-            Jekyll
+          <a href="/tags/#Open Source">
+            Open Source
           </a>
           &middot;
         
       
         
-          <a href="/tags/#Github">
-            Github
+          <a href="/tags/#GSoC">
+            GSoC
+          </a>
+          &middot;
+        
+      
+        
+          <a href="/tags/#SymPy">
+            SymPy
           </a>
 
         
@@ -153,22 +154,45 @@
 
   <hr>
 
-  <p>I have been procrastinating for this for a long time, but finally I made this transition from <a href="http://wordpress.com/">Wordress</a> to <a href="http://jekyllrb.com/">Jekyll</a> yesterday, though it doesn&#39;t requires you to be a ninja but you need to patiently learn the things for once atleast.</p>
+  <h3><strong>The Start of Coding Period!</strong></h3>
 
-<hr>
+<p>The Community bonding Period is close to end now &amp; my Exams as well. Tomorrow starts the Coding Period &amp; I have been waiting for it for some time now. </p>
 
-<blockquote>
-<p>I skimed through several blogs to learn the process, but I found this pretty usefull:
-<a href="http://jmcglone.com/guides/github-pages/">http://jmcglone.com/guides/github-pages/</a></p>
-</blockquote>
+<p>Recently I gave a quick look to my Proposed Timeline in my <a href="https://github.com/sympy/sympy/wiki/GSoC-2015-Application-AMiT-Kumar--Solvers-:-Extending-Solveset#timeline">Proposal</a>, &amp;  decided to swap the 2nd Week&#39;s work with Ist, this will help me securing few credits in my College&#39;s Minor Project Submission (Which has the deadline of 30th May).</p>
 
-<h3>Good Links</h3>
+<h3><strong>Plan for Week 1</strong></h3>
+
+<p>This week, I am planning to work on Solving Linear systems in <code>solveset</code>. (Currently solveset support univariate solvers only).</p>
+
+<p>The main functions, I would be implementing are:</p>
 
 <ul>
-<li><a href="http://packetlife.net/media/library/16/Markdown.pdf">Markdown Cheatsheet</a></li>
-<li><a href="https://github.com/tiimgreen/github-cheat-sheet">Github Cheat Sheet</a> (If you are not familiar with Github.)</li>
-<li><a href="https://github.com/jekyll/jekyll/wiki/Sites">Sites Using Jekyll</a> (Usefull for theme Idea)</li>
+<li><p><code>eq_to_matrix</code> :
+<em>method to convert system of Equations to Matrix Form.</em></p></li>
+<li><p><code>linsolve</code>: <em>It&#39;s the General Linear System solver.</em></p></li>
 </ul>
+
+<p>As mentioned in the proposal, Solving system of linear equations is an important feature of solvers in a CAS. Most of the CAS have a convenient single function to solve linear systems, for example <code>LinearSolve</code> in Mathematica.</p>
+
+<p>The <strong><code>linsolve</code></strong> which I would be implementing is inspired from Matlab &amp; Maxima.</p>
+
+<h5><strong>Features Overview</strong></h5>
+
+<p>We have a lot of reusable code in <code>sympy.matrices</code>  &amp; <code>sympy.solvers.solvers</code>, which would be quite useful.
+One of the most important thing I would like to have in <code>linsolve</code> is supporting a lot of input formats.
+Though, most of the CAS suport only one input format. This feature would be quite useful for sympy&#39;s <code>linsolve</code>.</p>
+
+<h6>The three most common input formats, I can recall as of now are:</h6>
+
+<ul>
+<li>Augmented Matrix Form</li>
+<li>List Of Equations Form</li>
+<li>Input A &amp; b Matrix Form (from <code>Ax = b</code>)</li>
+</ul>
+
+<p>It would be great to have all three input formats supported in the Public API <code>linsolve</code> Method.</p>
+
+<p>Looking forward for Coding Period, that&#39;s all for now.</p>
 
 </div>
 
@@ -187,7 +211,7 @@
     </script>
   </span>
 
-  <span class="fb-like" data-href=aktech.github.io/Migrated-to-Jekyll-and-Github-Pages data-action="like" data-layout="button_count" data-show-faces="false" data-share="false" style="display: inline-flex;">
+  <span class="fb-like" data-href=http://blog.iamit.in/GSoC-Getting-Up-For-the-Coding-Period data-action="like" data-layout="button_count" data-show-faces="false" data-share="false" style="display: inline-flex;">
   </span>
 </div>
 
@@ -216,9 +240,9 @@
     
       <li>
         <h3>
-          <a href="/Spoj-Problem-Small-Factorials-FCTRL2-Explanation-and-Solution">
-            Spoj FCTRL2 Explanation and Solution
-            <small>12 Dec 2014</small>
+          <a href="/Migrated-to-Jekyll-and-Github-Pages">
+            Migrated to Jekyll and Github Pages
+            <small>19 Jan 2015</small>
           </a>
         </h3>
       </li>
@@ -267,10 +291,9 @@
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'UA-48537986-1', 'aktech.github.io');
+  ga('create', 'UA-33694283-4', 'auto');
   ga('send', 'pageview');
 
 </script>
-
   </body>
 </html>
