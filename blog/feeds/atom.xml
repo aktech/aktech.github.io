@@ -2,15 +2,59 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
  <title>Amit Kumar</title>
- <link href="http://iamit.in/feeds/atom.xml" rel="self"/>
- <link href="http://iamit.in/"/>
- <updated>2015-06-02T13:42:24+00:00</updated>
+ <link href="http://blog.iamit.in/atom.xml" rel="self"/>
+ <link href="http://blog.iamit.in/"/>
+ <updated>2015-06-07T11:28:00+00:00</updated>
  <id>http://blog.iamit.in</id>
  <author>
    <name>Amit Kumar</name>
    <email>dtu.amit@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>GSoC &#58; This week in SymPy &#35;2</title>
+   <link href="http://blog.iamit.in/GSoC-week-2"/>
+   <updated>2015-06-07T00:00:00+00:00</updated>
+   <id>http://blog.iamit.in/GSoC &#58; This week in SymPy &#35;2 </id>
+   <content type="html">&lt;p&gt;Hi there! It&amp;#39;s been two weeks into GSoC, &amp;amp; I have managed to flip some bits.&lt;/p&gt;
+
+&lt;p&gt;This week, I started working on &lt;code&gt;ComplexPlane&lt;/code&gt; Class, &amp;amp; also worked on improving &lt;code&gt;linsolve&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h3&gt;&lt;strong&gt;Progress of Week 2&lt;/strong&gt;&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/gsoc/pr.png&quot;&gt; &lt;/p&gt;
+
+&lt;p&gt;The major portion of this week went into improving &lt;code&gt;linsolve&lt;/code&gt; function, which I wrote last week, 
+PR : &lt;strong&gt;&lt;a href=&quot;https://github.com/sympy/sympy/pull/9438&quot;&gt;#9438&lt;/a&gt;&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.github.com/moorepants&quot;&gt;Jason&lt;/a&gt; suggested to let the Matrix code be the core source for all linear solve operations (i.e. remove all algorithmic solve code from everywhere else in sympy). Then for any linear solve stuff that can&amp;#39;t be handled by the Matrix code base, implement that here in &lt;code&gt;linsolve&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;It was indeed a good idea, since solving linear system is more of Matrix stuff than that of solvers in CAS, So we introduced a new solver in &lt;code&gt;matrices.py&lt;/code&gt; named as:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;gauss_jordan_solve()&lt;/code&gt; : It solves &lt;code&gt;Ax = b&lt;/code&gt; using Gauss Jordan elimination.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;There may be zero, one, or infinite solutions.  If one solution
+exists, it will be returned. If infinite solutions exist, it will
+be returned parametrically in terms of Dummy parameters. If no solutions exist, It will throw
+ValueError.&lt;/p&gt;
+
+&lt;p&gt;Now &lt;code&gt;linsolve&lt;/code&gt; is a light wrapper around &lt;code&gt;gauss_jordan_solve()&lt;/code&gt; method, it basically converts all the input types into the standard A &amp;amp; b form &amp;amp; calls A.gauss&lt;em&gt;jordan&lt;/em&gt;solve() and replaces the dummy parameters with the symbols input by the user.&lt;/p&gt;
+
+&lt;h3&gt;Plan for Week 3:&lt;/h3&gt;
+
+&lt;p&gt;This week I plan to complete ComplexPlane class &amp;amp; get the following PR&amp;#39;s Merged:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/sympy/sympy/pull/9438&quot;&gt;PR #9438&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/sympy/sympy/pull/9463&quot;&gt;PR #9463&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;That&amp;#39;s all for now, looking forward for week #3.&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>GSoC &#58; This week in SymPy &#35;1</title>
