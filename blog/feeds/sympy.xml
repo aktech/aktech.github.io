@@ -2,8 +2,8 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
  <title>Amit Kumar</title>
- <link href="http://blog.iamit.in/atom.xml" rel="self"/>
- <link href="http://blog.iamit.in/"/>
+ <link href="http://iamit.in/blog/feeds/sympy.xml" rel="self"/>
+ <link href="http://iamit.in/blog/"/>
  <updated>2015-06-07T11:28:00+00:00</updated>
  <id>http://blog.iamit.in</id>
  <author>
@@ -14,7 +14,7 @@
  
  <entry>
    <title>GSoC &#58; This week in SymPy &#35;2</title>
-   <link href="http://blog.iamit.in/GSoC-week-2"/>
+   <link href="http://iamit.in/blog/GSoC-week-2"/>
    <updated>2015-06-07T00:00:00+00:00</updated>
    <id>http://blog.iamit.in/GSoC &#58; This week in SymPy &#35;2 </id>
    <content type="html">&lt;p&gt;Hi there! It&amp;#39;s been two weeks into GSoC, &amp;amp; I have managed to flip some bits.&lt;/p&gt;
@@ -58,7 +58,7 @@ ValueError.&lt;/p&gt;
  
  <entry>
    <title>GSoC &#58; This week in SymPy &#35;1</title>
-   <link href="http://blog.iamit.in/GSoC-week-1"/>
+   <link href="http://iamit.in/blog/GSoC-week-1"/>
    <updated>2015-06-01T00:00:00+00:00</updated>
    <id>http://blog.iamit.in/GSoC &#58; This week in SymPy &#35;1</id>
    <content type="html">&lt;p&gt;Hi there! The First week of the coding period has came to an end, this week has been very hectic for me due to my practicals and Minor project submission at college, though I mananged to reach the goal for this week.&lt;/p&gt;
@@ -144,7 +144,7 @@ It&amp;#39;s almost good to merge after a final review by &lt;a href=&quot;http:
  
  <entry>
    <title>GSoC &#58; Getting Up For the Coding Period</title>
-   <link href="http://blog.iamit.in/GSoC-Getting-Up-For-the-Coding-Period"/>
+   <link href="http://iamit.in/blog/GSoC-Getting-Up-For-the-Coding-Period"/>
    <updated>2015-05-24T00:00:00+00:00</updated>
    <id>http://blog.iamit.in/GSoC &#58; Getting-Up-For-the-Coding-Period </id>
    <content type="html">&lt;h3&gt;&lt;strong&gt;The Start of Coding Period!&lt;/strong&gt;&lt;/h3&gt;
@@ -191,7 +191,7 @@ Though, most of the CAS suport only one input format. This feature would be quit
  
  <entry>
    <title>Google Summer Of Code with SymPy</title>
-   <link href="http://blog.iamit.in/Google-Summer-Of-Code-with-SymPy"/>
+   <link href="http://iamit.in/blog/Google-Summer-Of-Code-with-SymPy"/>
    <updated>2015-04-28T00:00:00+00:00</updated>
    <id>http://blog.iamit.in/Google-Summer-Of-Code-with-SymPy</id>
    <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/gsoc/GSOC2015.png&quot; alt=&quot;GSoC 2015&quot;&gt;&lt;/p&gt;
