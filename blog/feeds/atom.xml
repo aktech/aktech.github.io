@@ -3,9 +3,9 @@
 
  <title>Amit Kumar</title>
  <link href="http://iamit.in/blog/feeds/atom.xml" rel="self"/>
- <link href="http://iamit.in/blog/"/>
- <updated>2015-06-07T11:28:00+00:00</updated>
- <id>http://blog.iamit.in</id>
+ <link href="http://iamit.in/blog"/>
+ <updated>2015-06-17T07:23:55+00:00</updated>
+ <id>http://iamit.in</id>
  <author>
    <name>Amit Kumar</name>
    <email>dtu.amit@gmail.com</email>
@@ -13,10 +13,117 @@
 
  
  <entry>
+   <title>GSoC &#58; This week in SymPy &#35;3</title>
+   <link href="http://iamit.in/blog/GSoC-week-3"/>
+   <updated>2015-06-17T00:00:00+00:00</updated>
+   <id>http://iamit.in/blog/GSoC &#58; This week in SymPy &#35;3</id>
+   <content type="html">&lt;p&gt;Hi there! It&amp;#39;s been three weeks into &lt;a href=&quot;https://en.wikipedia.org/wiki/Google_Summer_of_Code&quot;&gt;GSoC&lt;/a&gt;, &amp;amp; I have managed to get some pace.
+This week, I worked on creating &lt;code&gt;ComplexPlane&lt;/code&gt; Class.&lt;/p&gt;
+
+&lt;h3&gt;&amp;nbsp; &lt;strong&gt;Progress of Week 3&lt;/strong&gt; &lt;img style=&quot;float: left&quot; src=&quot;/assets/gsoc/pr.png&quot;&gt;&lt;/h3&gt;
+
+&lt;p&gt;The major portion of this week went onto creating &lt;code&gt;ComplexPlane&lt;/code&gt; Class. &lt;/br&gt;
+&lt;a href=&quot;https://github.com/sympy/sympy/pull/9463&quot;&gt;PR #9438&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3&gt;&lt;strong&gt;Design&lt;/strong&gt;&lt;/h3&gt;
+
+&lt;p&gt;The design for the ComplexPlane class supports both forms of representation of Complex regions in &lt;a href=&quot;https://en.wikipedia.org/wiki/Complex_plane&quot;&gt;Complex Plane.&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&lt;em&gt;Polar form&lt;/em&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Polar form is where a complex number is denoted by the &lt;em&gt;length&lt;/em&gt; (&lt;strong&gt;&lt;em&gt;r&lt;/em&gt;&lt;/strong&gt;) (otherwise known as the magnitude, absolute value, or modulus) and the &lt;em&gt;angle&lt;/em&gt; (&lt;strong&gt;&lt;em&gt;θ&lt;/em&gt;&lt;/strong&gt;) of its vector.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&lt;em&gt;Rectangular form&lt;/em&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Rectangular form, on the other hand, is where a complex number is denoted by its respective &lt;em&gt;horizontal&lt;/em&gt; (&lt;strong&gt;&lt;em&gt;x&lt;/em&gt;&lt;/strong&gt;) and &lt;em&gt;vertical&lt;/em&gt; (&lt;strong&gt;&lt;em&gt;y&lt;/em&gt;&lt;/strong&gt;) components. &lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/gsoc/complex_repr.png&quot;&gt;&lt;/p&gt;
+
+&lt;h3&gt;Initial Approach&lt;/h3&gt;
+
+&lt;p&gt;While writing code for &lt;code&gt;ComplexPlane&lt;/code&gt; class, we started with the following design: 
+Input &lt;a href=&quot;https://en.wikipedia.org/wiki/Interval_(mathematics)&quot;&gt;Interval&lt;/a&gt; of a and b interval, as following:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;n&quot;&gt;ComplexPlane&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a_interval&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b_interval&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;polar&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Where &lt;code&gt;a_interval&lt;/code&gt; &amp;amp; &lt;code&gt;b_interval&lt;/code&gt; are the respective intervals of &lt;code&gt;x&lt;/code&gt; and &lt;code&gt;y&lt;/code&gt; for complex number in rectangular form or the respective intervals of &lt;code&gt;r&lt;/code&gt; and &lt;code&gt;θ&lt;/code&gt; for complex number in polar form when polar flag is True.&lt;/p&gt;
+
+&lt;p&gt;But the &lt;strong&gt;&lt;em&gt;problem&lt;/em&gt;&lt;/strong&gt; with this approach is that &lt;strong&gt;&lt;em&gt;we can&amp;#39;t represent two different regions in a single&lt;/em&gt;&lt;/strong&gt; &lt;strong&gt;&lt;code&gt;ComplexPlane&lt;/code&gt;&lt;/strong&gt; &lt;strong&gt;&lt;em&gt;call&lt;/em&gt;&lt;/strong&gt;, i.e. , for example let say we have two rectangular regions be represented as follows:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/gsoc/complex_rect.png&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;We have to represent this with two&lt;/em&gt;&lt;/strong&gt; &lt;strong&gt;&lt;code&gt;ComplexPlane&lt;/code&gt;&lt;/strong&gt; &lt;strong&gt;&lt;em&gt;calls:&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;n&quot;&gt;rect1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ComplexPlane&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Interval&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Interval&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;rect2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ComplexPlane&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Interval&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Interval&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;shaded_region&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Union&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rect1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rect2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Similiary for, the following polar region:&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/gsoc/complex_polar.png&quot;&gt;&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;n&quot;&gt;halfdisk1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ComplexPlane&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Interval&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Interval&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;polar&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;halfdisk2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ComplexPlane&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Interval&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Interval&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+                         &lt;span class=&quot;n&quot;&gt;polar&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;shaded_region&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Union&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;halfdisk1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;halfdisk2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;Better Approach&lt;/h3&gt;
+
+&lt;p&gt;The &lt;strong&gt;&lt;em&gt;solution&lt;/em&gt;&lt;/strong&gt; to the above problem is to &lt;strong&gt;&lt;em&gt;wrap up two calls of&lt;/em&gt;&lt;/strong&gt; &lt;strong&gt;&lt;code&gt;ComplexPlane&lt;/code&gt;&lt;/strong&gt; &lt;strong&gt;&lt;em&gt;into one&lt;/em&gt;&lt;/strong&gt;. To do this, a better input API was needed, and the problem was solved with the help of &lt;strong&gt;&lt;code&gt;ProductSet&lt;/code&gt;&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Now we take input in the form of &lt;a href=&quot;http://mathworld.wolfram.com/ProductSet.html&quot;&gt;&lt;code&gt;ProductSet&lt;/code&gt;&lt;/a&gt; or Union of ProductSets:&lt;/p&gt;
+
+&lt;p&gt;The region above is represented as follows:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;For Rectangular Form&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;n&quot;&gt;psets&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Union&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Interval&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Interval&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+              &lt;span class=&quot;n&quot;&gt;Interval&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Interval&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;shaded_region&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ComplexPlane&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;psets&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;For Polar Form&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;n&quot;&gt;psets&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Union&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Interval&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Interval&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+              &lt;span class=&quot;n&quot;&gt;Interval&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Interval&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;shaded_region&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ComplexPlane&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;psets&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;polar&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Note:&lt;/em&gt;&lt;/strong&gt;
+The input &lt;code&gt;θ&lt;/code&gt; interval for polar form tolerates any interval in terms of &lt;code&gt;π&lt;/code&gt; , it is handled by the function &lt;code&gt;normalize_theta_set&lt;/code&gt; (wrote using &lt;code&gt;_pi_coeff&lt;/code&gt; function), It normalizes &lt;code&gt;θ&lt;/code&gt; set to an equivalent interval in &lt;code&gt;[0, 2π)&lt;/code&gt;, which simplifies various other methods such as &lt;code&gt;_union&lt;/code&gt;, &lt;code&gt;_intersect&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h3&gt;&lt;strong&gt;from &lt;strong&gt;future&lt;/strong&gt; import plan&lt;/strong&gt;  Week #4:&lt;/h3&gt;
+
+&lt;p&gt;This week I plan to polish my pending PR&amp;#39;s to get them Merged &amp;amp; start working on &lt;code&gt;LambertW&lt;/code&gt; solver in &lt;code&gt;solveset&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h3&gt;&lt;strong&gt;$ git log&lt;/strong&gt;&lt;/h3&gt;
+
+&lt;p&gt;&lt;img align=&quot;left&quot; src=&quot;/assets/gsoc/opr.png&quot;&gt; &amp;nbsp; &lt;a href=&quot;https://github.com/sympy/sympy/pull/9438&quot;&gt;PR #9438&lt;/a&gt; : Linsolve&lt;/p&gt;
+
+&lt;p&gt;&lt;/br&gt;
+&lt;img align=&quot;left&quot; src=&quot;/assets/gsoc/opr.png&quot;&gt; &amp;nbsp; &lt;a href=&quot;https://github.com/sympy/sympy/pull/9463&quot;&gt;PR #9463&lt;/a&gt; : ComplexPlane &lt;/p&gt;
+
+&lt;p&gt;&lt;/br&gt;
+&lt;img style=&quot;float: left&quot; src=&quot;/assets/gsoc/opr.png&quot;&gt; &amp;nbsp; &lt;a href=&quot;https://github.com/sympy/sympy/pull/9527&quot;&gt;PR #9527&lt;/a&gt; : Printing of ProductSets  &lt;/br&gt; &lt;/p&gt;
+
+&lt;p&gt;&lt;/br&gt;
+&lt;img style=&quot;float: left&quot; src=&quot;/assets/gsoc/mpr.png&quot;&gt; &amp;nbsp; &lt;a href=&quot;https://github.com/sympy/sympy/pull/9524&quot;&gt;PR # 9524&lt;/a&gt; : Fix solveset returned solution making denom zero &lt;/p&gt;
+
+&lt;p&gt;&lt;/br&gt;
+That&amp;#39;s all for now, looking forward for week #4. :grinning:&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
    <title>GSoC &#58; This week in SymPy &#35;2</title>
    <link href="http://iamit.in/blog/GSoC-week-2"/>
    <updated>2015-06-07T00:00:00+00:00</updated>
-   <id>http://blog.iamit.in/GSoC &#58; This week in SymPy &#35;2 </id>
+   <id>http://iamit.in/blog/GSoC &#58; This week in SymPy &#35;2 </id>
    <content type="html">&lt;p&gt;Hi there! It&amp;#39;s been two weeks into GSoC, &amp;amp; I have managed to flip some bits.&lt;/p&gt;
 
 &lt;p&gt;This week, I started working on &lt;code&gt;ComplexPlane&lt;/code&gt; Class, &amp;amp; also worked on improving &lt;code&gt;linsolve&lt;/code&gt;.&lt;/p&gt;
@@ -60,7 +167,7 @@ ValueError.&lt;/p&gt;
    <title>GSoC &#58; This week in SymPy &#35;1</title>
    <link href="http://iamit.in/blog/GSoC-week-1"/>
    <updated>2015-06-01T00:00:00+00:00</updated>
-   <id>http://blog.iamit.in/GSoC &#58; This week in SymPy &#35;1</id>
+   <id>http://iamit.in/blog/GSoC &#58; This week in SymPy &#35;1</id>
    <content type="html">&lt;p&gt;Hi there! The First week of the coding period has came to an end, this week has been very hectic for me due to my practicals and Minor project submission at college, though I mananged to reach the goal for this week.&lt;/p&gt;
 
 &lt;p&gt;This week, I worked on Linear system solver &lt;code&gt;linsolve&lt;/code&gt; in the &lt;code&gt;solveset&lt;/code&gt; Module, as I mentioned in my last &lt;a href=&quot;http://blog.iamit.in/GSoC-Getting-Up-For-the-Coding-Period/&quot;&gt;post&lt;/a&gt;, about my goals for Week 1. &lt;/p&gt;
@@ -146,7 +253,7 @@ It&amp;#39;s almost good to merge after a final review by &lt;a href=&quot;http:
    <title>GSoC &#58; Getting Up For the Coding Period</title>
    <link href="http://iamit.in/blog/GSoC-Getting-Up-For-the-Coding-Period"/>
    <updated>2015-05-24T00:00:00+00:00</updated>
-   <id>http://blog.iamit.in/GSoC &#58; Getting-Up-For-the-Coding-Period </id>
+   <id>http://iamit.in/blog/GSoC &#58; Getting-Up-For-the-Coding-Period </id>
    <content type="html">&lt;h3&gt;&lt;strong&gt;The Start of Coding Period!&lt;/strong&gt;&lt;/h3&gt;
 
 &lt;p&gt;The Community bonding Period is close to end now &amp;amp; my Exams as well. Tomorrow starts the Coding Period &amp;amp; I have been waiting for it for some time now. &lt;/p&gt;
@@ -193,7 +300,7 @@ Though, most of the CAS suport only one input format. This feature would be quit
    <title>Google Summer Of Code with SymPy</title>
    <link href="http://iamit.in/blog/Google-Summer-Of-Code-with-SymPy"/>
    <updated>2015-04-28T00:00:00+00:00</updated>
-   <id>http://blog.iamit.in/Google-Summer-Of-Code-with-SymPy</id>
+   <id>http://iamit.in/blog/Google-Summer-Of-Code-with-SymPy</id>
    <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/gsoc/GSOC2015.png&quot; alt=&quot;GSoC 2015&quot;&gt;&lt;/p&gt;
 
 &lt;p&gt;Yay! the much awaited results of &lt;a href=&quot;http://www.google-melange.com/gsoc/projects/list/google/gsoc2015&quot;&gt;Google Summer Of Code&lt;/a&gt; is out now, and I have been selected to work with &lt;a href=&quot;http://www.sympy.org/&quot;&gt;SymPy&lt;/a&gt; under &lt;a href=&quot;https://www.python.org/psf/&quot;&gt;Python Software Foundation.&lt;/a&gt;&lt;/p&gt;
@@ -228,7 +335,7 @@ Though, most of the CAS suport only one input format. This feature would be quit
    <title>Higher order functions in Python &#58; sorted, map, reduce, filter</title>
    <link href="http://iamit.in/blog/Higher-order-functions-in-Python-sorted-map-reduce-filter"/>
    <updated>2015-02-09T00:00:00+00:00</updated>
-   <id>http://blog.iamit.in/Higher order functions in Python &#58; sorted, map, reduce, filter</id>
+   <id>http://iamit.in/blog/Higher order functions in Python &#58; sorted, map, reduce, filter</id>
    <content type="html">&lt;p&gt;Python has a pretty good support for Higher order functions, we are going to learn their implementation here :bulb: .&lt;/p&gt;
 
 &lt;h2&gt;What are higher order functions?&lt;/h2&gt;
@@ -324,7 +431,7 @@ map takes a function as the first parameter and then an iterable containing data
    <title>Migrated to Jekyll and Github Pages</title>
    <link href="http://iamit.in/blog/Migrated-to-Jekyll-and-Github-Pages"/>
    <updated>2015-01-19T00:00:00+00:00</updated>
-   <id>http://blog.iamit.in/Migrated to Jekyll and Github Pages</id>
+   <id>http://iamit.in/blog/Migrated to Jekyll and Github Pages</id>
    <content type="html">&lt;p&gt;I have been procrastinating for this for a long time, but finally I made this transition from &lt;a href=&quot;http://wordpress.com/&quot;&gt;Wordress&lt;/a&gt; to &lt;a href=&quot;http://jekyllrb.com/&quot;&gt;Jekyll&lt;/a&gt; yesterday, though it doesn&amp;#39;t requires you to be a ninja but you need to patiently learn the things for once atleast.&lt;/p&gt;
 
 &lt;hr&gt;
@@ -348,7 +455,7 @@ map takes a function as the first parameter and then an iterable containing data
    <title>Spoj FCTRL2 Explanation and Solution</title>
    <link href="http://iamit.in/blog/Spoj-Problem-Small-Factorials-FCTRL2-Explanation-and-Solution"/>
    <updated>2014-12-12T00:00:00+00:00</updated>
-   <id>http://blog.iamit.in/Spoj FCTRL2 Explanation and Solution</id>
+   <id>http://iamit.in/blog/Spoj FCTRL2 Explanation and Solution</id>
    <content type="html">&lt;h2&gt;Problem:&lt;/h2&gt;
 
 &lt;p&gt;In this &lt;a href=&quot;http://www.spoj.com/problems/FCTRL2/&quot;&gt;Problem&lt;/a&gt;
