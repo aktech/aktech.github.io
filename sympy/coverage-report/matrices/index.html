@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
+    <title>Coverage report</title>
+    <link rel='stylesheet' href='style.css' type='text/css'>
+    
+    <script type='text/javascript' src='jquery.min.js'></script>
+    <script type='text/javascript' src='jquery.debounce.min.js'></script>
+    <script type='text/javascript' src='jquery.tablesorter.min.js'></script>
+    <script type='text/javascript' src='jquery.hotkeys.js'></script>
+    <script type='text/javascript' src='coverage_html.js'></script>
+    <script type='text/javascript'>
+        jQuery(document).ready(coverage.index_ready);
+    </script>
+</head>
+<body class='indexfile'>
+
+<div id='header'>
+    <div class='content'>
+        <h1>Coverage report:
+            <span class='pc_cov'>94%</span>
+        </h1>
+
+        <img id='keyboard_icon' src='keybd_closed.png' alt='Show keyboard shortcuts' />
+
+        <form id="filter_container">
+            <input id="filter" type="text" value="" placeholder="filter..." />
+        </form>
+    </div>
+</div>
+
+<div class='help_panel'>
+    <img id='panel_icon' src='keybd_open.png' alt='Hide keyboard shortcuts' />
+    <p class='legend'>Hot-keys on this page</p>
+    <div>
+    <p class='keyhelp'>
+        <span class='key'>n</span>
+        <span class='key'>s</span>
+        <span class='key'>m</span>
+        <span class='key'>x</span>
+        
+        <span class='key'>c</span> &nbsp; change column sorting
+    </p>
+    </div>
+</div>
+
+<div id='index'>
+    <table class='index'>
+        <thead>
+            
+            <tr class='tablehead' title='Click to sort'>
+                <th class='name left headerSortDown shortkey_n'>Module</th>
+                <th class='shortkey_s'>statements</th>
+                <th class='shortkey_m'>missing</th>
+                <th class='shortkey_x'>excluded</th>
+                
+                <th class='right shortkey_c'>coverage</th>
+            </tr>
+        </thead>
+        
+        <tfoot>
+            <tr class='total'>
+                <td class='name left'>Total</td>
+                <td>3756</td>
+                <td>237</td>
+                <td>53</td>
+                
+                <td class='right' data-ratio='3519 3756'>94%</td>
+            </tr>
+        </tfoot>
+        <tbody>
+            
+            <tr class='file'>
+                <td class='name left'><a href='sympy_matrices___init___py.html'>sympy/matrices/__init__.py</a></td>
+                <td>9</td>
+                <td>0</td>
+                <td>0</td>
+                
+                <td class='right' data-ratio='9 9'>100%</td>
+            </tr>
+            
+            <tr class='file'>
+                <td class='name left'><a href='sympy_matrices_dense_py.html'>sympy/matrices/dense.py</a></td>
+                <td>440</td>
+                <td>29</td>
+                <td>24</td>
+                
+                <td class='right' data-ratio='411 440'>93%</td>
+            </tr>
+            
+            <tr class='file'>
+                <td class='name left'><a href='sympy_matrices_densearith_py.html'>sympy/matrices/densearith.py</a></td>
+                <td>26</td>
+                <td>0</td>
+                <td>0</td>
+                
+                <td class='right' data-ratio='26 26'>100%</td>
+            </tr>
+            
+            <tr class='file'>
+                <td class='name left'><a href='sympy_matrices_densesolve_py.html'>sympy/matrices/densesolve.py</a></td>
+                <td>112</td>
+                <td>18</td>
+                <td>0</td>
+                
+                <td class='right' data-ratio='94 112'>84%</td>
+            </tr>
+            
+            <tr class='file'>
+                <td class='name left'><a href='sympy_matrices_densetools_py.html'>sympy/matrices/densetools.py</a></td>
+                <td>50</td>
+                <td>4</td>
+                <td>0</td>
+                
+                <td class='right' data-ratio='46 50'>92%</td>
+            </tr>
+            
+            <tr class='file'>
+                <td class='name left'><a href='sympy_matrices_expressions___init___py.html'>sympy/matrices/expressions/__init__.py</a></td>
+                <td>14</td>
+                <td>0</td>
+                <td>0</td>
+                
+                <td class='right' data-ratio='14 14'>100%</td>
+            </tr>
+            
+            <tr class='file'>
+                <td class='name left'><a href='sympy_matrices_expressions_adjoint_py.html'>sympy/matrices/expressions/adjoint.py</a></td>
+                <td>27</td>
+                <td>1</td>
+                <td>0</td>
+                
+                <td class='right' data-ratio='26 27'>96%</td>
+            </tr>
+            
+            <tr class='file'>
+                <td class='name left'><a href='sympy_matrices_expressions_blockmatrix_py.html'>sympy/matrices/expressions/blockmatrix.py</a></td>
+                <td>228</td>
+                <td>18</td>
+                <td>1</td>
+                
+                <td class='right' data-ratio='210 228'>92%</td>
+            </tr>
+            
+            <tr class='file'>
+                <td class='name left'><a href='sympy_matrices_expressions_determinant_py.html'>sympy/matrices/expressions/determinant.py</a></td>
+                <td>31</td>
+                <td>3</td>
+                <td>0</td>
+                
+                <td class='right' data-ratio='28 31'>90%</td>
+            </tr>
+            
+            <tr class='file'>
+                <td class='name left'><a href='sympy_matrices_expressions_diagonal_py.html'>sympy/matrices/expressions/diagonal.py</a></td>
+                <td>13</td>
+                <td>0</td>
+                <td>0</td>
+                
+                <td class='right' data-ratio='13 13'>100%</td>
+            </tr>
+            
+            <tr class='file'>
+                <td class='name left'><a href='sympy_matrices_expressions_factorizations_py.html'>sympy/matrices/expressions/factorizations.py</a></td>
+                <td>34</td>
+                <td>1</td>
+                <td>0</td>
+                
+                <td class='right' data-ratio='33 34'>97%</td>
+            </tr>
+            
+            <tr class='file'>
+                <td class='name left'><a href='sympy_matrices_expressions_fourier_py.html'>sympy/matrices/expressions/fourier.py</a></td>
+                <td>17</td>
+                <td>3</td>
+                <td>0</td>
+                
+                <td class='right' data-ratio='14 17'>82%</td>
+            </tr>
+            
+            <tr class='file'>
+                <td class='name left'><a href='sympy_matrices_expressions_funcmatrix_py.html'>sympy/matrices/expressions/funcmatrix.py</a></td>
+                <td>16</td>
+                <td>0</td>
+                <td>0</td>
+                
+                <td class='right' data-ratio='16 16'>100%</td>
+            </tr>
+            
+            <tr class='file'>
+                <td class='name left'><a href='sympy_matrices_expressions_hadamard_py.html'>sympy/matrices/expressions/hadamard.py</a></td>
+                <td>37</td>
+                <td>0</td>
+                <td>0</td>
+                
+                <td class='right' data-ratio='37 37'>100%</td>
+            </tr>
+            
+            <tr class='file'>
+                <td class='name left'><a href='sympy_matrices_expressions_inverse_py.html'>sympy/matrices/expressions/inverse.py</a></td>
+                <td>39</td>
+                <td>8</td>
+                <td>0</td>
+                
+                <td class='right' data-ratio='31 39'>79%</td>
+            </tr>
+            
+            <tr class='file'>
+                <td class='name left'><a href='sympy_matrices_expressions_matadd_py.html'>sympy/matrices/expressions/matadd.py</a></td>
+                <td>56</td>
+                <td>2</td>
+                <td>0</td>
+                
+                <td class='right' data-ratio='54 56'>96%</td>
+            </tr>
+            
+            <tr class='file'>
+                <td class='name left'><a href='sympy_matrices_expressions_matexpr_py.html'>sympy/matrices/expressions/matexpr.py</a></td>
+                <td>254</td>
+                <td>17</td>
+                <td>4</td>
+                
+                <td class='right' data-ratio='237 254'>93%</td>
+            </tr>
+            
+            <tr class='file'>
+                <td class='name left'><a href='sympy_matrices_expressions_matmul_py.html'>sympy/matrices/expressions/matmul.py</a></td>
+                <td>147</td>
+                <td>3</td>
+                <td>1</td>
+                
+                <td class='right' data-ratio='144 147'>98%</td>
+            </tr>
+            
+            <tr class='file'>
+                <td class='name left'><a href='sympy_matrices_expressions_matpow_py.html'>sympy/matrices/expressions/matpow.py</a></td>
+                <td>44</td>
+                <td>2</td>
+                <td>1</td>
+                
+                <td class='right' data-ratio='42 44'>95%</td>
+            </tr>
+            
+            <tr class='file'>
+                <td class='name left'><a href='sympy_matrices_expressions_slice_py.html'>sympy/matrices/expressions/slice.py</a></td>
+                <td>63</td>
+                <td>3</td>
+                <td>0</td>
+                
+                <td class='right' data-ratio='60 63'>95%</td>
+            </tr>
+            
+            <tr class='file'>
+                <td class='name left'><a href='sympy_matrices_expressions_trace_py.html'>sympy/matrices/expressions/trace.py</a></td>
+                <td>33</td>
+                <td>1</td>
+                <td>0</td>
+                
+                <td class='right' data-ratio='32 33'>97%</td>
+            </tr>
+            
+            <tr class='file'>
+                <td class='name left'><a href='sympy_matrices_expressions_transpose_py.html'>sympy/matrices/expressions/transpose.py</a></td>
+                <td>42</td>
+                <td>2</td>
+                <td>0</td>
+                
+                <td class='right' data-ratio='40 42'>95%</td>
+            </tr>
+            
+            <tr class='file'>
+                <td class='name left'><a href='sympy_matrices_immutable_py.html'>sympy/matrices/immutable.py</a></td>
+                <td>81</td>
+                <td>2</td>
+                <td>0</td>
+                
+                <td class='right' data-ratio='79 81'>98%</td>
+            </tr>
+            
+            <tr class='file'>
+                <td class='name left'><a href='sympy_matrices_matrices_py.html'>sympy/matrices/matrices.py</a></td>
+                <td>1343</td>
+                <td>69</td>
+                <td>19</td>
+                
+                <td class='right' data-ratio='1274 1343'>95%</td>
+            </tr>
+            
+            <tr class='file'>
+                <td class='name left'><a href='sympy_matrices_sparse_py.html'>sympy/matrices/sparse.py</a></td>
+                <td>581</td>
+                <td>51</td>
+                <td>3</td>
+                
+                <td class='right' data-ratio='530 581'>91%</td>
+            </tr>
+            
+            <tr class='file'>
+                <td class='name left'><a href='sympy_matrices_sparsetools_py.html'>sympy/matrices/sparsetools.py</a></td>
+                <td>19</td>
+                <td>0</td>
+                <td>0</td>
+                
+                <td class='right' data-ratio='19 19'>100%</td>
+            </tr>
+            
+        </tbody>
+    </table>
+
+    <p id="no_rows">
+        No items found using the specified filter.
+    </p>
+</div>
+
+<div id='footer'>
+    <div class='content'>
+        <p>
+            <a class='nav' href='https://coverage.readthedocs.org/en/coverage-4.0a5'>coverage.py v4.0a5</a>
+        </p>
+    </div>
+</div>
+
+</body>
+</html>
