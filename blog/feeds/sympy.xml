@@ -4,13 +4,118 @@
  <title>Amit Kumar</title>
  <link href="http://iamit.in/blog/feeds/sympy.xml" rel="self"/>
  <link href="http://iamit.in/blog"/>
- <updated>2015-06-17T07:23:55+00:00</updated>
+ <updated>2015-06-27T06:50:29+00:00</updated>
  <id>http://iamit.in</id>
  <author>
    <name>Amit Kumar</name>
    <email>dtu.amit@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>GSoC &#58; This week in SymPy &#35;4 &amp; &#35;5</title>
+   <link href="http://iamit.in/blog/GSoC-week-4-5"/>
+   <updated>2015-06-23T00:00:00+00:00</updated>
+   <id>http://iamit.in/blog/GSoC &#58; This week in SymPy &#35;4 &#38; 5</id>
+   <content type="html">&lt;p&gt;Hi there! It&amp;#39;s been five weeks into &lt;a href=&quot;https://en.wikipedia.org/wiki/Google_Summer_of_Code&quot;&gt;GSoC&lt;/a&gt;, 
+This week, I worked on polishing my previous PR&amp;#39;s to improve coverage and
+fixing some bugs.&lt;/p&gt;
+
+&lt;h3&gt;&amp;nbsp; &lt;strong&gt;Progress of Week 4 &amp;amp; 5&lt;/strong&gt; &lt;img style=&quot;float: left&quot; src=&quot;/assets/gsoc/pr.png&quot;&gt;&lt;/h3&gt;
+
+&lt;p&gt;&lt;/br&gt;
+During the last couple of weeks my &lt;code&gt;ComplexPlane&lt;/code&gt; Class &lt;a href=&quot;https://github.com/sympy/sympy/pull/9463&quot;&gt;PR #9438&lt;/a&gt;
+finally got &lt;strong&gt;&lt;em&gt;Merged&lt;/em&gt;&lt;/strong&gt; thanks to &lt;a href=&quot;http://github.com/hargup&quot;&gt;Harsh&lt;/a&gt; for thoroughly reviewing it and suggesting constructive changes.&lt;/p&gt;
+
+&lt;p&gt;For this I Managed to improve it&amp;#39;s coverage to perfect 100%, which is indeed satisfying, as it depicts all the new code being pushed is completely tested.&lt;/p&gt;
+
+&lt;p&gt;This week I also improved the Exception handling and coverage in my &lt;code&gt;linsolve&lt;/code&gt; &lt;a href=&quot;https://github.com/sympy/sympy/pull/&quot;&gt;PR&lt;/a&gt;, It also have a 100% coverage.&lt;/p&gt;
+
+&lt;h3&gt;Coverage Report&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt; [1] &lt;code&gt;gauss_jordan_solve&lt;/code&gt; &lt;strong&gt;100 %&lt;/strong&gt; &lt;/li&gt;
+&lt;li&gt; [2] &lt;code&gt;linsolve&lt;/code&gt; : &lt;strong&gt;100: %&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4&gt;Ref:&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;[1] &lt;a href=&quot;http://iamit.in/sympy/coverage-report/matrices/&quot;&gt;http://iamit.in/sympy/coverage-report/matrices/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;[2] &lt;a href=&quot;http://iamit.in/sympy/coverage-report/solveset/&quot;&gt;http://iamit.in/sympy/coverage-report/solveset/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;It&amp;#39;s good to be Merged now.&lt;/p&gt;
+
+&lt;h3&gt;&lt;strong&gt;Blocking Issue&lt;/strong&gt;: Intersection&amp;#39;s of FiniteSet with symbolic elements&lt;/h3&gt;
+
+&lt;p&gt;During Week 5, While working on transcendental equation solver in &lt;code&gt;solveset.py&lt;/code&gt;, I discovered a blocking issue in &lt;code&gt;FiniteSets&lt;/code&gt;, which is with the Intersection of &lt;code&gt;FiniteSet&lt;/code&gt; containing symbolic elements, for example:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;n&quot;&gt;In&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Symbol&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;a&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;real&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;In&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;FiniteSet&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;intersect&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;S&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Reals&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;Out&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;EmptySet&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Currently, either &lt;code&gt;FiniteSet&lt;/code&gt; is able to evaluate intersection otherwise it, returns an &lt;code&gt;EmptySet()&lt;/code&gt;.
+(See &lt;a href=&quot;https://github.com/sympy/sympy/issues/9536&quot;&gt;9536&lt;/a&gt; &amp;amp; &lt;a href=&quot;https://github.com/sympy/sympy/issues/8217&quot;&gt;8217&lt;/a&gt;).&lt;/p&gt;
+
+&lt;p&gt;To fix this, I have opened the PR &lt;a href=&quot;https://github.com/sympy/sympy/pull/9540&quot;&gt;#9540&lt;/a&gt;.
+Currently It fixes both the issues (&lt;a href=&quot;https://github.com/sympy/sympy/issues/9536&quot;&gt;9536&lt;/a&gt; &amp;amp; &lt;a href=&quot;https://github.com/sympy/sympy/issues/8217&quot;&gt;8217&lt;/a&gt;), but there are some failing tests using the current behaviour of &lt;code&gt;FiniteSet&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h4&gt;For example:&lt;/h4&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;n&quot;&gt;In&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;16&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;z&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;symbols&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;x y z&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;integer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;In&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;19&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;f1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;FiniteSet&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;In&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;f2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;FiniteSet&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;z&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;In Master:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;n&quot;&gt;In&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;23&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;f1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;intersect&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;Out&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;23&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;It should rather be:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;n&quot;&gt;In&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;f1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;intersect&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;Out&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;U&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Intersection&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;z&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;The current behavior of FiniteSet in Master is non-acceptable, since in the above example &lt;code&gt;x, y, z&lt;/code&gt; are integer symbols, so they can be any integer, but in the &lt;em&gt;Master&lt;/em&gt; , they are assumed to be distinct, which is wrong.
+There are such failing tests in &lt;code&gt;test_wester.py&lt;/code&gt; &lt;a href=&quot;https://github.com/sympy/sympy/blob/master/sympy/core/tests/test_wester.py#L74&quot;&gt;here&lt;/a&gt;, which is updated here: &lt;a href=&quot;https://github.com/aktech/sympy/commit/e8e6a0bb9285c315e9bade2bcd10b954760d4965&quot;&gt;aktech@e8e6a0b&lt;/a&gt; to incorporate with the right behaviour.&lt;/p&gt;
+
+&lt;p&gt;As of now there are a couple of failing tests, which needs to passed, before we can &lt;strong&gt;Merge&lt;/strong&gt; &lt;a href=&quot;https://github.com/sympy/sympy/pull/9540&quot;&gt;#9540&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4&gt;TODO Failing Tests:&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://travis-ci.org/sympy/sympy/jobs/67831123&quot;&gt;sympy/stats/tests/test_rv.py&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://travis-ci.org/sympy/sympy/jobs/67831130&quot;&gt;sympy/combinatorics/tests/test_partitions.py&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;&lt;strong&gt;from &lt;strong&gt;future&lt;/strong&gt; import plan&lt;/strong&gt;  Week #6:&lt;/h3&gt;
+
+&lt;p&gt;This week I plan to &lt;a href=&quot;https://github.com/sympy/sympy/pull/9540&quot;&gt;Fix Intersection&amp;#39;s of FiniteSet with symbolic elements&lt;/a&gt; &amp;amp; start working on &lt;code&gt;LambertW&lt;/code&gt; solver in &lt;code&gt;solveset&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h3&gt;&lt;strong&gt;$ git log&lt;/strong&gt;&lt;/h3&gt;
+
+&lt;p&gt;&lt;img align=&quot;left&quot; src=&quot;/assets/gsoc/opr.png&quot;&gt; &amp;nbsp; &lt;a href=&quot;https://github.com/sympy/sympy/pull/9540&quot;&gt;PR #9540&lt;/a&gt; : Intersection&amp;#39;s of FiniteSet with symbolic elements&lt;/p&gt;
+
+&lt;p&gt;&lt;/br&gt;
+&lt;img align=&quot;left&quot; src=&quot;/assets/gsoc/opr.png&quot;&gt; &amp;nbsp; &lt;a href=&quot;https://github.com/sympy/sympy/pull/9438&quot;&gt;PR #9438&lt;/a&gt; : Linsolve&lt;/p&gt;
+
+&lt;p&gt;&lt;/br&gt;
+&lt;img align=&quot;left&quot; src=&quot;/assets/gsoc/mpr.png&quot;&gt; &amp;nbsp; &lt;a href=&quot;https://github.com/sympy/sympy/pull/9463&quot;&gt;PR #9463&lt;/a&gt; : ComplexPlane &lt;/p&gt;
+
+&lt;p&gt;&lt;/br&gt;
+&lt;img style=&quot;float: left&quot; src=&quot;/assets/gsoc/mpr.png&quot;&gt; &amp;nbsp; &lt;a href=&quot;https://github.com/sympy/sympy/pull/9527&quot;&gt;PR #9527&lt;/a&gt; : Printing of ProductSets  &lt;/br&gt; &lt;/p&gt;
+
+&lt;p&gt;&lt;/br&gt;
+&lt;img style=&quot;float: left&quot; src=&quot;/assets/gsoc/mpr.png&quot;&gt; &amp;nbsp; &lt;a href=&quot;https://github.com/sympy/sympy/pull/9524&quot;&gt;PR # 9524&lt;/a&gt; : Fix solveset returned solution making denom zero &lt;/p&gt;
+
+&lt;p&gt;&lt;/br&gt;
+That&amp;#39;s all for now, looking forward for week #6. :grinning:&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>GSoC &#58; This week in SymPy &#35;3</title>
