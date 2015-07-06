@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="keywords" content="aktech, amit kumar, dtu, maths, python, github">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      GSoC &#58; This week in SymPy &#35;6 &middot; Amit Kumar
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+
+  </head>
+
+
+  <body>
+
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p>Programmer · Developer · Learner</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="http://iamit.in">HomePage</a>
+
+    
+
+    
+    
+      
+        
+          <a class="sidebar-nav-item" href="/about/">About</a>
+        
+      
+    
+      
+    
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+
+    <a class="sidebar-nav-item" href="">Source</a>
+    <a class="sidebar-nav-item" href="http://blog.iamit.in/timeline">Archive</a>
+
+    <span class="sidebar-nav-item">Contact</span>
+    <a class="sidebar-nav-item" href="https://github.com/aktech">GitHub</a>
+    <a class="sidebar-nav-item" href="https://twitter.com/iaktech">Twitter</a>
+    <a class="sidebar-nav-item" href="mailto:dtu.amit@gmail.com">Gmail</a>
+    <a class="sidebar-nav-item" href="https://www.quora.com/Amit-Kumar-516">Quora</a>
+  </nav>
+
+  <div class="sidebar-item">
+    <p>
+      &copy; 2015. AMiT Kumar.
+    </p>
+  </div>
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Amit Kumar</a>
+            <small>: Life Is Learning!</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+        <div class="post">
+  <span class="post-date">
+    <a href="/timeline" class="timeline">
+      06 Jul 2015
+    </a>
+  </span>
+  <h1 class="post-title">GSoC &#58; This week in SymPy &#35;6</h1>
+  <span class="post-tag">
+      
+        
+          <a href="/tags/#Open Source">
+            Open Source
+          </a>
+          &middot;
+        
+      
+        
+          <a href="/tags/#GSoC">
+            GSoC
+          </a>
+          &middot;
+        
+      
+        
+          <a href="/tags/#SymPy">
+            SymPy
+          </a>
+
+        
+      
+  </span>
+
+  <hr>
+
+  <p>Hi there! It&#39;s been six weeks into <a href="https://en.wikipedia.org/wiki/Google_Summer_of_Code">GSoC</a>,
+and it marks the half of GSoC. The Mid term evaluations have been done now, Google has been preety quick doing this, I recieved the passing mail within 15 minutes after the deadline to fill up evaluations, so basically GSoC Admin did the following, (I guess):</p>
+<div class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">GSoCStudents</span>
+<span class="k">WHERE</span> <span class="n">EvaluationResult</span><span class="o">=</span><span class="s1">&#39;PASS&#39;</span><span class="p">;</span>
+</code></pre></div><div class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="k">and</span> <span class="n">SendThemMail</span>
+</code></pre></div>
+<p>(Don&#39;t Judge my SQL, I am not good at it!)</p>
+
+<h3>&nbsp; <strong>Progress of Week 6</strong> <img style="float: left" src="/assets/gsoc/pr.png"></h3>
+
+<p></br>
+Last week my <code>Linsolve</code> <a href="https://github.com/sympy/sympy/pull/9438">PR #9438</a>
+finally got Merged Thanks! to <a href="http://github.com/hargup">@hargup</a> <a href="http://github.com/moorepants">@moorepants</a> <a href="http://github.com/flacjacket">@flacjacket</a> <a href="http://github.com/debugger22">@debugger22</a> for reviewing it and suggesting constructive changes.</p>
+
+<p>This week I worked on Intersection&#39;s of <code>FiniteSet</code> with symbolic elements, which was a blocking issue for lot of things, I managed to Fix the failing test which I mentioned in my last post. Eventually this PR got Merged as well, which has opened doors for lot of improvements.</p>
+
+<p>Thanks to <a href="https://github.com/jksuom">@jksuom</a> &amp; <a href="https://github.com/hargup">@hargup</a> for iterating over this PR, and making some very useful comments for improving it to make it Mergeable.</p>
+
+<p>I had a couple of hangout meeting with <a href="https://github.com/hargup">@hargup</a> this week, (though now he has left for SciPy for a couple of weeks), we discussed about the further plan, for making <code>solveset</code> more robust, such as like returning the domain of invert while calling the <code>invert_real</code> , See <a href="https://github.com/sympy/sympy/issues/9617">#9617</a>.</p>
+
+<p>Motivation for this:</p>
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">In</span> <span class="p">[</span><span class="mi">8</span><span class="p">]:</span> <span class="n">x</span> <span class="o">=</span> <span class="n">Symbol</span><span class="p">(</span><span class="s">&#39;x&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">9</span><span class="p">]:</span> <span class="n">n</span> <span class="o">=</span> <span class="n">Symbol</span><span class="p">(</span><span class="s">&#39;n&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">12</span><span class="p">]:</span> <span class="n">solveset</span><span class="p">(</span><span class="n">Abs</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="n">n</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">12</span><span class="p">]:</span> <span class="p">{</span><span class="o">-</span><span class="n">n</span><span class="p">,</span> <span class="n">n</span><span class="p">}</span>
+</code></pre></div>
+<p>The solution returned above is not actually complete, unless, somehow we state <code>n</code> should be positive for the output set to be non-Empty. See <a href="https://github.com/sympy/sympy/issues/9588">#9588</a></p>
+
+<h3><strong>from <strong>future</strong> import plan</strong>  Week #7:</h3>
+
+<p>This week I plan to work on making <code>invert_real</code> more robust.</p>
+
+<p>Relavant Issue:</p>
+
+<ul>
+<li><a href="https://github.com/sympy/sympy/issues/9617">#9617</a></li>
+<li><a href="https://github.com/sympy/sympy/issues/9588">#9588</a></li>
+</ul>
+
+<h3><strong>$ git log</strong></h3>
+
+<p><img align="left" src="/assets/gsoc/opr.png"> &nbsp; <a href="https://github.com/sympy/sympy/pull/9618">PR #9618</a> : Add test for <code>solveset(x**2 + a, x)</code> issue 9557</p>
+
+<p></br>
+<img align="left" src="/assets/gsoc/opr.png"> &nbsp; <a href="https://github.com/sympy/sympy/pull/9587">PR #9587</a> : Add Linsolve Docs</p>
+
+<p></br>
+<img align="left" src="/assets/gsoc/opr.png"> &nbsp; <a href="https://github.com/sympy/sympy/pull/9500">PR #9500</a> :  Documenting <code>solveset</code></p>
+
+<p></br>
+<img align="left" src="/assets/gsoc/mpr.png"> &nbsp; <a href="https://github.com/sympy/sympy/pull/9612">PR #9612</a> : solveset return solution for <code>solveset(True, ..)</code></p>
+
+<p></br>
+<img align="left" src="/assets/gsoc/mpr.png"> &nbsp; <a href="https://github.com/sympy/sympy/pull/9540">PR #9540</a> : Intersection&#39;s of FiniteSet with symbolic elements</p>
+
+<p></br>
+<img align="left" src="/assets/gsoc/mpr.png"> &nbsp; <a href="https://github.com/sympy/sympy/pull/9438">PR #9438</a> : Linsolve</p>
+
+<p></br>
+<img align="left" src="/assets/gsoc/mpr.png"> &nbsp; <a href="https://github.com/sympy/sympy/pull/9463">PR #9463</a> : ComplexPlane </p>
+
+<p></br>
+<img style="float: left" src="/assets/gsoc/mpr.png"> &nbsp; <a href="https://github.com/sympy/sympy/pull/9527">PR #9527</a> : Printing of ProductSets  </br> </p>
+
+<p></br>
+<img style="float: left" src="/assets/gsoc/mpr.png"> &nbsp; <a href="https://github.com/sympy/sympy/pull/9524">PR # 9524</a> : Fix solveset returned solution making denom zero </p>
+
+<p></br>
+That&#39;s all for now, looking forward for week #7. <img src="/public/smileys/grinning.png" title=":grinning:" height="20px" width="20px" style="display:inline;margin:0;vertical-align:middle"/></p>
+
+</div>
+
+<div class="social">
+  <span>
+    <iframe src="http://ghbtns.com/github-btn.html?user=aktech&type=follow&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="165" height="20">
+    </iframe>
+  </span>
+
+  <span class="tweet">
+    <a href="https://twitter.com/share" class="twitter-share-button" data-via="iaktech">
+      Tweet
+    </a>
+    <script>
+    !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+    </script>
+  </span>
+
+  <span class="fb-like" data-href=http://iamit.in/blog/GSoC-week-6 data-action="like" data-layout="button_count" data-show-faces="false" data-share="false" style="display: inline-flex;">
+  </span>
+</div>
+
+
+<div class="related">
+  <h2>Related Posts</h2>
+  <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="/blog/GSoC-week-4-5">
+            GSoC &#58; This week in SymPy &#35;4 &amp; &#35;5
+            <small>23 Jun 2015</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/blog/GSoC-week-3">
+            GSoC &#58; This week in SymPy &#35;3
+            <small>17 Jun 2015</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/blog/GSoC-week-2">
+            GSoC &#58; This week in SymPy &#35;2
+            <small>07 Jun 2015</small>
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
+</div>
+
+<div class="disqus">
+      <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'iaktech'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+</div>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <!-- Google Analytics -->
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-33694283-4', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  </body>
+</html>

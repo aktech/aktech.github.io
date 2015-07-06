@@ -4,13 +4,92 @@
  <title>Amit Kumar</title>
  <link href="http://iamit.in/blog/feeds/atom.xml" rel="self"/>
  <link href="http://iamit.in/blog"/>
- <updated>2015-06-27T06:50:29+00:00</updated>
+ <updated>2015-07-06T05:53:12+00:00</updated>
  <id>http://iamit.in</id>
  <author>
    <name>Amit Kumar</name>
    <email>dtu.amit@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>GSoC &#58; This week in SymPy &#35;6</title>
+   <link href="http://iamit.in/blog/GSoC-week-6"/>
+   <updated>2015-07-06T00:00:00+00:00</updated>
+   <id>http://iamit.in/blog/GSoC &#58; This week in SymPy &#35;6</id>
+   <content type="html">&lt;p&gt;Hi there! It&amp;#39;s been six weeks into &lt;a href=&quot;https://en.wikipedia.org/wiki/Google_Summer_of_Code&quot;&gt;GSoC&lt;/a&gt;,
+and it marks the half of GSoC. The Mid term evaluations have been done now, Google has been preety quick doing this, I recieved the passing mail within 15 minutes after the deadline to fill up evaluations, so basically GSoC Admin did the following, (I guess):&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sql&quot; data-lang=&quot;sql&quot;&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;GSoCStudents&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;WHERE&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;EvaluationResult&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;PASS&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sql&quot; data-lang=&quot;sql&quot;&gt;&lt;span class=&quot;k&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SendThemMail&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;(Don&amp;#39;t Judge my SQL, I am not good at it!)&lt;/p&gt;
+
+&lt;h3&gt;&amp;nbsp; &lt;strong&gt;Progress of Week 6&lt;/strong&gt; &lt;img style=&quot;float: left&quot; src=&quot;/assets/gsoc/pr.png&quot;&gt;&lt;/h3&gt;
+
+&lt;p&gt;&lt;/br&gt;
+Last week my &lt;code&gt;Linsolve&lt;/code&gt; &lt;a href=&quot;https://github.com/sympy/sympy/pull/9438&quot;&gt;PR #9438&lt;/a&gt;
+finally got Merged Thanks! to &lt;a href=&quot;http://github.com/hargup&quot;&gt;@hargup&lt;/a&gt; &lt;a href=&quot;http://github.com/moorepants&quot;&gt;@moorepants&lt;/a&gt; &lt;a href=&quot;http://github.com/flacjacket&quot;&gt;@flacjacket&lt;/a&gt; &lt;a href=&quot;http://github.com/debugger22&quot;&gt;@debugger22&lt;/a&gt; for reviewing it and suggesting constructive changes.&lt;/p&gt;
+
+&lt;p&gt;This week I worked on Intersection&amp;#39;s of &lt;code&gt;FiniteSet&lt;/code&gt; with symbolic elements, which was a blocking issue for lot of things, I managed to Fix the failing test which I mentioned in my last post. Eventually this PR got Merged as well, which has opened doors for lot of improvements.&lt;/p&gt;
+
+&lt;p&gt;Thanks to &lt;a href=&quot;https://github.com/jksuom&quot;&gt;@jksuom&lt;/a&gt; &amp;amp; &lt;a href=&quot;https://github.com/hargup&quot;&gt;@hargup&lt;/a&gt; for iterating over this PR, and making some very useful comments for improving it to make it Mergeable.&lt;/p&gt;
+
+&lt;p&gt;I had a couple of hangout meeting with &lt;a href=&quot;https://github.com/hargup&quot;&gt;@hargup&lt;/a&gt; this week, (though now he has left for SciPy for a couple of weeks), we discussed about the further plan, for making &lt;code&gt;solveset&lt;/code&gt; more robust, such as like returning the domain of invert while calling the &lt;code&gt;invert_real&lt;/code&gt; , See &lt;a href=&quot;https://github.com/sympy/sympy/issues/9617&quot;&gt;#9617&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Motivation for this:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;n&quot;&gt;In&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Symbol&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;x&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;real&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;In&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;9&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Symbol&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;n&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;real&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;In&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;12&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;solveset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Abs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;Out&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;12&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;The solution returned above is not actually complete, unless, somehow we state &lt;code&gt;n&lt;/code&gt; should be positive for the output set to be non-Empty. See &lt;a href=&quot;https://github.com/sympy/sympy/issues/9588&quot;&gt;#9588&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3&gt;&lt;strong&gt;from &lt;strong&gt;future&lt;/strong&gt; import plan&lt;/strong&gt;  Week #7:&lt;/h3&gt;
+
+&lt;p&gt;This week I plan to work on making &lt;code&gt;invert_real&lt;/code&gt; more robust.&lt;/p&gt;
+
+&lt;p&gt;Relavant Issue:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/sympy/sympy/issues/9617&quot;&gt;#9617&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/sympy/sympy/issues/9588&quot;&gt;#9588&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;&lt;strong&gt;$ git log&lt;/strong&gt;&lt;/h3&gt;
+
+&lt;p&gt;&lt;img align=&quot;left&quot; src=&quot;/assets/gsoc/opr.png&quot;&gt; &amp;nbsp; &lt;a href=&quot;https://github.com/sympy/sympy/pull/9618&quot;&gt;PR #9618&lt;/a&gt; : Add test for &lt;code&gt;solveset(x**2 + a, x)&lt;/code&gt; issue 9557&lt;/p&gt;
+
+&lt;p&gt;&lt;/br&gt;
+&lt;img align=&quot;left&quot; src=&quot;/assets/gsoc/opr.png&quot;&gt; &amp;nbsp; &lt;a href=&quot;https://github.com/sympy/sympy/pull/9587&quot;&gt;PR #9587&lt;/a&gt; : Add Linsolve Docs&lt;/p&gt;
+
+&lt;p&gt;&lt;/br&gt;
+&lt;img align=&quot;left&quot; src=&quot;/assets/gsoc/opr.png&quot;&gt; &amp;nbsp; &lt;a href=&quot;https://github.com/sympy/sympy/pull/9500&quot;&gt;PR #9500&lt;/a&gt; :  Documenting &lt;code&gt;solveset&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/br&gt;
+&lt;img align=&quot;left&quot; src=&quot;/assets/gsoc/mpr.png&quot;&gt; &amp;nbsp; &lt;a href=&quot;https://github.com/sympy/sympy/pull/9612&quot;&gt;PR #9612&lt;/a&gt; : solveset return solution for &lt;code&gt;solveset(True, ..)&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/br&gt;
+&lt;img align=&quot;left&quot; src=&quot;/assets/gsoc/mpr.png&quot;&gt; &amp;nbsp; &lt;a href=&quot;https://github.com/sympy/sympy/pull/9540&quot;&gt;PR #9540&lt;/a&gt; : Intersection&amp;#39;s of FiniteSet with symbolic elements&lt;/p&gt;
+
+&lt;p&gt;&lt;/br&gt;
+&lt;img align=&quot;left&quot; src=&quot;/assets/gsoc/mpr.png&quot;&gt; &amp;nbsp; &lt;a href=&quot;https://github.com/sympy/sympy/pull/9438&quot;&gt;PR #9438&lt;/a&gt; : Linsolve&lt;/p&gt;
+
+&lt;p&gt;&lt;/br&gt;
+&lt;img align=&quot;left&quot; src=&quot;/assets/gsoc/mpr.png&quot;&gt; &amp;nbsp; &lt;a href=&quot;https://github.com/sympy/sympy/pull/9463&quot;&gt;PR #9463&lt;/a&gt; : ComplexPlane &lt;/p&gt;
+
+&lt;p&gt;&lt;/br&gt;
+&lt;img style=&quot;float: left&quot; src=&quot;/assets/gsoc/mpr.png&quot;&gt; &amp;nbsp; &lt;a href=&quot;https://github.com/sympy/sympy/pull/9527&quot;&gt;PR #9527&lt;/a&gt; : Printing of ProductSets  &lt;/br&gt; &lt;/p&gt;
+
+&lt;p&gt;&lt;/br&gt;
+&lt;img style=&quot;float: left&quot; src=&quot;/assets/gsoc/mpr.png&quot;&gt; &amp;nbsp; &lt;a href=&quot;https://github.com/sympy/sympy/pull/9524&quot;&gt;PR # 9524&lt;/a&gt; : Fix solveset returned solution making denom zero &lt;/p&gt;
+
+&lt;p&gt;&lt;/br&gt;
+That&amp;#39;s all for now, looking forward for week #7. :grinning:&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>GSoC &#58; This week in SymPy &#35;4 &amp; &#35;5</title>
