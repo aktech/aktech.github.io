@@ -1,0 +1,243 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>sympy.core.core &mdash; SymPy 0.7.7.dev documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="http://live.sympy.org/static/live-core.css" type="text/css" />
+    <link rel="stylesheet" href="http://live.sympy.org/static/live-autocomplete.css" type="text/css" />
+    <link rel="stylesheet" href="http://live.sympy.org/static/live-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '0.7.7.dev',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://live.sympy.org/static/utilities.js"></script>
+    <script type="text/javascript" src="http://live.sympy.org/static/external/classy.js"></script>
+    <script type="text/javascript" src="http://live.sympy.org/static/live-core.js"></script>
+    <script type="text/javascript" src="http://live.sympy.org/static/live-autocomplete.js"></script>
+    <script type="text/javascript" src="http://live.sympy.org/static/live-sphinx.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML-full"></script>
+    <link rel="shortcut icon" href="../../../_static/sympy-notailtext-favicon.ico"/>
+    <link rel="top" title="SymPy 0.7.7.dev documentation" href="../../../index.html" />
+    <link rel="up" title="Module code" href="../../index.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../../index.html">SymPy 0.7.7.dev documentation</a> &raquo;</li>
+          <li><a href="../../index.html" accesskey="U">Module code</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for sympy.core.core</h1><div class="highlight"><pre>
+<span class="sd">&quot;&quot;&quot; The core&#39;s core. &quot;&quot;&quot;</span>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">print_function</span><span class="p">,</span> <span class="n">division</span>
+
+<span class="c"># used for canonical ordering of symbolic sequences</span>
+<span class="c"># via __cmp__ method:</span>
+<span class="c"># FIXME this is *so* irrelevant and outdated!</span>
+<span class="n">ordering_of_classes</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="c"># singleton numbers</span>
+    <span class="s">&#39;Zero&#39;</span><span class="p">,</span> <span class="s">&#39;One&#39;</span><span class="p">,</span> <span class="s">&#39;Half&#39;</span><span class="p">,</span> <span class="s">&#39;Infinity&#39;</span><span class="p">,</span> <span class="s">&#39;NaN&#39;</span><span class="p">,</span> <span class="s">&#39;NegativeOne&#39;</span><span class="p">,</span> <span class="s">&#39;NegativeInfinity&#39;</span><span class="p">,</span>
+    <span class="c"># numbers</span>
+    <span class="s">&#39;Integer&#39;</span><span class="p">,</span> <span class="s">&#39;Rational&#39;</span><span class="p">,</span> <span class="s">&#39;Float&#39;</span><span class="p">,</span>
+    <span class="c"># singleton symbols</span>
+    <span class="s">&#39;Exp1&#39;</span><span class="p">,</span> <span class="s">&#39;Pi&#39;</span><span class="p">,</span> <span class="s">&#39;ImaginaryUnit&#39;</span><span class="p">,</span>
+    <span class="c"># symbols</span>
+    <span class="s">&#39;Symbol&#39;</span><span class="p">,</span> <span class="s">&#39;Wild&#39;</span><span class="p">,</span> <span class="s">&#39;Temporary&#39;</span><span class="p">,</span>
+    <span class="c"># arithmetic operations</span>
+    <span class="s">&#39;Pow&#39;</span><span class="p">,</span> <span class="s">&#39;Mul&#39;</span><span class="p">,</span> <span class="s">&#39;Add&#39;</span><span class="p">,</span>
+    <span class="c"># function values</span>
+    <span class="s">&#39;Derivative&#39;</span><span class="p">,</span> <span class="s">&#39;Integral&#39;</span><span class="p">,</span>
+    <span class="c"># defined singleton functions</span>
+    <span class="s">&#39;Abs&#39;</span><span class="p">,</span> <span class="s">&#39;Sign&#39;</span><span class="p">,</span> <span class="s">&#39;Sqrt&#39;</span><span class="p">,</span>
+    <span class="s">&#39;Floor&#39;</span><span class="p">,</span> <span class="s">&#39;Ceiling&#39;</span><span class="p">,</span>
+    <span class="s">&#39;Re&#39;</span><span class="p">,</span> <span class="s">&#39;Im&#39;</span><span class="p">,</span> <span class="s">&#39;Arg&#39;</span><span class="p">,</span>
+    <span class="s">&#39;Conjugate&#39;</span><span class="p">,</span>
+    <span class="s">&#39;Exp&#39;</span><span class="p">,</span> <span class="s">&#39;Log&#39;</span><span class="p">,</span>
+    <span class="s">&#39;Sin&#39;</span><span class="p">,</span> <span class="s">&#39;Cos&#39;</span><span class="p">,</span> <span class="s">&#39;Tan&#39;</span><span class="p">,</span> <span class="s">&#39;Cot&#39;</span><span class="p">,</span> <span class="s">&#39;ASin&#39;</span><span class="p">,</span> <span class="s">&#39;ACos&#39;</span><span class="p">,</span> <span class="s">&#39;ATan&#39;</span><span class="p">,</span> <span class="s">&#39;ACot&#39;</span><span class="p">,</span>
+    <span class="s">&#39;Sinh&#39;</span><span class="p">,</span> <span class="s">&#39;Cosh&#39;</span><span class="p">,</span> <span class="s">&#39;Tanh&#39;</span><span class="p">,</span> <span class="s">&#39;Coth&#39;</span><span class="p">,</span> <span class="s">&#39;ASinh&#39;</span><span class="p">,</span> <span class="s">&#39;ACosh&#39;</span><span class="p">,</span> <span class="s">&#39;ATanh&#39;</span><span class="p">,</span> <span class="s">&#39;ACoth&#39;</span><span class="p">,</span>
+    <span class="s">&#39;RisingFactorial&#39;</span><span class="p">,</span> <span class="s">&#39;FallingFactorial&#39;</span><span class="p">,</span>
+    <span class="s">&#39;factorial&#39;</span><span class="p">,</span> <span class="s">&#39;binomial&#39;</span><span class="p">,</span>
+    <span class="s">&#39;Gamma&#39;</span><span class="p">,</span> <span class="s">&#39;LowerGamma&#39;</span><span class="p">,</span> <span class="s">&#39;UpperGamma&#39;</span><span class="p">,</span> <span class="s">&#39;PolyGamma&#39;</span><span class="p">,</span>
+    <span class="s">&#39;Erf&#39;</span><span class="p">,</span>
+    <span class="c"># special polynomials</span>
+    <span class="s">&#39;Chebyshev&#39;</span><span class="p">,</span> <span class="s">&#39;Chebyshev2&#39;</span><span class="p">,</span>
+    <span class="c"># undefined functions</span>
+    <span class="s">&#39;Function&#39;</span><span class="p">,</span> <span class="s">&#39;WildFunction&#39;</span><span class="p">,</span>
+    <span class="c"># anonymous functions</span>
+    <span class="s">&#39;Lambda&#39;</span><span class="p">,</span>
+    <span class="c"># Landau O symbol</span>
+    <span class="s">&#39;Order&#39;</span><span class="p">,</span>
+    <span class="c"># relational operations</span>
+    <span class="s">&#39;Equality&#39;</span><span class="p">,</span> <span class="s">&#39;Unequality&#39;</span><span class="p">,</span> <span class="s">&#39;StrictGreaterThan&#39;</span><span class="p">,</span> <span class="s">&#39;StrictLessThan&#39;</span><span class="p">,</span>
+    <span class="s">&#39;GreaterThan&#39;</span><span class="p">,</span> <span class="s">&#39;LessThan&#39;</span><span class="p">,</span>
+<span class="p">]</span>
+
+
+<span class="k">class</span> <span class="nc">BasicType</span><span class="p">(</span><span class="nb">type</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+
+<span class="k">class</span> <span class="nc">Registry</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Base class for registry objects.</span>
+
+<span class="sd">    Registries map a name to an object using attribute notation. Registry</span>
+<span class="sd">    classes behave singletonically: all their instances share the same state,</span>
+<span class="sd">    which is stored in the class object.</span>
+
+<span class="sd">    All subclasses should set `__slots__ = []`.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">def</span> <span class="nf">__setattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">obj</span><span class="p">):</span>
+        <span class="nb">setattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">obj</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__delattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="nb">delattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+
+<span class="c">#A set containing all sympy class objects, kept in sync with C</span>
+<span class="n">all_classes</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+
+
+<span class="k">class</span> <span class="nc">ClassRegistry</span><span class="p">(</span><span class="n">Registry</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Namespace for SymPy classes</span>
+
+<span class="sd">    This is needed to avoid problems with cyclic imports.</span>
+<span class="sd">    To get a SymPy class, use `C.&lt;class_name&gt;` e.g. `C.Rational`, `C.Add`.</span>
+
+<span class="sd">    For performance reasons, this is coupled with a set `all_classes` holding</span>
+<span class="sd">    the classes, which should not be modified directly.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">__slots__</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">def</span> <span class="nf">__setattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">cls</span><span class="p">):</span>
+        <span class="n">Registry</span><span class="o">.</span><span class="n">__setattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">cls</span><span class="p">)</span>
+        <span class="n">all_classes</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">cls</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__delattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="n">cls</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+        <span class="n">Registry</span><span class="o">.</span><span class="n">__delattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+        <span class="c"># The same class could have different names, so make sure</span>
+        <span class="c"># it&#39;s really gone from C before removing it from all_classes.</span>
+        <span class="k">if</span> <span class="n">cls</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="o">.</span><span class="n">__dict__</span><span class="o">.</span><span class="n">itervalues</span><span class="p">():</span>
+            <span class="n">all_classes</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">cls</span><span class="p">)</span>
+
+<span class="n">C</span> <span class="o">=</span> <span class="n">ClassRegistry</span><span class="p">()</span>
+
+
+<span class="k">class</span> <span class="nc">BasicMeta</span><span class="p">(</span><span class="n">BasicType</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kws</span><span class="p">):</span>
+        <span class="nb">setattr</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">cls</span><span class="o">.</span><span class="n">__name__</span><span class="p">,</span> <span class="n">cls</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__cmp__</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="c"># If the other object is not a Basic subclass, then we are not equal to</span>
+        <span class="c"># it.</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">BasicType</span><span class="p">):</span>
+            <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
+        <span class="n">n1</span> <span class="o">=</span> <span class="n">cls</span><span class="o">.</span><span class="n">__name__</span>
+        <span class="n">n2</span> <span class="o">=</span> <span class="n">other</span><span class="o">.</span><span class="n">__name__</span>
+        <span class="k">if</span> <span class="n">n1</span> <span class="o">==</span> <span class="n">n2</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mi">0</span>
+
+        <span class="n">UNKNOWN</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">ordering_of_classes</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">i1</span> <span class="o">=</span> <span class="n">ordering_of_classes</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">n1</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+            <span class="n">i1</span> <span class="o">=</span> <span class="n">UNKNOWN</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">i2</span> <span class="o">=</span> <span class="n">ordering_of_classes</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">n2</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+            <span class="n">i2</span> <span class="o">=</span> <span class="n">UNKNOWN</span>
+        <span class="k">if</span> <span class="n">i1</span> <span class="o">==</span> <span class="n">UNKNOWN</span> <span class="ow">and</span> <span class="n">i2</span> <span class="o">==</span> <span class="n">UNKNOWN</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">(</span><span class="n">n1</span> <span class="o">&gt;</span> <span class="n">n2</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="n">n1</span> <span class="o">&lt;</span> <span class="n">n2</span><span class="p">)</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">i1</span> <span class="o">&gt;</span> <span class="n">i2</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="n">i1</span> <span class="o">&lt;</span> <span class="n">i2</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__lt__</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">cls</span><span class="o">.</span><span class="n">__cmp__</span><span class="p">(</span><span class="n">other</span><span class="p">)</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">True</span>
+        <span class="k">return</span> <span class="bp">False</span>
+
+    <span class="k">def</span> <span class="nf">__gt__</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">cls</span><span class="o">.</span><span class="n">__cmp__</span><span class="p">(</span><span class="n">other</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">True</span>
+        <span class="k">return</span> <span class="bp">False</span>
+
+<span class="n">C</span><span class="o">.</span><span class="n">BasicMeta</span> <span class="o">=</span> <span class="n">BasicMeta</span>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../../../index.html">
+              <img class="logo" src="../../../_static/sympylogo.png" alt="Logo"/>
+            </a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../../index.html">SymPy 0.7.7.dev documentation</a> &raquo;</li>
+          <li><a href="../../index.html" >Module code</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2015 SymPy Development Team.
+      Last updated on Jul 09, 2015.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3b2.
+    </div>
+  </body>
+</html>
