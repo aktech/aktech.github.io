@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="keywords" content="aktech, amit kumar, dtu, maths, python, github">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      GSoC &#58; Throughout in SymPy &#35; Wrap Up &middot; Amit Kumar
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+
+  </head>
+
+
+  <body>
+
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p>Programmer · Developer · Learner</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="http://iamit.in">HomePage</a>
+
+    
+
+    
+    
+      
+        
+          <a class="sidebar-nav-item" href="/about/">About</a>
+        
+      
+    
+      
+    
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+
+    <a class="sidebar-nav-item" href="">Source</a>
+    <a class="sidebar-nav-item" href="http://blog.iamit.in/timeline">Archive</a>
+
+    <span class="sidebar-nav-item">Contact</span>
+    <a class="sidebar-nav-item" href="https://github.com/aktech">GitHub</a>
+    <a class="sidebar-nav-item" href="https://twitter.com/iaktech">Twitter</a>
+    <a class="sidebar-nav-item" href="mailto:dtu.amit@gmail.com">Gmail</a>
+    <a class="sidebar-nav-item" href="https://www.quora.com/Amit-Kumar-516">Quora</a>
+  </nav>
+
+  <div class="sidebar-item">
+    <p>
+      &copy; 2015. AMiT Kumar.
+    </p>
+  </div>
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Amit Kumar</a>
+            <small>: Life Is Learning!</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+        <div class="post">
+  <span class="post-date">
+    <a href="/timeline" class="timeline">
+      28 Aug 2015
+    </a>
+  </span>
+  <h1 class="post-title">GSoC &#58; Throughout in SymPy &#35; Wrap Up</h1>
+  <span class="post-tag">
+      
+        
+          <a href="/tags/#Open Source">
+            Open Source
+          </a>
+          &middot;
+        
+      
+        
+          <a href="/tags/#GSoC">
+            GSoC
+          </a>
+          &middot;
+        
+      
+        
+          <a href="/tags/#SymPy">
+            SymPy
+          </a>
+
+        
+      
+  </span>
+
+  <hr>
+
+  <p>Hi! I am Amit Kumar (<a href="http://www.github.com/aktech"><strong>@aktech</strong></a>), a final year undergraduate student of Mathematics &amp; Computing at Delhi Technological University. This post summarizes my experience working on GSoC Project on Improving Solvers in SymPy.</p>
+
+<h2>Introduction</h2>
+
+<p>I first stumbled upon SymPy last year, while looking for some Open Source Computer Algebra Systems to contribute. I didn&#39;t had any Open Source experience by then, So SymPy was an Ideal Choice for getting into the beautiful world of Open Source. I wasn&#39;t even Proficient in Python so at first it was little difficult for me, but Thanks! to the beauty of the language itself, which makes anyone comfortable with it in no time. Soon, I decided to participate into Google Summer of Code under SymPy. Though at this point of time, I didn&#39;t had decided about the project, I would like to work in Summers. </p>
+
+<h5>First Contribution</h5>
+
+<p>I started learning the codebase &amp; made my first contribution by Fixing an EasyToFix bug in <code>solvers.py</code> through the PR <a href="https://github.com/sympy/sympy/pull/8647">#8647</a>, Thanks to <a href="">@smichr</a> for helping me making my first ever open source contribution. After my first PR, I started looking for more things to work and improve upon and I started commiting quite often. During this period I learnt the basics of Git, which is one of the most important tools for contributing to Open Source.</p>
+
+<h2>Project Ideas</h2>
+
+<p>When I got a bit comfortable with the basics of SymPy &amp; contributing to open source in general, I decided to chose an area (module) to concentrate on. The modules I was interested in, were Solvers and Integrals, I was literally amazed by the capability of a CAS to integrate and solve equations. I decided to work on one of these in the summers. There was already some work done on the Integrals module in 2013, which was yet to be Merged. I wasn&#39;t well versed about the Manuel Bronsteins works on Methods of Integration in a Computer Algebra System, so I was little skeptical about working on Integrals. The Solvers module attracted me due it&#39;s awesome capabilities, I found it one of the most useful features of any Computer Algebra Systems, So I finally decided to work on Solvers Module.</p>
+
+<h2>Coding</h2>
+
+<p>I was finally accepted to work on Solvers this summer. I had my exams during the community bonding period, So I started almost in the first week of Coding Period. I made a detailed timeline of my work in summers, but through my experience I can say that&#39;s seldom useful. Since, you never know what may come out in between you and your schedule. As an instance PR <a href="https://github.com/sympy/sympy/pull/9540">#9540</a>, was a stumbling block in lot of my work, which was necessary to fix for proceeding ahead.</p>
+
+<h4>Phase I (Before Mid Terms)</h4>
+
+<p>When coding period commenced, I started implementing the <code>linsolve</code>, the linear system solver which is tolerant to different input forms &amp; can solve almost all forms of linear systems. At the start I got lot of reviews from Jason and Harsh, regarding improvement of the function. One of the most important thing I learnt which they focused on was Test Driven Development, they suggested me to write extensive tests before implementing the logic, which helps in reducing the problems in visualizing the final implementaion of the function and avoids API changes.</p>
+
+<p>After <code>linsolve</code> I implemented <code>ComplexPlane</code>, which is basically Complex Sets. It is useful for representing infinite solutions in argand plane. While implementing this I learnt that chosing the right API is one of the most important factors while designing aa important functionality. To know more about it, see my blog post <a href="http://iamit.in/blog/GSoC-week-3/">here</a>. During this period I also worked on fixing Intersection&#39;s of FiniteSet with symbolic elements, which was a stumbling block.</p>
+
+<h4>Phase II (After Mid Terms)</h4>
+
+<p>After successfully passing the Mid Terms, I started working more on robustness of <code>solveset</code>, Thanks to @hargup for pointing out the motivation for this work. The idea is to tell the user about the domain of solution returned. Simplest motivation was the solution of the equation <code>|x| - n</code>, for more info see my blog post <a href="http://iamit.in/blog/GSoC-week-7/">here</a>. I also worked on various trivial and non trivial bugs which were more or less blocking my work. </p>
+
+<p>Then I started replacing <code>solve</code> with <code>solveset</code> in the codebase, the idea was to make a smooth transition between <code>solve</code> and <code>solveset</code>, while doing this Jason pointed out that I should not remove <code>solve</code> tests, which can make <code>solve</code> vunerable to break, So I reverted removing of solve tests. Later we decided to add <code>domain</code> argument to <code>solveset</code>, which would help the user in easily dictating to solveset about what solutions they are interested in, thanks to @shivamvats for doing this in a PR.
+After the decision of adding <code>domain</code> argument, Harsh figured out that, as of now <code>solveset</code> is vunerable to API changes, so it&#39;s not the right time to replace solve with solveset, so we decided to halt this work, as a result I closed my several PR&#39;s unmerged. </p>
+
+<p>I also worked on Implementing Differential Calculus Method such as <code>is_increasing</code> etc, which is also Merged now. Meanwhile I have been working on documenting <code>solveset</code>, because a lot of people don&#39;t know what we are doing &amp; why we are doing, so It&#39;s very important to answer all those subtle questions which may come up in there mind, So we decided to create a FAQ style documentation of <code>solveset</code> see PR <a href="https://github.com/sympy/sympy/pull/9500">#9500</a>. This is almost done, some polishing is needed. It would be Merged soon.</p>
+
+<p>During this period apart from my work, there are some other works as well which is worth mentioning, one of them is <code>ConditionSet</code> by Harsh which serves the purpose of unevaluated solve object and even much more than that for our future endeavours with <code>solveset</code>. Others being <code>codomain</code> &amp; <code>not_empty</code> by Gaurav <a href="http://github.com/gxyd">@gxyd</a> which are also important additions to SymPy.</p>
+
+<h2>Advice</h2>
+
+<p>TODO: Probably, this will need a comprehensive post, I would write soon.</p>
+
+<h2>Future Plans</h2>
+
+<p>Recently Harsh came up with an idea of tree based solver. Since now <code>ConditionSet</code> has been introduced, the solving of equations can be seen as set transformation, We can do the following things to solve equations (abstract View):</p>
+
+<ul>
+<li>Apply Various Set Transformations on the given Set.</li>
+<li>Define a Metric of the usability or define a notion of better solution over others.</li>
+<li>Different Transformation would be the nodes of the tree.</li>
+<li>Suitable searching techniques could be applied to get the best solution.</li>
+</ul>
+
+<p>For more info see mailing list thread <a href="https://groups.google.com/forum/#!topic/sympy/-SIbX0AFL3Q">here</a>.</p>
+
+<p>As a part of this I worked on implementing a general decomposition function <code>decompogen</code> in PR <a href="https://github.com/sympy/sympy/pull/9831">#9831</a>, It&#39;s almost done, will be merged soon.</p>
+
+<p>I plan for a long term association with SymPy, I take the full responsibilty of my code. I will try to contribute as much as I can particularly in sets and solvers module.</p>
+
+<h2>Conclusion</h2>
+
+<p>On a concluding note, I must say that getting the opportunity to work on SymPy this summer has been one of the best things that could happen to me. Thanks to Harsh for helping me all my endeavour, also for being one of the best mentors I could get. I would like to thank Sean as well who from his busy schedule took up the time to attend meetings, hangouts and for doing code reviews. Also thanks to Chris Smith who is the most gentle and helpful person I have ever seen, he is one of the reasons I started contributing to SymPy.
+Thanks to Aaron, Ondrej, and last but not the least my fellow GSoCer&#39;s at SymPy <a href="http://github.com/leosartaj">leosartaj</a>, <a href="http://github.com/debugger22">debugger22</a>, <a href="http://github.com/sumith1896">sumith1896</a>, <a href="http://github.com/shivamvats">shivamvats</a>, <a href="https://github.com/abinashmeher999">abinashmeher999</a>. Special Thanks to whole SymPy team and Community for a wonderful collaboration experience. Kudos!</p>
+
+</div>
+
+<div class="social">
+  <span>
+    <iframe src="http://ghbtns.com/github-btn.html?user=aktech&type=follow&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="165" height="20">
+    </iframe>
+  </span>
+
+  <span class="tweet">
+    <a href="https://twitter.com/share" class="twitter-share-button" data-via="iaktech">
+      Tweet
+    </a>
+    <script>
+    !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+    </script>
+  </span>
+
+  <span class="fb-like" data-href=http://iamit.in/blog/GSoC-wrap-up data-action="like" data-layout="button_count" data-show-faces="false" data-share="false" style="display: inline-flex;">
+  </span>
+</div>
+
+
+<div class="related">
+  <h2>Related Posts</h2>
+  <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="/blog/GSoC-week-10-11">
+            GSoC &#58; This week in SymPy &#35;10 &amp; &#35;11
+            <small>11 Aug 2015</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/blog/GSoC-week-9">
+            GSoC &#58; This week in SymPy &#35;9
+            <small>28 Jul 2015</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/blog/GSoC-week-8">
+            GSoC &#58; This week in SymPy &#35;8
+            <small>21 Jul 2015</small>
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
+</div>
+
+<div class="disqus">
+      <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'iaktech'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+</div>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <!-- Google Analytics -->
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-33694283-4', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  </body>
+</html>
