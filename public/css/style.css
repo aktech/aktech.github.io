@@ -1,0 +1,49 @@
+body, html {
+  background: #556c88;
+  text-align: right;
+}
+
+.container {
+  position: absolute;
+  bottom: 3em;
+  right: 5em;
+}
+
+.container h1 {
+  font-family: Lato;
+  font-size: 3em;
+  color: silver;
+  margin-bottom: 0px;
+} 
+
+.container h3 {
+  font-family: Lato;
+  font-size: 1.5em;
+  color: darkgrey;
+  margin-top: 5px;
+  margin-bottom: 50px;
+}
+
+.container a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container a:hover {
+  color: silver;
+}
+
+.container ul li {
+  list-style: none;
+  font-family: Lato;
+  margin-bottom: 20px;
+  font-size: 1.2em;
+}
+
+.container ul li a {
+  color: silver;
+}
+
+.container ul li a:hover {
+  color: darkgrey;
+}
