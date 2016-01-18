@@ -1,7 +1,7 @@
-# My Blog at Github
-http://blog.iamit.in
+# My Website at Github
+http://iamit.in
 
-This repository powers my Blog @ Github.
+This repository powers my Website @ Github.
 
 Feel free to report [issue](https://github.com/aktech/aktech.github.io/issues/new) or make Pull Requests for any changes/fixes.
 
