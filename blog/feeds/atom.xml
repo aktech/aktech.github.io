@@ -4,13 +4,31 @@
  <title>Amit Kumar</title>
  <link href="http://iamit.in/blog/feeds/atom.xml" rel="self"/>
  <link href="http://iamit.in/blog"/>
- <updated>2016-01-18T16:20:00+05:30</updated>
+ <updated>2016-02-09T11:42:04+05:30</updated>
  <id>http://iamit.in</id>
  <author>
    <name>Amit Kumar</name>
    <email>dtu.amit@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>SymPy Workshop at PyDelhi Meetup</title>
+   <link href="http://iamit.in/blog/sympy-workshop-pydelhi-meetup"/>
+   <updated>2016-02-07T00:00:00+05:30</updated>
+   <id>http://iamit.in/blog/SymPy Workshop at PyDelhi Meetup</id>
+   <content type="html">&lt;p&gt;Hi there! It&amp;#39;s been sometime now since my last blog post, It&amp;#39;s probably the right time to write one now. Yesterday, I gave a talk on SymPy at Python Delhi User group Meetup at &lt;a href=&quot;https://maps.google.com/maps?f=q&amp;amp;hl=en&amp;amp;q=29%2C+Rajpur+Road%2C+Delhi%2C+in&quot;&gt;CSDS&lt;/a&gt;, New Delhi. Things never go the way you want, an hour was wasted in just setting up Anaconda on everyone&amp;#39;s system, eventually I had to cut on the material I could demonstrate, though It was nice to see that people were very enthusiatic about SymPy, they actively solved excercises. It was fun interacting with everyone.&lt;/p&gt;
+
+&lt;p&gt;Here is a Pic of the Seminar room at CSDS:
+&lt;img align=&quot;center&quot; src=&quot;/assets/sympy-workshop.jpg&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;I should also admit that, I have increased my appetite for attending conferences and meetups, these days. In the last 4 months I have attended 3 Meetups (PyDelhi Meetup) and 1 Conference (PyCon India 2015). I think this is one of the best things I have done in last few years &amp;amp; I would recommend anyone with a slight interest in Python either Beginner or Expert should attend &lt;a href=&quot;http://www.pydelhi.org&quot;&gt;PyDelhi&lt;/a&gt; &lt;a href=&quot;http://www.meetup.com/pydelhi/events/&quot;&gt;Meetups&lt;/a&gt;. Looking forward to more such meetups and conferences.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/sympy-sticker.jpg&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;I gave SymPy stickers to everyone who solved atleast one excercise (Since, I didn&amp;#39;t had enough stickers).&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>GSoC &#58; Throughout in SymPy &#35; Wrap Up</title>
