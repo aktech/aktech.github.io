@@ -4,13 +4,60 @@
  <title>Amit Kumar</title>
  <link href="http://iamit.in/blog/feeds/atom.xml" rel="self"/>
  <link href="http://iamit.in/blog"/>
- <updated>2016-03-27T17:55:26+05:30</updated>
+ <updated>2016-04-03T00:28:14+05:30</updated>
  <id>http://iamit.in</id>
  <author>
    <name>Amit Kumar</name>
    <email>dtu.amit@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Talk on Python MRO at PyDelhi Meetup</title>
+   <link href="http://iamit.in/blog/talk-python-mro-pydelhi-meetup"/>
+   <updated>2016-04-02T00:00:00+05:30</updated>
+   <id>http://iamit.in/blog/Talk on Python MRO at PyDelhi Meetup</id>
+   <content type="html">&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;en&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;Demystifying &lt;a href=&quot;https://twitter.com/hashtag/Python?src=hash&quot;&gt;#Python&lt;/a&gt; MRO at &lt;a href=&quot;https://twitter.com/PyDelhi&quot;&gt;@PyDelhi&lt;/a&gt; meetup tomorrow. See you there at Ramanujan College, Delhi.&lt;/p&gt;&amp;mdash; AMiT Kumar (@iaktech) &lt;a href=&quot;https://twitter.com/iaktech/status/715933679676162049&quot;&gt;April 1, 2016&lt;/a&gt;&lt;/blockquote&gt;
+
+&lt;script async src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;Hi there! Today I gave a talk on Python MRO at &lt;a href=&quot;http://pydelhi.org&quot;&gt;PyDelhi&lt;/a&gt; &lt;a href=&quot;http://www.meetup.com/pydelhi/events/226049223/&quot;&gt;Meetup&lt;/a&gt; at &lt;a href=&quot;http://www.ramanujancollege.ac.in/index.php&quot;&gt;Ramanujan College&lt;/a&gt;, Delhi. MRO stands for method resolution order &lt;em&gt;which defines the &amp;quot;class search path&amp;quot; used by Python to search for the right method to use in classes having multi-inheritance&lt;/em&gt;. Below is an example&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;whoami&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;I am A&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;B&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;whoami&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;I am B&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;C&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;whoami&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;I am C&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;D&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;B&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;C&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;pass&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;n&quot;&gt;d&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;D&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;whoami&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;To get the output of above example Python has a predefined algorithm called as method resolution order, which defines the order in which python would search for the method &lt;code&gt;whoami&lt;/code&gt; in the classes from which D inherits. To understand more about the working of mro see the &lt;a href=&quot;http://slides.com/aktech/python-mro/&quot;&gt;slides&lt;/a&gt; of talk.&lt;/p&gt;
+
+&lt;blockquote class=&quot;twitter-tweet&quot; data-conversation=&quot;none&quot; data-lang=&quot;en&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;. &lt;a href=&quot;https://twitter.com/iaktech&quot;&gt;@iaktech&lt;/a&gt; demystifying python&amp;#39;s MRO &lt;a href=&quot;https://twitter.com/PyDelhi&quot;&gt;@PyDelhi&lt;/a&gt; meetup in Ramanujan college. &lt;a href=&quot;https://t.co/VJNuiyPQFv&quot;&gt;pic.twitter.com/VJNuiyPQFv&lt;/a&gt;&lt;/p&gt;&amp;mdash; Anuvrat Parashar (@bhanuvrat) &lt;a href=&quot;https://twitter.com/bhanuvrat/status/716190054750625792&quot;&gt;April 2, 2016&lt;/a&gt;&lt;/blockquote&gt;
+
+&lt;script async src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+
+&lt;h4&gt;Motivation for the talk&lt;/h4&gt;
+
+&lt;p&gt;The motivation behind this talk is my failure to answer some simple mro based question in an interview with a bangalore based startup a month ago. I realized that its one of the basic language features which every Python programmer should be aware of &amp;amp; teaching something is probably the best way to learn something, so is delivering a talk! It&amp;#39;s well said by Albert Einstein:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;If you can&amp;#39;t explain it simply, you don&amp;#39;t understand it well enough.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;It is always a wonderful experience delivering a talk at PyDelhi Meetup or at any conference, I plan to do more of it in future. I always say this &amp;amp; would say it again, if you like Python or interested in learning then you must attend PyDelhi Meetups. See you on the next meetup ;)&lt;/p&gt;
+
+&lt;p&gt;Feel free to reach out to me for any feedbacks or query regarding anything at me [at] iamit [dot] in.&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>SymPy Workshop at FOSSASIA 2016, Singapore</title>
