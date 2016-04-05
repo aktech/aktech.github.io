@@ -7,7 +7,7 @@ Feel free to report [issue](https://github.com/aktech/aktech.github.io/issues/ne
 
 To visit my Website [Click here](http://iamit.in).
 
-# RSS Feed  ![alt tag](https://github.com/aktech/aktech.github.io/blob/master/vendor/rss.png)
+# RSS Feed  ![alt tag](https://github.com/aktech/aktech.github.io/blob/master/theme/rss.png)
 
 Link to RSS Feed:
 
