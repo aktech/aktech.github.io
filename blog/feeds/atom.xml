@@ -4,13 +4,55 @@
  <title>Amit Kumar</title>
  <link href="http://iamit.in/blog/feeds/atom.xml" rel="self"/>
  <link href="http://iamit.in/blog"/>
- <updated>2016-04-03T00:28:14+05:30</updated>
+ <updated>2016-05-29T22:20:12+05:30</updated>
  <id>http://iamit.in</id>
  <author>
    <name>Amit Kumar</name>
    <email>dtu.amit@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Talk on Introducing Metaclasses at PyDelhi Meetup</title>
+   <link href="http://iamit.in/blog/talk-python-metaclasses-pydelhi-meetup"/>
+   <updated>2016-05-29T00:00:00+05:30</updated>
+   <id>http://iamit.in/blog/Talk on Introducing Metaclasses at PyDelhi Meetup</id>
+   <content type="html">&lt;p&gt;Hey! I gave a talk on Python Metaclasses yesterday at &lt;a href=&quot;http://pydelhi.org&quot;&gt;PyDelhi&lt;/a&gt; &lt;a href=&quot;http://www.meetup.com/pydelhi/events/226342855/&quot;&gt;Meetup&lt;/a&gt; at Lyxel labs, Gurgaon .&lt;/p&gt;
+
+&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;en&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;Interested in learning Metaclasses? Come to &lt;a href=&quot;https://twitter.com/hashtag/PyDelhi?src=hash&quot;&gt;#PyDelhi&lt;/a&gt; meetup tomorrow to watch &lt;a href=&quot;https://twitter.com/iaktech&quot;&gt;@iaktech&lt;/a&gt; introducing metaclasses at &lt;a href=&quot;https://twitter.com/hashtag/LyxelLabs?src=hash&quot;&gt;#LyxelLabs&lt;/a&gt;, Gurgaon.&lt;/p&gt;&amp;mdash; PyDelhi (@PyDelhi) &lt;a href=&quot;https://twitter.com/PyDelhi/status/736067744039198721&quot;&gt;May 27, 2016&lt;/a&gt;&lt;/blockquote&gt;
+
+&lt;script async src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;In order to develop an intuition to understand metaclasses in python, Let&amp;#39;s see it in this way: &amp;quot;&lt;strong&gt;&lt;em&gt;Everything is an object in Python&lt;/em&gt;&lt;/strong&gt;&amp;quot;, So is a class! and every object is created by a class, of course:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;pass&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;foo_object&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;The class which creates the &lt;code&gt;foo_object&lt;/code&gt; is:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;__main__&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Foo&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;That&amp;#39;s what we expected, &lt;code&gt;Foo&lt;/code&gt;!&lt;/p&gt;
+
+&lt;p&gt;Now, as I said earlier, every class is also an object, So is &lt;code&gt;Foo&lt;/code&gt;, now lets see which class creates the class &lt;code&gt;Foo&lt;/code&gt; itself:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;type&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;The &lt;code&gt;type&lt;/code&gt;! Yes, the &lt;code&gt;type&lt;/code&gt; class creates the &lt;code&gt;Foo&lt;/code&gt; class and that&amp;#39;s what called as a Metaclass. Metaclasses are the secret sauce which creates classes! &lt;code&gt;type&lt;/code&gt; is the default metaclass in Python. To dive more into Metaclasses, have a look at the presentation slides of
+my talk.&lt;/p&gt;
+
+&lt;iframe src=&quot;//slides.com/aktech/introducing-metaclasses-in-python/embed&quot; width=&quot;700&quot; height=&quot;600&quot; scrolling=&quot;no&quot; frameborder=&quot;0&quot; webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;p&gt;If you missed my talk or attended and liked it, then you should definitely have a look at my &lt;a href=&quot;https://in.pycon.org/cfp/2016/proposals/introducing-metaclasses%7Edw0Je/&quot;&gt;proposal&lt;/a&gt; for this talk at PyCon India 2016 ;)&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Tip&lt;/strong&gt; : Interested in tasting more of Python? Come to PyDelhi &lt;a href=&quot;http://www.meetup.com/pydelhi/&quot;&gt;Meetups&lt;/a&gt;!&lt;/p&gt;
+
+&lt;p&gt;Here is a picture of an another talk by Peeyush Aggarwal &lt;a href=&quot;https://twitter.com/dhuadaar&quot;&gt;(@dhuadaar)&lt;/a&gt; on NLP.&lt;/p&gt;
+
+&lt;p&gt;&lt;img align=&quot;center&quot; src=&quot;/assets/dhuadaar.jpg&quot; width=&quot;500&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;See you in the next meetup :)&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Talk on Python MRO at PyDelhi Meetup</title>
