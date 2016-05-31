@@ -4,7 +4,7 @@
  <title>Amit Kumar</title>
  <link href="http://iamit.in/blog/feeds/atom.xml" rel="self"/>
  <link href="http://iamit.in/blog"/>
- <updated>2016-05-30T01:14:10+05:30</updated>
+ <updated>2016-05-31T20:58:04+05:30</updated>
  <id>http://iamit.in</id>
  <author>
    <name>Amit Kumar</name>
@@ -42,9 +42,12 @@ my talk.&lt;/p&gt;
 
 &lt;iframe src=&quot;//slides.com/aktech/introducing-metaclasses-in-python/embed&quot; width=&quot;700&quot; height=&quot;600&quot; scrolling=&quot;no&quot; frameborder=&quot;0&quot; webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;&lt;/iframe&gt;
 
-&lt;p&gt;If you missed my talk or attended and liked it, then you should definitely have a look at my &lt;a href=&quot;https://in.pycon.org/cfp/2016/proposals/introducing-metaclasses%7Edw0Je/&quot;&gt;proposal&lt;/a&gt; for this talk at PyCon India 2016 ;)&lt;/p&gt;
+&lt;p&gt;&lt;/br&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Tip&lt;/strong&gt; : Interested in tasting more of Python? Come to PyDelhi &lt;a href=&quot;http://www.meetup.com/pydelhi/&quot;&gt;Meetups&lt;/a&gt;!&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Tip&lt;/strong&gt; : Interested in tasting bit more of Python? Come to PyDelhi &lt;a href=&quot;http://www.meetup.com/pydelhi/&quot;&gt;Meetups&lt;/a&gt;!
+or if you would like to taste lot of python, then you should come to &lt;a href=&quot;https://in.pycon.org/2016/&quot;&gt;PyCon India 2016&lt;/a&gt;, its a premier conference in India on using and developing the Python programming language &amp;amp; is conducted annually by the Python developer community. It attracts the best Python programmers from across the country and abroad.&lt;/p&gt;
+
+&lt;p&gt;If you missed my talk or attended and liked it, then you should definitely have a look at my &lt;a href=&quot;https://in.pycon.org/cfp/2016/proposals/introducing-metaclasses%7Edw0Je/&quot;&gt;proposal&lt;/a&gt; for this talk at PyCon India 2016 or you can submit your own proposal &lt;a href=&quot;https://in.pycon.org/cfp/2016/proposals/&quot;&gt;here&lt;/a&gt;, the call for proposals is open ;)&lt;/p&gt;
 
 &lt;p&gt;Here is a picture of an another talk by Peeyush Aggarwal &lt;a href=&quot;https://twitter.com/dhuadaar&quot;&gt;(@dhuadaar)&lt;/a&gt; on NLP.&lt;/p&gt;
 
