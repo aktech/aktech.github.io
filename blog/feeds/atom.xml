@@ -4,7 +4,7 @@
  <title>Amit Kumar</title>
  <link href="http://iamit.in/blog/feeds/atom.xml" rel="self"/>
  <link href="http://iamit.in/blog"/>
- <updated>2016-08-29T04:29:47+05:30</updated>
+ <updated>2016-08-29T04:38:38+05:30</updated>
  <id>http://iamit.in</id>
  <author>
    <name>Amit Kumar</name>
@@ -14,9 +14,9 @@
  
  <entry>
    <title>SciPy 2016 &#58; Journey to the West</title>
-   <link href="http://iamit.in/scipy-2016"/>
+   <link href="http://iamit.in/blog/scipy-2016"/>
    <updated>2016-08-28T00:00:00+05:30</updated>
-   <id>http://iamit.in/SciPy-2016 &#58; Journey to the West</id>
+   <id>http://iamit.in/blog/SciPy-2016 &#58; Journey to the West</id>
    <content type="html">&lt;p&gt;&lt;a href=&quot;http://scipy2016.scipy.org&quot;&gt;SciPy 2016&lt;/a&gt; was held in &lt;a href=&quot;http://www.utexas.edu/&quot;&gt;University of Texas&lt;/a&gt;
 at Austin like every other year. We reached &lt;a href=&quot;http://www.meetattexas.com/&quot;&gt;AT&amp;amp;T Executive Education
 and Conference Center&lt;/a&gt; on the Night of 9 July after
