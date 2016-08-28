@@ -4,13 +4,107 @@
  <title>Amit Kumar</title>
  <link href="http://iamit.in/blog/feeds/atom.xml" rel="self"/>
  <link href="http://iamit.in/blog"/>
- <updated>2016-08-26T03:11:12+05:30</updated>
+ <updated>2016-08-29T04:29:47+05:30</updated>
  <id>http://iamit.in</id>
  <author>
    <name>Amit Kumar</name>
    <email>dtu.amit@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>SciPy 2016 &#58; Journey to the West</title>
+   <link href="http://iamit.in/scipy-2016"/>
+   <updated>2016-08-28T00:00:00+05:30</updated>
+   <id>http://iamit.in/SciPy-2016 &#58; Journey to the West</id>
+   <content type="html">&lt;p&gt;&lt;a href=&quot;http://scipy2016.scipy.org&quot;&gt;SciPy 2016&lt;/a&gt; was held in &lt;a href=&quot;http://www.utexas.edu/&quot;&gt;University of Texas&lt;/a&gt;
+at Austin like every other year. We reached &lt;a href=&quot;http://www.meetattexas.com/&quot;&gt;AT&amp;amp;T Executive Education
+and Conference Center&lt;/a&gt; on the Night of 9 July after
+a 30+ hour journey from New Delhi to Austin with layovers in Germany and Newark.
+The conference was schedule to start on 11 July, so we had a day to fix our sleep
+cycle and jet lag. We visited a couple places (Barton springs and Capitol) on 10th
+July, with &lt;a href=&quot;https://github.com/aman-iitj&quot;&gt;Aman&lt;/a&gt;, &lt;a href=&quot;https://github.com/isuruf&quot;&gt;Isuru&lt;/a&gt;
+who happend to be staying in adjacent rooms. &lt;a href=&quot;https://github.com/hargup&quot;&gt;Harsh&lt;/a&gt;
+joined us at Capitol.In the evening we met &lt;a href=&quot;https://github.com/asmeurer&quot;&gt;Aaron&lt;/a&gt;
+and &lt;a href=&quot;https://github.com/certik&quot;&gt;Ondrej&lt;/a&gt; for the first time, even though we have
+worked with each other for over an year. Here is a picture of UT Tower from the window
+of our room.&lt;/p&gt;
+
+&lt;p&gt;&lt;img align=&quot;center&quot; src=&quot;/assets/ut-austin.jpg&quot; width=&quot;500&quot;&gt;&lt;/p&gt;
+
+&lt;h3&gt;Day 1 &amp;amp; 2 (Tutorial)&lt;/h3&gt;
+
+&lt;p&gt;The most important day of the conference for us, as we were supposed to deliver a tutorial
+on &lt;a href=&quot;http://sympy.org&quot;&gt;SymPy&lt;/a&gt;. Here is a picture of the Tutorial room:&lt;/p&gt;
+
+&lt;p&gt;&lt;img align=&quot;center&quot; src=&quot;/assets/sympy-tutorial.jpg&quot; width=&quot;500&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;The tutorial started at about 8:10 AM, due to slight delay because of projector
+issues, I am still waiting for the day when I will find a projector that just
+works! Anyways, the tutorial introduction was started by Aaron and Ondrej, then
+we took over with notebooks. Here is the video:&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/AqnpuGbM6-Q&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;hr&gt;
+
+&lt;h3&gt;Day 3, 4 &amp;amp; 5 (Conference)&lt;/h3&gt;
+
+&lt;h4&gt;Day 3&lt;/h4&gt;
+
+&lt;p&gt;The conference started with a Keynote from &lt;a href=&quot;https://github.com/ellisonbg/altair&quot;&gt;Brian Gragner&lt;/a&gt;,
+the maintainer of &lt;a href=&quot;https://github.com/jupyter/jupyter&quot;&gt;Jupyter Project&lt;/a&gt;. I was very
+excited for this keynote as I could recall a &lt;a href=&quot;https://www.youtube.com/watch?v=YCxQI4C34j8&quot;&gt;lightning talk&lt;/a&gt;
+from him in the last SciPy, which was pretty good. In this keynote he talked about various
+aspects of the project jupyter and introduced the new project he was working on named
+&lt;a href=&quot;https://github.com/ellisonbg/altair&quot;&gt;altair&lt;/a&gt;, a Declarative statistical visualization
+library for Python.&lt;/p&gt;
+
+&lt;p&gt;&lt;img align=&quot;center&quot; src=&quot;/assets/scipy-day1.jpg&quot; width=&quot;500&quot;&gt;&lt;/p&gt;
+
+&lt;h4&gt;Day 4&lt;/h4&gt;
+
+&lt;p&gt;The Day 2 started with a Sponsor and Scholarship Recipient Breakfast, where I met some of the other people
+who were awarded Financial Aid and also who were in the panel of selecting Finacial aid recipients. I
+am thankful to Eric Ma and Scott Collis for awarding me the financial aid for attending the conference.
+Later on the Day, we had the keynote by Andreas Klöckner, He works on high-order numerical methods for 
+the simulation of wave problems as well as issues in high-performance scientific computing that relate
+to bringing these methods to life on large-scale parallel computers. Aaron also had his talk on the same
+day. He introduced the code generation abilities of SymPy. Code generation is useful across a wide
+variety of domains. SymPy supports generating code for C, Fortran, Matlab/Octave, Python, Julia,
+Javascript, LLVM, Rust, and Theano. The code generation system is easily extensible to any language.&lt;/p&gt;
+
+&lt;p&gt;&lt;img align=&quot;center&quot; src=&quot;/assets/aaron-codegen.jpg&quot; width=&quot;500&quot;&gt;&lt;/p&gt;
+
+&lt;h4&gt;Day 5&lt;/h4&gt;
+
+&lt;p&gt;The Day 5 was our last day of the conference, as I had to leave for an another
+conference in the NewYork (&lt;a href=&quot;https://2016.pygotham.org/&quot;&gt;PyGotham&lt;/a&gt;), the next
+day. It started with the Keynote by Hanna Wallach. She is a Senior Researcher
+at Microsoft Research New York City and an Adjunct Associate Professor in
+the College of Information and Computer Sciences at the University of Massachusetts Amherst.
+She talked about Machine Learning for Social Science. In the evening, Ondrej and Isuru had
+a talk, where they introduced SymEngine. Ondrej talked about the internals and interface of
+SymEngine and then Isuru showed some interesting benchmarks of comparing SymEngine with other
+computer Algebra Systems like Mathematica, Maple, GiNaC and even SymPy.&lt;/p&gt;
+
+&lt;h4&gt;Concluding Note&lt;/h4&gt;
+
+&lt;p&gt;SciPy was an amazing conference, I was overwhelmed by the quality of talks and workshops.
+The best part was meeting all the awesome people behind some of the greatest projects
+like SciPy, Numpy, pandas, matplotlib, etc. There is always so much to learn from conferences
+like these. I also met Jill Cowan, who I think is the one person, without whom the conference
+would not have been possible, she manages a lot of things at once, which is incredibly
+hard to do. I also met Prabhu Ramachandran, who was the co-chair of the conference, he is
+an extremely knowledgeble guy, I had the privilege of meeting him twice, once in Pune and
+then in SciPy itself. Thanks to Enthought for putting up the energy to organize such an
+huge conference. Looking forward to next SciPy!&lt;/p&gt;
+
+&lt;p&gt;&lt;img align=&quot;center&quot; src=&quot;/assets/sympy-team.jpg&quot; width=&quot;500&quot;&gt;&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Talk on Introducing Metaclasses at PyDelhi Meetup</title>
