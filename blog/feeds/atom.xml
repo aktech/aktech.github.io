@@ -4,13 +4,80 @@
  <title>Amit Kumar</title>
  <link href="http://iamit.in/blog/feeds/atom.xml" rel="self"/>
  <link href="http://iamit.in/blog"/>
- <updated>2016-08-29T04:38:38+05:30</updated>
+ <updated>2016-09-04T20:44:54+05:30</updated>
  <id>http://iamit.in</id>
  <author>
    <name>Amit Kumar</name>
    <email>dtu.amit@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>PyGotham 2016 &#58; Journey to the West II</title>
+   <link href="http://iamit.in/blog/pygotham-2016"/>
+   <updated>2016-09-02T00:00:00+05:30</updated>
+   <id>http://iamit.in/blog/PyGotham-2016 &#58; Journey to the West II</id>
+   <content type="html">&lt;p&gt;This post is the second in the series of my &lt;a href=&quot;http://iamit.in/blog/scipy-2016/&quot;&gt;Journey to the West&lt;/a&gt;.
+It describes my experience of attending &lt;a href=&quot;https://2016.pygotham.org/&quot;&gt;PyGotham 2016&lt;/a&gt;
+in New York City in July 2016.&lt;/p&gt;
+
+&lt;p&gt;&lt;img align=&quot;center&quot; src=&quot;/assets/pygotham_2016/pygotham.jpg&quot; width=&quot;500&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;The conference started on 16th July, we
+(&lt;a href=&quot;https://github.com/leosartaj&quot;&gt;Sartaj&lt;/a&gt; and I) were at &lt;a href=&quot;http://scipy2016.scipy.org&quot;&gt;SciPy&lt;/a&gt;
+at Austin on 15th July, We took the flight on 16th morning and reached at the conference place
+in the afternoon. We had to skip sprints at &lt;a href=&quot;http://scipy2016.scipy.org&quot;&gt;SciPy&lt;/a&gt;. Interestingly
+the venue for the conference was United Nations Conference building in Manhattan. We stayed at
+Astoria in Queens at an Airbnb apartment.&lt;/p&gt;
+
+&lt;p&gt;&lt;img align=&quot;center&quot; src=&quot;/assets/pygotham_2016/venue-pygotham.jpg&quot; width=&quot;500&quot;&gt;&lt;/p&gt;
+
+&lt;h2&gt;Day 1&lt;/h2&gt;
+
+&lt;p&gt;I missed a major portion of Day 1 as I reached late, though fortunately I was
+able to attend Keynote which was schedule at the end of the day, thanks to the
+organisers! for such smart scheduling, which makes a lot of sense.
+I met a lot people there, mostly from New York, from various domains. I also
+met &lt;a href=&quot;https://twitter.com/dontusethiscode&quot;&gt;James Powell&lt;/a&gt; there, whom I met at
+&lt;a href=&quot;http://scipy2016.scipy.org&quot;&gt;SciPy&lt;/a&gt;. as well, he introduced me to a lot
+of people at PyGotham. The keynote was given by &lt;a href=&quot;https://twitter.com/ewa_jodlowska&quot;&gt;Ewa Jodlowska&lt;/a&gt;,&lt;/p&gt;
+
+&lt;p&gt;&lt;img align=&quot;center&quot; src=&quot;/assets/pygotham_2016/ewa-pygotham.jpg&quot; width=&quot;500&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;She is a Director of Operations for the &lt;a href=&quot;https://www.python.org/psf/&quot;&gt;Python Software Foundation&lt;/a&gt;.
+&lt;a href=&quot;https://twitter.com/ewa_jodlowska&quot;&gt;Ewa&lt;/a&gt;, talked about the role of PSF in financially
+supporting the Python community. I was glad to see the kind of transparency PSF have.
+She showed a lot of insights of the expenditure of Python Software Foundation. A lot of
+financial aid for the conferences I attend comes from PSF itself! Thanks to the people
+who run Python Software Foundation.&lt;/p&gt;
+
+&lt;p&gt;&lt;img align=&quot;center&quot; src=&quot;/assets/pygotham_2016/open-space-pygotham.jpg&quot; width=&quot;500&quot;&gt;&lt;/p&gt;
+
+&lt;h2&gt;Day 2&lt;/h2&gt;
+
+&lt;p&gt;I had my talk on Day 2, after lunch. The talk was scheduled for 25 minutes and
+the helper told me about various signals he would make based on the time left.
+I was afraid that I may take longer than time alloted, but I spoke like a
+house on fire and finished my talk in just about 15 minutes, it was the first
+time, when I was asked no question! It seems I need to work on my speaking speed.
+It was an important lesson to learn though. :P&lt;/p&gt;
+
+&lt;p&gt;&lt;img align=&quot;center&quot; src=&quot;/assets/pygotham_2016/amit-pygotham.jpg&quot; width=&quot;500&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;The Keynote for Day 2 was given by &lt;a href=&quot;https://twitter.com/kcunning&quot;&gt;Katie Cunningham&lt;/a&gt; who is an excellent speaker
+or rather teacher! She talked about how a good teacher should look like. James Powell
+volunteered for being her student during the keynote. She taught the art of teaching
+by Empathy, by taking an example of teaching someone how to knit. It was one of
+the best keynotes I have ever seen.&lt;/p&gt;
+
+&lt;p&gt;&lt;img align=&quot;center&quot; src=&quot;/assets/pygotham_2016/katie-pygotham.jpg&quot; width=&quot;500&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;Later in the evening James took me to the Dinner with Katie and all the volunteers of
+PyGotham 2016. It was great to see their enthusiasm towards contributing back to the
+community. It was an amazing evening spent with those awesome people. I am looking
+forward to attend PyGotham again.&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>SciPy 2016 &#58; Journey to the West</title>
