@@ -53,6 +53,6 @@ def make_posts():
 
 
 # run commands
-run_commands(all_commands)
 make_posts()
+run_commands(all_commands)
 
