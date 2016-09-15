@@ -47,7 +47,6 @@ def make_posts():
         subprocess.call(['cp', 'blog-gen/_site/blog/' + post_html_file_name, 'blog/' + post_folder_name])
 
         post_folder_directory = 'blog/' + post_folder_name + '/'
-        import ipdb;ipdb.set_trace()
         subprocess.call(['mv', post_folder_directory + post_html_file_name,
                          post_folder_directory + 'index.html'])
 
