@@ -26,7 +26,7 @@ def run_commands(all_commands):
         subprocess.call(command.split())
 
 def make_posts():
-    blog_gen_dir = 'blog-gen/_site/blog'
+    blog_gen_dir = 'blog-gen/_site/blog/'
     all_blog_post_html = os.listdir(blog_gen_dir)
 
     # Delete and create blog folder
@@ -34,7 +34,7 @@ def make_posts():
     subprocess.call(['mkdir', 'blog'])
 
     for post_html_file_name in all_blog_post_html:
-        fp = open(post_html_file_name, 'r')
+        fp = open(blog_gen_dir + post_html_file_name, 'r')
         post_html = fp.read()
         found = re.findall("data-href=http://iamit.in/blog/(.*) data-action", post_html)
 
