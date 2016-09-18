@@ -6,6 +6,12 @@ permalink: /talks/
 
 List of talks/workshops/presentations delivered in reverse chronological order.
 
+### 13. Introducing Metaclasses
+17 September, 2016 | [PyCon UK 2016](http://2016.pyconuk.org/) | Cardiff City Hall, Wales UK | [Video](https://www.youtube.com/watch?v=UXuhj-Tc-qE) | [Slides](http://slides.com/aktech/introducing-metaclasses-in-python)
+
+### 12. Soldier: Subprocess in style (Lightning Talk)
+16 September, 2016 | [PyCon UK 2016](http://2016.pyconuk.org/) | Cardiff City Hall, Wales UK | [Video](https://youtu.be/hjSD88cqKYs?t=27m58s) | [Slides](http://iamit.in/talks/slides/soldier.pdf)
+
 ### 11. Python 101
 21 August, 2016 | [PythonExpress](https://pythonexpress.in/workshop/61/) | Open Source Learning Center, GGSIPU, Delhi
 
