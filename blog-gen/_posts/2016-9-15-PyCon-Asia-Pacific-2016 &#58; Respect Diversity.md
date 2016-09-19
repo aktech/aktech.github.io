@@ -61,7 +61,29 @@ module written by friend of mine on top of subprocess module to provide an nice
 user API to the user.
 
 We were called for a nice Dinner at Viking's Buffet after the conference, with all
-the speakers and volunteers. It was a great evening spent with the geeks around.
+the speakers and volunteers. It was a great evening spent with all the geeks around.
+
+[picture of dinner]
+
+## Day 3
+
+The Day 3 was at Akamai's office, which was a small venue. That venue was made
+available for sprints. There were a few projects to sprint on. In the afternoon
+there was a Djano Girls Seoul workshop conducted by my friends Hassan and Sujin,
+which was nice introduction to getting started up with Django for a lot of people.
+After spending some time there, I went to explore Seoul with Amanda. We went to
+various tourist places, throughout the Day. She took me to her friend Navid who is
+doing some research in Seoul, and he was a very nice guy and we had dinner together.
+Navid took to various places in Seoul after dinner and we left at around 3:00 AM
+(Yes, you read it, right!). It was an amazing experience, there were some malls and
+shop which were only open during night, so I got enough time to explore them.
+
+I spent my Day 4 mainly for tourism and explored an lot of places alone and was joined
+by few of the others attendees in the afternoon. I also got the chance to see some
+Archery by some veterans, Hyeokwoo Alex Kwon took me there, who is a Korean by
+birth, and studying at University of Toronto, Canada. Below is a picture of me
+posing for Archery. ;)
+
 I am thankful to a lot of people for making my stay and journey comfortable in
 Seoul, I would like to thank all of them specially Amanda, Jason, Hassan, Kookheon,
 Sujin lee, Younggun Kim, Liew Beng Keat, I don't remember all the names, sorry,
@@ -69,6 +91,5 @@ If I missed some of them! Thanks to whole team of PyCon APAC 2016 for putting up
 a wonderful show at Coex, PyCon SG for generously funding my travel and Kookheon
 for helping me with getting documents for making my travel possible. Kudos to the
 whole community! Looking forward to come back soon! ;)
-
 
 
