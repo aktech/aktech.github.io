@@ -11,7 +11,7 @@
 
   <title>
     
-      GSoC &#58; This week in SymPy &#35;9 &middot; Amit Kumar
+      PyCon Asia Pacific 2016 &#58; Respect Diversity &middot; Amit Kumar
     
   </title>
 
@@ -210,29 +210,22 @@
         <div class="post">
   <span class="post-date">
     <a href="/timeline" class="timeline">
-      28 Jul 2015
+      20 Sep 2016
     </a>
   </span>
-  <h1 class="post-title">GSoC &#58; This week in SymPy &#35;9</h1>
+  <h1 class="post-title">PyCon Asia Pacific 2016 &#58; Respect Diversity</h1>
   <span class="post-tag">
       
         
-          <a href="/tags/#Open Source">
-            Open Source
+          <a href="/tags/#Conference">
+            Conference
           </a>
           &middot;
         
       
         
-          <a href="/tags/#GSoC">
-            GSoC
-          </a>
-          &middot;
-        
-      
-        
-          <a href="/tags/#SymPy">
-            SymPy
+          <a href="/tags/#Python">
+            Python
           </a>
 
         
@@ -241,71 +234,106 @@
 
   <hr>
 
-  <p>Hi there! It&#39;s been nine weeks into <a href="https://en.wikipedia.org/wiki/Google_Summer_of_Code">GSoC</a>
-. Here is the Progress for this week.</p>
+  <p><img align="center" src="/assets/pycon_apac_2016/respect-diversity.jpg" width="500"></p>
 
-<h3>&nbsp; <strong>Progress of Week 9</strong> <img style="float: left" src="/assets/gsoc/pr.png"></h3>
+<p>&quot;Respect Diversity&quot; is what comes to my mind, when I recall the <a href="https://www.pycon.kr/2016apac/">PyCon Asia Pacific
+2016</a> in Seoul, South Korea. It was probably the best conference I have ever been to
+in the recent times. I made a lot of friends and meet some amazing people there.
+Thanks to the PyCon SG and PyCon APAC for helping me financially in attending the
+conference and giving me the opportunity to present there. Thanks to Korean Embassy
+that I fortunately recieved my visa, just 12 hrs before my flight.</p>
 
-<p></br>
-This week I worked on Replacing <code>solve</code> with <code>solveset</code> or <code>linsolve</code> in the codebase:
-Here are the modules, I covered, as of now:</p>
+<p>I reached Seoul on 12th August after an extremely long journey due to 20 hour layover
+in Guanghzou, China. I stayed at place called Nonhyeon-dong in Gangnum-gu, (the place
+where Psy did that famous Gangnam Style. ;). It was a nice place, probably the best
+place I could stay in Seoul. Fortunately I managed to get a cheap airbnb near the
+conference venue.</p>
 
-<ul>
-<li><a href="https://github.com/sympy/sympy/pull/9740">diffgeom</a></li>
-<li><a href="https://github.com/sympy/sympy/pull/9718">calculus</a></li>
-<li><a href="https://github.com/sympy/sympy/pull/9724">core</a></li>
-<li><a href="https://github.com/sympy/sympy/pull/9743">functions</a></li>
-<li><a href="https://github.com/sympy/sympy/pull/9744">galgebra</a></li>
-<li><a href="https://github.com/sympy/sympy/pull/9708">geometry</a></li>
-<li><a href="https://github.com/sympy/sympy/pull/9745">ntheory</a></li>
-<li><a href="https://github.com/sympy/sympy/pull/9738">simplify</a></li>
-<li><a href="https://github.com/sympy/sympy/pull/9717">series</a></li>
-<li><a href="https://github.com/sympy/sympy/pull/9716">sets</a></li>
-<li><a href="https://github.com/sympy/sympy/pull/9710">stats</a></li>
-</ul>
+<h2>Day 1</h2>
 
-<p><a href="github.com/moorepants">@moorepants</a> pointed out that I should not change old <code>solve</code>tests, since people may break an untested code, this argument is valid, so I have added equivalent tests for <code>solveset</code>, where it is competent with <code>solve</code>.</p>
+<p>I reached the venue pretty early at around 8:30. I was amazed by the beauty of the
+venue, the Coex Mall, asia&#39;s largest underground shopping mall.</p>
 
-<p>There are some untested code in codebase as well, where <code>solve</code> is used, for those cases replacing has not been done, as the tests would pass anyway, since those lines are not tested. So I have added a TODO for those instances, to replace with <code>solveset</code>, when those lines are tested.</p>
+<p><img align="center" src="/assets/pycon_apac_2016/coex.jpg" width="500"></p>
 
-<h4>Other Work</h4>
+<p>The moment I went inside, I had the feeling that this is probably the best conference, venue
+I have ever seen. Kudos to the organizers for putting up all the hardwork to
+get such a venue. The Day 1 started with the Keynote by <a href="http://wesmckinney.com/">Wes McKinney</a>, where
+he discussed various aspects of Open Source. He was an accidental Software Developer,
+who started writing python libraries to make his work better. He also talked about,
+how the Open Source can be made sustainable and also discussed a bit about pandas, of
+which he is the author.</p>
 
-<p>I also changed the output of <code>linsolve</code> when no solution are returned, earlier it throwed <code>ValueError</code> &amp; now it returns an <code>EmptySet()</code>, which is consistent with rest of the <code>solveset</code>. See <a href="https://github.com/sympy/sympy/pull/9726">PR #9726</a></p>
+<p><img align="center" src="/assets/pycon_apac_2016/wes-keynote.jpg" width="500"></p>
 
-<h3><strong>from <strong>future</strong> import plan</strong>  Week #10:</h3>
+<p>The second keynote was by <a href="https://jacobian.org/">Jacob Kaplan-Moss</a> who unfortunately couldn&#39;t come to
+the conference, though he delivered Keynote through Google Hangouts, which was
+broadcasted live into the hall.</p>
 
-<p>This week I plan to Merge my pending PR&#39;s on replacing old <code>solve</code> in the code base with <code>solveset</code>, and work on Documentation &amp; <code>lambertw</code> solver.</p>
+<p>My talk was scheduled in the evening. Quite a good number of people showed up, although
+it was the last talk of the day.</p>
 
-<h3><strong>$ git log</strong></h3>
+<p><img align="center" src="/assets/pycon_apac_2016/amit-talk-poster.jpg" width="500"></p>
 
-<p><img align="left" src="/assets/gsoc/mpr.png"> &nbsp; <a href="https://github.com/sympy/sympy/pull/9726">PR #9726</a> : Return EmptySet() if there are no solution to linear system </p>
+<p>I started my talk in Korean, which I learnt from from friend Hassan and Sujin.
+They got pretty excited by hearing Korean from an Indian. Here is the video of my talk.</p>
 
-<p></br>
-<img align="left" src="/assets/gsoc/mpr.png"> &nbsp; <a href="https://github.com/sympy/sympy/pull/9724">PR #9724</a> : Replace solve with solveset in core</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/cuonAMJjHow" frameborder="0" allowfullscreen></iframe>
 
-<p></br>
-<img align="left" src="/assets/gsoc/mpr.png"> &nbsp; <a href="https://github.com/sympy/sympy/pull/9717">PR #9717</a> : Replace solve with solveset in sympy.calculus</p>
+<p>In the evening, we went to a nearby temple which was pretty amazing. I also met Jason
+and Amanda, who became good friends.</p>
 
-<p></br>
-<img align="left" src="/assets/gsoc/mpr.png"> &nbsp; <a href="https://github.com/sympy/sympy/pull/9716">PR #9716</a> : Use solveset instead of solve in sympy.sets</p>
+<h2>Day 2</h2>
 
-<p></br>
-<img align="left" src="/assets/gsoc/mpr.png"> &nbsp; <a href="https://github.com/sympy/sympy/pull/9717">PR #9717</a> : Replace solve with solveset in <code>sympy.series</code></p>
+<p>The Day 2 was more interesting than one, as it started with meeting <a href="http://lucumr.pocoo.org/about/">Armin Ronacher</a>,
+who is known for creation of Flask. It was an excellent talk, he talked about the
+various lessons he learned from working on various projects. His talk was followed by
+Maciej Fijałkowski, who is a core Developer of PyPy. He talked about various aspects
+of funding in Open Source, which is indeed a crucial component for the sustainance of
+Open Source projects. There were lots of interesting talk on Day 2. There was a high
+school guy, who gave a talk on Django vs Flask, but unfortunately it was in Korean.
+One of the talk was so well recieved that they had to repeat it twice!
+(Building AI Chat bot using Python 3 &amp; TensorFlow)</p>
 
-<p></br>
-<img align="left" src="/assets/gsoc/mpr.png"> &nbsp; <a href="https://github.com/sympy/sympy/pull/9710">PR #9710</a> : Replace solve with solveset in <code>sympy.stats</code></p>
+<p>The Day two ended with the lightning talks, where I gave a talk on Soldier, a
+module written by friend of mine on top of subprocess module to provide an nice
+user API to the user.</p>
 
-<p></br>
-<img align="left" src="/assets/gsoc/mpr.png"> &nbsp; <a href="https://github.com/sympy/sympy/pull/9708">PR #9708</a> : Use solveset instead of solve in <code>sympy.geometry</code></p>
+<p>We were called for a nice Dinner at Viking&#39;s Buffet after the conference, with all
+the speakers and volunteers. It was a great evening spent with all the geeks around.</p>
 
-<p></br>
-<img align="left" src="/assets/gsoc/opr.png"> &nbsp; <a href="https://github.com/sympy/sympy/pull/9587">PR #9587</a> : Add Linsolve Docs</p>
+<p><img align="center" src="/assets/pycon_apac_2016/pycon-apac-dinner.jpg" width="500"></p>
 
-<p></br>
-<img align="left" src="/assets/gsoc/opr.png"> &nbsp; <a href="https://github.com/sympy/sympy/pull/9500">PR #9500</a> :  Documenting <code>solveset</code></p>
+<h2>Day 3</h2>
 
-<p></br>
-That&#39;s all for now, looking forward for week #10. <img src="/public/smileys/grinning.png" title=":grinning:" height="20px" width="20px" style="display:inline;margin:0;vertical-align:middle"/></p>
+<p>The Day 3 was at Akamai&#39;s office, which was a small venue. That venue was made
+available for sprints. There were a few projects to sprint on. In the afternoon
+there was a Djano Girls Seoul workshop conducted by my friends Hassan and Sujin,
+which was nice introduction to getting started up with Django for a lot of people.</p>
+
+<p><img align="center" src="/assets/pycon_apac_2016/django-girls-seoul.jpg" width="500"></p>
+
+<p>After spending some time there, I went to explore Seoul with Amanda. We went to
+various tourist places, throughout the Day. She took me to her friend Navid who is
+doing some research in Seoul, and he was a very nice guy and we had dinner together.
+Navid took to various places in Seoul after dinner and we left at around 3:00 AM
+(Yes, you read it, right!). It was an amazing experience, there were some malls and
+shop which were only open during night, so I got enough time to explore them.</p>
+
+<p>I spent my Day 4 mainly for tourism and explored an lot of places alone and was joined
+by few of the others attendees in the afternoon. I also got the chance to see some
+Archery by some veterans, Hyeokwoo Alex Kwon took me there, who is a Korean by
+birth, and studying at University of Toronto, Canada.</p>
+
+<p><img align="center" src="/assets/pycon_apac_2016/korea-archery.jpg" width="500"></p>
+
+<p>I am thankful to a lot of people for making my stay and journey comfortable in
+Seoul, I would like to thank all of them specially Amanda, Jason, Hassan, Kookheon,
+Sujin lee, Younggun Kim, Liew Beng Keat, I don&#39;t remember all the names, sorry,
+If I missed some of them! Thanks to whole team of PyCon APAC 2016 for putting up
+a wonderful show at Coex, PyCon SG for generously funding my travel and Kookheon
+for helping me with getting documents for making my travel possible. Kudos to the
+whole community! Looking forward to come back soon! ;)</p>
 
 </div>
 
@@ -324,7 +352,7 @@ That&#39;s all for now, looking forward for week #10. <img src="/public/smileys/
     </script>
   </span>
 
-  <span class="fb-like" data-href=http://iamit.in/blog/GSoC-week-9 data-action="like" data-layout="button_count" data-show-faces="false" data-share="false" style="display: inline-flex;">
+  <span class="fb-like" data-href=http://iamit.in/blog/pycon-apac-2016 data-action="like" data-layout="button_count" data-show-faces="false" data-share="false" style="display: inline-flex;">
   </span>
 </div>
 
@@ -332,15 +360,6 @@ That&#39;s all for now, looking forward for week #10. <img src="/public/smileys/
 <div class="related">
   <h2>Related Posts</h2>
   <ul class="related-posts">
-    
-      <li>
-        <h3>
-          <a href="/blog/pycon-apac-2016">
-            PyCon Asia Pacific 2016 &#58; Respect Diversity
-            <small>20 Sep 2016</small>
-          </a>
-        </h3>
-      </li>
     
       <li>
         <h3>
@@ -356,6 +375,15 @@ That&#39;s all for now, looking forward for week #10. <img src="/public/smileys/
           <a href="/blog/scipy-2016">
             SciPy 2016 &#58; Journey to the West
             <small>28 Aug 2016</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/blog/talk-python-metaclasses-pydelhi-meetup">
+            Talk on Introducing Metaclasses at PyDelhi Meetup
+            <small>29 May 2016</small>
           </a>
         </h3>
       </li>

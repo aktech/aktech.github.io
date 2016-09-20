@@ -4,13 +4,121 @@
  <title>Amit Kumar</title>
  <link href="http://iamit.in/blog/feeds/atom.xml" rel="self"/>
  <link href="http://iamit.in/blog"/>
- <updated>2016-09-18T19:44:08+05:30</updated>
+ <updated>2016-09-20T15:05:17+05:30</updated>
  <id>http://iamit.in</id>
  <author>
    <name>Amit Kumar</name>
    <email>dtu.amit@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>PyCon Asia Pacific 2016 &#58; Respect Diversity</title>
+   <link href="http://iamit.in/blog/pycon-apac-2016"/>
+   <updated>2016-09-20T00:00:00+05:30</updated>
+   <id>http://iamit.in/blog/PyCon-Asia-Pacific-2016 &#58; Respect Diversity</id>
+   <content type="html">&lt;p&gt;&lt;img align=&quot;center&quot; src=&quot;/assets/pycon_apac_2016/respect-diversity.jpg&quot; width=&quot;500&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;&amp;quot;Respect Diversity&amp;quot; is what comes to my mind, when I recall the &lt;a href=&quot;https://www.pycon.kr/2016apac/&quot;&gt;PyCon Asia Pacific
+2016&lt;/a&gt; in Seoul, South Korea. It was probably the best conference I have ever been to
+in the recent times. I made a lot of friends and meet some amazing people there.
+Thanks to the PyCon SG and PyCon APAC for helping me financially in attending the
+conference and giving me the opportunity to present there. Thanks to Korean Embassy
+that I fortunately recieved my visa, just 12 hrs before my flight.&lt;/p&gt;
+
+&lt;p&gt;I reached Seoul on 12th August after an extremely long journey due to 20 hour layover
+in Guanghzou, China. I stayed at place called Nonhyeon-dong in Gangnum-gu, (the place
+where Psy did that famous Gangnam Style. ;). It was a nice place, probably the best
+place I could stay in Seoul. Fortunately I managed to get a cheap airbnb near the
+conference venue.&lt;/p&gt;
+
+&lt;h2&gt;Day 1&lt;/h2&gt;
+
+&lt;p&gt;I reached the venue pretty early at around 8:30. I was amazed by the beauty of the
+venue, the Coex Mall, asia&amp;#39;s largest underground shopping mall.&lt;/p&gt;
+
+&lt;p&gt;&lt;img align=&quot;center&quot; src=&quot;/assets/pycon_apac_2016/coex.jpg&quot; width=&quot;500&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;The moment I went inside, I had the feeling that this is probably the best conference, venue
+I have ever seen. Kudos to the organizers for putting up all the hardwork to
+get such a venue. The Day 1 started with the Keynote by &lt;a href=&quot;http://wesmckinney.com/&quot;&gt;Wes McKinney&lt;/a&gt;, where
+he discussed various aspects of Open Source. He was an accidental Software Developer,
+who started writing python libraries to make his work better. He also talked about,
+how the Open Source can be made sustainable and also discussed a bit about pandas, of
+which he is the author.&lt;/p&gt;
+
+&lt;p&gt;&lt;img align=&quot;center&quot; src=&quot;/assets/pycon_apac_2016/wes-keynote.jpg&quot; width=&quot;500&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;The second keynote was by &lt;a href=&quot;https://jacobian.org/&quot;&gt;Jacob Kaplan-Moss&lt;/a&gt; who unfortunately couldn&amp;#39;t come to
+the conference, though he delivered Keynote through Google Hangouts, which was
+broadcasted live into the hall.&lt;/p&gt;
+
+&lt;p&gt;My talk was scheduled in the evening. Quite a good number of people showed up, although
+it was the last talk of the day.&lt;/p&gt;
+
+&lt;p&gt;&lt;img align=&quot;center&quot; src=&quot;/assets/pycon_apac_2016/amit-talk-poster.jpg&quot; width=&quot;500&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;I started my talk in Korean, which I learnt from from friend Hassan and Sujin.
+They got pretty excited by hearing Korean from an Indian. Here is the video of my talk.&lt;/p&gt;
+
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/cuonAMJjHow&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;p&gt;In the evening, we went to a nearby temple which was pretty amazing. I also met Jason
+and Amanda, who became good friends.&lt;/p&gt;
+
+&lt;h2&gt;Day 2&lt;/h2&gt;
+
+&lt;p&gt;The Day 2 was more interesting than one, as it started with meeting &lt;a href=&quot;http://lucumr.pocoo.org/about/&quot;&gt;Armin Ronacher&lt;/a&gt;,
+who is known for creation of Flask. It was an excellent talk, he talked about the
+various lessons he learned from working on various projects. His talk was followed by
+Maciej Fijałkowski, who is a core Developer of PyPy. He talked about various aspects
+of funding in Open Source, which is indeed a crucial component for the sustainance of
+Open Source projects. There were lots of interesting talk on Day 2. There was a high
+school guy, who gave a talk on Django vs Flask, but unfortunately it was in Korean.
+One of the talk was so well recieved that they had to repeat it twice!
+(Building AI Chat bot using Python 3 &amp;amp; TensorFlow)&lt;/p&gt;
+
+&lt;p&gt;The Day two ended with the lightning talks, where I gave a talk on Soldier, a
+module written by friend of mine on top of subprocess module to provide an nice
+user API to the user.&lt;/p&gt;
+
+&lt;p&gt;We were called for a nice Dinner at Viking&amp;#39;s Buffet after the conference, with all
+the speakers and volunteers. It was a great evening spent with all the geeks around.&lt;/p&gt;
+
+&lt;p&gt;&lt;img align=&quot;center&quot; src=&quot;/assets/pycon_apac_2016/pycon-apac-dinner.jpg&quot; width=&quot;500&quot;&gt;&lt;/p&gt;
+
+&lt;h2&gt;Day 3&lt;/h2&gt;
+
+&lt;p&gt;The Day 3 was at Akamai&amp;#39;s office, which was a small venue. That venue was made
+available for sprints. There were a few projects to sprint on. In the afternoon
+there was a Djano Girls Seoul workshop conducted by my friends Hassan and Sujin,
+which was nice introduction to getting started up with Django for a lot of people.&lt;/p&gt;
+
+&lt;p&gt;&lt;img align=&quot;center&quot; src=&quot;/assets/pycon_apac_2016/django-girls-seoul.jpg&quot; width=&quot;500&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;After spending some time there, I went to explore Seoul with Amanda. We went to
+various tourist places, throughout the Day. She took me to her friend Navid who is
+doing some research in Seoul, and he was a very nice guy and we had dinner together.
+Navid took to various places in Seoul after dinner and we left at around 3:00 AM
+(Yes, you read it, right!). It was an amazing experience, there were some malls and
+shop which were only open during night, so I got enough time to explore them.&lt;/p&gt;
+
+&lt;p&gt;I spent my Day 4 mainly for tourism and explored an lot of places alone and was joined
+by few of the others attendees in the afternoon. I also got the chance to see some
+Archery by some veterans, Hyeokwoo Alex Kwon took me there, who is a Korean by
+birth, and studying at University of Toronto, Canada.&lt;/p&gt;
+
+&lt;p&gt;&lt;img align=&quot;center&quot; src=&quot;/assets/pycon_apac_2016/korea-archery.jpg&quot; width=&quot;500&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;I am thankful to a lot of people for making my stay and journey comfortable in
+Seoul, I would like to thank all of them specially Amanda, Jason, Hassan, Kookheon,
+Sujin lee, Younggun Kim, Liew Beng Keat, I don&amp;#39;t remember all the names, sorry,
+If I missed some of them! Thanks to whole team of PyCon APAC 2016 for putting up
+a wonderful show at Coex, PyCon SG for generously funding my travel and Kookheon
+for helping me with getting documents for making my travel possible. Kudos to the
+whole community! Looking forward to come back soon! ;)&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>PyGotham 2016 &#58; Journey to the West II</title>
