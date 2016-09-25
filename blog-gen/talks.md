@@ -6,7 +6,7 @@ permalink: /talks/
 
 List of talks/workshops/presentations delivered in reverse chronological order.
 
-### 13. What's new in Python3.6 (or rather 3.6.0b1)
+### 14. What's new in Python3.6 (or rather 3.6.0b1)
 25 September, 2016 | [PyCon India 2016](https://in.pycon.org/2016/) | JNU, New Delhi |
 
 ### 13. Introducing Metaclasses
