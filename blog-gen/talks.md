@@ -19,7 +19,7 @@ List of talks/workshops/presentations delivered in reverse chronological order.
 21 August, 2016 | [PythonExpress](https://pythonexpress.in/workshop/61/) | Open Source Learning Center, GGSIPU, Delhi
 
 ### 10. Soldier: Subprocess in style (Lightning Talk)
-14 August, 2016 | [PyCon Asia Pacific 2016](https://www.pycon.kr/2016apac/) | Seoul, South Korea | Video | [Slides](http://iamit.in/talks/slides/soldier.pdf)
+14 August, 2016 | [PyCon Asia Pacific 2016](https://www.pycon.kr/2016apac/) | Seoul, South Korea | [Video](https://www.youtube.com/watch?v=nzQ0O-ftYZU&feature=youtu.be&t=3025) | [Slides](http://iamit.in/talks/slides/soldier.pdf)
 
 ### 9. Demystifying Python's Method Resolution Order v2.0
 13 August, 2016 | [PyCon Asia Pacific 2016](https://www.pycon.kr/2016apac/) | Seoul, South Korea | [Video](https://www.youtube.com/watch?v=cuonAMJjHow) | [Slides](http://slides.com/aktech/python-mro)
