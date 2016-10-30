@@ -11,7 +11,7 @@
 
   <title>
     
-      GSoC &#58; Getting Up For the Coding Period &middot; Amit Kumar
+      Summer 2016 @ HackerEarth &middot; Amit Kumar
     
   </title>
 
@@ -221,29 +221,22 @@ mixpanel.init("9bcd0c90399531aa18ede5c761d9af5e");</script><!-- end Mixpanel -->
         <div class="post">
   <span class="post-date">
     <a href="/timeline" class="timeline">
-      24 May 2015
+      30 Oct 2016
     </a>
   </span>
-  <h1 class="post-title">GSoC &#58; Getting Up For the Coding Period</h1>
+  <h1 class="post-title">Summer 2016 @ HackerEarth</h1>
   <span class="post-tag">
       
         
-          <a href="/tags/#Open Source">
-            Open Source
+          <a href="/tags/#Internship">
+            Internship
           </a>
           &middot;
         
       
         
-          <a href="/tags/#GSoC">
-            GSoC
-          </a>
-          &middot;
-        
-      
-        
-          <a href="/tags/#SymPy">
-            SymPy
+          <a href="/tags/#Python">
+            Python
           </a>
 
         
@@ -252,45 +245,59 @@ mixpanel.init("9bcd0c90399531aa18ede5c761d9af5e");</script><!-- end Mixpanel -->
 
   <hr>
 
-  <h3><strong>The Start of Coding Period!</strong></h3>
+  <p><center> <img src="/assets/hackerearth/HE_logo.png" width="200"></center></p>
 
-<p>The Community bonding Period is close to end now &amp; my Exams as well. Tomorrow starts the Coding Period &amp; I have been waiting for it for some time now. </p>
+<p>I was done with my college exams by the end of May 2016, and was looking to work on something
+interesting. I had an internship offer from HackerEarth in Bangalore, which I had applied for
+couple of months ago. It was a tough choice as I had to decline a full time offer for this
+internship. I chosed to intern at HackerEarth as I had heard good things about HackerEarth&#39;s 
+Engineering Team. I went to Bangalore on 4th June as my internship was about to start on 6th. 
+It was my second visit to Bangalore, the first one was in 2015 during PyCon India.</p>
 
-<p>Recently I gave a quick look to my Proposed Timeline in my <a href="https://github.com/sympy/sympy/wiki/GSoC-2015-Application-AMiT-Kumar--Solvers-:-Extending-Solveset#timeline">Proposal</a>, &amp;  decided to swap the 2nd Week&#39;s work with Ist, this will help me securing few credits in my College&#39;s Minor Project Submission (Which has the deadline of 30th May).</p>
+<p>On the second day I came to know that I would be working with the Research &amp; Development Team.
+There I met my Mentor &amp; Manager Praveen Kumar who heads the R &amp; D and Engineering at 
+HackerEarth. It was the first time, when I worked on a web application. HackerEarth was built
+with Python and Django.</p>
 
-<h3><strong>Plan for Week 1</strong></h3>
+<h2>Work</h2>
 
-<p>This week, I am planning to work on Solving Linear systems in <code>solveset</code>. (Currently solveset support univariate solvers only).</p>
+<p>I was working on making the code editor intelligent, so that users have better experience,
+while submitting solutions to problems on HackerEarth. My first task was to show the standard
+error logs (stderr), whenever there is a Runtime Error, as earlier only a <code>RE</code> was displayed
+during a RunTime Error, which was not very insightful for the user. If you use HackerEarth now,
+you can notice the new column named (Error Log) in the submission results.</p>
 
-<p>The main functions, I would be implementing are:</p>
+<p><img align="center" src="/assets/hackerearth/hackerearth-submission-table.png" width="500"></p>
 
-<ul>
-<li><p><code>eq_to_matrix</code> :
-<em>method to convert system of Equations to Matrix Form.</em></p></li>
-<li><p><code>linsolve</code>: <em>It&#39;s the General Linear System solver.</em></p></li>
-</ul>
+<p>After this, my next job was to show better insights of the Standard Error logs, so that users
+can make more sense out of it and improve their code and hence improve their chances of having
+the solution accepted. At this point the error logs would look something like this:</p>
 
-<p>As mentioned in the proposal, Solving system of linear equations is an important feature of solvers in a CAS. Most of the CAS have a convenient single function to solve linear systems, for example <code>LinearSolve</code> in Mathematica.</p>
+<p><img align="center" src="/assets/hackerearth/raw-error-log.png" width="500"></p>
 
-<p>The <strong><code>linsolve</code></strong> which I would be implementing is inspired from Matlab &amp; Maxima.</p>
+<p>I had to analyse the error logs and do R &amp; D to build this system, thanks to my mentors Shubham
+and Praveen for helping me in Designing that System to show better error logs. The Error logs
+now looks something like this:</p>
 
-<h5><strong>Features Overview</strong></h5>
+<p><img align="center" src="/assets/hackerearth/hackerearth-error-log.png" width="500"></p>
 
-<p>We have a lot of reusable code in <code>sympy.matrices</code>  &amp; <code>sympy.solvers.solvers</code>, which would be quite useful.
-One of the most important thing I would like to have in <code>linsolve</code> is supporting a lot of input formats.
-Though, most of the CAS suport only one input format. This feature would be quite useful for sympy&#39;s <code>linsolve</code>.</p>
+<p>I also worked on giving suggestions to the user based on their output with respect to the
+expected output. (Note: Nothing fancy here! :P)</p>
 
-<h6>The three most common input formats, I can recall as of now are:</h6>
+<p><img align="center" src="/assets/hackerearth/hackerearth-output-suggestion.png" width="500"></p>
 
-<ul>
-<li>Augmented Matrix Form</li>
-<li>List Of Equations Form</li>
-<li>Input A &amp; b Matrix Form (from <code>Ax = b</code>)</li>
-</ul>
+<h2>Final Words</h2>
 
-<p>It would be great to have all three input formats supported in the Public API <code>linsolve</code> Method.</p>
+<p>It was a great experience, interning at HackerEarth. I highly recommend anyone, planning to
+work with a great Team. Thanks to all the people whom I met there (Praveen, Shubham, Vivek,
+Vishal, Santosh, Manoj, Rahul, Viru, Sreeram, Sudip), I learnt a lot of stuff in that short
+term intern. I went to three conference during my internship, thanks to Praveen &amp; Vivek for
+bearing with that. And last but not the least thanks to Prabhat and Santosh for the last
+moment Farewell!</p>
 
-<p>Looking forward for Coding Period, that&#39;s all for now.</p>
+<p>Team HackerEarth @ Wonderla!</p>
+
+<p><img align="center" src="/assets/hackerearth/hackerearth-wonderla.jpg" width="500"></p>
 
 </div>
 
@@ -309,7 +316,7 @@ Though, most of the CAS suport only one input format. This feature would be quit
     </script>
   </span>
 
-  <span class="fb-like" data-href=http://iamit.in/blog/GSoC-Getting-Up-For-the-Coding-Period data-action="like" data-layout="button_count" data-show-faces="false" data-share="false" style="display: inline-flex;">
+  <span class="fb-like" data-href=http://iamit.in/blog/summer-2016-hackerearth data-action="like" data-layout="button_count" data-show-faces="false" data-share="false" style="display: inline-flex;">
   </span>
 </div>
 
@@ -317,15 +324,6 @@ Though, most of the CAS suport only one input format. This feature would be quit
 <div class="related">
   <h2>Related Posts</h2>
   <ul class="related-posts">
-    
-      <li>
-        <h3>
-          <a href="/blog/summer-2016-hackerearth">
-            Summer 2016 @ HackerEarth
-            <small>30 Oct 2016</small>
-          </a>
-        </h3>
-      </li>
     
       <li>
         <h3>
@@ -341,6 +339,15 @@ Though, most of the CAS suport only one input format. This feature would be quit
           <a href="/blog/pygotham-2016">
             PyGotham 2016 &#58; Journey to the West II
             <small>02 Sep 2016</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/blog/scipy-2016">
+            SciPy 2016 &#58; Journey to the West
+            <small>28 Aug 2016</small>
           </a>
         </h3>
       </li>
