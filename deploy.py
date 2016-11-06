@@ -22,6 +22,7 @@ all_commands = [
 
 
 def run_commands(all_commands):
+    print("Copying all the static files from blog-gen ...\n")
     for command in all_commands:
         subprocess.call(command.split())
 
@@ -34,6 +35,7 @@ def make_posts():
     subprocess.call(['mkdir', 'blog'])
 
     for post_html_file_name in all_blog_post_html:
+        print("Writing posts to blog directory ...\n")
         fp = open(blog_gen_dir + post_html_file_name, 'r')
         post_html = fp.read()
         found = re.findall("data-href=http://iamit.in/blog/(.*) data-action", post_html)
@@ -54,4 +56,4 @@ def make_posts():
 # run commands
 make_posts()
 run_commands(all_commands)
-
+print("All done. Ready to Push.\n")
