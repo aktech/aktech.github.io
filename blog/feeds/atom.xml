@@ -4,13 +4,59 @@
  <title>Amit Kumar</title>
  <link href="http://iamit.in/blog/feeds/atom.xml" rel="self"/>
  <link href="http://iamit.in/blog"/>
- <updated>2016-10-30T20:05:43+05:30</updated>
+ <updated>2016-11-07T00:01:46+05:30</updated>
  <id>http://iamit.in</id>
  <author>
    <name>Amit Kumar</name>
    <email>dtu.amit@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>PyCon UK 2016 &#58; Python in Wales!</title>
+   <link href="http://iamit.in/blog/pycon-uk-2016"/>
+   <updated>2016-11-06T00:00:00+05:30</updated>
+   <id>http://iamit.in/blog/PyCon UK &#58; Python in Wales</id>
+   <content type="html">&lt;p&gt;This is an anecdote of my Journey to the United Kingdom for &lt;a href=&quot;http://2016.pyconuk.org/&quot;&gt;PyCon UK&lt;/a&gt;. It was held at Cardiff, the capital of Wales (a country in South West Britain). I took a flight to London from Delhi via Doha (Qatar) as it was cheaper than directly getting to Cardiff. I usually prefer flights with layovers, when I am not running short of time as it gives me an opportunity to have a glimpse of culture of people from different nationalities. I spent few Days in London to explore the City then I went to Cardiff with Sartaj and Manoj to attend PyCon UK. There we stayed at Hostel called as BunkHouse, which was pretty close to the conference venue. Here is a picture of the venue of the conference.&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt; &lt;img src=&quot;/assets/pycon-uk-2016/pycon-uk-cardiff-city-hall.jpg&quot; width=&quot;600&quot;&gt;&lt;/center&gt;&lt;/p&gt;
+
+&lt;h2&gt;Day 0&lt;/h2&gt;
+
+&lt;p&gt;We reached Cardiff on 15th, the Day 0 of the programme (Open Day) was at Cardiff University Bute Building. The Day 0 consists of talks from various domain like python in education, RaspberryPi, Micro:Bit, NLP, with parallel workshops of Django Girls. I met some of the organisers including Cory and also Nicolas, who delivered a Keynote in PyCon India 2015. The most interesting thing I saw there was text-to-speech of all the talks during the talk. I was totally amazed to see that, later I realized that a couple of people were doing this in real time. They did a wonderful job in doing it with great accuracy and speed!&lt;/p&gt;
+
+&lt;h2&gt;Day 1&lt;/h2&gt;
+
+&lt;p&gt;The main Conference started on 16th September at Cardiff City Hall with the introduction by Peter, (Conference Chair) followed by the Keynote by &lt;a href=&quot;https://twitter.com/brandon_rhodes&quot;&gt;Brandon Rhodes&lt;/a&gt; on &amp;quot;&lt;a href=&quot;https://www.youtube.com/watch?v=zFMdhXYlFfY&quot;&gt;Python and the Glories of the UNIX Tradition&lt;/a&gt;&amp;quot;. It was a brilliant keynote! I have been following Brandon Rhodes since the time, I thought of learning about how Python actually works. His talk on &lt;a href=&quot;https://www.youtube.com/watch?v=C4Kc8xzcA68&quot;&gt;The Mighty Dictionary&lt;/a&gt; is one of the masterpieces! It was great to talk to a guy, I have been following.&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt; &lt;img src=&quot;/assets/pycon-uk-2016/pycon-uk-2016-day1.jpg&quot; width=&quot;600&quot;&gt;&lt;/center&gt;&lt;/p&gt;
+
+&lt;h2&gt;Day 2&lt;/h2&gt;
+
+&lt;p&gt;The Day 2 of the conference started with the Keynote by Gail Ollis on &amp;quot;Folklore and fantasy in the information age&amp;quot;. I couldn&amp;#39;t attend this talk as my talk was scheduled just after the Keynote and I had to gear up for my talk. I delivered a talk on &lt;a href=&quot;http://slides.com/aktech/introducing-metaclasses-in-python&quot;&gt;Introducing MetaClasses&lt;/a&gt;. The organization of conference was so amazing that I gave the talk in the morning and the video was up in the evening, Here is a Video of my Talk:&lt;/p&gt;
+
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/UXuhj-Tc-qE&quot; frameborder=&quot;0&quot; allowfullscreen&gt;
+&lt;/iframe&gt;
+
+&lt;h2&gt;Day 3&lt;/h2&gt;
+
+&lt;p&gt;Day 3 started with an excellent Keynote by &lt;a href=&quot;https://twitter.com/_bashar&quot;&gt;Bashar Al-Abdulhadi&lt;/a&gt; who shared ideas on why should developers work on translation/internationalization of their packages. I was really impressed by this talk. His talk was an unconventional one as compared to other PyCon&amp;#39;s as he didn&amp;#39;t talked much about code instead he talked about the reach of code, which is an important aspect of building community. I sincerely feel, that he did total justice to the Keynote, as IMO Keynote should talk about the community rather than code, &amp;amp; he did exactly the same. It was wonderful chatting with him, looking forward to meet him soon.&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt; &lt;img src=&quot;/assets/pycon-uk-2016/Bashar-Al-Abdulhadi-pycon-uk.jpg&quot; width=&quot;600&quot;&gt;&lt;/center&gt;&lt;/p&gt;
+
+&lt;h2&gt;Day 4 : Sprints&lt;/h2&gt;
+
+&lt;p&gt;Sprints is an important aspect of a conference and how you organize it decides its success. In PyCon UK, it was well organized and was productive as well. I and Sartaj sprinted for &lt;a href=&quot;https://github.com/sympy/sympy&quot;&gt;SymPy&lt;/a&gt;. SymPy got a bunch of people interested for contribution. Some of them also made some Pull requests and few got them merged as well. At the end of the conference all us announced the progress we made throughout the day. It was overwhelming to see the amount of progress made in one day.&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt; &lt;img src=&quot;/assets/pycon-uk-2016/pycon-uk-sprints.jpg&quot; width=&quot;600&quot;&gt;&lt;/center&gt;&lt;/p&gt;
+
+&lt;p&gt;It was a great experience attending PyCon UK and meeting some of the most amazing people in the Python Community. Thanks to the Organizers &lt;a href=&quot;https://twitter.com/inglesp&quot;&gt;Peter&lt;/a&gt;, &lt;a href=&quot;https://twitter.com/Lukasaoz&quot;&gt;Cory&lt;/a&gt;, &lt;a href=&quot;https://twitter.com/evildmp&quot;&gt;Daniele&lt;/a&gt; &amp;amp; the whole PyCon UK organizing Team for having me there. It wouldn&amp;#39;t have been possible without there support. I look forward to meet them soon. Cardiff and London were wonderful places to explore as well.&lt;/p&gt;
+
+&lt;p&gt;Kudos to the Volunteers, Great Job!&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt; &lt;img src=&quot;/assets/pycon-uk-2016/pycon-uk-volunteers.jpg&quot; width=&quot;600&quot;&gt;&lt;/center&gt;&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Summer 2016 @ HackerEarth</title>
