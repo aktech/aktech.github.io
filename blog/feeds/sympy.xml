@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
  <title>Amit Kumar</title>
- <link href="http://0.0.0.0:4000/blog/feeds/sympy.xml" rel="self"/>
- <link href="http://0.0.0.0:4000/blog"/>
- <updated>2017-03-20T00:43:24+05:30</updated>
- <id>http://0.0.0.0:4000</id>
+ <link href="http://iamit.in/blog/feeds/sympy.xml" rel="self"/>
+ <link href="http://iamit.in/blog"/>
+ <updated>2016-11-07T00:01:46+05:30</updated>
+ <id>http://iamit.in</id>
  <author>
    <name>Amit Kumar</name>
    <email>dtu.amit@gmail.com</email>
@@ -14,9 +14,9 @@
  
  <entry>
    <title>SymPy Workshop at FOSSASIA 2016, Singapore</title>
-   <link href="http://0.0.0.0:4000/blog/sympy-workshop-fossasia-2016"/>
+   <link href="http://iamit.in/blog/sympy-workshop-fossasia-2016"/>
    <updated>2016-03-26T00:00:00+05:30</updated>
-   <id>http://0.0.0.0:4000/blog/SymPy Workshop at FOSSASIA 2016, Singapore</id>
+   <id>http://iamit.in/blog/SymPy Workshop at FOSSASIA 2016, Singapore</id>
    <content type="html">&lt;p&gt;Hi there! Last week I went to &lt;a href=&quot;https://en.wikipedia.org/wiki/Singapore&quot;&gt;Singapore&lt;/a&gt; for &lt;a href=&quot;http://2016.fossasia.org/&quot;&gt;FOSSASIA&lt;/a&gt; Open Tech Summit  2016. I conducted a Worskhop on &lt;a href=&quot;http://sympy.org&quot;&gt;SymPy&lt;/a&gt; and assisted the &lt;a href=&quot;http://pydy.org&quot;&gt;PyDy&lt;/a&gt; Workshop in Python track hosted by &lt;a href=&quot;https://kushaldas.in/&quot;&gt;Kushal Das&lt;/a&gt;. This blog post accounts to my experience as a speaker, as a attendee at FOSSASIA and as a traveler to Singapore.&lt;/p&gt;
 
 &lt;h2&gt;&lt;strong&gt;About FOSSASIA&lt;/strong&gt;&lt;/h2&gt;
@@ -65,10 +65,10 @@ I would not have been able to attend the conference without the generous financi
  
  <entry>
    <title>SymPy Workshop at PyDelhi Meetup</title>
-   <link href="http://0.0.0.0:4000/blog/sympy-workshop-pydelhi-meetup"/>
+   <link href="http://iamit.in/blog/sympy-workshop-pydelhi-meetup"/>
    <updated>2016-02-07T00:00:00+05:30</updated>
-   <id>http://0.0.0.0:4000/blog/SymPy Workshop at PyDelhi Meetup</id>
-   <content type="html">&lt;p&gt;Hi there! It&amp;#39;s been sometime now since my last blog post, It&amp;#39;s probably the right time to write one now. Yesterday, I gave a talk on SymPy at Python Delhi User group Meetup at &lt;a href=&quot;https://maps.google.com/maps?f=q&amp;hl=en&amp;q=29%2C+Rajpur+Road%2C+Delhi%2C+in&quot;&gt;CSDS&lt;/a&gt;, New Delhi. Things never go the way you want, an hour was wasted in just setting up Anaconda on everyone&amp;#39;s system, eventually I had to cut on the material I could demonstrate, though It was nice to see that people were very enthusiatic about SymPy, they actively solved excercises. It was fun interacting with everyone.&lt;/p&gt;
+   <id>http://iamit.in/blog/SymPy Workshop at PyDelhi Meetup</id>
+   <content type="html">&lt;p&gt;Hi there! It&amp;#39;s been sometime now since my last blog post, It&amp;#39;s probably the right time to write one now. Yesterday, I gave a talk on SymPy at Python Delhi User group Meetup at &lt;a href=&quot;https://maps.google.com/maps?f=q&amp;amp;hl=en&amp;amp;q=29%2C+Rajpur+Road%2C+Delhi%2C+in&quot;&gt;CSDS&lt;/a&gt;, New Delhi. Things never go the way you want, an hour was wasted in just setting up Anaconda on everyone&amp;#39;s system, eventually I had to cut on the material I could demonstrate, though It was nice to see that people were very enthusiatic about SymPy, they actively solved excercises. It was fun interacting with everyone.&lt;/p&gt;
 
 &lt;p&gt;Here is a Pic of the Seminar room at CSDS:
 &lt;img align=&quot;center&quot; src=&quot;/assets/sympy-workshop.jpg&quot;&gt;&lt;/p&gt;
@@ -83,9 +83,9 @@ I would not have been able to attend the conference without the generous financi
  
  <entry>
    <title>GSoC &#58; Throughout in SymPy &#35; Wrap Up</title>
-   <link href="http://0.0.0.0:4000/blog/GSoC-wrap-up"/>
+   <link href="http://iamit.in/blog/GSoC-wrap-up"/>
    <updated>2015-08-28T00:00:00+05:30</updated>
-   <id>http://0.0.0.0:4000/blog/GSoC &#58; Throughout in SymPy &#35; Wrap Up</id>
+   <id>http://iamit.in/blog/GSoC &#58; Throughout in SymPy &#35; Wrap Up</id>
    <content type="html">&lt;p&gt;Hi! I am Amit Kumar (&lt;a href=&quot;http://www.github.com/aktech&quot;&gt;&lt;strong&gt;@aktech&lt;/strong&gt;&lt;/a&gt;), a final year undergraduate student of Mathematics &amp;amp; Computing at Delhi Technological University. This post summarizes my experience working on GSoC Project on Improving Solvers in SymPy.&lt;/p&gt;
 
 &lt;h2&gt;Introduction&lt;/h2&gt;
@@ -151,9 +151,9 @@ Thanks to Aaron, Ondrej, and last but not the least my fellow GSoCer&amp;#39;s a
  
  <entry>
    <title>GSoC &#58; This week in SymPy &#35;10 &amp; &#35;11</title>
-   <link href="http://0.0.0.0:4000/blog/GSoC-week-10-11"/>
+   <link href="http://iamit.in/blog/GSoC-week-10-11"/>
    <updated>2015-08-11T00:00:00+05:30</updated>
-   <id>http://0.0.0.0:4000/blog/GSoC &#58; This week in SymPy &#35;10 &#38;11</id>
+   <id>http://iamit.in/blog/GSoC &#58; This week in SymPy &#35;10 &#38;11</id>
    <content type="html">&lt;p&gt;Hi there! It&amp;#39;s been 11 weeks into &lt;a href=&quot;https://en.wikipedia.org/wiki/Google_Summer_of_Code&quot;&gt;GSoC&lt;/a&gt; 
 and we have reached into the last week before the soft deadline. Here is the Progress so far.&lt;/p&gt;
 
@@ -202,9 +202,9 @@ That&amp;#39;s all for now, looking forward for week #12. :grinning:&lt;/p&gt;
  
  <entry>
    <title>GSoC &#58; This week in SymPy &#35;9</title>
-   <link href="http://0.0.0.0:4000/blog/GSoC-week-9"/>
+   <link href="http://iamit.in/blog/GSoC-week-9"/>
    <updated>2015-07-28T00:00:00+05:30</updated>
-   <id>http://0.0.0.0:4000/blog/GSoC &#58; This week in SymPy &#35;9</id>
+   <id>http://iamit.in/blog/GSoC &#58; This week in SymPy &#35;9</id>
    <content type="html">&lt;p&gt;Hi there! It&amp;#39;s been nine weeks into &lt;a href=&quot;https://en.wikipedia.org/wiki/Google_Summer_of_Code&quot;&gt;GSoC&lt;/a&gt;
 . Here is the Progress for this week.&lt;/p&gt;
 
@@ -275,9 +275,9 @@ That&amp;#39;s all for now, looking forward for week #10. :grinning:&lt;/p&gt;
  
  <entry>
    <title>GSoC &#58; This week in SymPy &#35;8</title>
-   <link href="http://0.0.0.0:4000/blog/GSoC-week-8"/>
+   <link href="http://iamit.in/blog/GSoC-week-8"/>
    <updated>2015-07-21T00:00:00+05:30</updated>
-   <id>http://0.0.0.0:4000/blog/GSoC &#58; This week in SymPy &#35;8</id>
+   <id>http://iamit.in/blog/GSoC &#58; This week in SymPy &#35;8</id>
    <content type="html">&lt;p&gt;Hi there! It&amp;#39;s been eight weeks into &lt;a href=&quot;https://en.wikipedia.org/wiki/Google_Summer_of_Code&quot;&gt;GSoC&lt;/a&gt;
 . Here is the Progress for this week.&lt;/p&gt;
 
@@ -340,9 +340,9 @@ That&amp;#39;s all for now, looking forward for week #9. :grinning:&lt;/p&gt;
  
  <entry>
    <title>GSoC &#58; This week in SymPy &#35;7</title>
-   <link href="http://0.0.0.0:4000/blog/GSoC-week-7"/>
+   <link href="http://iamit.in/blog/GSoC-week-7"/>
    <updated>2015-07-15T00:00:00+05:30</updated>
-   <id>http://0.0.0.0:4000/blog/GSoC &#58; This week in SymPy &#35;7</id>
+   <id>http://iamit.in/blog/GSoC &#58; This week in SymPy &#35;7</id>
    <content type="html">&lt;p&gt;Hi there! It&amp;#39;s been seven weeks into &lt;a href=&quot;https://en.wikipedia.org/wiki/Google_Summer_of_Code&quot;&gt;GSoC&lt;/a&gt;
 and second half has started now. Here is the Progress so far.&lt;/p&gt;
 
@@ -430,9 +430,9 @@ That&amp;#39;s all for now, looking forward for week #8. :grinning:&lt;/p&gt;
  
  <entry>
    <title>GSoC &#58; This week in SymPy &#35;6</title>
-   <link href="http://0.0.0.0:4000/blog/GSoC-week-6"/>
+   <link href="http://iamit.in/blog/GSoC-week-6"/>
    <updated>2015-07-06T00:00:00+05:30</updated>
-   <id>http://0.0.0.0:4000/blog/GSoC &#58; This week in SymPy &#35;6</id>
+   <id>http://iamit.in/blog/GSoC &#58; This week in SymPy &#35;6</id>
    <content type="html">&lt;p&gt;Hi there! It&amp;#39;s been six weeks into &lt;a href=&quot;https://en.wikipedia.org/wiki/Google_Summer_of_Code&quot;&gt;GSoC&lt;/a&gt;,
 and it marks the half of GSoC. The Mid term evaluations have been done now, Google has been preety quick doing this, I recieved the passing mail within 15 minutes after the deadline to fill up evaluations, so basically GSoC Admin did the following, (I guess):&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sql&quot; data-lang=&quot;sql&quot;&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;GSoCStudents&lt;/span&gt;
@@ -509,9 +509,9 @@ That&amp;#39;s all for now, looking forward for week #7. :grinning:&lt;/p&gt;
  
  <entry>
    <title>GSoC &#58; This week in SymPy &#35;4 &amp; &#35;5</title>
-   <link href="http://0.0.0.0:4000/blog/GSoC-week-4-5"/>
+   <link href="http://iamit.in/blog/GSoC-week-4-5"/>
    <updated>2015-06-23T00:00:00+05:30</updated>
-   <id>http://0.0.0.0:4000/blog/GSoC &#58; This week in SymPy &#35;4 &#38; 5</id>
+   <id>http://iamit.in/blog/GSoC &#58; This week in SymPy &#35;4 &#38; 5</id>
    <content type="html">&lt;p&gt;Hi there! It&amp;#39;s been five weeks into &lt;a href=&quot;https://en.wikipedia.org/wiki/Google_Summer_of_Code&quot;&gt;GSoC&lt;/a&gt;, 
 This week, I worked on polishing my previous PR&amp;#39;s to improve coverage and
 fixing some bugs.&lt;/p&gt;
@@ -614,9 +614,9 @@ That&amp;#39;s all for now, looking forward for week #6. :grinning:&lt;/p&gt;
  
  <entry>
    <title>GSoC &#58; This week in SymPy &#35;3</title>
-   <link href="http://0.0.0.0:4000/blog/GSoC-week-3"/>
+   <link href="http://iamit.in/blog/GSoC-week-3"/>
    <updated>2015-06-17T00:00:00+05:30</updated>
-   <id>http://0.0.0.0:4000/blog/GSoC &#58; This week in SymPy &#35;3</id>
+   <id>http://iamit.in/blog/GSoC &#58; This week in SymPy &#35;3</id>
    <content type="html">&lt;p&gt;Hi there! It&amp;#39;s been three weeks into &lt;a href=&quot;https://en.wikipedia.org/wiki/Google_Summer_of_Code&quot;&gt;GSoC&lt;/a&gt;, &amp;amp; I have managed to get some pace.
 This week, I worked on creating &lt;code&gt;ComplexPlane&lt;/code&gt; Class.&lt;/p&gt;
 
@@ -721,9 +721,9 @@ That&amp;#39;s all for now, looking forward for week #4. :grinning:&lt;/p&gt;
  
  <entry>
    <title>GSoC &#58; This week in SymPy &#35;2</title>
-   <link href="http://0.0.0.0:4000/blog/GSoC-week-2"/>
+   <link href="http://iamit.in/blog/GSoC-week-2"/>
    <updated>2015-06-07T00:00:00+05:30</updated>
-   <id>http://0.0.0.0:4000/blog/GSoC &#58; This week in SymPy &#35;2 </id>
+   <id>http://iamit.in/blog/GSoC &#58; This week in SymPy &#35;2 </id>
    <content type="html">&lt;p&gt;Hi there! It&amp;#39;s been two weeks into GSoC, &amp;amp; I have managed to flip some bits.&lt;/p&gt;
 
 &lt;p&gt;This week, I started working on &lt;code&gt;ComplexPlane&lt;/code&gt; Class, &amp;amp; also worked on improving &lt;code&gt;linsolve&lt;/code&gt;.&lt;/p&gt;
@@ -765,9 +765,9 @@ ValueError.&lt;/p&gt;
  
  <entry>
    <title>GSoC &#58; This week in SymPy &#35;1</title>
-   <link href="http://0.0.0.0:4000/blog/GSoC-week-1"/>
+   <link href="http://iamit.in/blog/GSoC-week-1"/>
    <updated>2015-06-01T00:00:00+05:30</updated>
-   <id>http://0.0.0.0:4000/blog/GSoC &#58; This week in SymPy &#35;1</id>
+   <id>http://iamit.in/blog/GSoC &#58; This week in SymPy &#35;1</id>
    <content type="html">&lt;p&gt;Hi there! The First week of the coding period has came to an end, this week has been very hectic for me due to my practicals and Minor project submission at college, though I mananged to reach the goal for this week.&lt;/p&gt;
 
 &lt;p&gt;This week, I worked on Linear system solver &lt;code&gt;linsolve&lt;/code&gt; in the &lt;code&gt;solveset&lt;/code&gt; Module, as I mentioned in my last &lt;a href=&quot;http://iamit.in/blog/GSoC-Getting-Up-For-the-Coding-Period/&quot;&gt;post&lt;/a&gt;, about my goals for Week 1. &lt;/p&gt;
@@ -851,9 +851,9 @@ It&amp;#39;s almost good to merge after a final review by &lt;a href=&quot;http:
  
  <entry>
    <title>GSoC &#58; Getting Up For the Coding Period</title>
-   <link href="http://0.0.0.0:4000/blog/GSoC-Getting-Up-For-the-Coding-Period"/>
+   <link href="http://iamit.in/blog/GSoC-Getting-Up-For-the-Coding-Period"/>
    <updated>2015-05-24T00:00:00+05:30</updated>
-   <id>http://0.0.0.0:4000/blog/GSoC &#58; Getting-Up-For-the-Coding-Period </id>
+   <id>http://iamit.in/blog/GSoC &#58; Getting-Up-For-the-Coding-Period </id>
    <content type="html">&lt;h3&gt;&lt;strong&gt;The Start of Coding Period!&lt;/strong&gt;&lt;/h3&gt;
 
 &lt;p&gt;The Community bonding Period is close to end now &amp;amp; my Exams as well. Tomorrow starts the Coding Period &amp;amp; I have been waiting for it for some time now. &lt;/p&gt;
@@ -898,9 +898,9 @@ Though, most of the CAS suport only one input format. This feature would be quit
  
  <entry>
    <title>Google Summer Of Code with SymPy</title>
-   <link href="http://0.0.0.0:4000/blog/Google-Summer-Of-Code-with-SymPy"/>
+   <link href="http://iamit.in/blog/Google-Summer-Of-Code-with-SymPy"/>
    <updated>2015-04-28T00:00:00+05:30</updated>
-   <id>http://0.0.0.0:4000/blog/Google-Summer-Of-Code-with-SymPy</id>
+   <id>http://iamit.in/blog/Google-Summer-Of-Code-with-SymPy</id>
    <content type="html">&lt;p&gt;&lt;img src=&quot;/assets/gsoc/GSOC2015.png&quot; alt=&quot;GSoC 2015&quot;&gt;&lt;/p&gt;
 
 &lt;p&gt;Yay! the much awaited results of &lt;a href=&quot;http://www.google-melange.com/gsoc/projects/list/google/gsoc2015&quot;&gt;Google Summer Of Code&lt;/a&gt; is out now, and I have been selected to work with &lt;a href=&quot;http://www.sympy.org/&quot;&gt;SymPy&lt;/a&gt; under &lt;a href=&quot;https://www.python.org/psf/&quot;&gt;Python Software Foundation.&lt;/a&gt;&lt;/p&gt;
