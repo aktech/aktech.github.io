@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="keywords" content="aktech, amit kumar, dtu, maths, python, github">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      GSoC &#58; This week in SymPy &#35;4 &amp; &#35;5 &middot; Amit Kumar
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+  <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+
+  <!-- mixpanel -->
+  <!-- start Mixpanel --><script type="text/javascript">(function(e,a){if(!a.__SV){var b=window;try{var c,l,i,j=b.location,g=j.hash;c=function(a,b){return(l=a.match(RegExp(b+"=([^&]*)")))?l[1]:null};g&&c(g,"state")&&(i=JSON.parse(decodeURIComponent(c(g,"state"))),"mpeditor"===i.action&&(b.sessionStorage.setItem("_mpcehash",g),history.replaceState(i.desiredHash||"",e.title,j.pathname+j.search)))}catch(m){}var k,h;window.mixpanel=a;a._i=[];a.init=function(b,c,f){function e(b,a){var c=a.split(".");2==c.length&&(b=b[c[0]],a=c[1]);b[a]=function(){b.push([a].concat(Array.prototype.slice.call(arguments,
+0)))}}var d=a;"undefined"!==typeof f?d=a[f]=[]:f="mixpanel";d.people=d.people||[];d.toString=function(b){var a="mixpanel";"mixpanel"!==f&&(a+="."+f);b||(a+=" (stub)");return a};d.people.toString=function(){return d.toString(1)+".people (stub)"};k="disable time_event track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config reset people.set people.set_once people.increment people.append people.union people.track_charge people.clear_charges people.delete_user".split(" ");
+for(h=0;h<k.length;h++)e(d,k[h]);a._i.push([b,c,f])};a.__SV=1.2;b=e.createElement("script");b.type="text/javascript";b.async=!0;b.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?MIXPANEL_CUSTOM_LIB_URL:"file:"===e.location.protocol&&"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//)?"https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js":"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";c=e.getElementsByTagName("script")[0];c.parentNode.insertBefore(b,c)}})(document,window.mixpanel||[]);
+mixpanel.init("9bcd0c90399531aa18ede5c761d9af5e");</script><!-- end Mixpanel -->
+  
+
+  </head>
+
+
+  <body>
+
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p>Programmer · Developer · Learner</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="http://iamit.in">HomePage</a>
+
+    
+
+    
+    
+      
+        
+          <a class="sidebar-nav-item" href="/about/">About</a>
+        
+      
+    
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/talks/">Talks</a>
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+
+    <a class="sidebar-nav-item" href="">Source</a>
+    <a class="sidebar-nav-item" href="http://iamit.in/timeline">Archive</a>
+
+    <span class="sidebar-nav-item">Contact</span>
+    <a class="sidebar-nav-item" href="https://github.com/aktech">GitHub</a>
+    <a class="sidebar-nav-item" href="https://twitter.com/iaktech">Twitter</a>
+    <a class="sidebar-nav-item" href="mailto:dtu.amit@gmail.com">Gmail</a>
+    <a class="sidebar-nav-item" href="https://www.quora.com/Amit-Kumar-516">Quora</a>
+  </nav>
+
+  <div class="sidebar-item">
+    <p>
+      &copy; 2016. AMiT Kumar.
+    </p>
+  </div>
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/blog" title="Home">Amit Kumar</a>
+            <small>: Life Is Learning!</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+        <div class="post">
+  <span class="post-date">
+    <a href="/timeline" class="timeline">
+      23 Jun 2015
+    </a>
+  </span>
+  <h1 class="post-title">GSoC &#58; This week in SymPy &#35;4 &amp; &#35;5</h1>
+  <span class="post-tag">
+      
+        
+          <a href="/tags/#Open Source">
+            Open Source
+          </a>
+          &middot;
+        
+      
+        
+          <a href="/tags/#GSoC">
+            GSoC
+          </a>
+          &middot;
+        
+      
+        
+          <a href="/tags/#SymPy">
+            SymPy
+          </a>
+
+        
+      
+  </span>
+
+  <hr>
+
+  <p>Hi there! It&#39;s been five weeks into <a href="https://en.wikipedia.org/wiki/Google_Summer_of_Code">GSoC</a>, 
+This week, I worked on polishing my previous PR&#39;s to improve coverage and
+fixing some bugs.</p>
+
+<h3>&nbsp; <strong>Progress of Week 4 &amp; 5</strong> <img style="float: left" src="/assets/gsoc/pr.png"></h3>
+
+<p></br>
+During the last couple of weeks my <code>ComplexPlane</code> Class <a href="https://github.com/sympy/sympy/pull/9463">PR #9438</a>
+finally got <strong><em>Merged</em></strong> thanks to <a href="http://github.com/hargup">Harsh</a> for thoroughly reviewing it and suggesting constructive changes.</p>
+
+<p>For this I Managed to improve it&#39;s coverage to perfect 100%, which is indeed satisfying, as it depicts all the new code being pushed is completely tested.</p>
+
+<p>This week I also improved the Exception handling and coverage in my <code>linsolve</code> <a href="https://github.com/sympy/sympy/pull/">PR</a>, It also have a 100% coverage.</p>
+
+<h3>Coverage Report</h3>
+
+<ul>
+<li> [1] <code>gauss_jordan_solve</code> <strong>100 %</strong> </li>
+<li> [2] <code>linsolve</code> : <strong>100: %</strong></li>
+</ul>
+
+<h4>Ref:</h4>
+
+<ul>
+<li>[1] <a href="http://iamit.in/sympy/coverage-report/matrices/">http://iamit.in/sympy/coverage-report/matrices/</a></li>
+<li>[2] <a href="http://iamit.in/sympy/coverage-report/solveset/">http://iamit.in/sympy/coverage-report/solveset/</a></li>
+</ul>
+
+<p>It&#39;s good to be Merged now.</p>
+
+<h3><strong>Blocking Issue</strong>: Intersection&#39;s of FiniteSet with symbolic elements</h3>
+
+<p>During Week 5, While working on transcendental equation solver in <code>solveset.py</code>, I discovered a blocking issue in <code>FiniteSets</code>, which is with the Intersection of <code>FiniteSet</code> containing symbolic elements, for example:</p>
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">In</span> <span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="n">a</span> <span class="o">=</span> <span class="n">Symbol</span><span class="p">(</span><span class="s">&#39;a&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">3</span><span class="p">]:</span> <span class="n">FiniteSet</span><span class="p">(</span><span class="n">log</span><span class="p">(</span><span class="n">a</span><span class="p">))</span><span class="o">.</span><span class="n">intersect</span><span class="p">(</span><span class="n">S</span><span class="o">.</span><span class="n">Reals</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">3</span><span class="p">]:</span> <span class="n">EmptySet</span><span class="p">()</span>
+</code></pre></div>
+<p>Currently, either <code>FiniteSet</code> is able to evaluate intersection otherwise it, returns an <code>EmptySet()</code>.
+(See <a href="https://github.com/sympy/sympy/issues/9536">9536</a> &amp; <a href="https://github.com/sympy/sympy/issues/8217">8217</a>).</p>
+
+<p>To fix this, I have opened the PR <a href="https://github.com/sympy/sympy/pull/9540">#9540</a>.
+Currently It fixes both the issues (<a href="https://github.com/sympy/sympy/issues/9536">9536</a> &amp; <a href="https://github.com/sympy/sympy/issues/8217">8217</a>), but there are some failing tests using the current behaviour of <code>FiniteSet</code>.</p>
+
+<h4>For example:</h4>
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">In</span> <span class="p">[</span><span class="mi">16</span><span class="p">]:</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s">&#39;x y z&#39;</span><span class="p">,</span> <span class="n">integer</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">19</span><span class="p">]:</span> <span class="n">f1</span> <span class="o">=</span> <span class="n">FiniteSet</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">20</span><span class="p">]:</span> <span class="n">f2</span> <span class="o">=</span> <span class="n">FiniteSet</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span>
+</code></pre></div>
+<ul>
+<li>In Master:</li>
+</ul>
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">In</span> <span class="p">[</span><span class="mi">23</span><span class="p">]:</span> <span class="n">f1</span><span class="o">.</span><span class="n">intersect</span><span class="p">(</span><span class="n">f2</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">23</span><span class="p">]:</span> <span class="p">{</span><span class="n">x</span><span class="p">}</span>
+</code></pre></div>
+<ul>
+<li>It should rather be:</li>
+</ul>
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">In</span> <span class="p">[</span><span class="mi">5</span><span class="p">]:</span> <span class="n">f1</span><span class="o">.</span><span class="n">intersect</span><span class="p">(</span><span class="n">f2</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">5</span><span class="p">]:</span> <span class="p">{</span><span class="n">x</span><span class="p">}</span> <span class="n">U</span> <span class="n">Intersection</span><span class="p">({</span><span class="n">y</span><span class="p">},</span> <span class="p">{</span><span class="n">x</span><span class="p">,</span> <span class="n">z</span><span class="p">})</span>
+</code></pre></div>
+<p>The current behavior of FiniteSet in Master is non-acceptable, since in the above example <code>x, y, z</code> are integer symbols, so they can be any integer, but in the <em>Master</em> , they are assumed to be distinct, which is wrong.
+There are such failing tests in <code>test_wester.py</code> <a href="https://github.com/sympy/sympy/blob/master/sympy/core/tests/test_wester.py#L74">here</a>, which is updated here: <a href="https://github.com/aktech/sympy/commit/e8e6a0bb9285c315e9bade2bcd10b954760d4965">aktech@e8e6a0b</a> to incorporate with the right behaviour.</p>
+
+<p>As of now there are a couple of failing tests, which needs to passed, before we can <strong>Merge</strong> <a href="https://github.com/sympy/sympy/pull/9540">#9540</a></p>
+
+<h4>TODO Failing Tests:</h4>
+
+<ul>
+<li><a href="https://travis-ci.org/sympy/sympy/jobs/67831123">sympy/stats/tests/test_rv.py</a></li>
+<li><a href="https://travis-ci.org/sympy/sympy/jobs/67831130">sympy/combinatorics/tests/test_partitions.py</a></li>
+</ul>
+
+<h3><strong>from <strong>future</strong> import plan</strong>  Week #6:</h3>
+
+<p>This week I plan to <a href="https://github.com/sympy/sympy/pull/9540">Fix Intersection&#39;s of FiniteSet with symbolic elements</a> &amp; start working on <code>LambertW</code> solver in <code>solveset</code>.</p>
+
+<h3><strong>$ git log</strong></h3>
+
+<p><img align="left" src="/assets/gsoc/opr.png"> &nbsp; <a href="https://github.com/sympy/sympy/pull/9540">PR #9540</a> : Intersection&#39;s of FiniteSet with symbolic elements</p>
+
+<p></br>
+<img align="left" src="/assets/gsoc/opr.png"> &nbsp; <a href="https://github.com/sympy/sympy/pull/9438">PR #9438</a> : Linsolve</p>
+
+<p></br>
+<img align="left" src="/assets/gsoc/mpr.png"> &nbsp; <a href="https://github.com/sympy/sympy/pull/9463">PR #9463</a> : ComplexPlane </p>
+
+<p></br>
+<img style="float: left" src="/assets/gsoc/mpr.png"> &nbsp; <a href="https://github.com/sympy/sympy/pull/9527">PR #9527</a> : Printing of ProductSets  </br> </p>
+
+<p></br>
+<img style="float: left" src="/assets/gsoc/mpr.png"> &nbsp; <a href="https://github.com/sympy/sympy/pull/9524">PR # 9524</a> : Fix solveset returned solution making denom zero </p>
+
+<p></br>
+That&#39;s all for now, looking forward for week #6. <img src="/public/smileys/grinning.png" title=":grinning:" height="20px" width="20px" style="display:inline;margin:0;vertical-align:middle"/></p>
+
+</div>
+
+<div class="social">
+  <span>
+    <iframe src="http://ghbtns.com/github-btn.html?user=aktech&type=follow&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="165" height="20">
+    </iframe>
+  </span>
+
+  <span class="tweet">
+    <a href="https://twitter.com/share" class="twitter-share-button" data-via="iaktech">
+      Tweet
+    </a>
+    <script>
+    !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+    </script>
+  </span>
+
+  <span class="fb-like" data-href=http://iamit.in/blog/GSoC-week-4-5 data-action="like" data-layout="button_count" data-show-faces="false" data-share="false" style="display: inline-flex;">
+  </span>
+</div>
+
+
+<div class="related">
+  <h2>Related Posts</h2>
+  <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="/blog/pycon-uk-2016">
+            PyCon UK 2016 &#58; Python in Wales!
+            <small>06 Nov 2016</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/blog/summer-2016-hackerearth">
+            Summer 2016 @ HackerEarth
+            <small>30 Oct 2016</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/blog/pycon-apac-2016">
+            PyCon Asia Pacific 2016 &#58; Respect Diversity
+            <small>20 Sep 2016</small>
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
+</div>
+
+<div class="disqus">
+      <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'iaktech'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+</div>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <!-- Google Analytics -->
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-33694283-4', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+  </body>
+</html>
