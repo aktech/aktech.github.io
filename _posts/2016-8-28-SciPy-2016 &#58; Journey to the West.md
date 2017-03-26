@@ -5,7 +5,7 @@ tags:
   - Conference
   - Scientific Computing
   - Python
-permalink: /blog/scipy-2016
+permalink: /blog/scipy-2016/
 ---
 
 [SciPy 2016](http://scipy2016.scipy.org) was held in [University of Texas](http://www.utexas.edu/)

@@ -5,7 +5,7 @@ tags:
   - SymPy
   - Scientific Computing
   - FOSSASIA
-permalink: /blog/sympy-workshop-fossasia-2016
+permalink: /blog/sympy-workshop-fossasia-2016/
 ---
 
 Hi there! Last week I went to [Singapore](https://en.wikipedia.org/wiki/Singapore) for [FOSSASIA](http://2016.fossasia.org/) Open Tech Summit  2016. I conducted a Worskhop on [SymPy](http://sympy.org) and assisted the [PyDy](http://pydy.org) Workshop in Python track hosted by [Kushal Das](https://kushaldas.in/). This blog post accounts to my experience as a speaker, as a attendee at FOSSASIA and as a traveler to Singapore.

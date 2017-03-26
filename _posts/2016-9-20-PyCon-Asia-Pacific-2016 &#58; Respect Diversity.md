@@ -4,7 +4,7 @@ title: PyCon Asia Pacific 2016 &#58; Respect Diversity
 tags:
   - Conference
   - Python
-permalink: /blog/pycon-apac-2016
+permalink: /blog/pycon-apac-2016/
 ---
 
 <img align="center" src="/assets/pycon_apac_2016/respect-diversity.jpg" width="500">

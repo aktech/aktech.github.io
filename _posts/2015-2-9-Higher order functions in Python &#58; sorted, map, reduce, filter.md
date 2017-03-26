@@ -3,7 +3,7 @@ layout: post
 title: Higher order functions in Python &#58; sorted, map, reduce, filter
 tags:
   - Python
-permalink: /blog/Higher-order-functions-in-Python-sorted-map-reduce-filter
+permalink: /blog/Higher-order-functions-in-Python-sorted-map-reduce-filter/
 ---
 Python has a pretty good support for Higher order functions, we are going to learn their implementation here :bulb: .
 

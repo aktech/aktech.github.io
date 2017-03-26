@@ -5,7 +5,7 @@ tags:
   - Open Source
   - GSoC
   - SymPy
-permalink: /blog/GSoC-week-3
+permalink: /blog/GSoC-week-3/
 ---
 
 Hi there! It's been three weeks into [GSoC](https://en.wikipedia.org/wiki/Google_Summer_of_Code), & I have managed to get some pace.

@@ -4,7 +4,7 @@ title: Spoj FCTRL2 Explanation and Solution
 tags:
   - Spoj
   - Competitive Coding
-permalink: /blog/Spoj-Problem-Small-Factorials-FCTRL2-Explanation-and-Solution
+permalink: /blog/Spoj-Problem-Small-Factorials-FCTRL2-Explanation-and-Solution/
 ---
 
 

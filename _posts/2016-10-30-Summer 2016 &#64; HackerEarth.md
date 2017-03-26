@@ -4,7 +4,7 @@ title: Summer 2016 @ HackerEarth
 tags:
   - Internship
   - Python
-permalink: /blog/summer-2016-hackerearth
+permalink: /blog/summer-2016-hackerearth/
 ---
 <center> <img src="/assets/hackerearth/HE_logo.png" width="200"></center>
 

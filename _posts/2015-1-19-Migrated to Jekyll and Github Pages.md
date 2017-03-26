@@ -4,7 +4,7 @@ title: Migrated to Jekyll and Github Pages
 tags:
   - Jekyll
   - Github
-permalink: /blog/Migrated-to-Jekyll-and-Github-Pages
+permalink: /blog/Migrated-to-Jekyll-and-Github-Pages/
 ---
 
 

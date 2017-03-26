@@ -5,7 +5,7 @@ tags:
   - Open Source
   - GSoC
   - SymPy
-permalink: /blog/GSoC-week-1
+permalink: /blog/GSoC-week-1/
 ---
 
 Hi there! The First week of the coding period has came to an end, this week has been very hectic for me due to my practicals and Minor project submission at college, though I mananged to reach the goal for this week.
