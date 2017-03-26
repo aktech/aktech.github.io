@@ -1,0 +1,42 @@
+# Dependencies
+markdown:         redcarpet
+highlighter:      pygments
+
+# Permalinks
+permalink:        pretty
+
+# custom plugins
+plugins_dir:      ./_plugins
+
+# Setup
+title:            'Amit Kumar'
+tagline:          ': Life Is Learning!'
+description:      'Programmer · Developer · Learner'
+url:              //aktech.github.io
+
+author:
+  name:           'Amit Kumar'
+  email:          dtu.amit@gmail.com
+
+# source of the 'modified-lanyon' theme
+github:
+  main:           https://github.com/aktech/aktech.github.io
+
+# contact details
+contact:
+  github:         https://github.com/aktech
+  twitter:        https://twitter.com/iaktech
+  gmail:          mailto:dtu.amit@gmail.com
+  quora:          https://www.quora.com/Amit-Kumar-516
+
+# Gems
+
+source:      .
+destination: ./_site
+
+timezone: Asia/Calcutta
+
+devurl: http://localhost:4000
+port: 4000
+host: 0.0.0.0
+baseurl: /
