@@ -1,49 +1,1124 @@
----
-layout: default
-title: Blog
----
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 
-<div class="posts">
-  {% for post in site.posts %}
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="keywords" content="aktech, amit kumar, dtu, maths, python, github">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Blog &middot; Amit Kumar
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+  <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+
+  <!-- mixpanel -->
+  <!-- start Mixpanel --><script type="text/javascript">(function(e,a){if(!a.__SV){var b=window;try{var c,l,i,j=b.location,g=j.hash;c=function(a,b){return(l=a.match(RegExp(b+"=([^&]*)")))?l[1]:null};g&&c(g,"state")&&(i=JSON.parse(decodeURIComponent(c(g,"state"))),"mpeditor"===i.action&&(b.sessionStorage.setItem("_mpcehash",g),history.replaceState(i.desiredHash||"",e.title,j.pathname+j.search)))}catch(m){}var k,h;window.mixpanel=a;a._i=[];a.init=function(b,c,f){function e(b,a){var c=a.split(".");2==c.length&&(b=b[c[0]],a=c[1]);b[a]=function(){b.push([a].concat(Array.prototype.slice.call(arguments,
+0)))}}var d=a;"undefined"!==typeof f?d=a[f]=[]:f="mixpanel";d.people=d.people||[];d.toString=function(b){var a="mixpanel";"mixpanel"!==f&&(a+="."+f);b||(a+=" (stub)");return a};d.people.toString=function(){return d.toString(1)+".people (stub)"};k="disable time_event track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config reset people.set people.set_once people.increment people.append people.union people.track_charge people.clear_charges people.delete_user".split(" ");
+for(h=0;h<k.length;h++)e(d,k[h]);a._i.push([b,c,f])};a.__SV=1.2;b=e.createElement("script");b.type="text/javascript";b.async=!0;b.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?MIXPANEL_CUSTOM_LIB_URL:"file:"===e.location.protocol&&"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//)?"https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js":"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";c=e.getElementsByTagName("script")[0];c.parentNode.insertBefore(b,c)}})(document,window.mixpanel||[]);
+mixpanel.init("9bcd0c90399531aa18ede5c761d9af5e");</script><!-- end Mixpanel -->
+  
+
+  </head>
+
+
+  <body>
+
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p>Programmer · Developer · Learner</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="http://iamit.in">HomePage</a>
+
+    
+
+    
+    
+      
+        
+          <a class="sidebar-nav-item" href="/about/">About</a>
+        
+      
+    
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/talks/">Talks</a>
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+      
+    
+
+    <a class="sidebar-nav-item" href="">Source</a>
+    <a class="sidebar-nav-item" href="http://iamit.in/timeline">Archive</a>
+
+    <span class="sidebar-nav-item">Contact</span>
+    <a class="sidebar-nav-item" href="https://github.com/aktech">GitHub</a>
+    <a class="sidebar-nav-item" href="https://twitter.com/iaktech">Twitter</a>
+    <a class="sidebar-nav-item" href="mailto:dtu.amit@gmail.com">Gmail</a>
+    <a class="sidebar-nav-item" href="https://www.quora.com/Amit-Kumar-516">Quora</a>
+  </nav>
+
+  <div class="sidebar-item">
+    <p>
+      &copy; 2016. AMiT Kumar.
+    </p>
+  </div>
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/blog" title="Home">Amit Kumar</a>
+            <small>: Life Is Learning!</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+        <div class="posts">
+  
   <div class="index-post">
     <span class="post-date">
-      <a href="{{ site.baseurl }}timeline" class="timeline">
-        {{ post.date | date_to_string }}
+      <a href="/timeline" class="timeline">
+        06 Nov 2016
       </a>
     </span>
 
     <h2 class="post-title">
-      <a href="{{ post.url }}">
-        {{ post.title }}
+      <a href="/blog/pycon-uk-2016">
+        PyCon UK 2016 &#58; Python in Wales!
       </a>
     </h2>
 
     <span class="post-tag">
-      {% for tag in post.tags %}
-        {% if tag == post.tags.last %}
-          <a href="{{ site.baseurl }}tags/#{{tag}}">
-            {{ tag }}
-          </a>
-
-        {% else %}
-          <a href="{{ site.baseurl }}tags/#{{tag}}">
-            {{ tag }}
+      
+        
+          <a href="/tags/#Conference">
+            Conference
           </a>
           &middot;
-        {% endif %}
-      {% endfor %}
+        
+      
+        
+          <a href="/tags/#Python">
+            Python
+          </a>
+
+        
+      
     </span>
   </div>
-  {% endfor %}
+  
+  <div class="index-post">
+    <span class="post-date">
+      <a href="/timeline" class="timeline">
+        30 Oct 2016
+      </a>
+    </span>
 
-<div class="container bottom" style="font-size:15px">
+    <h2 class="post-title">
+      <a href="/blog/summer-2016-hackerearth">
+        Summer 2016 @ HackerEarth
+      </a>
+    </h2>
+
+    <span class="post-tag">
+      
+        
+          <a href="/tags/#Internship">
+            Internship
+          </a>
+          &middot;
+        
+      
+        
+          <a href="/tags/#Python">
+            Python
+          </a>
+
+        
+      
+    </span>
+  </div>
+  
+  <div class="index-post">
+    <span class="post-date">
+      <a href="/timeline" class="timeline">
+        20 Sep 2016
+      </a>
+    </span>
+
+    <h2 class="post-title">
+      <a href="/blog/pycon-apac-2016">
+        PyCon Asia Pacific 2016 &#58; Respect Diversity
+      </a>
+    </h2>
+
+    <span class="post-tag">
+      
+        
+          <a href="/tags/#Conference">
+            Conference
+          </a>
+          &middot;
+        
+      
+        
+          <a href="/tags/#Python">
+            Python
+          </a>
+
+        
+      
+    </span>
+  </div>
+  
+  <div class="index-post">
+    <span class="post-date">
+      <a href="/timeline" class="timeline">
+        02 Sep 2016
+      </a>
+    </span>
+
+    <h2 class="post-title">
+      <a href="/blog/pygotham-2016">
+        PyGotham 2016 &#58; Journey to the West II
+      </a>
+    </h2>
+
+    <span class="post-tag">
+      
+        
+          <a href="/tags/#Conference">
+            Conference
+          </a>
+          &middot;
+        
+      
+        
+          <a href="/tags/#Python">
+            Python
+          </a>
+
+        
+      
+    </span>
+  </div>
+  
+  <div class="index-post">
+    <span class="post-date">
+      <a href="/timeline" class="timeline">
+        28 Aug 2016
+      </a>
+    </span>
+
+    <h2 class="post-title">
+      <a href="/blog/scipy-2016">
+        SciPy 2016 &#58; Journey to the West
+      </a>
+    </h2>
+
+    <span class="post-tag">
+      
+        
+          <a href="/tags/#Conference">
+            Conference
+          </a>
+          &middot;
+        
+      
+        
+          <a href="/tags/#Scientific Computing">
+            Scientific Computing
+          </a>
+          &middot;
+        
+      
+        
+          <a href="/tags/#Python">
+            Python
+          </a>
+
+        
+      
+    </span>
+  </div>
+  
+  <div class="index-post">
+    <span class="post-date">
+      <a href="/timeline" class="timeline">
+        29 May 2016
+      </a>
+    </span>
+
+    <h2 class="post-title">
+      <a href="/blog/talk-python-metaclasses-pydelhi-meetup">
+        Talk on Introducing Metaclasses at PyDelhi Meetup
+      </a>
+    </h2>
+
+    <span class="post-tag">
+      
+        
+          <a href="/tags/#Core Python">
+            Core Python
+          </a>
+          &middot;
+        
+      
+        
+          <a href="/tags/#PyDelhi">
+            PyDelhi
+          </a>
+
+        
+      
+    </span>
+  </div>
+  
+  <div class="index-post">
+    <span class="post-date">
+      <a href="/timeline" class="timeline">
+        02 Apr 2016
+      </a>
+    </span>
+
+    <h2 class="post-title">
+      <a href="/blog/talk-python-mro-pydelhi-meetup">
+        Talk on Python MRO at PyDelhi Meetup
+      </a>
+    </h2>
+
+    <span class="post-tag">
+      
+        
+          <a href="/tags/#Core Python">
+            Core Python
+          </a>
+          &middot;
+        
+      
+        
+          <a href="/tags/#PyDelhi">
+            PyDelhi
+          </a>
+
+        
+      
+    </span>
+  </div>
+  
+  <div class="index-post">
+    <span class="post-date">
+      <a href="/timeline" class="timeline">
+        26 Mar 2016
+      </a>
+    </span>
+
+    <h2 class="post-title">
+      <a href="/blog/sympy-workshop-fossasia-2016">
+        SymPy Workshop at FOSSASIA 2016, Singapore
+      </a>
+    </h2>
+
+    <span class="post-tag">
+      
+        
+          <a href="/tags/#SymPy">
+            SymPy
+          </a>
+          &middot;
+        
+      
+        
+          <a href="/tags/#Scientific Computing">
+            Scientific Computing
+          </a>
+          &middot;
+        
+      
+        
+          <a href="/tags/#FOSSASIA">
+            FOSSASIA
+          </a>
+
+        
+      
+    </span>
+  </div>
+  
+  <div class="index-post">
+    <span class="post-date">
+      <a href="/timeline" class="timeline">
+        07 Feb 2016
+      </a>
+    </span>
+
+    <h2 class="post-title">
+      <a href="/blog/sympy-workshop-pydelhi-meetup">
+        SymPy Workshop at PyDelhi Meetup
+      </a>
+    </h2>
+
+    <span class="post-tag">
+      
+        
+          <a href="/tags/#SymPy">
+            SymPy
+          </a>
+          &middot;
+        
+      
+        
+          <a href="/tags/#Scientific Computing">
+            Scientific Computing
+          </a>
+          &middot;
+        
+      
+        
+          <a href="/tags/#PyDelhi">
+            PyDelhi
+          </a>
+
+        
+      
+    </span>
+  </div>
+  
+  <div class="index-post">
+    <span class="post-date">
+      <a href="/timeline" class="timeline">
+        28 Aug 2015
+      </a>
+    </span>
+
+    <h2 class="post-title">
+      <a href="/blog/GSoC-wrap-up">
+        GSoC &#58; Throughout in SymPy &#35; Wrap Up
+      </a>
+    </h2>
+
+    <span class="post-tag">
+      
+        
+          <a href="/tags/#Open Source">
+            Open Source
+          </a>
+          &middot;
+        
+      
+        
+          <a href="/tags/#GSoC">
+            GSoC
+          </a>
+          &middot;
+        
+      
+        
+          <a href="/tags/#SymPy">
+            SymPy
+          </a>
+
+        
+      
+    </span>
+  </div>
+  
+  <div class="index-post">
+    <span class="post-date">
+      <a href="/timeline" class="timeline">
+        11 Aug 2015
+      </a>
+    </span>
+
+    <h2 class="post-title">
+      <a href="/blog/GSoC-week-10-11">
+        GSoC &#58; This week in SymPy &#35;10 &amp; &#35;11
+      </a>
+    </h2>
+
+    <span class="post-tag">
+      
+        
+          <a href="/tags/#Open Source">
+            Open Source
+          </a>
+          &middot;
+        
+      
+        
+          <a href="/tags/#GSoC">
+            GSoC
+          </a>
+          &middot;
+        
+      
+        
+          <a href="/tags/#SymPy">
+            SymPy
+          </a>
+
+        
+      
+    </span>
+  </div>
+  
+  <div class="index-post">
+    <span class="post-date">
+      <a href="/timeline" class="timeline">
+        28 Jul 2015
+      </a>
+    </span>
+
+    <h2 class="post-title">
+      <a href="/blog/GSoC-week-9">
+        GSoC &#58; This week in SymPy &#35;9
+      </a>
+    </h2>
+
+    <span class="post-tag">
+      
+        
+          <a href="/tags/#Open Source">
+            Open Source
+          </a>
+          &middot;
+        
+      
+        
+          <a href="/tags/#GSoC">
+            GSoC
+          </a>
+          &middot;
+        
+      
+        
+          <a href="/tags/#SymPy">
+            SymPy
+          </a>
+
+        
+      
+    </span>
+  </div>
+  
+  <div class="index-post">
+    <span class="post-date">
+      <a href="/timeline" class="timeline">
+        21 Jul 2015
+      </a>
+    </span>
+
+    <h2 class="post-title">
+      <a href="/blog/GSoC-week-8">
+        GSoC &#58; This week in SymPy &#35;8
+      </a>
+    </h2>
+
+    <span class="post-tag">
+      
+        
+          <a href="/tags/#Open Source">
+            Open Source
+          </a>
+          &middot;
+        
+      
+        
+          <a href="/tags/#GSoC">
+            GSoC
+          </a>
+          &middot;
+        
+      
+        
+          <a href="/tags/#SymPy">
+            SymPy
+          </a>
+
+        
+      
+    </span>
+  </div>
+  
+  <div class="index-post">
+    <span class="post-date">
+      <a href="/timeline" class="timeline">
+        15 Jul 2015
+      </a>
+    </span>
+
+    <h2 class="post-title">
+      <a href="/blog/GSoC-week-7">
+        GSoC &#58; This week in SymPy &#35;7
+      </a>
+    </h2>
+
+    <span class="post-tag">
+      
+        
+          <a href="/tags/#Open Source">
+            Open Source
+          </a>
+          &middot;
+        
+      
+        
+          <a href="/tags/#GSoC">
+            GSoC
+          </a>
+          &middot;
+        
+      
+        
+          <a href="/tags/#SymPy">
+            SymPy
+          </a>
+
+        
+      
+    </span>
+  </div>
+  
+  <div class="index-post">
+    <span class="post-date">
+      <a href="/timeline" class="timeline">
+        06 Jul 2015
+      </a>
+    </span>
+
+    <h2 class="post-title">
+      <a href="/blog/GSoC-week-6">
+        GSoC &#58; This week in SymPy &#35;6
+      </a>
+    </h2>
+
+    <span class="post-tag">
+      
+        
+          <a href="/tags/#Open Source">
+            Open Source
+          </a>
+          &middot;
+        
+      
+        
+          <a href="/tags/#GSoC">
+            GSoC
+          </a>
+          &middot;
+        
+      
+        
+          <a href="/tags/#SymPy">
+            SymPy
+          </a>
+
+        
+      
+    </span>
+  </div>
+  
+  <div class="index-post">
+    <span class="post-date">
+      <a href="/timeline" class="timeline">
+        23 Jun 2015
+      </a>
+    </span>
+
+    <h2 class="post-title">
+      <a href="/blog/GSoC-week-4-5">
+        GSoC &#58; This week in SymPy &#35;4 &amp; &#35;5
+      </a>
+    </h2>
+
+    <span class="post-tag">
+      
+        
+          <a href="/tags/#Open Source">
+            Open Source
+          </a>
+          &middot;
+        
+      
+        
+          <a href="/tags/#GSoC">
+            GSoC
+          </a>
+          &middot;
+        
+      
+        
+          <a href="/tags/#SymPy">
+            SymPy
+          </a>
+
+        
+      
+    </span>
+  </div>
+  
+  <div class="index-post">
+    <span class="post-date">
+      <a href="/timeline" class="timeline">
+        17 Jun 2015
+      </a>
+    </span>
+
+    <h2 class="post-title">
+      <a href="/blog/GSoC-week-3">
+        GSoC &#58; This week in SymPy &#35;3
+      </a>
+    </h2>
+
+    <span class="post-tag">
+      
+        
+          <a href="/tags/#Open Source">
+            Open Source
+          </a>
+          &middot;
+        
+      
+        
+          <a href="/tags/#GSoC">
+            GSoC
+          </a>
+          &middot;
+        
+      
+        
+          <a href="/tags/#SymPy">
+            SymPy
+          </a>
+
+        
+      
+    </span>
+  </div>
+  
+  <div class="index-post">
+    <span class="post-date">
+      <a href="/timeline" class="timeline">
+        07 Jun 2015
+      </a>
+    </span>
+
+    <h2 class="post-title">
+      <a href="/blog/GSoC-week-2">
+        GSoC &#58; This week in SymPy &#35;2
+      </a>
+    </h2>
+
+    <span class="post-tag">
+      
+        
+          <a href="/tags/#Open Source">
+            Open Source
+          </a>
+          &middot;
+        
+      
+        
+          <a href="/tags/#GSoC">
+            GSoC
+          </a>
+          &middot;
+        
+      
+        
+          <a href="/tags/#SymPy">
+            SymPy
+          </a>
+
+        
+      
+    </span>
+  </div>
+  
+  <div class="index-post">
+    <span class="post-date">
+      <a href="/timeline" class="timeline">
+        01 Jun 2015
+      </a>
+    </span>
+
+    <h2 class="post-title">
+      <a href="/blog/GSoC-week-1">
+        GSoC &#58; This week in SymPy &#35;1
+      </a>
+    </h2>
+
+    <span class="post-tag">
+      
+        
+          <a href="/tags/#Open Source">
+            Open Source
+          </a>
+          &middot;
+        
+      
+        
+          <a href="/tags/#GSoC">
+            GSoC
+          </a>
+          &middot;
+        
+      
+        
+          <a href="/tags/#SymPy">
+            SymPy
+          </a>
+
+        
+      
+    </span>
+  </div>
+  
+  <div class="index-post">
+    <span class="post-date">
+      <a href="/timeline" class="timeline">
+        24 May 2015
+      </a>
+    </span>
+
+    <h2 class="post-title">
+      <a href="/blog/GSoC-Getting-Up-For-the-Coding-Period">
+        GSoC &#58; Getting Up For the Coding Period
+      </a>
+    </h2>
+
+    <span class="post-tag">
+      
+        
+          <a href="/tags/#Open Source">
+            Open Source
+          </a>
+          &middot;
+        
+      
+        
+          <a href="/tags/#GSoC">
+            GSoC
+          </a>
+          &middot;
+        
+      
+        
+          <a href="/tags/#SymPy">
+            SymPy
+          </a>
+
+        
+      
+    </span>
+  </div>
+  
+  <div class="index-post">
+    <span class="post-date">
+      <a href="/timeline" class="timeline">
+        28 Apr 2015
+      </a>
+    </span>
+
+    <h2 class="post-title">
+      <a href="/blog/Google-Summer-Of-Code-with-SymPy">
+        Google Summer Of Code with SymPy
+      </a>
+    </h2>
+
+    <span class="post-tag">
+      
+        
+          <a href="/tags/#Open Source">
+            Open Source
+          </a>
+          &middot;
+        
+      
+        
+          <a href="/tags/#GSoC">
+            GSoC
+          </a>
+          &middot;
+        
+      
+        
+          <a href="/tags/#SymPy">
+            SymPy
+          </a>
+
+        
+      
+    </span>
+  </div>
+  
+  <div class="index-post">
+    <span class="post-date">
+      <a href="/timeline" class="timeline">
+        09 Feb 2015
+      </a>
+    </span>
+
+    <h2 class="post-title">
+      <a href="/blog/Higher-order-functions-in-Python-sorted-map-reduce-filter">
+        Higher order functions in Python &#58; sorted, map, reduce, filter
+      </a>
+    </h2>
+
+    <span class="post-tag">
+      
+        
+          <a href="/tags/#Python">
+            Python
+          </a>
+
+        
+      
+    </span>
+  </div>
+  
+  <div class="index-post">
+    <span class="post-date">
+      <a href="/timeline" class="timeline">
+        19 Jan 2015
+      </a>
+    </span>
+
+    <h2 class="post-title">
+      <a href="/blog/Migrated-to-Jekyll-and-Github-Pages">
+        Migrated to Jekyll and Github Pages
+      </a>
+    </h2>
+
+    <span class="post-tag">
+      
+        
+          <a href="/tags/#Jekyll">
+            Jekyll
+          </a>
+          &middot;
+        
+      
+        
+          <a href="/tags/#Github">
+            Github
+          </a>
+
+        
+      
+    </span>
+  </div>
+  
+  <div class="index-post">
+    <span class="post-date">
+      <a href="/timeline" class="timeline">
+        12 Dec 2014
+      </a>
+    </span>
+
+    <h2 class="post-title">
+      <a href="/blog/Spoj-Problem-Small-Factorials-FCTRL2-Explanation-and-Solution">
+        Spoj FCTRL2 Explanation and Solution
+      </a>
+    </h2>
+
+    <span class="post-tag">
+      
+        
+          <a href="/tags/#Spoj">
+            Spoj
+          </a>
+          &middot;
+        
+      
+        
+          <a href="/tags/#Competitive Coding">
+            Competitive Coding
+          </a>
+
+        
+      
+    </span>
+  </div>
+  
+
+<div class="container bottom">
     <hr>
-    <p> 
+    <p style="font-size:5px"> 
         <center>All content copyright &copy; <b>A</b>mit <b>K</b>umar  unless otherwise noted.
          Licensed under <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons</a>. 
-    </br>Find me on <a href="https://github.com/aktech">GitHub</a>, or shoot me an <a
+    Find me on <a href="https://github.com/aktech">GitHub</a>, or shoot me an <a
     href="mailto:dtu.amit@gmail.com">email</a>. </center> </br> </br>
     </p>
 </div>
 
 </div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <!-- Google Analytics -->
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-33694283-4', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+  </body>
+</html>
