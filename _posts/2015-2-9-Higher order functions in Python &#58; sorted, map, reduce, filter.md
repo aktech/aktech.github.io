@@ -50,7 +50,7 @@ In [0]: sorted([1, -3, 2])  # sorting normally
 Out[0]: [-3, 1, 2]
 
 In [0]: sorted([1, -2, 0], key=abs)  # sorting by absolute values
-Out[0]: [1, 2, 3]
+Out[0]: [0, 1, -2]
 
 ```
 Note: abs is the absolute value function. i.e. `abs(-3) = 3`
