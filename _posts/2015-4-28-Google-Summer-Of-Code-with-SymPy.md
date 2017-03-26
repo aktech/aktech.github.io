@@ -5,7 +5,7 @@ tags:
   - Open Source
   - GSoC
   - SymPy
-permalink: /blog/Google-Summer-Of-Code-with-SymPy
+permalink: /blog/Google-Summer-Of-Code-with-SymPy/
 ---
 
 ![GSoC 2015](/assets/gsoc/GSOC2015.png)

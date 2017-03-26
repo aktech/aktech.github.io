@@ -4,7 +4,7 @@ title: Talk on Introducing Metaclasses at PyDelhi Meetup
 tags:
   - Core Python
   - PyDelhi
-permalink: /blog/talk-python-metaclasses-pydelhi-meetup
+permalink: /blog/talk-python-metaclasses-pydelhi-meetup/
 ---
 
 

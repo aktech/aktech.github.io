@@ -5,7 +5,7 @@ tags:
   - Open Source
   - GSoC
   - SymPy
-permalink: /blog/GSoC-wrap-up
+permalink: /blog/GSoC-wrap-up/
 ---
 
 Hi! I am Amit Kumar ([**@aktech**](http://www.github.com/aktech)), a final year undergraduate student of Mathematics & Computing at Delhi Technological University. This post summarizes my experience working on GSoC Project on Improving Solvers in SymPy.

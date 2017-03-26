@@ -5,7 +5,7 @@ tags:
   - Open Source
   - GSoC
   - SymPy
-permalink: /blog/GSoC-Getting-Up-For-the-Coding-Period
+permalink: /blog/GSoC-Getting-Up-For-the-Coding-Period/
 ---
 
 ### **The Start of Coding Period!**

@@ -5,7 +5,7 @@ tags:
   - Open Source
   - GSoC
   - SymPy
-permalink: /blog/GSoC-week-2
+permalink: /blog/GSoC-week-2/
 ---
 
 Hi there! It's been two weeks into GSoC, & I have managed to flip some bits.

@@ -4,7 +4,7 @@ title: PyCon UK 2016 &#58; Python in Wales!
 tags:
   - Conference
   - Python
-permalink: /blog/pycon-uk-2016
+permalink: /blog/pycon-uk-2016/
 ---
 
 This is an anecdote of my Journey to the United Kingdom for [PyCon UK](http://2016.pyconuk.org/). It was held at Cardiff, the capital of Wales (a country in South West Britain). I took a flight to London from Delhi via Doha (Qatar) as it was cheaper than directly getting to Cardiff. I usually prefer flights with layovers, when I am not running short of time as it gives me an opportunity to have a glimpse of culture of people from different nationalities. I spent few Days in London to explore the City then I went to Cardiff with Sartaj and Manoj to attend PyCon UK. There we stayed at Hostel called as BunkHouse, which was pretty close to the conference venue. Here is a picture of the venue of the conference.

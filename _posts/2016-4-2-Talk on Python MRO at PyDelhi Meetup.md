@@ -4,7 +4,7 @@ title: Talk on Python MRO at PyDelhi Meetup
 tags:
   - Core Python
   - PyDelhi
-permalink: /blog/talk-python-mro-pydelhi-meetup
+permalink: /blog/talk-python-mro-pydelhi-meetup/
 ---
 
 
