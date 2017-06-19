@@ -6,27 +6,38 @@ permalink: /talks/
 
 List of talks/workshops/presentations delivered in reverse chronological order.
 
+### 18. Python in Maths Class (Lightning Talk)
+13, Jun 2017 | [PyParis](http://pyparis.org/) | Paris, France
+
+### 17. Let's Talk about GIL v2.0
+9, Jun 2017 | [PyCon CZ](https://in.pycon.org/2016/) | [Video](https://www.youtube.com/watch?v=motIB96FI48&feature=youtu.be&t=5h36m18s) | Prague, Czech Republic
+
+### 16. Let's Talk about GIL v1.0
+25 Sep, 2016 | [PyDelhi Conference](https://in.pycon.org/2016/) | [Video](https://www.youtube.com/watch?v=CwTnUvHo6d8) | IIM Lucknow, Noida
+
+### 15. Let's Talk about GIL v0.1
+21 Jan, 2017 | [PyDelhi Meetup](https://www.meetup.com/pydelhi/events/233814702/) | IIM Lucknow, Noida
+
 ### 14. What's new in Python3.6 (or rather 3.6.0b1)
-25 September, 2016 | [PyCon India 2016](https://in.pycon.org/2016/) | JNU, New Delhi |
+25 Sep, 2016 | [PyCon India 2016](https://in.pycon.org/2016/) | [Video](https://www.youtube.com/watch?v=DI-jbSjJThA) | JNU, New Delhi |
 
 ### 13. Introducing Metaclasses
-17 September, 2016 | [PyCon UK 2016](http://2016.pyconuk.org/) | Cardiff City Hall, Wales UK | [Video](https://www.youtube.com/watch?v=UXuhj-Tc-qE) | [Slides](http://slides.com/aktech/introducing-metaclasses-in-python)
+17 Sep, 2016 | [PyCon UK 2016](http://2016.pyconuk.org/) | Cardiff City Hall, Wales UK | [Video](https://www.youtube.com/watch?v=UXuhj-Tc-qE) | [Slides](http://slides.com/aktech/introducing-metaclasses-in-python)
 
 ### 12. Soldier: Subprocess in style (Lightning Talk)
-16 September, 2016 | [PyCon UK 2016](http://2016.pyconuk.org/) | Cardiff City Hall, Wales UK | [Video](https://youtu.be/hjSD88cqKYs?t=27m58s) | [Slides](http://iamit.in/talks/slides/soldier.pdf)
+16 Sept, 2016 | [PyCon UK 2016](http://2016.pyconuk.org/) | Cardiff City Hall, Wales UK | [Video](https://youtu.be/hjSD88cqKYs?t=27m58s) | [Slides](http://iamit.in/talks/slides/soldier.pdf)
 
 ### 11. Python 101
-21 August, 2016 | [PythonExpress](https://pythonexpress.in/workshop/61/) | Open Source Learning Center, GGSIPU, Delhi
+21 Aug, 2016 | [PythonExpress](https://pythonexpress.in/workshop/61/) | Open Source Learning Center, GGSIPU, Delhi
 
 ### 10. Soldier: Subprocess in style (Lightning Talk)
-14 August, 2016 | [PyCon Asia Pacific 2016](https://www.pycon.kr/2016apac/) | Seoul, South Korea | [Video](https://www.youtube.com/watch?v=nzQ0O-ftYZU&feature=youtu.be&t=3025) | [Slides](http://iamit.in/talks/slides/soldier.pdf)
+14 Aug, 2016 | [PyCon Asia Pacific 2016](https://www.pycon.kr/2016apac/) | Seoul, South Korea | [Video](https://www.youtube.com/watch?v=nzQ0O-ftYZU&feature=youtu.be&t=3025) | [Slides](http://iamit.in/talks/slides/soldier.pdf)
 
 ### 9. Demystifying Python's Method Resolution Order v2.0
-13 August, 2016 | [PyCon Asia Pacific 2016](https://www.pycon.kr/2016apac/) | Seoul, South Korea | [Video](https://www.youtube.com/watch?v=cuonAMJjHow) | [Slides](http://slides.com/aktech/python-mro)
+13 Aug, 2016 | [PyCon Asia Pacific 2016](https://www.pycon.kr/2016apac/) | Seoul, South Korea | [Video](https://www.youtube.com/watch?v=cuonAMJjHow) | [Slides](http://slides.com/aktech/python-mro)
 
 ### 8. Demystifying Python's Method Resolution Order
-17 July, 2016 | [PyGotham 2016](https://2016.pygotham.org/) | New York, US |
-Video | [Slides](http://slides.com/aktech/python-mro)
+17 July, 2016 | [PyGotham 2016](https://2016.pygotham.org/) | New York, US | [Slides](http://slides.com/aktech/python-mro)
 
 ### 7. SymPy Tutorial
 11 July, 2016 | [SciPy 2016](http://scipy2016.scipy.org/) | Austin, TX US | [Video](https://www.youtube.com/watch?v=AqnpuGbM6-Q) | [Slides](http://www.sympy.org/scipy-2016-tutorial/)
@@ -39,7 +50,7 @@ Video | [Slides](http://slides.com/aktech/python-mro)
 
 
 ### 4. Demystifying Python MRO
-2 April, 2016 | [PyDelhi](http://pydelhi.org) [Meetup](http://www.meetup.com/pydelhi/events/226049223) | [Ramanujan College](http://Ramanujancollege.ac.in) | [Slides](http://slides.com/aktech/python-mro/)
+2 Apr, 2016 | [PyDelhi](http://pydelhi.org) [Meetup](http://www.meetup.com/pydelhi/events/226049223) | [Ramanujan College](http://Ramanujancollege.ac.in) | [Slides](http://slides.com/aktech/python-mro/)
 
 ### 3. Symbolic Computation with Python using SymPy
 20 March, 2016 | [FOSSASIA, 2016](http://2016.fossasia.org/) | [Singapore, Science Center](http://www.science.edu.sg/Pages/SCBHome.aspx) | [Slides](http://slides.com/aktech/sympy), [Content](http://iamit.in/sympy-tutorial/)
