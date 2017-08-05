@@ -94,16 +94,9 @@ This week I plan to polish my pending PR's to get them Merged & start working on
 
 ### **$ git log**
 
-<img align="left" src="/assets/gsoc/opr.png"> &nbsp; [PR #9438](https://github.com/sympy/sympy/pull/9438) : Linsolve
+*  [PR #9438](https://github.com/sympy/sympy/pull/9438) : Linsolve
+*  [PR #9463](https://github.com/sympy/sympy/pull/9463) : ComplexPlane
+*  [PR #9527](https://github.com/sympy/sympy/pull/9527) : Printing of ProductSets
+*  [PR # 9524](https://github.com/sympy/sympy/pull/9524) : Fix solveset returned solution making denom zero
 
-</br>
-<img align="left" src="/assets/gsoc/opr.png"> &nbsp; [PR #9463](https://github.com/sympy/sympy/pull/9463) : ComplexPlane 
-
-</br>
-<img style="float: left" src="/assets/gsoc/opr.png"> &nbsp; [PR #9527](https://github.com/sympy/sympy/pull/9527) : Printing of ProductSets  </br> 
-
-</br>
-<img style="float: left" src="/assets/gsoc/mpr.png"> &nbsp; [PR # 9524](https://github.com/sympy/sympy/pull/9524) : Fix solveset returned solution making denom zero 
-
-</br>
 That's all for now, looking forward for week #4. :grinning:

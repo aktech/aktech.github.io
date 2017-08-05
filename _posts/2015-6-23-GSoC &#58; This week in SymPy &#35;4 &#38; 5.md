@@ -93,17 +93,10 @@ This week I plan to [Fix Intersection's of FiniteSet with symbolic elements](htt
 
 <img align="left" src="/assets/gsoc/opr.png"> &nbsp; [PR #9540](https://github.com/sympy/sympy/pull/9540) : Intersection's of FiniteSet with symbolic elements
 
-</br>
-<img align="left" src="/assets/gsoc/opr.png"> &nbsp; [PR #9438](https://github.com/sympy/sympy/pull/9438) : Linsolve
+* [PR #9438](https://github.com/sympy/sympy/pull/9438) : Linsolve
+* [PR #9463](https://github.com/sympy/sympy/pull/9463) : ComplexPlane
+* [PR #9527](https://github.com/sympy/sympy/pull/9527) : Printing of ProductSets  </br>
+* [PR # 9524](https://github.com/sympy/sympy/pull/9524) : Fix solveset returned solution making denom zero
 
-</br>
-<img align="left" src="/assets/gsoc/mpr.png"> &nbsp; [PR #9463](https://github.com/sympy/sympy/pull/9463) : ComplexPlane 
 
-</br>
-<img style="float: left" src="/assets/gsoc/mpr.png"> &nbsp; [PR #9527](https://github.com/sympy/sympy/pull/9527) : Printing of ProductSets  </br> 
-
-</br>
-<img style="float: left" src="/assets/gsoc/mpr.png"> &nbsp; [PR # 9524](https://github.com/sympy/sympy/pull/9524) : Fix solveset returned solution making denom zero 
-
-</br>
 That's all for now, looking forward for week #6. :grinning:

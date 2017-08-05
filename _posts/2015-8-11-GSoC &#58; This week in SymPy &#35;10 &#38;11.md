@@ -39,11 +39,9 @@ See [diff-cal](https://github.com/aktech/sympy/tree/diff-cal) branch.
 This week I plan to finish up all the pending work and wrap up the project and get [PR #9500](http://github.com/sympy/sympy/pull/9500) Merged. 
 
 ### **$ git log**
-</br>
-<img align="left" src="/assets/gsoc/opr.png"> &nbsp; [PR #9500](https://github.com/sympy/sympy/pull/9500) :  Documenting `solveset`
 
-</br>
-<img align="left" src="/assets/gsoc/mpr.png"> &nbsp; [PR #9587](https://github.com/sympy/sympy/pull/9587) : Add Linsolve Docs
+* [PR #9500](https://github.com/sympy/sympy/pull/9500) :  Documenting `solveset`
+* [PR #9587](https://github.com/sympy/sympy/pull/9587) : Add Linsolve Docs
 
 </br>
 That's all for now, looking forward for week #12. :grinning:
