@@ -12,7 +12,7 @@ Hi there! It's been nine weeks into [GSoC](https://en.wikipedia.org/wiki/Google_
 . Here is the Progress for this week.
 
 ### &nbsp; **Progress of Week 9** <img style="float: left" src="/assets/gsoc/pr.png"> 
-</br>
+
 This week I worked on Replacing `solve` with `solveset` or `linsolve` in the codebase:
 Here are the modules, I covered, as of now:
 
@@ -42,31 +42,14 @@ This week I plan to Merge my pending PR's on replacing old `solve` in the code b
 
 ### **$ git log**
 
-<img align="left" src="/assets/gsoc/mpr.png"> &nbsp; [PR #9726](https://github.com/sympy/sympy/pull/9726) : Return EmptySet() if there are no solution to linear system 
+* [PR #9726](https://github.com/sympy/sympy/pull/9726) : Return EmptySet() if there are no solution to linear system
+* [PR #9724](https://github.com/sympy/sympy/pull/9724) : Replace solve with solveset in core
+* [PR #9717](https://github.com/sympy/sympy/pull/9717) : Replace solve with solveset in sympy.calculus
+* [PR #9716](https://github.com/sympy/sympy/pull/9716) : Use solveset instead of solve in sympy.sets
+* [PR #9717](https://github.com/sympy/sympy/pull/9717) : Replace solve with solveset in `sympy.series`
+* [PR #9710](https://github.com/sympy/sympy/pull/9710) : Replace solve with solveset in `sympy.stats`
+* [PR #9708](https://github.com/sympy/sympy/pull/9708) : Use solveset instead of solve in `sympy.geometry`
+* [PR #9587](https://github.com/sympy/sympy/pull/9587) : Add Linsolve Docs
+* [PR #9500](https://github.com/sympy/sympy/pull/9500) :  Documenting `solveset`
 
-</br>
-<img align="left" src="/assets/gsoc/mpr.png"> &nbsp; [PR #9724](https://github.com/sympy/sympy/pull/9724) : Replace solve with solveset in core
-
-</br>
-<img align="left" src="/assets/gsoc/mpr.png"> &nbsp; [PR #9717](https://github.com/sympy/sympy/pull/9717) : Replace solve with solveset in sympy.calculus
-
-</br>
-<img align="left" src="/assets/gsoc/mpr.png"> &nbsp; [PR #9716](https://github.com/sympy/sympy/pull/9716) : Use solveset instead of solve in sympy.sets
-
-</br>
-<img align="left" src="/assets/gsoc/mpr.png"> &nbsp; [PR #9717](https://github.com/sympy/sympy/pull/9717) : Replace solve with solveset in `sympy.series`
-
-</br>
-<img align="left" src="/assets/gsoc/mpr.png"> &nbsp; [PR #9710](https://github.com/sympy/sympy/pull/9710) : Replace solve with solveset in `sympy.stats`
-
-</br>
-<img align="left" src="/assets/gsoc/mpr.png"> &nbsp; [PR #9708](https://github.com/sympy/sympy/pull/9708) : Use solveset instead of solve in `sympy.geometry`
-
-</br>
-<img align="left" src="/assets/gsoc/opr.png"> &nbsp; [PR #9587](https://github.com/sympy/sympy/pull/9587) : Add Linsolve Docs
-
-</br>
-<img align="left" src="/assets/gsoc/opr.png"> &nbsp; [PR #9500](https://github.com/sympy/sympy/pull/9500) :  Documenting `solveset`
-
-</br>
 That's all for now, looking forward for week #10. :grinning:

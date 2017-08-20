@@ -12,7 +12,8 @@ Hi there! It's been seven weeks into [GSoC](https://en.wikipedia.org/wiki/Google
 and second half has started now. Here is the Progress so far.
 
 ### &nbsp; **Progress of Week 7** <img style="float: left" src="/assets/gsoc/pr.png"> 
-</br>
+
+
 This week I Opened [#9628](https://github.com/sympy/sympy/pull/9628), which is basically an attempt to make `solveset` more robust, as I mentioned in my [last post](http://iamit.in/blog/GSoC-week-6/).
 The idea is to tell the user about the domain of solution returned.
 
@@ -89,22 +90,11 @@ This week I plan to complete [PR #9628](https://github.com/sympy/sympy/pull/9618
 
 Below is the list of other PR's I worked on:
 
-<img align="left" src="/assets/gsoc/opr.png"> &nbsp; [PR #9671](https://github.com/sympy/sympy/pull/9671) : Simplify `ComplexPlane({x}*{y})` to `FiniteSet(x + I*y)`
+* [PR #9671](https://github.com/sympy/sympy/pull/9671) : Simplify `ComplexPlane({x}*{y})` to `FiniteSet(x + I*y)`
+* [PR #9668](https://github.com/sympy/sympy/pull/9668) : Support solving for Dummy symbols in linsolve
+* [PR #9666](https://github.com/sympy/sympy/pull/9666) : Equate S.Complexes with `ComplexPlane(S.Reals*S.Reals)`
+* [PR #9628](https://github.com/sympy/sympy/pull/9628) : [WIP] Make invert_real more robust
+* [PR #9587](https://github.com/sympy/sympy/pull/9587) : Add Linsolve Docs
+* [PR #9500](https://github.com/sympy/sympy/pull/9500) :  Documenting `solveset`
 
-
-<img align="left" src="/assets/gsoc/opr.png"> &nbsp; [PR #9668](https://github.com/sympy/sympy/pull/9668) : Support solving for Dummy symbols in linsolve
-
-</br>
-<img align="left" src="/assets/gsoc/opr.png"> &nbsp; [PR #9666](https://github.com/sympy/sympy/pull/9666) : Equate S.Complexes with `ComplexPlane(S.Reals*S.Reals)`
-
-
-<img align="left" src="/assets/gsoc/opr.png"> &nbsp; [PR #9628](https://github.com/sympy/sympy/pull/9628) : [WIP] Make invert_real more robust
-
-</br>
-<img align="left" src="/assets/gsoc/opr.png"> &nbsp; [PR #9587](https://github.com/sympy/sympy/pull/9587) : Add Linsolve Docs
-
-</br>
-<img align="left" src="/assets/gsoc/opr.png"> &nbsp; [PR #9500](https://github.com/sympy/sympy/pull/9500) :  Documenting `solveset`
-
-</br>
 That's all for now, looking forward for week #8. :grinning:

@@ -40,7 +40,6 @@ my talk.
 
 <iframe src="//slides.com/aktech/introducing-metaclasses-in-python/embed" width="700" height="600" scrolling="no" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
-</br>
 
 **Tip** : Interested in tasting bit more of Python? Come to PyDelhi [Meetups](http://www.meetup.com/pydelhi/)!
 or if you would like to taste lot of python, then you should come to [PyCon India 2016](https://in.pycon.org/2016/), its a premier conference in India on using and developing the Python programming language & is conducted annually by the Python developer community. It attracts the best Python programmers from across the country and abroad.

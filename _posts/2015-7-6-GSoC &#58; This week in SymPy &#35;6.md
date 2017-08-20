@@ -21,7 +21,8 @@ and SendThemMail
 (Don't Judge my SQL, I am not good at it!)
 
 ### &nbsp; **Progress of Week 6** <img style="float: left" src="/assets/gsoc/pr.png"> 
-</br>
+
+
 Last week my `Linsolve` [PR #9438](https://github.com/sympy/sympy/pull/9438)
 finally got Merged Thanks! to [@hargup](http://github.com/hargup) [@moorepants](http://github.com/moorepants) [@flacjacket](http://github.com/flacjacket) [@debugger22](http://github.com/debugger22) for reviewing it and suggesting constructive changes.
 
@@ -55,31 +56,15 @@ Relavant Issue:
 
 ### **$ git log**
 
-<img align="left" src="/assets/gsoc/opr.png"> &nbsp; [PR #9618](https://github.com/sympy/sympy/pull/9618) : Add test for `solveset(x**2 + a, x)` issue 9557
+* [PR #9618](https://github.com/sympy/sympy/pull/9618) : Add test for `solveset(x**2 + a, x)` issue 9557
+* [PR #9587](https://github.com/sympy/sympy/pull/9587) : Add Linsolve Docs
+* [PR #9500](https://github.com/sympy/sympy/pull/9500) :  Documenting `solveset`
+* [PR #9612](https://github.com/sympy/sympy/pull/9612) : solveset return solution for `solveset(True, ..)`
+* [PR #9540](https://github.com/sympy/sympy/pull/9540) : Intersection's of FiniteSet with symbolic elements
+* [PR #9438](https://github.com/sympy/sympy/pull/9438) : Linsolve
+* [PR #9463](https://github.com/sympy/sympy/pull/9463) : ComplexPlane
+* [PR #9527](https://github.com/sympy/sympy/pull/9527) : Printing of ProductSets
+* [PR # 9524](https://github.com/sympy/sympy/pull/9524) : Fix solveset returned solution making denom zero
 
-</br>
-<img align="left" src="/assets/gsoc/opr.png"> &nbsp; [PR #9587](https://github.com/sympy/sympy/pull/9587) : Add Linsolve Docs
 
-</br>
-<img align="left" src="/assets/gsoc/opr.png"> &nbsp; [PR #9500](https://github.com/sympy/sympy/pull/9500) :  Documenting `solveset`
-
-</br>
-<img align="left" src="/assets/gsoc/mpr.png"> &nbsp; [PR #9612](https://github.com/sympy/sympy/pull/9612) : solveset return solution for `solveset(True, ..)`
-
-</br>
-<img align="left" src="/assets/gsoc/mpr.png"> &nbsp; [PR #9540](https://github.com/sympy/sympy/pull/9540) : Intersection's of FiniteSet with symbolic elements
-
-</br>
-<img align="left" src="/assets/gsoc/mpr.png"> &nbsp; [PR #9438](https://github.com/sympy/sympy/pull/9438) : Linsolve
-
-</br>
-<img align="left" src="/assets/gsoc/mpr.png"> &nbsp; [PR #9463](https://github.com/sympy/sympy/pull/9463) : ComplexPlane 
-
-</br>
-<img style="float: left" src="/assets/gsoc/mpr.png"> &nbsp; [PR #9527](https://github.com/sympy/sympy/pull/9527) : Printing of ProductSets  </br> 
-
-</br>
-<img style="float: left" src="/assets/gsoc/mpr.png"> &nbsp; [PR # 9524](https://github.com/sympy/sympy/pull/9524) : Fix solveset returned solution making denom zero 
-
-</br>
 That's all for now, looking forward for week #7. :grinning:

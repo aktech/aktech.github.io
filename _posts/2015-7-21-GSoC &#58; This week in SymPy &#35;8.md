@@ -12,7 +12,7 @@ Hi there! It's been eight weeks into [GSoC](https://en.wikipedia.org/wiki/Google
 . Here is the Progress for this week.
 
 ### &nbsp; **Progress of Week 8** <img style="float: left" src="/assets/gsoc/pr.png"> 
-</br>
+
 This week, my PR for making `invert_real` more robust was Merged, along with these:
 
 * [PR #9628](https://github.com/sympy/sympy/pull/9628) : Make `invert_real` more robust
@@ -44,28 +44,13 @@ This week I plan to Merge my pending PR's & work on replacing old `solve` in the
 
 ### **$ git log**
 
-<img align="left" src="/assets/gsoc/opr.png"> &nbsp; [PR #9710](https://github.com/sympy/sympy/pull/9710) : Replace solve with solveset in `sympy.stats`
+* [PR #9710](https://github.com/sympy/sympy/pull/9710) : Replace solve with solveset in `sympy.stats`
+* [PR #9708](https://github.com/sympy/sympy/pull/9708) : Use solveset instead of solve in `sympy.geometry`
+* [PR #9671](https://github.com/sympy/sympy/pull/9671) : Simplify `ComplexPlane({x}*{y})` to `FiniteSet(x + I*y)`
+* [PR #9668](https://github.com/sympy/sympy/pull/9668) : Support solving for Dummy symbols in linsolve
+* [PR #9666](https://github.com/sympy/sympy/pull/9666) : Equate S.Complexes with `ComplexPlane(S.Reals*S.Reals)`
+* [PR #9628](https://github.com/sympy/sympy/pull/9628) : Make invert_real more robust
+* [PR #9587](https://github.com/sympy/sympy/pull/9587) : Add Linsolve Docs
+* [PR #9500](https://github.com/sympy/sympy/pull/9500) :  Documenting `solveset`
 
-</br>
-<img align="left" src="/assets/gsoc/opr.png"> &nbsp; [PR #9708](https://github.com/sympy/sympy/pull/9708) : Use solveset instead of solve in `sympy.geometry`
-
-</br>
-<img align="left" src="/assets/gsoc/opr.png"> &nbsp; [PR #9671](https://github.com/sympy/sympy/pull/9671) : Simplify `ComplexPlane({x}*{y})` to `FiniteSet(x + I*y)`
-
-</br>
-<img align="left" src="/assets/gsoc/mpr.png"> &nbsp; [PR #9668](https://github.com/sympy/sympy/pull/9668) : Support solving for Dummy symbols in linsolve
-
-</br>
-<img align="left" src="/assets/gsoc/mpr.png"> &nbsp; [PR #9666](https://github.com/sympy/sympy/pull/9666) : Equate S.Complexes with `ComplexPlane(S.Reals*S.Reals)`
-
-
-<img align="left" src="/assets/gsoc/mpr.png"> &nbsp; [PR #9628](https://github.com/sympy/sympy/pull/9628) : Make invert_real more robust
-
-</br>
-<img align="left" src="/assets/gsoc/opr.png"> &nbsp; [PR #9587](https://github.com/sympy/sympy/pull/9587) : Add Linsolve Docs
-
-</br>
-<img align="left" src="/assets/gsoc/opr.png"> &nbsp; [PR #9500](https://github.com/sympy/sympy/pull/9500) :  Documenting `solveset`
-
-</br>
 That's all for now, looking forward for week #9. :grinning:

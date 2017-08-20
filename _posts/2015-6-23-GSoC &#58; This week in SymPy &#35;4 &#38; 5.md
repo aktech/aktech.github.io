@@ -13,7 +13,8 @@ This week, I worked on polishing my previous PR's to improve coverage and
 fixing some bugs.
 
 ### &nbsp; **Progress of Week 4 & 5** <img style="float: left" src="/assets/gsoc/pr.png"> 
-</br>
+
+
 During the last couple of weeks my `ComplexPlane` Class [PR #9438](https://github.com/sympy/sympy/pull/9463)
 finally got ***Merged*** thanks to [Harsh](http://github.com/hargup) for thoroughly reviewing it and suggesting constructive changes.
 
@@ -95,7 +96,7 @@ This week I plan to [Fix Intersection's of FiniteSet with symbolic elements](htt
 
 * [PR #9438](https://github.com/sympy/sympy/pull/9438) : Linsolve
 * [PR #9463](https://github.com/sympy/sympy/pull/9463) : ComplexPlane
-* [PR #9527](https://github.com/sympy/sympy/pull/9527) : Printing of ProductSets  </br>
+* [PR #9527](https://github.com/sympy/sympy/pull/9527) : Printing of ProductSets
 * [PR # 9524](https://github.com/sympy/sympy/pull/9524) : Fix solveset returned solution making denom zero
 
 

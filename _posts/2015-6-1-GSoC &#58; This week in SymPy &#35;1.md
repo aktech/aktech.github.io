@@ -13,7 +13,8 @@ Hi there! The First week of the coding period has came to an end, this week has 
 This week, I worked on Linear system solver `linsolve` in the `solveset` Module, as I mentioned in my last [post](http://iamit.in/blog/GSoC-Getting-Up-For-the-Coding-Period/), about my goals for Week 1. 
 
 ### **Progress of Week 1** 
-<img src="/assets/gsoc/pr.png"> I implemented the following two functions: </br>
+<img src="/assets/gsoc/pr.png"> I implemented the following two functions:
+
 PR : **[#9438](https://github.com/sympy/sympy/pull/9438)**.
 It's almost good to merge after a final review by [flacjacket](http://www.github.com/flacjacket) & [hargup](http://www.github.com/hargup).
 
@@ -69,7 +70,8 @@ In []: linsolve((A, b), [x, y, z])
 Out[]: ....
 ValueError: Linear system has no solution
 ```
-### The input formats supported:</br>
+### The input formats supported:
+
 (as mentioned in my last [post](http://iamit.in/blog/GSoC-Getting-Up-For-the-Coding-Period/))
 
 * Augmented Matrix Form

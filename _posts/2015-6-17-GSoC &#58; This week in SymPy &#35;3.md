@@ -13,7 +13,7 @@ This week, I worked on creating `ComplexPlane` Class.
 
 ### &nbsp; **Progress of Week 3** <img style="float: left" src="/assets/gsoc/pr.png"> 
 
-The major portion of this week went onto creating `ComplexPlane` Class. </br>
+The major portion of this week went onto creating `ComplexPlane` Class.
 [PR #9438](https://github.com/sympy/sympy/pull/9463)
 
 ### **Design**
