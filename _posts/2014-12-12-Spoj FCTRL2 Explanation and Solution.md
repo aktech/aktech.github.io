@@ -116,7 +116,7 @@ int t;
 ```
 Thanks to this Tutorial at [Codechef](http://blog.codechef.com/2009/07/02/tutorial-for-small-factorials/)
 
-##Code in Python
+## Code in Python
 
 For Python Freaks, it’s a cakewalk.
 10 lines of code!
