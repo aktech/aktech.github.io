@@ -8,7 +8,7 @@ permalink: /blog/Spoj-Problem-Small-Factorials-FCTRL2-Explanation-and-Solution/
 ---
 
 
-##Problem:
+## Problem:
 In this [Problem](http://www.spoj.com/problems/FCTRL2/)
 , we are required to find Factorials of numbers ranging from 1 to 100, but  Since an unsigned 64-bit Integer can store upto 19 decimal digits, where as 100! has 150+ digits, so we can’t use Int Data type.
 
