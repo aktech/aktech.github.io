@@ -34,7 +34,7 @@ a[0] = 5
 a[1] = 4
 and the value of m will be 2 specifying that there are 2 digits in the array currently.
 
-##Codechef Tutorial
+## Codechef Tutorial
 >Now, to multiply this array with the value 37. We start off from the index 0 of the array to index 1. At every iteration, we calculate 37 * a[index]. We also maintain a temporary variable called temp which is initialized to 0. Now, at every step, we calculate x = a[index] * 37 + temp. The new value of a[index] will be x % 10 and the new value of temp will be temp / 10. We are simply carrying out multiplication the way it is carried out usually  (The Process is shown in Figure below). So, for the current situation, the iterations will be something like this.
 
 >Initialize temp = 0
@@ -69,11 +69,11 @@ the answer and the value of m will be the number of digits in the answer. We can
 
 ![Multiply 45 * 37](/assets/fctrl2/fctrl2.png)
 
-##Code in C++
+## Code in C++
 
 ``` cpp
 // Source Code Of Above Algorithm:
-##include<iostream>
+#include<iostream>
 using namespace std;
 int main() {
 int t;
