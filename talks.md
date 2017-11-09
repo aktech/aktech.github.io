@@ -6,6 +6,9 @@ permalink: /talks/
 
 List of talks/workshops/presentations delivered in reverse chronological order.
 
+### 19. Data Pipelining with Luigi
+7, Nov 2017 | [PyData London Meetup](https://www.meetup.com/PyData-London-Meetup/events/244401841/) | [Content](https://github.com/aktech/luigi-talk) | AHL, London
+
 ### 18. Python in Maths Class (Lightning Talk)
 13, Jun 2017 | [PyParis](http://pyparis.org/) | Paris, France
 
