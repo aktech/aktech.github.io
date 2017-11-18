@@ -7,15 +7,29 @@ permalink: /blog/zomato
 ---
 
 Hi! there, It's been over a month since my last day at Zomato, I have planned this post for a while now.
-Probably now its the right time to pen down my thoughts on the last 1 year at Zomato. It all started on
-3rd October 2016, my first day at Zomato. I have been a fan of Zomato well before I joined them mainly due
-to their amazing social media humor. I was very excited to start my first job there. The first day started
-with the induction programme (*An induction programme is an important process for bringing staff into an organisation.*).
-Along with me there were 8-10 more of them and two of them joined in the tech team (Suhaib and Anu). I was an
-off-campus and off-season hire so there weren't a lot of tech people joining, except the three of us. The induction
-introduced us to various teams and their job. In the evening after the induction, the HR took me to introduce
-me to my team. She told me that I would be working with the ML team (though the team was mainly known as Reviews Team).
-It was a team of 3 before me, they were Shubham Chaudhary, Amit Kushwaha and Paras Arora (our manager).
+Probably now is the right time to pen down my thoughts on the last 1 year at Zomato. I had a great time there
+and I wish them success. It all started on 3rd October 2016, my first day at Zomato. I have been a fan of Zomato
+well before I joined them, mainly due to their amazing social media humor. I was very excited to start my first
+job there. The first day started with the induction programme (*An induction programme is an important process
+for bringing staff into an organisation.*). Along with me there were 8-10 more of them and two of them joined in
+the tech team (Suhaib and Anu). I was an off-campus and off-season hire so there weren't a lot of tech people
+joining, except the three of us. The induction introduced us to various teams and their job. In the evening after
+the induction, the HR took me to introduce me to my team. She told me that I would be working with the ML team
+(though the team was mainly known as Reviews Team).
+
+### Team
+
+It was a team of 4 including Shubham Chaudhary, Amit Kushwaha and Paras Arora (our manager).
+I must say that was probably the best team I could have worked with. If I am asked one person
+from whom I learnt the most, It would probably impossible to say, as all of them contributed
+into different aspects. Paras was one of the finest and smartest manager that I have
+worked with. Probably I got to understand the job of a Product Manager only after working with
+him. Amit and Shubham were excellent team members. I learnt a lot about Machine Learning and
+Natural Language Processing from these guys. They recently wrote a paper on review highlights,
+will share the link as soon as its published. Shubham was one of benchmarks in terms of best
+development practices. He maintains a high quality of work no matter how fast he has to deliver.
+
+### Work
 
 My first job was to create a dashboard to have the ability to easily create the collections on Zomato.
 A Collection is a set of restaurants based on various themes like Biryani, Desserts, etc. The dashboard was supposed to be
@@ -24,11 +38,21 @@ such as food, service and ambience), which Amit and Shubham were working on for 
 dashboard was quite a challenging task for me as I had no prior experience with the frontend, but thanks to
 Shubham who explained me some basics such as what is an ajax call and Amit who introduced me to the design
 of review highlights to understand the data I need to use for the dashboard. Apart from the technical
-aspects my biggest learning was the estimation of project requires thorough understanding & planning of
-each and every aspect of the product, this came through the fact that I estimated its completion time as 2 weeks,
+aspects my biggest learning was that the estimation of a project requires thorough understanding & planning of
+each and every aspect of the product, this came through the fact that I estimated its completion time as 2 days,
 which took over two weeks.
 
-Below are the major takeaways from my learnings throughout the last one year:
+Throughout my time at Zomato, I primarily worked in the backend and also got the opportunity to work on the
+image quality prediction pipeline. My last major project was cuisine predictor (predicting the cuisine of a
+restaurant based on the dishes they serve). 
+
+Most of the people I worked with were really good and eventually I made some really good friends.
+I mostly enjoyed my work. It was fun going to work, but as they say all good things comes to an end.
+In september I realized that, It's the right time to move on.
+
+### Takeaway
+
+Below are some of the takeaways from my learnings during the last one year, in no particular order:
 
 * Time estimation is one of the toughest job in software engineering, the key is to try to break the job into independent
 units and try estimating the time for each unit.
@@ -57,4 +81,4 @@ able to satisfy yourself, then you're good to go.
 * Don't just ask question just because you're too lazy to try hard to google the solution. Remember it's science, not magic!
 There is always a reason why its not working.
 
-TODO
+* Request and anticipate code reviews.
