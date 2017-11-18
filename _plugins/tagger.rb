@@ -12,14 +12,14 @@ module Jekyll
       tagdata = {}
 
       # loop over all posts
-      site.posts.each do |post|
+      site.posts.docs.each do |post|
         # loop over all tags for a post
-        post.tags.each do |tag|
+        post['tags'].each do |tag|
           # add metadata about post to tagdata
           if tagdata.has_key?(tag)
-            tagdata[tag] << {"url"=>post.url, "title"=>post.title}
+            tagdata[tag] << {"url"=>post.url, "title"=>post['title']}
           else
-            tagdata[tag] = [{"url"=>post.url, "title"=>post.title}]
+            tagdata[tag] = [{"url"=>post.url, "title"=>post['title']}]
           end
         end
       end

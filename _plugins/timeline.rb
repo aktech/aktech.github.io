@@ -1,38 +1,26 @@
-# Author : Pravendra Singh
-# Twitter : @hackpravj
-#
-# map tags to posts and store generated data to site.pages variable
-# here this data is being used to render all posts under each tags on a seperate page
+# http://tech.pro/tutorial/1299/getting-started-with-jekyll-plugins
+# I changed to use reversed data so that latest(by time) is rendered first
 
 module Jekyll
-  # this plugin comes under 'Generator' category of jekyll plugins
-  class TagGenerator < Generator
+  class ArchivesGenerator < Generator
     def generate(site)
-      # variable that will contain all mapping data
-      tagdata = {}
-
-      # loop over all posts
+      years = {}
       site.posts.docs.each do |post|
-        # loop over all tags for a post
-        post['tags'].each do |tag|
-          # add metadata about post to tagdata
-          if tagdata.has_key?(tag)
-            tagdata[tag] << {"url"=>post['url'], "title"=>post['title']}
-          else
-            tagdata[tag] = [{"url"=>post['url'], "title"=>post['title']}]
-          end
+        if years.has_key?(post.date.year)
+          years[post.date.year] << {"url"=>post.url, "title"=>post['title']}
+        else
+          years[post.date.year] = [{"url"=>post.url, "title"=>post['title']}]
         end
       end
 
-      # add tagdata to site.pages variable for global use
-      site.pages <<  TagPage.new(site, site.source, "tags", "index.html", tagdata)
+      site.pages <<  ArchivesPage.new(site, site.source, "timeline", "index.html", years)
     end
   end
 
-  class TagPage < Page
-    def initialize(site, base, dir, name, tagdata)
+  class ArchivesPage < Page
+    def initialize(site, base, dir, name, years)
       super(site, base, dir, name)
-      self.data['tagdata'] = tagdata
+      self.data['years'] = years
     end
   end
 end
