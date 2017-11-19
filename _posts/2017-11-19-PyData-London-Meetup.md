@@ -7,6 +7,8 @@ tags:
 permalink: /blog/pydata-london-39th-meetup
 ---
 
+<center><img src="/assets/pydata-london.jpeg" width="200"></center>
+
 Last week I got the opportunity to attend and speak at [PyData London's 39<sup>th</sup> Meetup](https://www.meetup.com/PyData-London-Meetup/events/244401841/) at [AHL's](https://www.ahl.com) office.
 Our Backend lead at work Prashant is a co-organiser of the meetup.
 One of the speakers turned away few days before the meetup, then Prashant asked
