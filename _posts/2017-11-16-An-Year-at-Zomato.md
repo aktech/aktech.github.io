@@ -81,7 +81,7 @@ There is always a reason why its not working.
 * If you're building an API, never trust the guy who would be using it, handle the case for when he tells
 his 6 year old daughter to use it.
 
-* Security is one the critical things which is often ignored a lot by a Software Engineer. Remember that you are
+* Security is one of the critical things which is often ignored a lot by a Software Engineer. Remember that you are
 responsible for every bit of your code, think from the perspective of a hacker.
 
 * User is always an idiot, he would never use the product the way you want him to.
