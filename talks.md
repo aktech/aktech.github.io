@@ -6,6 +6,9 @@ permalink: /talks/
 
 List of talks/workshops/presentations delivered in reverse chronological order.
 
+### 20. Let's Talk About GIL v3.0 (Upcoming)
+16, Feb 2018 | [Swiss Python Summit 2018](http://www.python-summit.ch/) | [Content](https://github.com/aktech/gil_talk) | Rapperswill, Switzerland
+
 ### 19. Data Pipelining with Luigi
 7, Nov 2017 | [PyData London Meetup](https://www.meetup.com/PyData-London-Meetup/events/244401841/) | [Content](https://github.com/aktech/luigi-talk) | AHL, London
 
