@@ -17,3 +17,4 @@ To visit my Website [Click here](http://iamit.in).
 * Change the `baseurl` in the `_config.url` from `https://iamit.in/` to `/` (Don't know of a better solution).
 * If your post includes any media, add it into the assets folder.
 * Create your blog post in the `_post` directory by copying any previous posts, notice the naming scheme, which corresponds to the publishing date.
+* Run `./deploy.sh` and push to github.

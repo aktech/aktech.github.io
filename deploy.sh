@@ -9,6 +9,8 @@ logging () {
 logging "Deploying blog"
 logging "Copying tags/ and timeline/ folder from tags_timeline_gen/"
 cp -r tags_timeline_gen/* .
+cat tags/index.html
+cat timeline/index.html
 logging "Doing a jekyll serve"
 jekyll serve &
 
