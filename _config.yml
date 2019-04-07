@@ -1,37 +1,37 @@
 # Dependencies
-highlighter:      rouge
+highlighter: rouge
 
 # Permalinks
-permalink:        pretty
+permalink: pretty
 
 # custom plugins
-plugins_dir:      ./_plugins
+plugins_dir: ./_plugins
 
 # Setup
-title:            'Amit Kumar'
-tagline:          ': Life Is Learning!'
-description:      'Programmer · Developer · Learner'
+title: "Amit Kumar"
+tagline: ": Life Is Learning!"
+description: "Programmer · Developer · Learner"
 
 author:
-  name:           'Amit Kumar'
-  email:          dtu.amit@gmail.com
+  name: "Amit Kumar"
+  email: dtu.amit@gmail.com
 
 github:
-  main:           https://github.com/aktech/aktech.github.io
+  main: https://github.com/aktech/aktech.github.io
 
 # contact details
 contact:
-  github:         https://github.com/aktech
-  twitter:        https://twitter.com/iaktech
-  gmail:          mailto:dtu.amit@gmail.com
-  quora:          https://www.quora.com/Amit-Kumar-516
+  github: https://github.com/aktech
+  twitter: https://twitter.com/iaktech
+  gmail: mailto:dtu.amit@gmail.com
+  quora: https://www.quora.com/Amit-Kumar-516
 
 # Gems
 
-source:      .
+source: .
 destination: ./_site
 
 timezone: Asia/Calcutta
-short_url: 'iamit.in/'
-production_url:  https://aktech.github.io/
-source_url:      https://github.com/aktech`.github.io
+short_url: "iamit.in/"
+production_url: https://aktech.github.io/
+source_url: https://github.com/aktech.github.io
