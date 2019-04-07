@@ -32,7 +32,6 @@ source:      .
 destination: ./_site
 
 timezone: Asia/Calcutta
-baseurl: ''
 short_url: 'iamit.in/'
 production_url:  https://aktech.github.io/
-source_url:      https://github.com/aktech.github.io
+source_url:      https://github.com/aktech`.github.io
