@@ -1,6 +1,6 @@
 language: ruby
 rvm:
-  - 2.3.3
+  - 2.4.1
 before_install:
   - gem update --system
   - gem install bundler
@@ -9,3 +9,4 @@ script:
 env:
   global:
     - NOKOGIRI_USE_SYSTEM_LIBRARIES=true # speeds up installation of html-proofer
+cache: bundler
