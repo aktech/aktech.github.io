@@ -12,7 +12,7 @@ cp -r tags_timeline_gen/* .
 cat tags/index.html
 cat timeline/index.html
 logging "Doing a jekyll serve"
-jekyll serve &
+bundle exec jekyll serve &
 
 maximum_wait=10
 wait=0
