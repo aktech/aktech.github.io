@@ -242,7 +242,9 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  concurrent-ruby (~> 1.1, >= 1.1.5)
   github-pages
+  minitest (~> 5.11, >= 5.11.3)
 
 BUNDLED WITH
    2.0.1
