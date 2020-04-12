@@ -1,4 +1,4 @@
 source 'https://rubygems.org'
-gem 'github-pages', group: :jekyll_plugins
-gem 'concurrent-ruby', '~> 1.1', '>= 1.1.5'
-gem 'minitest', '~> 5.11', '>= 5.11.3'
+gem 'jekyll', group: :jekyll_plugins
+gem 'concurrent-ruby', '~> 1.1.6', '>= 1.1.6'
+gem 'minitest', '~> 5.14.0', '>= 5.14.0'
