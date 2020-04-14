@@ -25,7 +25,7 @@ module Jekyll
       end
 
       # add tagdata to site.pages variable for global use
-      site.pages <<  TagPage.new(site, site.source, "tags", "index.html", tagdata)
+      site.pages <<  TagPage.new(site, site.source, "blog/tags", "index.html", tagdata)
     end
   end
 

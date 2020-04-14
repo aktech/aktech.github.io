@@ -37,7 +37,6 @@ GEM
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
     mercenary (0.3.6)
-    minitest (5.14.0)
     pathutil (0.16.2)
       forwardable-extended (~> 2.6)
     public_suffix (3.1.1)
@@ -56,9 +55,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  concurrent-ruby (~> 1.1.6, >= 1.1.6)
   jekyll
-  minitest (~> 5.14.0, >= 5.14.0)
 
 BUNDLED WITH
    2.0.1

@@ -8,9 +8,7 @@ logging () {
 # Copy timeline and tags generator from tags_timeline_gen
 logging "Deploying blog"
 logging "Copying tags/ and timeline/ folder from tags_timeline_gen/"
-cp -r tags_timeline_gen/* .
-cat tags/index.html
-cat timeline/index.html
+cp -r tags_timeline_gen/* blog/
 logging "Doing a jekyll serve"
 bundle exec jekyll serve &
 
@@ -26,8 +24,8 @@ done
 
 if [ "$wait" -lt "$maximum_wait" ]; then
   logging "Copying generated tags/ and timeline/ from _site/"
-  cp -r _site/timeline .
-  cp -r _site/tags .
+  cp -r _site/timeline blog/
+  cp -r _site/tags blog/
   ps aux | grep jekyll
   logging "Jekyll serve is running in the background. To kill: $ kill -9 'PROCESS_ID'"
   logging "Done, ready to push to github."

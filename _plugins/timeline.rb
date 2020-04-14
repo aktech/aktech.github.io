@@ -13,7 +13,7 @@ module Jekyll
         end
       end
 
-      site.pages <<  ArchivesPage.new(site, site.source, "timeline", "index.html", years)
+      site.pages <<  ArchivesPage.new(site, site.source, "blog/timeline", "index.html", years)
     end
   end
 
