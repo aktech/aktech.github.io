@@ -8,9 +8,10 @@ permalink: /about/
 Life is Learning!
 </p>
 
-Hi there! thanks for stumbling upon my website. I am a Contract Software Engineer at
-[Turner & Townsend](https://www.turnerandtownsend.com/).
-Previously I worked at [Cambridge Medical Robotics](https://cmrsurgical.com/).
+Hi there! thanks for stumbling upon my website. I am a Software Engineer at Quansight, LLC.
+Previously I worked at Aire, [Turner & Townsend](https://www.turnerandtownsend.com/) &
+[Cambridge Medical Robotics](https://cmrsurgical.com/) as a Contract Software Engineer.
+
 I also worked as a Data Engineer at [The Telegraph](http://telegraph.co.uk),
 a UK based news tech company. I have also worked as a Software Engineer in
 [Zomato's](https://www.zomato.com/) Machine Learning Team.
