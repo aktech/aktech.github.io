@@ -7,7 +7,7 @@ permalink: /talks/
 List of talks/workshops/presentations delivered in reverse chronological order.
 
 ### 21. Introducing QHub: How to Get Your Own Cloud Data Science Platform on the Cheap
-14, Oct 2020 | [JupyterCon 2020](https://cfp.jupytercon.com/2020/schedule/presentation/185/introducing-qhub-how-to-get-your-own-cloud-data-science-platform-on-the-cheap/) | Online
+14, Oct 2020 | [JupyterCon 2020 Online](https://cfp.jupytercon.com/2020/schedule/presentation/185/introducing-qhub-how-to-get-your-own-cloud-data-science-platform-on-the-cheap/) | [Video](https://www.youtube.com/watch?v=XXJIjW9FVVk)
 
 ### 20. Let's Talk About GIL v3.0
 16, Feb 2018 | [Swiss Python Summit 2018](http://www.python-summit.ch/) | [Video](https://www.youtube.com/watch?v=2JCQQR-IGAg) | [Content](https://github.com/aktech/gil_talk) | Rapperswill, Switzerland
