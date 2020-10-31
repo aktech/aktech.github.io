@@ -39,7 +39,7 @@ not support Python 3.
 
 This also prevented it to use the latest version of SymPy. The SymPy
 version (~0.7.6) it was using was last updated 6 years ago. This made
-SymPy Gamma urgent need to upgradation. At the time of writing this blog,
+SymPy Gamma in urgent need for upgradation. At the time of writing this blog,
 SymPy Gamma is running on Google App Engine's latest runtime and latest
 version of SymPy.
 
