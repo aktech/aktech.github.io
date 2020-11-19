@@ -31,6 +31,13 @@ cp -r _site/blog/tags blog/
 
 Now commit and push!
 
+
+## Generating Html directory from html files
+
+```bash
+python scripts/generate_directory_index3.py folder_with_html_files
+```
+
 ## RSS Feed
 
 * Blog (All Posts) Feed: http://iamit.in/blog/feeds/atom.xml
