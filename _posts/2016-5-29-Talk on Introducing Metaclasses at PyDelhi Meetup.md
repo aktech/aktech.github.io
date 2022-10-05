@@ -48,6 +48,6 @@ If you missed my talk or attended and liked it, then you should definitely have 
 
 Here is a picture of an another talk by Peeyush Aggarwal [(@dhuadaar)](https://twitter.com/dhuadaar) on NLP.
 
-<img align="center" src="/assets/dhuadaar.jpg" width="500">
+<img align="center" src="/assets/misc/dhuadaar.jpg" width="500">
 
  See you in the next meetup :)

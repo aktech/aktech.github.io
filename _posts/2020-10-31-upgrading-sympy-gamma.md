@@ -20,14 +20,14 @@ expressions it displays the result with additional related computations.
 It is inspired from the idea of [WolframAlpha](http://www.wolframalpha.com/) which is based on the
 commercial Computer Algebra System named ["Mathematica"](https://en.wikipedia.org/wiki/Mathematica).
 
-<center><img src="/assets/wolfram-alpha-logo.svg" width="300"></center>
+<center><img src="/assets/misc/wolfram-alpha-logo.svg" width="300"></center>
 
 I have always been impressed by it ever since I first found about it.
 While playing with it during this summer, I realised that it runs on Google
 App Engine's Python 2.7 runtime. It is powered by SymPy, an open source
 computer algebra system.
 
-<center><img align="center" src="/assets/Sympy_logo.svg" width="150"></center>
+<center><img align="center" src="/assets/misc/Sympy_logo.svg" width="150"></center>
 
 ## The Problem
 

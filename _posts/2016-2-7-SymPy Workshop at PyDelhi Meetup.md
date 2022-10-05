@@ -16,6 +16,6 @@ Here is a Pic of the Seminar room at CSDS:
 
 I should also admit that, I have increased my appetite for attending conferences and meetups, these days. In the last 4 months I have attended 3 Meetups (PyDelhi Meetup) and 1 Conference (PyCon India 2015). I think this is one of the best things I have done in last few years & I would recommend anyone with a slight interest in Python either Beginner or Expert should attend [PyDelhi](http://www.pydelhi.org) [Meetups](http://www.meetup.com/pydelhi/events/). Looking forward to more such meetups and conferences.
 
-<img src="/assets/sympy-sticker.jpg">
+<img src="/assets/misc/sympy-sticker.jpg">
 
 I gave SymPy stickers to everyone who solved atleast one excercise (Since, I didn't had enough stickers).
