@@ -21,14 +21,14 @@ and [Ondrej](https://github.com/certik) for the first time, even though we have
 worked with each other for over an year. Here is a picture of UT Tower from the window
 of our room.
 
-<img align="center" src="/assets/ut-austin.jpg" width="500">
+<img align="center" src="/assets/misc/ut-austin.jpg" width="500">
 
 ### Day 1 & 2 (Tutorial)
 
 The most important day of the conference for us, as we were supposed to deliver a tutorial
 on [SymPy](http://sympy.org). Here is a picture of the Tutorial room:
 
-<img align="center" src="/assets/sympy-tutorial.jpg" width="500">
+<img align="center" src="/assets/misc/sympy-tutorial.jpg" width="500">
 
 The tutorial started at about 8:10 AM, due to slight delay because of projector
 issues, I am still waiting for the day when I will find a projector that just
@@ -51,7 +51,7 @@ aspects of the project jupyter and introduced the new project he was working on 
 [altair](https://github.com/ellisonbg/altair), a Declarative statistical visualization
 library for Python.
 
-<img align="center" src="/assets/scipy-day1.jpg" width="500">
+<img align="center" src="/assets/misc/scipy-day1.jpg" width="500">
 
 #### Day 4
 
@@ -65,7 +65,7 @@ day. He introduced the code generation abilities of SymPy. Code generation is us
 variety of domains. SymPy supports generating code for C, Fortran, Matlab/Octave, Python, Julia,
 Javascript, LLVM, Rust, and Theano. The code generation system is easily extensible to any language.
 
-<img align="center" src="/assets/aaron-codegen.jpg" width="500">
+<img align="center" src="/assets/misc/aaron-codegen.jpg" width="500">
 
 #### Day 5
 
@@ -91,5 +91,5 @@ an extremely knowledgeble guy, I had the privilege of meeting him twice, once in
 then in SciPy itself. Thanks to Enthought for putting up the energy to organize such an
 huge conference. Looking forward to next SciPy!
 
-<img align="center" src="/assets/sympy-team.jpg" width="500">
+<img align="center" src="/assets/misc/sympy-team.jpg" width="500">
 
