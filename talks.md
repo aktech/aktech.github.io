@@ -6,6 +6,9 @@ permalink: /talks/
 
 List of talks/workshops/presentations delivered in reverse chronological order.
 
+### 22. Introducing Nebari
+1, Nov 2022 | [PyData London Meetup](https://www.meetup.com/pydata-london-meetup/events/288579967/)
+
 ### 21. Introducing QHub: How to Get Your Own Cloud Data Science Platform on the Cheap
 14, Oct 2020 | [JupyterCon 2020 Online](https://cfp.jupytercon.com/2020/schedule/presentation/185/introducing-qhub-how-to-get-your-own-cloud-data-science-platform-on-the-cheap/) | [Video](https://www.youtube.com/watch?v=XXJIjW9FVVk)
 
