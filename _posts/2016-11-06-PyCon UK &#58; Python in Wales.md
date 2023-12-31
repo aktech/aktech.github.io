@@ -1,6 +1,6 @@
 ---
 layout: post
-title: PyCon UK 2016 &#58; Python in Wales!
+title: PyCon UK 2016 &#58; Python in Wales! 🐍
 tags:
   - Conference
   - Python

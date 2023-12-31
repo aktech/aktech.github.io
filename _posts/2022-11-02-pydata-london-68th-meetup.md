@@ -1,6 +1,6 @@
 ---
 layout: post
-title: PyData London 68<sup>th</sup> Meetup
+title: PyData London 68<sup>th</sup> Meetup 🐍
 tags:
 - PyData
 - London

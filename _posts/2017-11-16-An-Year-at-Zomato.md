@@ -1,6 +1,6 @@
 ---
 layout: post
-title: An Year at Zomato
+title: An Year at Zomato 💼
 tags:
   - Zomato
 permalink: /blog/zomato

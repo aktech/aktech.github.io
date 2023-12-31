@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Moved to London
+title: Moved to London 🇬🇧
 tags:
   - London
 permalink: /blog/moved-to-london

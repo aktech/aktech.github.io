@@ -1,6 +1,6 @@
 ---
 layout: post
-title: The First PyCon Pune'17
+title: The First PyCon Pune'17 🐍
 tags:
   - Conference
   - Python
