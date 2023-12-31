@@ -1,4 +1,4 @@
-name: Jekyll site CI
+name: Update Tags and Timeline
 
 on:
   push:
