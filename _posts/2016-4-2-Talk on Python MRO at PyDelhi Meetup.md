@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Talk on Python MRO at PyDelhi Meetup
+title: Talk on Python MRO at PyDelhi Meetup 🎙️
 tags:
   - Core Python
   - PyDelhi

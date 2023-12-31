@@ -1,6 +1,6 @@
 ---
 layout: post
-title: SymPy Workshop at FOSSASIA 2016, Singapore
+title: SymPy Workshop at FOSSASIA 2016, Singapore 🎙️
 tags:
   - SymPy
   - Scientific Computing

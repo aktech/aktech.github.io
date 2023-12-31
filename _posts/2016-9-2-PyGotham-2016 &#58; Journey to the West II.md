@@ -1,6 +1,6 @@
 ---
 layout: post
-title: PyGotham 2016 &#58; Journey to the West II
+title: PyGotham 2016 &#58; Journey to the West II ✈️
 tags:
   - Conference
   - Python

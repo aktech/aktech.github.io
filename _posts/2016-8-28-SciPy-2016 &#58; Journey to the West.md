@@ -1,6 +1,6 @@
 ---
 layout: post
-title: SciPy 2016 &#58; Journey to the West
+title: SciPy 2016 &#58; Journey to the West ✈️
 tags:
   - Conference
   - Scientific Computing

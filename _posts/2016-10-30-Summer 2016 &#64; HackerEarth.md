@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Summer 2016 @ HackerEarth
+title: Summer 2016 @ HackerEarth 🧑‍💼
 tags:
   - Internship
   - Python

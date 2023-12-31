@@ -1,6 +1,6 @@
 ---
 layout: post
-title: SymPy Workshop at PyDelhi Meetup
+title: SymPy Workshop at PyDelhi Meetup 🎙️
 tags:
   - SymPy
   - Scientific Computing
