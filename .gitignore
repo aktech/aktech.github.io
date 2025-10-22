@@ -2,13 +2,18 @@
 .idea/
 blog-gen/_drafts/
 
-# Jekyll
+# Hugo
+public/
+resources/_gen/
+.hugo_build.lock
+
+# Jekyll (legacy - can be removed after migration)
 _site/
 .jekyll-cache
 .jekyll-metadata
 .sass-cache
 
-# Ruby
+# Ruby (legacy - can be removed after migration)
 .bundle/
 .byebug_history
 .ruby-gemset
@@ -30,4 +35,8 @@ coverage
 gh-pages/
 pkg/
 test/dest
-tmp/*
+tmp/
+
+# htmltest
+tmp/
+.htmltest/

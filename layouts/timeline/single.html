@@ -1,0 +1,24 @@
+{{ define "main" }}
+{{ $posts := where .Site.RegularPages "Section" "blog" }}
+{{ $postsByYear := dict }}
+
+{{ range $posts }}
+  {{ $year := .Date.Format "2006" }}
+  {{ if not (isset $postsByYear $year) }}
+    {{ $postsByYear = merge $postsByYear (dict $year slice) }}
+  {{ end }}
+  {{ $yearPosts := index $postsByYear $year }}
+  {{ $postsByYear = merge $postsByYear (dict $year ($yearPosts | append .)) }}
+{{ end }}
+
+{{ range $year, $yearPosts := $postsByYear }}
+  {{ if $yearPosts }}
+  <h2>{{ $year }}</h2>
+  <ul>
+  {{ range $yearPosts }}
+    <li><a href="{{ .Permalink }}">{{ .Title | safeHTML }}</a></li>
+  {{ end }}
+  </ul>
+  {{ end }}
+{{ end }}
+{{ end }}

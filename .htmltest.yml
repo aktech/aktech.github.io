@@ -1,0 +1,6 @@
+DirectoryPath: "public"
+CheckExternal: false  # Don't check external links for now (faster)
+IgnoreDirectoryMissingTrailingSlash: true
+IgnoreURLs:
+  - "^https://aktech.github.io"  # Will be checked internally
+IgnoreInternalEmptyHash: true
