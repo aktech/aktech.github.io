@@ -32,5 +32,12 @@
     <p>
       &copy; {{ now.Year }}. Amit Kumar.
     </p>
+    {{ if .GitInfo }}
+    <p style="font-size: 0.8rem; opacity: 0.6;">
+      <a href="{{ .Site.Params.github.main }}/commit/{{ .GitInfo.Hash }}" style="color: inherit; text-decoration: none;">
+        {{ .GitInfo.AbbreviatedHash }}
+      </a>
+    </p>
+    {{ end }}
   </div>
 </div>

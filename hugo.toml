@@ -1,6 +1,7 @@
 baseURL = "https://aktech.github.io/"
 languageCode = "en-us"
 title = "Amit Kumar"
+enableGitInfo = true
 
 [frontmatter]
   date = ["date", ":filename", ":fileModTime"]
