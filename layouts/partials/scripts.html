@@ -6,3 +6,46 @@
   js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
+
+<!-- Theme toggle functionality -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const themeToggle = document.getElementById('theme-toggle');
+    const lightIcon = document.getElementById('theme-toggle-light-icon');
+    const darkIcon = document.getElementById('theme-toggle-dark-icon');
+    const html = document.documentElement;
+
+    // Get current theme
+    let currentTheme = localStorage.getItem('theme') || 'light';
+
+    // Update icon visibility based on current theme
+    function updateToggleButton(theme) {
+      if (theme === 'dark') {
+        // In dark mode, show sun icon (click to go to light)
+        lightIcon.style.display = 'inline-block';
+        darkIcon.style.display = 'none';
+      } else {
+        // In light mode, show moon icon (click to go to dark)
+        lightIcon.style.display = 'none';
+        darkIcon.style.display = 'inline-block';
+      }
+    }
+
+    // Set initial button state
+    updateToggleButton(currentTheme);
+
+    // Toggle theme on button click
+    themeToggle.addEventListener('click', function() {
+      currentTheme = currentTheme === 'light' ? 'dark' : 'light';
+
+      if (currentTheme === 'dark') {
+        html.setAttribute('data-theme', 'dark');
+      } else {
+        html.removeAttribute('data-theme');
+      }
+
+      localStorage.setItem('theme', currentTheme);
+      updateToggleButton(currentTheme);
+    });
+  });
+</script>
