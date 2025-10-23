@@ -1,0 +1,10 @@
+[
+  {"name": "Manchester, UK", "lat": 53.4808, "lng": -2.2426},
+  {"name": "Edinburgh, UK", "lat": 55.9533, "lng": -3.1883},
+  {"name": "Bengaluru, India", "lat": 12.9716, "lng": 77.5946},
+  {"name": "Delhi, India", "lat": 28.7041, "lng": 77.1025},
+  {"name": "Bihar, India", "lat": 25.0961, "lng": 85.3131},
+  {"name": "Budapest, Hungary", "lat": 47.4979, "lng": 19.0402},
+  {"name": "Eger, Hungary", "lat": 47.9027, "lng": 20.3770},
+  {"name": "Szólád, Hungary", "lat": 46.8333, "lng": 17.7667}
+]

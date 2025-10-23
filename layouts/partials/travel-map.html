@@ -1,0 +1,52 @@
+{{ with .Params.travelYear }}
+  {{ $dataKey := printf "travel_%s" . }}
+  {{ with index $.Site.Data $dataKey }}
+
+<!-- Leaflet CSS -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@2.0.0-alpha.1/dist/leaflet.css" />
+
+<div id="travel-map" style="height: 450px; margin: 2em 0; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"></div>
+<p style="font-style: italic; text-align: center; margin-top: -1em; color: #666; font-size: 0.9em;">Places I traveled in {{ $.Params.travelYear }}</p>
+
+<!-- Leaflet JS (using global version for simplicity) -->
+<script src="https://unpkg.com/leaflet@2.0.0-alpha.1/dist/leaflet-global.js"></script>
+
+<script>
+(function() {
+  const locations = JSON.parse({{ . | jsonify }});
+
+  // Initialize map
+  const map = new L.Map('travel-map', {
+    center: [45.0, 10.0],
+    zoom: 4
+  });
+
+  // Add CARTO Voyager tile layer
+  new L.TileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+    subdomains: 'abcd',
+    maxZoom: 20
+  }).addTo(map);
+
+  // Create markers from static coordinates
+  const bounds = [];
+
+  locations.forEach(location => {
+    // Create marker using Leaflet 2.0 constructor syntax
+    const marker = new L.Marker([location.lat, location.lng])
+      .bindPopup(`<b>${location.name}</b>`)
+      .addTo(map);
+
+    bounds.push([location.lat, location.lng]);
+  });
+
+  // Fit map to show all markers
+  if (bounds.length > 0) {
+    const latLngBounds = new L.LatLngBounds(bounds);
+    map.fitBounds(latLngBounds, { padding: [50, 50] });
+  }
+})();
+</script>
+
+  {{ end }}
+{{ end }}
