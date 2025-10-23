@@ -49,3 +49,49 @@
     });
   });
 </script>
+
+<!-- Code copy button functionality -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Find all code blocks with .highlight class
+    const codeBlocks = document.querySelectorAll('.highlight');
+
+    codeBlocks.forEach(function(codeBlock) {
+      // Create copy button
+      const copyButton = document.createElement('button');
+      copyButton.className = 'code-copy-button';
+      copyButton.setAttribute('aria-label', 'Copy code to clipboard');
+
+      // Create both icons wrapped in spans for proper show/hide
+      copyButton.innerHTML = `<span class="clipboard-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/></svg></span><span class="check-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>`;
+
+      // Add click handler
+      copyButton.addEventListener('click', function(e) {
+        // Prevent default and blur to remove focus outline
+        e.preventDefault();
+        copyButton.blur();
+
+        // Get the code content
+        const pre = codeBlock.querySelector('pre');
+        const code = pre.querySelector('code') || pre;
+        const textToCopy = code.textContent;
+
+        // Copy to clipboard
+        navigator.clipboard.writeText(textToCopy).then(function() {
+          // Add copied class (CSS handles icon visibility)
+          copyButton.classList.add('copied');
+
+          // Reset after 2 seconds
+          setTimeout(function() {
+            copyButton.classList.remove('copied');
+          }, 2000);
+        }).catch(function(err) {
+          console.error('Failed to copy code:', err);
+        });
+      });
+
+      // Add button to code block
+      codeBlock.appendChild(copyButton);
+    });
+  });
+</script>
