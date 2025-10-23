@@ -1,51 +1,102 @@
-# Personal Blog and webpage on Github Pages
+# Personal Blog and Webpage
 
-Webpage: http://iamit.in
-Blog: http://iamit.in/blog
+**Website:** https://iamit.in
+**Blog:** https://iamit.in/blog
 
-## Locally running the blog
+Built with [Hugo](https://gohugo.io/) and deployed via GitHub Actions to GitHub Pages.
 
-* Make sure you have jekyll and bundle installed, then run the following, commands:
+## Quick Start
 
-```bash
-bundle install
-bundle exec jekyll serve
-```
+### Prerequisites
 
-## Updating tags and timeline
+- [Hugo](https://gohugo.io/installation/) (v0.152.0 or later, extended version)
+- [htmltest](https://github.com/wjdp/htmltest) (optional, for link checking)
 
-* Copy the tags and timeline generator into blog/
+### Local Development
 
 ```bash
-cp -r blog/tags_timeline_gen/* blog/
+# Serve the site locally with live reload
+hugo server
+
+# Open http://localhost:1313 in your browser
 ```
 
-* Now make sure the jekyll serve is running (see the command above), then you'll have
-the generated tags and timeline in the `_site/blog` folder, run the following to copy
-them into `blog/` folder
+### Building
 
 ```bash
-cp -r _site/blog/timeline blog/
-cp -r _site/blog/tags blog/
+# Build the site (outputs to public/)
+./build.sh
+
+# Or manually:
+hugo --gc --minify
+cp public/index.xml public/atom.xml
 ```
 
-Now commit and push!
-
-
-## Generating Html directory from html files
+### Testing
 
 ```bash
-python scripts/generate_directory_index3.py folder_with_html_files
+# Check for broken links
+htmltest
 ```
 
-## RSS Feed
+## Writing a New Post
 
-* Blog (All Posts) Feed: http://iamit.in/blog/feeds/atom.xml
-* Blog (SymPy/GSoC Posts) Feed: http://iamit.in/blog/feeds/sympy.xml
+1. Create a new markdown file in `content/blog/`:
+   ```bash
+   # Format: YYYY-MM-DD-Title.md
+   touch "content/blog/$(date +%Y-%m-%d)-My-New-Post.md"
+   ```
 
-## Writing a Post
+2. Add front matter:
+   ```yaml
+   ---
+   date: "2024-01-15"
+   title: My New Post
+   tags:
+     - Tag1
+     - Tag2
+   url: /blog/my-new-post/
+   ---
+   ```
 
-* Change the `baseurl` in the `_config.url` from `https://iamit.in/` to `/` (Don't know of a better solution).
-* If your post includes any media, add it into the assets folder.
-* Create your blog post in the `_post` directory by copying any previous posts, notice the naming scheme, which corresponds to the publishing date.
-* Run `./deploy.sh` and push to github.
+3. Write your content in Markdown
+
+4. Preview locally:
+   ```bash
+   hugo server -D  # -D includes drafts
+   ```
+
+5. Commit and push - GitHub Actions will automatically deploy
+
+## Project Structure
+
+```
+├── content/           # Markdown content
+│   ├── blog/         # Blog posts
+│   ├── about.md      # About page
+│   ├── talks.md      # Talks page
+│   └── publications.md
+├── layouts/          # Hugo templates
+├── static/           # Static assets (images, CSS, JS)
+├── hugo.toml         # Hugo configuration
+└── .github/workflows/
+    ├── hugo.yml      # Deployment workflow
+    └── pr-check.yml  # PR validation workflow
+```
+
+## Deployment
+
+The site automatically deploys via GitHub Actions when you push to `main`:
+
+1. Build with Hugo
+2. Run htmltest for link validation
+3. Deploy to GitHub Pages
+
+## RSS Feeds
+
+- All Posts: https://iamit.in/index.xml
+- Atom Feed: https://iamit.in/atom.xml
+
+## License
+
+See [LICENSE](LICENSE)
