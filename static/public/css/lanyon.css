@@ -580,31 +580,31 @@ a.pagination-item:hover {
 
 /* Footer */
 .container.bottom {
-  font-size: 14px !important;
+  font-size: 16px !important;
 }
 
 .container.bottom * {
-  font-size: 14px !important;
+  font-size: 16px !important;
 }
 
 .container.bottom p {
-  font-size: 14px !important;
+  font-size: 16px !important;
   line-height: 1.4 !important;
 }
 
 .container.bottom p * {
-  font-size: 14px !important;
+  font-size: 16px !important;
 }
 
 .container.bottom center {
-  font-size: 14px !important;
+  font-size: 16px !important;
 }
 
 .footer-text {
-  font-size: 14px !important;
+  font-size: 16px !important;
   line-height: 1.4 !important;
 }
 
 .footer-text a {
-  font-size: 14px !important;
+  font-size: 16px !important;
 }
