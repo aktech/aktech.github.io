@@ -7,3 +7,4 @@ IgnoreURLs:
   - "^https://aktech.github.io"  # Will be checked internally
   - "^/livereload.js"  # Hugo dev server only
   - "github.com/moorepants$"  # Missing http/https prefix in content
+  - "^/pagefind/"  # Pagefind search files (generated dynamically)
