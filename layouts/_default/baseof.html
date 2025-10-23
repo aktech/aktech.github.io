@@ -29,7 +29,7 @@
           <center>All content copyright &copy; <b>A</b>mit <b>K</b>umar unless otherwise noted.
            Licensed under <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons</a>.
           Find me on <a href="https://github.com/aktech">GitHub</a>, or shoot me an <a
-          href="mailto:dtu.amit@gmail.com">email</a>.{{ $gitInfo := .GitInfo }}{{ if not $gitInfo }}{{ range first 1 (where .Site.RegularPages "GitInfo" "!=" nil) }}{{ $gitInfo = .GitInfo }}{{ end }}{{ end }}{{ if $gitInfo }} <span style="opacity: 0.6;">(<a href="{{ .Site.Params.github.main }}/commit/{{ $gitInfo.Hash }}" style="color: inherit; text-decoration: none;">{{ $gitInfo.AbbreviatedHash }}</a>)</span>{{ end }} </center> </br> </br>
+          href="mailto:dtu.amit@gmail.com">email</a>.{{ if .Site.Data.git }} <span style="opacity: 0.6;">(<a href="{{ .Site.Params.github.main }}/commit/{{ .Site.Data.git.hashFull }}" style="color: inherit; text-decoration: none;">{{ .Site.Data.git.hash }}</a>)</span>{{ end }} </center> </br> </br>
         </p>
       </div>
     </div>

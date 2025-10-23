@@ -40,3 +40,4 @@ tmp/
 # htmltest
 tmp/
 .htmltest/
+data/git.json

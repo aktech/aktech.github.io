@@ -44,6 +44,15 @@ jobs:
           HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
           HUGO_ENVIRONMENT: production
         run: |
+          mkdir -p data
+          GIT_COMMIT_HASH=$(git rev-parse --short HEAD)
+          GIT_COMMIT_HASH_FULL=$(git rev-parse HEAD)
+          cat > data/git.json <<EOF
+          {
+            "hash": "$GIT_COMMIT_HASH",
+            "hashFull": "$GIT_COMMIT_HASH_FULL"
+          }
+          EOF
           hugo \
             --gc \
             --minify \
