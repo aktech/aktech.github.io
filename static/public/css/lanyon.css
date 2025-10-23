@@ -608,3 +608,82 @@ a.pagination-item:hover {
 .footer-text a {
   font-size: 16px !important;
 }
+
+/* Social buttons - Light mode (default) */
+.social {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 60px !important;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.social-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background-color: #e8e8e8;
+  border: 2px solid #bbb;
+  border-radius: 12px;
+  color: #222;
+  text-decoration: none;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.social-button:hover {
+  background-color: #d4d4d4;
+  border-color: #999;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  color: #000;
+}
+
+.social-button svg {
+  display: block;
+  width: 20px;
+  height: 20px;
+  fill: #222;
+  transition: fill 0.25s ease;
+}
+
+.social-button:hover svg {
+  fill: #000;
+}
+
+/* Social buttons - Dark mode */
+[data-theme="dark"] .social-button {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
+
+[data-theme="dark"] .social-button:hover {
+  background-color: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+  color: #fff;
+}
+
+[data-theme="dark"] .social-button svg {
+  fill: #fff;
+}
+
+[data-theme="dark"] .social-button:hover svg {
+  fill: #fff;
+}
+
+/* Travel map caption */
+.travel-map-caption {
+  font-style: italic;
+  text-align: center;
+  margin-top: -1em;
+  color: #666;
+  font-size: 0.9em;
+}
+
+[data-theme="dark"] .travel-map-caption {
+  color: #aaa;
+}
