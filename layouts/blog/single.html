@@ -1,0 +1,51 @@
+{{ define "main" }}
+<div class="post">
+  <span class="post-date">
+    <a href="{{ .Site.BaseURL }}blog/timeline" class="timeline">
+      {{ .Date.Format "2 Jan 2006" }}
+    </a>
+  </span>
+  <h1 class="post-title">{{ .Title | safeHTML }}</h1>
+  <span class="post-tag">
+      {{ range $index, $tag := .Params.tags }}
+        {{ if eq $index (sub (len $.Params.tags) 1) }}
+          <a href="{{ $.Site.BaseURL }}tags/#{{ $tag | urlize }}">
+            {{ $tag }}
+          </a>
+        {{ else }}
+          <a href="{{ $.Site.BaseURL }}tags/#{{ $tag | urlize }}">
+            {{ $tag }}
+          </a>
+          &middot;
+        {{ end }}
+      {{ end }}
+  </span>
+
+  <hr>
+
+  {{ .Content }}
+</div>
+
+{{ partial "social.html" . }}
+
+<div class="related">
+  <h2>Related Posts</h2>
+  <ul class="related-posts">
+    {{ $related := first 3 (where .Site.RegularPages "Section" "blog") }}
+    {{ range $related }}
+      <li>
+        <h3>
+          <a href="{{ .Permalink }}">
+            {{ .Title | safeHTML }}
+            <small>{{ .Date.Format "2 Jan 2006" }}</small>
+          </a>
+        </h3>
+      </li>
+    {{ end }}
+  </ul>
+</div>
+
+{{ partial "disqus.html" . }}
+
+{{ partial "scripts.html" . }}
+{{ end }}

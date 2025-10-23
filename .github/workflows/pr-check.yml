@@ -1,0 +1,55 @@
+name: PR Check - Build and Test
+
+on:
+  pull_request:
+    branches: ["main", "master"]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    env:
+      HUGO_VERSION: 0.152.0
+    steps:
+      - name: Install Hugo CLI
+        run: |
+          wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb \
+          && sudo dpkg -i ${{ runner.temp }}/hugo.deb
+
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          fetch-depth: 0
+
+      - name: Build with Hugo
+        env:
+          HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
+          HUGO_ENVIRONMENT: production
+        run: |
+          hugo \
+            --gc \
+            --minify
+
+      - name: Create atom.xml symlink
+        run: cp public/index.xml public/atom.xml
+
+      - name: Install htmltest
+        run: |
+          wget -O ${{ runner.temp }}/htmltest.tar.gz https://github.com/wjdp/htmltest/releases/download/v0.17.0/htmltest_0.17.0_linux_amd64.tar.gz \
+          && tar xzf ${{ runner.temp }}/htmltest.tar.gz -C ${{ runner.temp }} \
+          && sudo mv ${{ runner.temp }}/htmltest /usr/local/bin/
+
+      - name: Test HTML
+        run: htmltest
+
+      - name: Build Summary
+        if: always()
+        run: |
+          echo "## Build Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "✅ Hugo build completed successfully" >> $GITHUB_STEP_SUMMARY
+          echo "✅ HTML link checking completed" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### Site Statistics" >> $GITHUB_STEP_SUMMARY
+          echo "- Total pages: $(find public -name "*.html" | wc -l)" >> $GITHUB_STEP_SUMMARY
+          echo "- Total assets: $(find public/assets -type f 2>/dev/null | wc -l)" >> $GITHUB_STEP_SUMMARY

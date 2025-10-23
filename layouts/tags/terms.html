@@ -1,0 +1,19 @@
+{{ define "main" }}
+{{ range $key, $value := .Site.Taxonomies.tags }}
+  {{ $firstPage := index (first 1 $value.Pages) 0 }}
+  {{ $tagName := $key }}
+  {{ range $firstPage.Params.tags }}
+    {{ $normalized := . | lower | replaceRE "[^a-z0-9]+" "" }}
+    {{ $keyNormalized := $key | lower | replaceRE "[^a-z0-9]+" "" }}
+    {{ if eq $normalized $keyNormalized }}
+      {{ $tagName = . }}
+    {{ end }}
+  {{ end }}
+  <h3 id="{{ $key }}" class="tag-title">- {{ $tagName }}</h3>
+  <ul>
+  {{ range $value.Pages }}
+    <li><a href="{{ .Permalink }}">{{ .Title | safeHTML }}</a></li>
+  {{ end }}
+  </ul>
+{{ end }}
+{{ end }}

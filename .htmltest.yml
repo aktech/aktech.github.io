@@ -1,0 +1,9 @@
+DirectoryPath: "public"
+CheckExternal: false  # Don't check external links (too slow and unreliable)
+IgnoreDirectoryMissingTrailingSlash: true
+IgnoreInternalEmptyHash: true
+IgnoreAltMissing: true  # Ignore missing alt tags (accessibility issue, not broken link)
+IgnoreURLs:
+  - "^https://aktech.github.io"  # Will be checked internally
+  - "^/livereload.js"  # Hugo dev server only
+  - "github.com/moorepants$"  # Missing http/https prefix in content
