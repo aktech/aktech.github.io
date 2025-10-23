@@ -35,6 +35,46 @@
  * Update the foundational and global aspects of the page.
  */
 
+:root {
+  /* Light theme colors (default) */
+  --bg-color: #fff;
+  --text-color: #515151;
+  --text-strong: #303030;
+  --heading-color: #313131;
+  --link-color: #268bd2;
+  --code-color: #bf616a;
+  --code-bg: #f9f9f9;
+  --border-color: #eee;
+  --border-color-alt: #e5e5e5;
+  --masthead-color: #505050;
+  --masthead-small: #c0c0c0;
+  --meta-color: #9a9a9a;
+  --quote-color: #7a7a7a;
+  --abbr-color: #555;
+  --pagination-hover: #f5f5f5;
+  --message-color: #717171;
+}
+
+[data-theme="dark"] {
+  /* Dark theme colors - warm cream palette for reduced eye strain */
+  --bg-color: #1e1e1e;
+  --text-color: #e4ddd4;
+  --text-strong: #f0e9df;
+  --heading-color: #f0e9df;
+  --link-color: #8ab4f8;
+  --code-color: #ffb084;
+  --code-bg: #2a2a2a;
+  --border-color: #404040;
+  --border-color-alt: #404040;
+  --masthead-color: #e4ddd4;
+  --masthead-small: #b8afa6;
+  --meta-color: #b8afa6;
+  --quote-color: #c4bbb2;
+  --abbr-color: #b8afa6;
+  --pagination-hover: #2a2a2a;
+  --message-color: #b8afa6;
+}
+
 * {
   -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
@@ -59,15 +99,16 @@ html {
 }
 
 body {
-  color: #515151;
-  background-color: #fff;
+  color: var(--text-color);
+  background-color: var(--bg-color);
   -webkit-text-size-adjust: 100%;
       -ms-text-size-adjust: 100%;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* No `:visited` state is required by default (browsers will use `a`) */
 a {
-  color: #268bd2;
+  color: var(--link-color);
   text-decoration: none;
 }
 /* `:focus` is linked to `:hover` for basic accessibility */
@@ -81,7 +122,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: .5rem;
   font-weight: bold;
   line-height: 1.25;
-  color: #313131;
+  color: var(--heading-color);
   text-rendering: optimizeLegibility;
 }
 h1 {
@@ -107,7 +148,7 @@ p {
 }
 
 strong {
-  color: #303030;
+  color: var(--text-strong);
 }
 
 
@@ -129,19 +170,19 @@ hr {
   position: relative;
   margin: 1.5rem 0;
   border: 0;
-  border-top: 1px solid #eee;
-  border-bottom: 1px solid #fff;
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--bg-color);
 }
 
 abbr {
   font-size: 85%;
   font-weight: bold;
-  color: #555;
+  color: var(--abbr-color);
   text-transform: uppercase;
 }
 abbr[title] {
   cursor: help;
-  border-bottom: 1px dotted #e5e5e5;
+  border-bottom: 1px dotted var(--border-color-alt);
 }
 
 /* Code */
@@ -152,8 +193,8 @@ pre {
 code {
   padding: .25em .5em;
   font-size: 85%;
-  color: #bf616a;
-  background-color: #f9f9f9;
+  color: var(--code-color);
+  background-color: var(--code-bg);
   border-radius: 3px;
 }
 pre {
@@ -167,7 +208,7 @@ pre {
   white-space: pre-wrap;
   word-break: break-all;
   word-wrap: break-word;
-  background-color: #f9f9f9;
+  background-color: var(--code-bg);
 }
 pre code {
   padding: 0;
@@ -211,8 +252,8 @@ pre code {
 blockquote {
   padding: .5rem 1rem;
   margin: .8rem 0;
-  color: #7a7a7a;
-  border-left: .25rem solid #e5e5e5;
+  color: var(--quote-color);
+  border-left: .25rem solid var(--border-color-alt);
 }
 blockquote p:last-child {
   margin-bottom: 0;
@@ -235,17 +276,17 @@ img {
 table {
   margin-bottom: 1rem;
   width: 100%;
-  border: 1px solid #e5e5e5;
+  border: 1px solid var(--border-color-alt);
   border-collapse: collapse;
 }
 td,
 th {
   padding: .25rem .5rem;
-  border: 1px solid #e5e5e5;
+  border: 1px solid var(--border-color-alt);
 }
 tbody tr:nth-child(odd) td,
 tbody tr:nth-child(odd) th {
-  background-color: #f9f9f9;
+  background-color: var(--code-bg);
 }
 
 
@@ -271,8 +312,8 @@ tbody tr:nth-child(odd) th {
 .message {
   margin-bottom: 1rem;
   padding: 1rem;
-  color: #717171;
-  background-color: #f9f9f9;
+  color: var(--message-color);
+  background-color: var(--code-bg);
 }
 
 
@@ -305,15 +346,15 @@ tbody tr:nth-child(odd) th {
 .masthead-title {
   margin-top: 0;
   margin-bottom: 0;
-  color: #505050;
+  color: var(--masthead-color);
 }
 .masthead-title a {
-  color: #505050;
+  color: var(--masthead-color);
 }
 .masthead-title small {
   font-size: 75%;
   font-weight: 400;
-  color: #c0c0c0;
+  color: var(--masthead-small);
   letter-spacing: 0;
 }
 
@@ -334,7 +375,7 @@ tbody tr:nth-child(odd) th {
 .page-title,
 .post-title,
 .post-title a {
-  color: #303030;
+  color: var(--text-strong);
 }
 .page-title,
 .post-title {
@@ -346,14 +387,14 @@ tbody tr:nth-child(odd) th {
   display: block;
   margin-top: -.5rem;
   margin-bottom: 1rem;
-  color: #9a9a9a;
+  color: var(--meta-color);
 }
 
 /* Related posts */
 .related {
   padding-top: 2rem;
   padding-bottom: 2rem;
-  border-top: 1px solid #eee;
+  border-top: 1px solid var(--border-color);
 }
 .related-posts {
   padding-left: 0;
@@ -364,10 +405,10 @@ tbody tr:nth-child(odd) th {
 }
 .related-posts li small {
   font-size: 75%;
-  color: #999;
+  color: var(--meta-color);
 }
 .related-posts li a:hover {
-  color: #268bd2;
+  color: var(--link-color);
   text-decoration: none;
 }
 .related-posts li a:hover small {
@@ -395,7 +436,7 @@ tbody tr:nth-child(odd) th {
 .pagination-item {
   display: block;
   padding: 1rem;
-  border: 1px solid #eee;
+  border: 1px solid var(--border-color);
 }
 .pagination-item:first-child {
   margin-bottom: -1px;
@@ -403,7 +444,7 @@ tbody tr:nth-child(odd) th {
 
 /* Only provide a hover state for linked pagination items */
 a.pagination-item:hover {
-  background-color: #f5f5f5;
+  background-color: var(--pagination-hover);
 }
 
 @media (min-width: 30em) {
@@ -423,5 +464,63 @@ a.pagination-item:hover {
     margin-left: -1px;
     border-top-right-radius:    4px;
     border-bottom-right-radius: 4px;
+  }
+}
+
+
+/*
+ * Theme Toggle Button
+ */
+
+#theme-toggle {
+  position: fixed;
+  top: 0.75rem;
+  right: 1.5rem;
+  z-index: 1001;
+  padding: 0.4rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-color);
+  transition: all 0.2s ease;
+  line-height: 1;
+  opacity: 0.7;
+}
+
+#theme-toggle:hover {
+  opacity: 1;
+  transform: scale(1.15);
+}
+
+#theme-toggle:active {
+  transform: scale(0.9);
+}
+
+#theme-toggle svg {
+  display: block;
+  width: 22px;
+  height: 22px;
+}
+
+@media (max-width: 48rem) {
+  #theme-toggle {
+    top: 0.65rem;
+    right: 1rem;
+    padding: 0.35rem;
+  }
+
+  #theme-toggle svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+/* Adjust for when sidebar toggle is visible */
+@media (min-width: 30.1rem) {
+  #theme-toggle {
+    top: 0.85rem;
   }
 }

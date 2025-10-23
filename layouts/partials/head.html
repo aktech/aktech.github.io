@@ -40,6 +40,7 @@
   <link rel="stylesheet" href="{{ .Site.BaseURL }}/public/css/poole.css">
   <link rel="stylesheet" href="{{ .Site.BaseURL }}/public/css/syntax.css">
   <link rel="stylesheet" href="{{ .Site.BaseURL }}/public/css/lanyon.css">
+  <link rel="stylesheet" href="{{ .Site.BaseURL }}/public/theme/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Newsreader:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap">
 
   <!-- Icons -->
@@ -47,9 +48,20 @@
   <link rel="shortcut icon" href="{{ .Site.BaseURL }}public/favicon.ico">
 
   <!-- RSS -->
-  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml">
 
   <!-- mixpanel -->
   {{ partial "mixpanel.html" . }}
+
+  <!-- Dark mode theme switcher -->
+  <script>
+    // Load theme before page renders to prevent flash
+    (function() {
+      const theme = localStorage.getItem('theme') || 'light';
+      if (theme === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
 
   </head>
