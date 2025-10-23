@@ -20,6 +20,9 @@ hugo --gc --minify
 echo "Creating atom.xml from index.xml..."
 cp public/index.xml public/atom.xml
 
+echo "Building Pagefind search index..."
+npx -y pagefind --site public
+
 echo "✓ Build complete!"
 echo ""
 echo "To check for broken links, run: htmltest"

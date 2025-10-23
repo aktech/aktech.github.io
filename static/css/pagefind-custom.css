@@ -1,0 +1,85 @@
+/* Custom Pagefind styling to match blog fonts */
+
+/* Override Pagefind UI fonts */
+.pagefind-ui,
+.pagefind-ui__result,
+.pagefind-ui__search-input {
+  font-family: "Crimson Pro", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+}
+
+/* Search input styling */
+.pagefind-ui__search-input {
+  font-size: 20px !important;
+  padding: 14px 14px 14px 50px !important;
+}
+
+/* Result title styling - Crimson Pro */
+.pagefind-ui__result-title {
+  font-family: "Crimson Pro", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+  font-size: 23px !important;
+  font-weight: 600 !important;
+  line-height: 1.3 !important;
+  margin-bottom: 8px !important;
+}
+
+/* Result excerpt text - Lora */
+.pagefind-ui__result-excerpt {
+  font-family: "Lora", Georgia, serif !important;
+  font-size: 17px !important;
+  line-height: 1.7 !important;
+}
+
+/* Result link text */
+.pagefind-ui__result-link {
+  font-family: "Crimson Pro", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+  font-size: 23px !important;
+}
+
+/* Message text */
+.pagefind-ui__message {
+  font-family: "Crimson Pro", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+  font-size: 19px !important;
+}
+
+/* Clear button styling */
+.pagefind-ui__search-clear {
+  font-size: 18px !important;
+  font-family: "Crimson Pro", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+}
+
+/* Load more button styling */
+.pagefind-ui__button {
+  font-size: 18px !important;
+  font-family: "Crimson Pro", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+  padding: 16px 24px !important;
+  line-height: 1.5 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* Increase result container padding for better spacing */
+.pagefind-ui__result {
+  padding: 16px 20px !important;
+  margin-bottom: 20px !important;
+}
+
+/* Dark mode support */
+[data-theme="dark"] .pagefind-ui__search-input {
+  background-color: #202020;
+  color: #e8e8e8;
+  border-color: #404040;
+}
+
+[data-theme="dark"] .pagefind-ui__result {
+  background-color: #202020;
+  border-color: #404040;
+}
+
+[data-theme="dark"] .pagefind-ui__result-title {
+  color: #e8e8e8;
+}
+
+[data-theme="dark"] .pagefind-ui__result-excerpt {
+  color: #b8b8b8;
+}
