@@ -1,0 +1,9 @@
+[
+  {"name": "Athens, Greece", "lat": 37.9838, "lng": 23.7275},
+  {"name": "Lugo, Spain", "lat": 43.0097, "lng": -7.5567},
+  {"name": "Paris, France", "lat": 48.8566, "lng": 2.3522},
+  {"name": "Dublin, Ireland", "lat": 53.3498, "lng": -6.2603},
+  {"name": "Berlin, Germany", "lat": 52.5200, "lng": 13.4050},
+  {"name": "Delhi, India", "lat": 28.7041, "lng": 77.1025},
+  {"name": "Tromso, Norway", "lat": 69.6492, "lng": 18.9553}
+]
