@@ -465,6 +465,7 @@ tbody tr:nth-child(odd) th {
 .page-title,
 .post-title {
   margin-top: 0;
+  font-weight: 400;
 }
 
 /* Meta data line below post title */
