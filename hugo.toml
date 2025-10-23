@@ -33,6 +33,11 @@ enableGitInfo = true
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
+  [markup.highlight]
+    noClasses = false
+    lineNos = false
+    lineNumbersInTable = false
+    style = "catppuccin-latte"
 
 [taxonomies]
   tag = "tags"
