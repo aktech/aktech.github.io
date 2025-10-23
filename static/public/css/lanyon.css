@@ -41,12 +41,13 @@ body {
 }
 
 html {
-  font-family: "PT Serif", Georgia, "Times New Roman", serif;
+  font-family: "Lora", "Crimson Pro", Georgia, serif;
+  font-weight: 500;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "PT Sans", Helvetica, Arial, sans-serif;
-  font-weight: 400;
+  font-family: "Crimson Pro", Helvetica, Arial, sans-serif;
+  font-weight: 500;
   color: #313131;
   letter-spacing: -.025rem;
 }
@@ -103,6 +104,9 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 0;
   margin-bottom: 0;
   color: #505050;
+  font-family: "Lora", Georgia, serif;
+  font-weight: 600;
+  font-size: 1.25rem;
 }
 .masthead-title a {
   color: #505050;
@@ -148,7 +152,7 @@ h1, h2, h3, h4, h5, h6 {
   width: 14rem;
   visibility: hidden;
   overflow-y: auto;
-  font-family: "PT Sans", Helvetica, Arial, sans-serif;
+  font-family: "Crimson Pro", Helvetica, Arial, sans-serif;
   font-size: .875rem; /* 15px */
   color: rgba(255,255,255,.6);
   background-color: #202020;
@@ -299,6 +303,25 @@ a.sidebar-nav-item:focus {
 .page,
 .post {
   margin-bottom: 4em;
+  font-family: "Lora", Georgia, serif;
+}
+
+.page h1, .post h1 {
+  font-size: 2.25rem;
+}
+
+.page h2, .post h2 {
+  font-size: 1.75rem;
+}
+
+.page h3, .post h3 {
+  font-size: 1.4rem;
+}
+
+.page h4, .post h4,
+.page h5, .post h5,
+.page h6, .post h6 {
+  font-size: 1.15rem;
 }
 
 /* added extra */
@@ -379,7 +402,7 @@ a.sidebar-nav-item:focus {
   overflow: hidden; /* clearfix */
   margin-left: -1rem;
   margin-right: -1rem;
-  font-family: "PT Sans", Helvetica, Arial, sans-serif;
+  font-family: "Crimson Pro", Helvetica, Arial, sans-serif;
   color: #ccc;
   text-align: center;
 }
@@ -546,4 +569,35 @@ a.pagination-item:hover {
 .theme-base-0f .sidebar-toggle,
 .theme-base-0f .related-posts li a:hover {
   color: #8f5536;
+}
+
+/* Footer */
+.container.bottom {
+  font-size: 14px !important;
+}
+
+.container.bottom * {
+  font-size: 14px !important;
+}
+
+.container.bottom p {
+  font-size: 14px !important;
+  line-height: 1.4 !important;
+}
+
+.container.bottom p * {
+  font-size: 14px !important;
+}
+
+.container.bottom center {
+  font-size: 14px !important;
+}
+
+.footer-text {
+  font-size: 14px !important;
+  line-height: 1.4 !important;
+}
+
+.footer-text a {
+  font-size: 14px !important;
 }
