@@ -24,7 +24,7 @@ As the name suggests its one of the largest tech conferences in Asia and my expe
 ## The SymPy/PyDy Workshop
 
 Community is more important than Code @ Singapore Science Center Level 3, Pauling Lab
-<img align="center" src="/assets/sympy-zen.jpg" width = "400">
+<img align="center" src="/assets/misc/sympy-zen.jpg" width = "400">
 
 The SymPy and PyDy workshop was scheduled on 20th March at 1:00 - 2:00 PM (PyDy) and 2:00 - 4:00 PM (SymPy). [Jason](http://www.moorepants.info/) suggested to conduct the SymPy workshop first since PyDy uses SymPy and it would be easier for people to learn SymPy first and then PyDy, but since the [schedule](http://2016.fossasia.org/schedule/) was already published, It was not possible to reschedule the workshops, so we had to continue with PyDy first.
 [Sahil](https://github.com/sahilshekhawat) started the PyDy workshop at 1:00 PM, though we had to spend a lot of time installing Anaconda to everyone's systems by creating a local server and distributing flash drives as most of the people didn't had Anaconda or Canopy installed. This has been the problem for almost all the workshops I have conducted in the past. It seems I need to invent an efficient way to do this faster in future as we spent 30-40 odd minutes in installation.
@@ -50,4 +50,4 @@ I would not have been able to attend the conference without the generous financi
 ### Good Bye!
 
 Good bye! everyone, see you on my next blog post, meanwhile you can have a look at a Picture of me doing back flip at Sentosa ;)
-<img align="center" src="/assets/amit-backflip.gif">
+<img align="center" src="/assets/misc/amit-backflip.gif">
