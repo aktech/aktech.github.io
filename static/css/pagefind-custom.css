@@ -10,6 +10,7 @@
 /* Search input styling */
 .pagefind-ui__search-input {
   font-size: 20px !important;
+  font-weight: 300 !important;
   padding: 14px 14px 14px 50px !important;
 }
 
@@ -26,6 +27,7 @@
 .pagefind-ui__result-excerpt {
   font-family: "Lora", Georgia, serif !important;
   font-size: 17px !important;
+  font-weight: 500 !important;
   line-height: 1.7 !important;
 }
 
@@ -39,6 +41,7 @@
 .pagefind-ui__message {
   font-family: "Crimson Pro", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
   font-size: 19px !important;
+  font-weight: 300 !important;
 }
 
 /* Clear button styling */
@@ -127,6 +130,18 @@
   background-color: transparent !important;
   color: #e8e8e8 !important;
   border: none !important;
+}
+
+/* Magnifying glass icon size */
+.pagefind-ui__search-input::before {
+  width: 24px !important;
+  height: 24px !important;
+  font-size: 24px !important;
+}
+
+.pagefind-ui svg {
+  width: 24px !important;
+  height: 24px !important;
 }
 
 /* Search icon (magnifying glass) in dark mode */
