@@ -56,23 +56,23 @@
 }
 
 [data-theme="dark"] {
-  /* Dark theme colors */
-  --bg-color: #1a1a1a;
-  --text-color: #d4d4d4;
-  --text-strong: #e8e8e8;
-  --heading-color: #e8e8e8;
-  --link-color: #58a6ff;
-  --code-color: #ff7b72;
-  --code-bg: #2d2d2d;
-  --border-color: #3d3d3d;
-  --border-color-alt: #3d3d3d;
-  --masthead-color: #d4d4d4;
-  --masthead-small: #8b949e;
-  --meta-color: #8b949e;
-  --quote-color: #8b949e;
-  --abbr-color: #8b949e;
-  --pagination-hover: #2d2d2d;
-  --message-color: #8b949e;
+  /* Dark theme colors - warm cream palette for reduced eye strain */
+  --bg-color: #1e1e1e;
+  --text-color: #e4ddd4;
+  --text-strong: #f0e9df;
+  --heading-color: #f0e9df;
+  --link-color: #8ab4f8;
+  --code-color: #ffb084;
+  --code-bg: #2a2a2a;
+  --border-color: #404040;
+  --border-color-alt: #404040;
+  --masthead-color: #e4ddd4;
+  --masthead-small: #b8afa6;
+  --meta-color: #b8afa6;
+  --quote-color: #c4bbb2;
+  --abbr-color: #b8afa6;
+  --pagination-hover: #2a2a2a;
+  --message-color: #b8afa6;
 }
 
 * {

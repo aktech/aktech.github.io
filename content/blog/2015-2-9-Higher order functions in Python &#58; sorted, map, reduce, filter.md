@@ -57,6 +57,7 @@ Out[0]: [0, 1, -2]
 Note: abs is the absolute value function. i.e. `abs(-3) = 3`
 
 ## map
+
 *Takes an input iterable of values and return a list with different values. Same order, same length, but mapped via a function.*
 
 `map(function, iterable)`
@@ -93,6 +94,7 @@ filter(None, ['a','', 'b' ])
 ## reduce
 
 reduce takes an iterable of input data and consumes it to come up with a single value.
+
 
 *The function we have to write is different too - the function will take two values and typically reduce will consume the first two values from the iterable then consume one value at a time from the list using the return value from the previous call.*
 

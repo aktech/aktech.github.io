@@ -17,12 +17,14 @@ The simplest data structure which can be used to store such results is an Array.
 
 ---
 
+
 *How to store a two (or more) digit number  in an Array (one digit per index) ?*
 
 We need to store the input ‘n’ (1-100) into an array to find it’s Factorial To store a Number in an array, we can grab the digits from least significant position  (For Example 1456) one by one and put it into the array.                                                                                                                                                                                                                    For example:  To put 123 into an array (let say a[50]), we will grab the last digits one by one, final array would be given as  a[] = {3,2,1}  i.e. a[0]=3, a[1]=2, a[2]=1 & so on…
 
 **LOGIC used for this**: Let n = 123 then  1). let rem = n%10 (this means remainder when n is divided by 10)  2. a[index] = rem     3. n = n/10  (this removes the last digit from n, Now we are ready to grab the second last digit & so on)  Repeating this step iteratively, we can save n into an array.
  ---
+
 *How To Find the Factorial of the Number stored in array?*
 
 After we have put the input number (1-100) into an array, we have to now find its Factorial. To do that we have to multiply the number ‘n’ with (n-1), (n-2) … & so on …3.2.1 . Now we need to find an Algorithm for multiplying an Integer with a number stored into an array & we can use that algorithm for all multiplications.

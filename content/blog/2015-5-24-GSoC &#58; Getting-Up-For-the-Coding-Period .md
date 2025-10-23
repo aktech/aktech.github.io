@@ -21,6 +21,7 @@ The main functions, I would be implementing are:
 
 
 * `eq_to_matrix` :
+
 *method to convert system of Equations to Matrix Form.*
 
 * `linsolve`: *It's the General Linear System solver.*
