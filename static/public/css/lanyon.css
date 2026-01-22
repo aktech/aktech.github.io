@@ -41,12 +41,12 @@ body {
 }
 
 html {
-  font-family: "Lora", "Crimson Pro", Georgia, serif;
+  font-family: var(--font-content);
   font-weight: 500;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Crimson Pro", Helvetica, Arial, sans-serif;
+  font-family: var(--font-primary);
   font-weight: 500;
   color: var(--heading-color);
   letter-spacing: -.025rem;
@@ -104,7 +104,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 0;
   margin-bottom: 0;
   color: var(--masthead-color);
-  font-family: "Lora", Georgia, serif;
+  font-family: var(--font-content);
   font-weight: 600;
   font-size: 1.25rem;
 }
@@ -152,7 +152,7 @@ h1, h2, h3, h4, h5, h6 {
   width: 14rem;
   visibility: hidden;
   overflow-y: auto;
-  font-family: "Crimson Pro", Helvetica, Arial, sans-serif;
+  font-family: var(--font-primary);
   font-size: .875rem; /* 15px */
   color: rgba(255,255,255,.6);
   background-color: #202020;
@@ -303,7 +303,7 @@ a.sidebar-nav-item:focus {
 .page,
 .post {
   margin-bottom: 4em;
-  font-family: "Lora", Georgia, serif;
+  font-family: var(--font-content);
 }
 
 /* Reduce blog post content size */
@@ -409,7 +409,7 @@ a.sidebar-nav-item:focus {
   overflow: hidden; /* clearfix */
   margin-left: -1rem;
   margin-right: -1rem;
-  font-family: "Crimson Pro", Helvetica, Arial, sans-serif;
+  font-family: var(--font-primary);
   color: #ccc;
   text-align: center;
 }

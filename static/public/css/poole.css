@@ -36,6 +36,11 @@
  */
 
 :root {
+  /* Font stacks - change these to update fonts site-wide */
+  --font-primary: "Crimson Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-content: "Lora", Georgia, serif;
+  --font-code: "Fira Code", Menlo, Monaco, "Courier New", monospace;
+
   /* Light theme colors (default) */
   --bg-color: #fff;
   --text-color: #515151;
@@ -88,7 +93,7 @@ body {
 }
 
 html {
-  font-family: "Crimson Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: var(--font-primary);
   font-size: 16px;
   line-height: 1.5;
 }
@@ -188,7 +193,7 @@ abbr[title] {
 /* Code */
 code,
 pre {
-  font-family: "Fira Code", Menlo, Monaco, "Courier New", monospace;
+  font-family: var(--font-code);
 }
 code {
   padding: .25em .5em;
@@ -313,7 +318,7 @@ pre code {
 
 /* Gist via GitHub Pages */
 .gist .gist-file {
-  font-family: "Fira Code", Menlo, Monaco, "Courier New", monospace !important;
+  font-family: var(--font-code) !important;
 }
 .gist .markdown-body {
   padding: 15px;
@@ -513,7 +518,7 @@ tbody tr:nth-child(odd) th {
   overflow: hidden; /* clearfix */
   margin-left: -1rem;
   margin-right: -1rem;
-  font-family: "Crimson Pro", Helvetica, Arial, sans-serif;
+  font-family: var(--font-primary);
   color: #ccc;
   text-align: center;
 }
