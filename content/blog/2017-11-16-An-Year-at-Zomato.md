@@ -20,7 +20,7 @@ the tech team ([Suhaib](https://suheb.in/) and [Anu](https://anumittal.in/)). I 
 
 ### Team
 
-It was a team of 4 including [Shubham Chaudhary](http://shubham.chaudhary.xyz/), [Amit Kushwaha](https://amitkushwaha.co.in/) and [Paras Arora](https://medium.com/@parasarora1310) (our manager).
+It was a team of 4 including [Shubham Chaudhary](http://shubham.chaudhary.xyz/), [Amit Kushwaha](https://amitkushwaha.co.in/) and [Paras Arora](https://medium.com/@aroraparas) (our manager).
 In July'17 [Anirudh](https://github.com/anirudhgupta22) was the latest addition to the team. I must say that was probably the best team I could have worked with. If I am asked one person from whom I learnt the most, It would probably be impossible to answer, as all of them contributed
 into different aspects. Paras was one of the finest and smartest manager that I have
 worked with. Probably I got to understand the job of a Product Manager only after working with
