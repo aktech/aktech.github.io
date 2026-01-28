@@ -1,0 +1,17 @@
+[
+  {"name": "London, UK", "lat": 51.5074, "lng": -0.1278},
+  {"name": "Edinburgh, UK", "lat": 55.9533, "lng": -3.1883},
+  {"name": "Cambridge, UK", "lat": 52.2053, "lng": 0.1218},
+  {"name": "Oxford, UK", "lat": 51.7520, "lng": -1.2577},
+  {"name": "Newcastle upon Tyne, UK", "lat": 54.9783, "lng": -1.6178},
+  {"name": "York, UK", "lat": 53.9600, "lng": -1.0873},
+  {"name": "Northampton, UK", "lat": 52.2405, "lng": -0.9027},
+  {"name": "Delhi, India", "lat": 28.7041, "lng": 77.1025},
+  {"name": "Gurgaon, India", "lat": 28.4595, "lng": 77.0266},
+  {"name": "Bengaluru, India", "lat": 12.9716, "lng": 77.5946},
+  {"name": "Kozhikode, India", "lat": 11.2588, "lng": 75.7804},
+  {"name": "Paris, France", "lat": 48.8566, "lng": 2.3522},
+  {"name": "Versailles, France", "lat": 48.8014, "lng": 2.1301},
+  {"name": "Amsterdam, Netherlands", "lat": 52.3676, "lng": 4.9041},
+  {"name": "Helsinki, Finland", "lat": 60.1699, "lng": 24.9384}
+]
