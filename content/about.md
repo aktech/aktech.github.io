@@ -8,7 +8,7 @@ url: /about/
 Life is Learning!
 </p>
 
-Hi there! thanks for stumbling upon my website. I am a Software Engineer at Quansight, LLC.
+Hi there! thanks for stumbling upon my website. I am a Staff Software Engineer at [OpenTeams](https://www.openteams.com/) (previously [Quansight](https://www.quansight.com/), acquired by OpenTeams in 2025).
 Previously I worked at Aire, [Turner & Townsend](https://www.turnerandtownsend.com/) &
 [Cambridge Medical Robotics](https://cmrsurgical.com/) as a Contract Software Engineer.
 

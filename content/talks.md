@@ -6,72 +6,149 @@ url: /talks/
 
 List of talks/workshops/presentations delivered in reverse chronological order.
 
-### 22. Introducing Nebari
-1, Nov 2022 | [PyData London Meetup](https://www.meetup.com/pydata-london-meetup/events/288579967/)
+<div class="talks-timeline">
 
-### 21. Introducing QHub: How to Get Your Own Cloud Data Science Platform on the Cheap
-14, Oct 2020 | [JupyterCon 2020 Online](https://cfp.jupytercon.com/2020/schedule/presentation/185/introducing-qhub-how-to-get-your-own-cloud-data-science-platform-on-the-cheap/) | [Video](https://www.youtube.com/watch?v=XXJIjW9FVVk)
+<div class="timeline-year"><h2>2022</h2></div>
 
-### 20. Let's Talk About GIL v3.0
-16, Feb 2018 | [Swiss Python Summit 2018](http://www.python-summit.ch/) | [Video](https://www.youtube.com/watch?v=2JCQQR-IGAg) | [Content](https://github.com/aktech/gil_talk) | Rapperswill, Switzerland
+<div class="timeline-item">
+  <div class="timeline-item-title">Introducing Nebari</div>
+  <div class="timeline-item-meta">1 Nov 2022 · <a href="https://www.meetup.com/pydata-london-meetup/events/288579967/">PyData London Meetup</a></div>
+</div>
 
-### 19. Data Pipelining with Luigi
-7, Nov 2017 | [PyData London Meetup](https://www.meetup.com/PyData-London-Meetup/events/244401841/) | [Content](https://github.com/aktech/luigi-talk) | AHL, London
+<div class="timeline-year"><h2>2020</h2></div>
 
-### 18. Python in Maths Class (Lightning Talk)
-13, Jun 2017 | [PyParis](http://pyparis.org/) | Paris, France
+<div class="timeline-item">
+  <div class="timeline-item-title">Introducing QHub: How to Get Your Own Cloud Data Science Platform on the Cheap</div>
+  <div class="timeline-item-meta">14 Oct 2020 · <a href="https://cfp.jupytercon.com/2020/schedule/presentation/185/introducing-qhub-how-to-get-your-own-cloud-data-science-platform-on-the-cheap/">JupyterCon 2020 Online</a></div>
+  <div class="timeline-item-links"><a href="https://www.youtube.com/watch?v=XXJIjW9FVVk">Video</a></div>
+</div>
 
-### 17. Let's Talk about GIL v2.0
-9, Jun 2017 | [PyCon CZ](https://in.pycon.org/2016/) | [Video](https://www.youtube.com/watch?v=motIB96FI48&feature=youtu.be&t=5h36m18s) | Prague, Czech Republic
+<div class="timeline-year"><h2>2018</h2></div>
 
-### 16. Let's Talk about GIL v1.0
-25 Sep, 2016 | [PyDelhi Conference](https://in.pycon.org/2016/) | [Video](https://www.youtube.com/watch?v=CwTnUvHo6d8) | IIM Lucknow, Noida
+<div class="timeline-item">
+  <div class="timeline-item-title">Let's Talk About GIL v3.0</div>
+  <div class="timeline-item-meta">16 Feb 2018 · <a href="http://www.python-summit.ch/">Swiss Python Summit 2018</a> · Rapperswil, Switzerland</div>
+  <div class="timeline-item-links"><a href="https://www.youtube.com/watch?v=2JCQQR-IGAg">Video</a> <a href="https://github.com/aktech/gil_talk">Content</a></div>
+</div>
 
-### 15. Let's Talk about GIL v0.1
-21 Jan, 2017 | [PyDelhi Meetup](https://www.meetup.com/pydelhi/events/233814702/) | IIM Lucknow, Noida
+<div class="timeline-year"><h2>2017</h2></div>
 
-### 14. What's new in Python3.6 (or rather 3.6.0b1)
-25 Sep, 2016 | [PyCon India 2016](https://in.pycon.org/2016/) | [Video](https://www.youtube.com/watch?v=DI-jbSjJThA) | JNU, New Delhi |
+<div class="timeline-item">
+  <div class="timeline-item-title">Data Pipelining with Luigi</div>
+  <div class="timeline-item-meta">7 Nov 2017 · <a href="https://www.meetup.com/PyData-London-Meetup/events/244401841/">PyData London Meetup</a> · AHL, London</div>
+  <div class="timeline-item-links"><a href="https://github.com/aktech/luigi-talk">Content</a></div>
+</div>
 
-### 13. Introducing Metaclasses
-17 Sep, 2016 | [PyCon UK 2016](http://2016.pyconuk.org/) | Cardiff City Hall, Wales UK | [Video](https://www.youtube.com/watch?v=UXuhj-Tc-qE) | [Slides](http://slides.com/aktech/introducing-metaclasses-in-python)
+<div class="timeline-item">
+  <div class="timeline-item-title">Python in Maths Class (Lightning Talk)</div>
+  <div class="timeline-item-meta">13 Jun 2017 · <a href="http://pyparis.org/">PyParis</a> · Paris, France</div>
+</div>
 
-### 12. Soldier: Subprocess in style (Lightning Talk)
-16 Sept, 2016 | [PyCon UK 2016](http://2016.pyconuk.org/) | Cardiff City Hall, Wales UK | [Video](https://youtu.be/hjSD88cqKYs?t=27m58s) | [Slides](http://iamit.in/talks/slides/soldier.pdf)
+<div class="timeline-item">
+  <div class="timeline-item-title">Let's Talk about GIL v2.0</div>
+  <div class="timeline-item-meta">9 Jun 2017 · <a href="https://cz.pycon.org/2017/">PyCon CZ</a> · Prague, Czech Republic</div>
+  <div class="timeline-item-links"><a href="https://www.youtube.com/watch?v=motIB96FI48&feature=youtu.be&t=5h36m18s">Video</a></div>
+</div>
 
-### 11. Python 101
-21 Aug, 2016 | [PythonExpress](https://pythonexpress.in/workshop/61/) | Open Source Learning Center, GGSIPU, Delhi
+<div class="timeline-item">
+  <div class="timeline-item-title">Let's Talk about GIL v0.1</div>
+  <div class="timeline-item-meta">21 Jan 2017 · <a href="https://www.meetup.com/pydelhi/events/233814702/">PyDelhi Meetup</a> · IIM Lucknow, Noida</div>
+</div>
 
-### 10. Soldier: Subprocess in style (Lightning Talk)
-14 Aug, 2016 | [PyCon Asia Pacific 2016](https://www.pycon.kr/2016apac/) | Seoul, South Korea | [Video](https://www.youtube.com/watch?v=nzQ0O-ftYZU&feature=youtu.be&t=3025) | [Slides](http://iamit.in/talks/slides/soldier.pdf)
+<div class="timeline-year"><h2>2016</h2></div>
 
-### 9. Demystifying Python's Method Resolution Order v2.0
-13 Aug, 2016 | [PyCon Asia Pacific 2016](https://www.pycon.kr/2016apac/) | Seoul, South Korea | [Video](https://www.youtube.com/watch?v=cuonAMJjHow) | [Slides](http://slides.com/aktech/python-mro)
+<div class="timeline-item">
+  <div class="timeline-item-title">Let's Talk about GIL v1.0</div>
+  <div class="timeline-item-meta">25 Sep 2016 · <a href="https://in.pycon.org/2016/">PyDelhi Conference</a> · IIM Lucknow, Noida</div>
+  <div class="timeline-item-links"><a href="https://www.youtube.com/watch?v=CwTnUvHo6d8">Video</a></div>
+</div>
 
-### 8. Demystifying Python's Method Resolution Order
-17 July, 2016 | [PyGotham 2016](https://2016.pygotham.org/) | New York, US | [Slides](http://slides.com/aktech/python-mro)
+<div class="timeline-item">
+  <div class="timeline-item-title">What's new in Python3.6 (or rather 3.6.0b1)</div>
+  <div class="timeline-item-meta">25 Sep 2016 · <a href="https://in.pycon.org/2016/">PyCon India 2016</a> · JNU, New Delhi</div>
+  <div class="timeline-item-links"><a href="https://www.youtube.com/watch?v=DI-jbSjJThA">Video</a></div>
+</div>
 
-### 7. SymPy Tutorial
-11 July, 2016 | [SciPy 2016](http://scipy2016.scipy.org/) | Austin, TX US | [Video](https://www.youtube.com/watch?v=AqnpuGbM6-Q) | [Slides](http://www.sympy.org/scipy-2016-tutorial/)
+<div class="timeline-item">
+  <div class="timeline-item-title">Introducing Metaclasses</div>
+  <div class="timeline-item-meta">17 Sep 2016 · <a href="http://2016.pyconuk.org/">PyCon UK 2016</a> · Cardiff City Hall, Wales UK</div>
+  <div class="timeline-item-links"><a href="https://www.youtube.com/watch?v=UXuhj-Tc-qE">Video</a> <a href="http://slides.com/aktech/introducing-metaclasses-in-python">Slides</a></div>
+</div>
 
-### 6. Introducing Metaclasses & Application in Django (with Vishal Gowda)
-11 June, 2016 | [Django Meetup](http://www.meetup.com/HackerEarth-Tech-Meetup/events/231711511/) | HackerEarth, Bangalore | [Video](coming soon!) | [Slides](http://slides.com/aktech/introducing-metaclasses-in-python)
+<div class="timeline-item">
+  <div class="timeline-item-title">Soldier: Subprocess in style (Lightning Talk)</div>
+  <div class="timeline-item-meta">16 Sep 2016 · <a href="http://2016.pyconuk.org/">PyCon UK 2016</a> · Cardiff City Hall, Wales UK</div>
+  <div class="timeline-item-links"><a href="https://youtu.be/hjSD88cqKYs?t=27m58s">Video</a> <a href="http://iamit.in/talks/slides/soldier.pdf">Slides</a></div>
+</div>
 
-### 5. Introducing Metaclasses
-28 May, 2016 | [PyDelhi](http://pydelhi.org) [Meetup](http://www.meetup.com/pydelhi/events/226342855/) | Lyxel Labs, Gurgaon | [Slides](http://slides.com/aktech/introducing-metaclasses-in-python)
+<div class="timeline-item">
+  <div class="timeline-item-title">Python 101</div>
+  <div class="timeline-item-meta">21 Aug 2016 · <a href="https://pythonexpress.in/workshop/61/">PythonExpress</a> · Open Source Learning Center, GGSIPU, Delhi</div>
+</div>
 
+<div class="timeline-item">
+  <div class="timeline-item-title">Soldier: Subprocess in style (Lightning Talk)</div>
+  <div class="timeline-item-meta">14 Aug 2016 · <a href="https://www.pycon.kr/2016apac/">PyCon Asia Pacific 2016</a> · Seoul, South Korea</div>
+  <div class="timeline-item-links"><a href="https://www.youtube.com/watch?v=nzQ0O-ftYZU&feature=youtu.be&t=3025">Video</a> <a href="http://iamit.in/talks/slides/soldier.pdf">Slides</a></div>
+</div>
 
-### 4. Demystifying Python MRO
-2 Apr, 2016 | [PyDelhi](http://pydelhi.org) [Meetup](http://www.meetup.com/pydelhi/events/226049223) | [Ramanujan College](http://Ramanujancollege.ac.in) | [Slides](http://slides.com/aktech/python-mro/)
+<div class="timeline-item">
+  <div class="timeline-item-title">Demystifying Python's Method Resolution Order v2.0</div>
+  <div class="timeline-item-meta">13 Aug 2016 · <a href="https://www.pycon.kr/2016apac/">PyCon Asia Pacific 2016</a> · Seoul, South Korea</div>
+  <div class="timeline-item-links"><a href="https://www.youtube.com/watch?v=cuonAMJjHow">Video</a> <a href="http://slides.com/aktech/python-mro">Slides</a></div>
+</div>
 
-### 3. Symbolic Computation with Python using SymPy
-20 March, 2016 | [FOSSASIA, 2016](http://2016.fossasia.org/) | [Singapore, Science Center](http://www.science.edu.sg/Pages/SCBHome.aspx) | [Slides](http://slides.com/aktech/sympy), [Content](http://iamit.in/sympy-tutorial/)
+<div class="timeline-item">
+  <div class="timeline-item-title">Demystifying Python's Method Resolution Order</div>
+  <div class="timeline-item-meta">17 Jul 2016 · <a href="https://2016.pygotham.org/">PyGotham 2016</a> · New York, US</div>
+  <div class="timeline-item-links"><a href="http://slides.com/aktech/python-mro">Slides</a></div>
+</div>
 
-### 2. Symbolic Computation with Python using SymPy
-6 Feb, 2016 | [PyDelhi](http://pydelhi.org) [Meetup](http://www.meetup.com/pydelhi/events/226049215/) | [CSDS](https://maps.google.com/maps?f=q&hl=en&q=29%2C+Rajpur+Road%2C+Delhi%2C+in) | [Content](http://iamit.in/sympy-tutorial/)
+<div class="timeline-item">
+  <div class="timeline-item-title">SymPy Tutorial</div>
+  <div class="timeline-item-meta">11 Jul 2016 · <a href="http://scipy2016.scipy.org/">SciPy 2016</a> · Austin, TX US</div>
+  <div class="timeline-item-links"><a href="https://www.youtube.com/watch?v=AqnpuGbM6-Q">Video</a> <a href="http://www.sympy.org/scipy-2016-tutorial/">Slides</a></div>
+</div>
 
-### 1. Symbolic Computation with Python using SymPy (assisted, not delivered)
-2, Oct 2015 | [PyCon India, 2015](https://in.pycon.org/2015) | [NIMHANS CC, Bangalore](https://www.google.com/maps?ll=12.943219,77.596617&z=16&t=m&hl=en-US&gl=IN&mapclient=embed&cid=14143977283967748386) | [Content](http://iamit.in/sympy-tutorial/)
+<div class="timeline-item">
+  <div class="timeline-item-title">Introducing Metaclasses & Application in Django</div>
+  <div class="timeline-item-meta">11 Jun 2016 · <a href="http://www.meetup.com/HackerEarth-Tech-Meetup/events/231711511/">Django Meetup</a> · HackerEarth, Bangalore (with Vishal Gowda)</div>
+  <div class="timeline-item-links"><a href="http://slides.com/aktech/introducing-metaclasses-in-python">Slides</a></div>
+</div>
+
+<div class="timeline-item">
+  <div class="timeline-item-title">Introducing Metaclasses</div>
+  <div class="timeline-item-meta">28 May 2016 · <a href="http://www.meetup.com/pydelhi/events/226342855/">PyDelhi Meetup</a> · Lyxel Labs, Gurgaon</div>
+  <div class="timeline-item-links"><a href="http://slides.com/aktech/introducing-metaclasses-in-python">Slides</a></div>
+</div>
+
+<div class="timeline-item">
+  <div class="timeline-item-title">Demystifying Python MRO</div>
+  <div class="timeline-item-meta">2 Apr 2016 · <a href="http://www.meetup.com/pydelhi/events/226049223">PyDelhi Meetup</a> · Ramanujan College</div>
+  <div class="timeline-item-links"><a href="http://slides.com/aktech/python-mro/">Slides</a></div>
+</div>
+
+<div class="timeline-item">
+  <div class="timeline-item-title">Symbolic Computation with Python using SymPy</div>
+  <div class="timeline-item-meta">20 Mar 2016 · <a href="http://2016.fossasia.org/">FOSSASIA 2016</a> · Singapore Science Center</div>
+  <div class="timeline-item-links"><a href="http://slides.com/aktech/sympy">Slides</a> <a href="http://iamit.in/sympy-tutorial/">Content</a></div>
+</div>
+
+<div class="timeline-item">
+  <div class="timeline-item-title">Symbolic Computation with Python using SymPy</div>
+  <div class="timeline-item-meta">6 Feb 2016 · <a href="http://www.meetup.com/pydelhi/events/226049215/">PyDelhi Meetup</a> · CSDS, Delhi</div>
+  <div class="timeline-item-links"><a href="http://iamit.in/sympy-tutorial/">Content</a></div>
+</div>
+
+<div class="timeline-year"><h2>2015</h2></div>
+
+<div class="timeline-item">
+  <div class="timeline-item-title">Symbolic Computation with Python using SymPy (assisted)</div>
+  <div class="timeline-item-meta">2 Oct 2015 · <a href="https://in.pycon.org/2015">PyCon India 2015</a> · NIMHANS CC, Bangalore</div>
+  <div class="timeline-item-links"><a href="http://iamit.in/sympy-tutorial/">Content</a></div>
+</div>
+
+</div>
 
 ---
 
