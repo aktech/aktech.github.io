@@ -1,4 +1,4 @@
-{{- $title := .Title -}}
+{{- $title := .Title | plainify | htmlUnescape -}}
 {{- $description := "" -}}
 {{- if .Description -}}
   {{- $description = .Description -}}
@@ -15,6 +15,11 @@
   {{- $fontBold := resources.Get "fonts/FiraSans-SemiBold.ttf" -}}
   {{- $fontRegular := resources.Get "fonts/FiraSans-Regular.ttf" -}}
   {{- if and $base $fontBold $fontRegular -}}
+    {{/* Clean title for image: strip emojis and other non-Latin/punctuation chars */}}
+    {{- $imgTitle := $title | replaceRE `[\x{1F000}-\x{1FFFF}]|[\x{2600}-\x{27BF}]|[\x{FE00}-\x{FE0F}]|[\x{200D}]|[\x{20E3}]|[\x{E0020}-\x{E007F}]|[\x{2B50}]|[\x{2702}-\x{27B0}]|[\x{1F680}-\x{1F6FF}]|[\x{1F900}-\x{1F9FF}]|[\x{1FA00}-\x{1FA6F}]|[\x{1FA70}-\x{1FAFF}]|[\x{FE0F}]|[\x{200B}-\x{200F}]` "" -}}
+    {{- $imgTitle = $imgTitle | replaceRE `<[^>]+>` "" -}}
+    {{- $imgTitle = $imgTitle | replaceRE `\s+` " " | strings.TrimRight " " -}}
+
     {{/* Title text */}}
     {{- $titleOpts := dict
       "color" "#e2e8f0"
@@ -24,7 +29,7 @@
       "y" 80
       "font" $fontBold
     -}}
-    {{- $img := $base | images.Filter (images.Text $title $titleOpts) -}}
+    {{- $img := $base | images.Filter (images.Text $imgTitle $titleOpts) -}}
 
     {{/* Author + date line */}}
     {{- $meta := .Site.Params.author.name -}}
