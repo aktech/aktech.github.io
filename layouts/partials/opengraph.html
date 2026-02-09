@@ -1,0 +1,79 @@
+{{- $title := .Title -}}
+{{- $description := "" -}}
+{{- if .Description -}}
+  {{- $description = .Description -}}
+{{- else if .IsPage -}}
+  {{- $description = .Summary | plainify | truncate 200 -}}
+{{- else -}}
+  {{- $description = .Site.Params.description -}}
+{{- end -}}
+
+{{- $ogImage := "" -}}
+
+{{- if and .IsPage (ne .Title "") -}}
+  {{- $base := resources.Get "og_base.png" -}}
+  {{- $fontBold := resources.Get "fonts/FiraSans-SemiBold.ttf" -}}
+  {{- $fontRegular := resources.Get "fonts/FiraSans-Regular.ttf" -}}
+  {{- if and $base $fontBold $fontRegular -}}
+    {{/* Title text */}}
+    {{- $titleOpts := dict
+      "color" "#e2e8f0"
+      "size" 52
+      "linespacing" 12
+      "x" 80
+      "y" 80
+      "font" $fontBold
+    -}}
+    {{- $img := $base | images.Filter (images.Text $title $titleOpts) -}}
+
+    {{/* Author + date line */}}
+    {{- $meta := .Site.Params.author.name -}}
+    {{- with .Date -}}
+      {{- $meta = printf "%s  ·  %s" $meta (. | time.Format "January 2, 2006") -}}
+    {{- end -}}
+    {{- $metaOpts := dict
+      "color" "#94a3b8"
+      "size" 26
+      "x" 80
+      "y" 435
+      "font" $fontRegular
+    -}}
+    {{- $img = $img | images.Filter (images.Text $meta $metaOpts) -}}
+
+    {{/* Tags */}}
+    {{- with .Params.tags -}}
+      {{- $tagStr := delimit . "  ·  " -}}
+      {{- $tagOpts := dict
+        "color" "#63b3ed"
+        "size" 22
+        "x" 80
+        "y" 485
+        "font" $fontRegular
+      -}}
+      {{- $img = $img | images.Filter (images.Text $tagStr $tagOpts) -}}
+    {{- end -}}
+
+    {{- $targetPath := printf "%sog.png" .RelPermalink -}}
+    {{- $img = resources.Copy $targetPath $img -}}
+    {{- $ogImage = $img.Permalink -}}
+  {{- end -}}
+{{- end -}}
+
+{{- if not $ogImage -}}
+  {{- $ogImage = "https://iamit.in/assets/misc/summary_image.png" -}}
+{{- end -}}
+
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}" />
+<meta property="og:title" content="{{ $title }}" />
+<meta property="og:description" content="{{ $description }}" />
+<meta property="og:url" content="{{ .Permalink }}" />
+<meta property="og:image" content="{{ $ogImage }}" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@iaktech" />
+<meta name="twitter:creator" content="@iaktech" />
+<meta name="twitter:title" content="{{ $title }}" />
+<meta name="twitter:description" content="{{ $description }}" />
+<meta name="twitter:image" content="{{ $ogImage }}" />
+<meta name="twitter:image:alt" content="{{ $title }}" />

@@ -17,18 +17,20 @@
       manifest.json provides metadata used when your web app is added to the
       homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
     -->
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Amit Kumar" />
+    <meta property="og:description" content="Amit Kumar's Blog, a Software Engineer" />
+    <meta property="og:url" content="{{ .Site.BaseURL }}" />
+    <meta property="og:image" content="{{ .Site.BaseURL }}assets/misc/summary_image.png" />
+
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@iaktech" />
     <meta name="twitter:creator" content="@iaktech" />
-    <meta name="twitter:title" content="Amit Kumar's Personal Blog" />
-    <meta name="twitter:description" content="Amit Kumar's Personal Blog" />
-    <meta name="twitter:image" content="https://iamit.in/assets/misc/summary_image.png" />
-    <meta name="twitter:image:alt" content="Card image of Amit Kumar's Personal Blog" />
-    <meta property="og:locale" content="en_US" />
-
-    <meta property="og:title" content="Amit Kumar's Personal Blog" />
-    <meta property="og:image" content="https://iamit.in/assets/misc/summary_image.png" />
-    <meta property="og:url" content="https://iamit.in" />
+    <meta name="twitter:title" content="Amit Kumar" />
+    <meta name="twitter:description" content="Amit Kumar's Blog, a Software Engineer" />
+    <meta name="twitter:image" content="{{ .Site.BaseURL }}assets/misc/summary_image.png" />
+    <meta name="twitter:image:alt" content="Amit Kumar" />
 </head>
 <body>
 
