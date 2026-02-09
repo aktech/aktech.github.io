@@ -37,6 +37,9 @@ pkg/
 test/dest
 tmp/
 
+# Generated assets
+assets/og_base.png
+
 # htmltest
 tmp/
 .htmltest/
