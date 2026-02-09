@@ -27,18 +27,25 @@ REPO_ROOT = SCRIPT_DIR.parent
 ASSETS_DIR = REPO_ROOT / "assets"
 FONTS_DIR = ASSETS_DIR / "fonts"
 OUTPUT_PATH = ASSETS_DIR / "og_base.png"
+TITLE_CANVAS_PATH = ASSETS_DIR / "og_title_canvas.png"
 AUTHOR_PHOTO = ASSETS_DIR / "author.jpg"
 
 WIDTH = 1200
 HEIGHT = 630
+TITLE_CANVAS_WIDTH = 850
+TITLE_CANVAS_HEIGHT = 400
 
 
-def create_gradient(draw: ImageDraw.Draw) -> None:
+def gradient_color(y: int) -> tuple[int, int, int]:
+    r = int(15 + (25 - 15) * y / HEIGHT)
+    g = int(23 + (35 - 23) * y / HEIGHT)
+    b = int(42 + (65 - 42) * y / HEIGHT)
+    return (r, g, b)
+
+
+def create_gradient(draw: ImageDraw.Draw, width: int = WIDTH) -> None:
     for y in range(HEIGHT):
-        r = int(15 + (25 - 15) * y / HEIGHT)
-        g = int(23 + (35 - 23) * y / HEIGHT)
-        b = int(42 + (65 - 42) * y / HEIGHT)
-        draw.line([(0, y), (WIDTH, y)], fill=(r, g, b))
+        draw.line([(0, y), (width, y)], fill=gradient_color(y))
 
 
 def add_accent_line(draw: ImageDraw.Draw) -> None:
@@ -119,6 +126,15 @@ def generate() -> None:
 
     img.save(str(OUTPUT_PATH), "PNG")
     print(f"Created {OUTPUT_PATH} ({WIDTH}x{HEIGHT})")
+
+    # Title canvas: narrow+short image with matching gradient for text wrapping
+    title_canvas = Image.new("RGB", (TITLE_CANVAS_WIDTH, TITLE_CANVAS_HEIGHT))
+    tc_draw = ImageDraw.Draw(title_canvas)
+    for y in range(TITLE_CANVAS_HEIGHT):
+        tc_draw.line([(0, y), (TITLE_CANVAS_WIDTH, y)], fill=gradient_color(y))
+    tc_draw.rectangle([(0, 0), (TITLE_CANVAS_WIDTH, 5)], fill=(99, 179, 237))
+    title_canvas.save(str(TITLE_CANVAS_PATH), "PNG")
+    print(f"Created {TITLE_CANVAS_PATH} ({TITLE_CANVAS_WIDTH}x{TITLE_CANVAS_HEIGHT})")
 
 
 if __name__ == "__main__":
