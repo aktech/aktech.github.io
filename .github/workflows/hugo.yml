@@ -23,7 +23,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        shard: [0, 1, 2, 3, 4, 5]
+        shard: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -45,7 +45,7 @@ jobs:
       - name: Generate TTS audio
         run: |
           npm install kokoro-js@1.2.1
-          node scripts/generate_tts.mjs --shard ${{ matrix.shard }} --total-shards 6
+          node scripts/generate_tts.mjs --shard ${{ matrix.shard }} --total-shards 15 --concurrency 2
 
       - name: Upload audio artifact
         uses: actions/upload-artifact@v4
