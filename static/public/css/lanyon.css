@@ -817,3 +817,127 @@ a.pagination-item:hover {
 .timeline-item-links a:hover {
   text-decoration: underline;
 }
+
+/*
+ * Text-to-speech button
+ */
+
+.tts-wrap {
+  margin: 1rem 0 0;
+}
+
+.tts-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 1rem 0.45rem 0.8rem;
+  border: 1px solid var(--border-color, #d0d0d0);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--body-color, #515151);
+  font-family: inherit;
+  font-size: 0.82rem;
+  letter-spacing: 0.01em;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.tts-bar {
+  margin-top: 1.2rem;
+  width: 100%;
+}
+
+.tts-time {
+  display: block;
+  text-align: right;
+  font-size: 0.75rem;
+  color: var(--text-muted, #999);
+  margin-bottom: 0.4rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.tts-bar-track {
+  position: relative;
+  height: 4px;
+  background: var(--border-color, #d0d0d0);
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.tts-bar-fill {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 0%;
+  background: var(--link-color, #268bd2);
+  border-radius: 2px;
+  transition: width 0.15s linear;
+  pointer-events: none;
+}
+
+.tts-bar-handle {
+  position: absolute;
+  top: 50%;
+  left: 0%;
+  width: 12px;
+  height: 12px;
+  background: var(--link-color, #268bd2);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: left 0.15s linear;
+  cursor: grab;
+}
+
+.tts-bar-handle:active {
+  cursor: grabbing;
+  transform: translate(-50%, -50%) scale(1.3);
+}
+
+[data-theme="dark"] .tts-bar-track {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+[data-theme="dark"] .tts-bar-fill {
+  background: #63b3ed;
+}
+
+[data-theme="dark"] .tts-bar-handle {
+  background: #63b3ed;
+}
+
+.tts-btn:hover {
+  border-color: var(--link-color, #268bd2);
+  color: var(--link-color, #268bd2);
+}
+
+.tts-btn:hover svg {
+  stroke: var(--link-color, #268bd2);
+}
+
+.tts-btn.playing {
+  border-color: var(--link-color, #268bd2);
+  color: var(--link-color, #268bd2);
+  background: rgba(38, 139, 210, 0.06);
+}
+
+.tts-btn.playing svg {
+  stroke: var(--link-color, #268bd2);
+}
+
+[data-theme="dark"] .tts-btn {
+  border-color: rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.7);
+}
+
+[data-theme="dark"] .tts-btn:hover,
+[data-theme="dark"] .tts-btn.playing {
+  border-color: #63b3ed;
+  color: #63b3ed;
+  background: rgba(99, 179, 237, 0.08);
+}
+
+[data-theme="dark"] .tts-btn:hover svg,
+[data-theme="dark"] .tts-btn.playing svg {
+  stroke: #63b3ed;
+}

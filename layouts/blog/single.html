@@ -21,6 +21,22 @@
       {{ end }}
   </span>
 
+  <div class="tts-wrap" id="tts-wrap">
+    <button id="tts-btn" class="tts-btn" aria-label="Listen to this post">
+      <svg id="tts-play-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+      <svg id="tts-pause-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+      <svg id="tts-stop-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none"><rect x="3" y="3" width="18" height="18" rx="2"/></svg>
+      <span id="tts-label">Listen to this post</span>
+    </button>
+    <div class="tts-bar" id="tts-bar" style="display:none">
+      <span class="tts-time" id="tts-time">0:00 / 0:00</span>
+      <div class="tts-bar-track" id="tts-bar-track">
+        <div class="tts-bar-fill" id="tts-bar-fill"></div>
+        <div class="tts-bar-handle" id="tts-bar-handle"></div>
+      </div>
+    </div>
+  </div>
+
   <hr>
 
   {{ .Content }}
@@ -50,4 +66,228 @@
 {{ partial "disqus.html" . }}
 
 {{ partial "scripts.html" . }}
+
+<script>
+(function() {
+  var btn = document.getElementById('tts-btn');
+  var label = document.getElementById('tts-label');
+  var bar = document.getElementById('tts-bar');
+  var track = document.getElementById('tts-bar-track');
+  var fill = document.getElementById('tts-bar-fill');
+  var handle = document.getElementById('tts-bar-handle');
+  var playIcon = document.getElementById('tts-play-icon');
+  var pauseIcon = document.getElementById('tts-pause-icon');
+  var stopIcon = document.getElementById('tts-stop-icon');
+
+  if (!btn || !window.speechSynthesis) {
+    if (btn) btn.parentElement.style.display = 'none';
+    return;
+  }
+
+  var synth = window.speechSynthesis;
+  var fullText = '';
+  var state = 'idle';
+  var currentCharIndex = 0;
+  var generation = 0;
+  var timeEl = document.getElementById('tts-time');
+  var totalDurationSec = 0;
+  var bestVoice = null;
+
+  function pickVoice() {
+    var voices = synth.getVoices();
+    if (!voices.length) return null;
+    var en = voices.filter(function(v) { return v.lang.startsWith('en'); });
+    if (!en.length) en = voices;
+    // Prefer premium/enhanced voices (macOS labels them)
+    var premium = en.filter(function(v) {
+      return /premium|enhanced|natural/i.test(v.name);
+    });
+    if (premium.length) return premium[0];
+    // Prefer known good voices
+    var preferred = ['Samantha', 'Karen', 'Daniel', 'Moira', 'Tessa', 'Rishi', 'Google UK English Female', 'Google US English'];
+    for (var i = 0; i < preferred.length; i++) {
+      for (var j = 0; j < en.length; j++) {
+        if (en[j].name.indexOf(preferred[i]) !== -1) return en[j];
+      }
+    }
+    return en[0];
+  }
+
+  // Voices load async in some browsers
+  bestVoice = pickVoice();
+  if (synth.onvoiceschanged !== undefined) {
+    synth.onvoiceschanged = function() { bestVoice = pickVoice(); };
+  }
+
+  function getPostText() {
+    var post = document.querySelector('.post');
+    if (!post) return '';
+    var clone = post.cloneNode(true);
+    clone.querySelectorAll('script, style, .highlight, pre, code, .post-date, .post-tag, .tts-wrap').forEach(function(el) {
+      el.remove();
+    });
+    return clone.textContent.replace(/\s+/g, ' ').trim();
+  }
+
+  function formatTime(sec) {
+    var m = Math.floor(sec / 60);
+    var s = Math.floor(sec % 60);
+    return m + ':' + (s < 10 ? '0' : '') + s;
+  }
+
+  function updateTime(pct) {
+    if (!totalDurationSec) return;
+    var elapsed = (pct / 100) * totalDurationSec;
+    timeEl.textContent = formatTime(elapsed) + ' / ' + formatTime(totalDurationSec);
+  }
+
+  function setProgress(pct) {
+    var p = Math.min(Math.max(pct, 0), 100);
+    fill.style.width = p + '%';
+    handle.style.left = p + '%';
+    updateTime(p);
+  }
+
+  function setUI(newState) {
+    state = newState;
+    playIcon.style.display = state === 'idle' ? '' : 'none';
+    pauseIcon.style.display = state === 'playing' ? '' : 'none';
+    stopIcon.style.display = state === 'paused' ? '' : 'none';
+    btn.classList.toggle('playing', state !== 'idle');
+    bar.style.display = state === 'idle' ? 'none' : '';
+    if (state === 'idle') {
+      label.textContent = 'Listen to this post';
+      setProgress(0);
+      currentCharIndex = 0;
+    } else if (state === 'playing') {
+      label.textContent = 'Pause';
+    } else if (state === 'paused') {
+      label.textContent = 'Resume';
+    }
+  }
+
+  function speakFrom(charIndex) {
+    generation++;
+    var myGen = generation;
+    synth.cancel();
+    var text = fullText.substring(charIndex);
+    if (!text) { setUI('idle'); return; }
+    var offset = charIndex;
+    var utt = new SpeechSynthesisUtterance(text);
+    if (bestVoice) utt.voice = bestVoice;
+    utt.rate = 0.95;
+    utt.pitch = 1.0;
+    utt.onend = function() {
+      if (myGen !== generation) return;
+      setProgress(100);
+      setTimeout(function() { if (myGen === generation) setUI('idle'); }, 500);
+    };
+    utt.onerror = function() {
+      if (myGen !== generation) return;
+      setUI('idle');
+    };
+    utt.onboundary = function(e) {
+      if (myGen !== generation) return;
+      currentCharIndex = offset + e.charIndex;
+      if (fullText.length > 0) {
+        setProgress((currentCharIndex / fullText.length) * 100);
+      }
+    };
+    synth.speak(utt);
+    setUI('playing');
+  }
+
+  function seekTo(pct) {
+    var charIndex = Math.floor((pct / 100) * fullText.length);
+    // Snap to nearest word boundary
+    while (charIndex > 0 && fullText[charIndex] !== ' ') charIndex--;
+    if (charIndex > 0) charIndex++;
+    currentCharIndex = charIndex;
+    setProgress(pct);
+    if (state === 'playing') {
+      speakFrom(charIndex);
+    }
+  }
+
+  btn.addEventListener('click', function() {
+    if (state === 'idle') {
+      fullText = getPostText();
+      if (!fullText) return;
+      // Estimate duration: ~150 words per minute at rate 1
+      var wordCount = fullText.split(/\s+/).length;
+      totalDurationSec = (wordCount / 150) * 60;
+      updateTime(0);
+      speakFrom(0);
+    } else if (state === 'playing') {
+      synth.pause();
+      setUI('paused');
+    } else if (state === 'paused') {
+      synth.resume();
+      setUI('playing');
+    }
+  });
+
+  // Click on track to seek
+  track.addEventListener('click', function(e) {
+    if (state === 'idle') return;
+    var rect = track.getBoundingClientRect();
+    var pct = ((e.clientX - rect.left) / rect.width) * 100;
+    seekTo(pct);
+    if (state === 'paused') {
+      speakFrom(currentCharIndex);
+    }
+  });
+
+  // Drag handle to seek
+  var dragging = false;
+  handle.addEventListener('mousedown', function(e) {
+    if (state === 'idle') return;
+    dragging = true;
+    e.preventDefault();
+  });
+  document.addEventListener('mousemove', function(e) {
+    if (!dragging) return;
+    var rect = track.getBoundingClientRect();
+    var pct = Math.min(Math.max(((e.clientX - rect.left) / rect.width) * 100, 0), 100);
+    setProgress(pct);
+  });
+  document.addEventListener('mouseup', function(e) {
+    if (!dragging) return;
+    dragging = false;
+    var rect = track.getBoundingClientRect();
+    var pct = Math.min(Math.max(((e.clientX - rect.left) / rect.width) * 100, 0), 100);
+    seekTo(pct);
+    if (state === 'paused') {
+      speakFrom(currentCharIndex);
+    }
+  });
+
+  // Touch support for mobile
+  handle.addEventListener('touchstart', function(e) {
+    if (state === 'idle') return;
+    dragging = true;
+    e.preventDefault();
+  }, { passive: false });
+  document.addEventListener('touchmove', function(e) {
+    if (!dragging) return;
+    var rect = track.getBoundingClientRect();
+    var touch = e.touches[0];
+    var pct = Math.min(Math.max(((touch.clientX - rect.left) / rect.width) * 100, 0), 100);
+    setProgress(pct);
+  });
+  document.addEventListener('touchend', function(e) {
+    if (!dragging) return;
+    dragging = false;
+    var rect = track.getBoundingClientRect();
+    var touch = e.changedTouches[0];
+    var pct = Math.min(Math.max(((touch.clientX - rect.left) / rect.width) * 100, 0), 100);
+    seekTo(pct);
+    if (state === 'paused') {
+      speakFrom(currentCharIndex);
+    }
+  });
+
+  window.addEventListener('beforeunload', function() { synth.cancel(); });
+})();
+</script>
 {{ end }}
