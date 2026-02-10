@@ -848,12 +848,33 @@ a.pagination-item:hover {
 }
 
 .tts-time {
-  display: block;
-  text-align: right;
   font-size: 0.75rem;
   color: var(--text-muted, #999);
-  margin-bottom: 0.4rem;
   font-variant-numeric: tabular-nums;
+}
+
+.tts-bar > :first-child {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.4rem;
+}
+
+.tts-speed {
+  background: none;
+  border: 1px solid var(--text-muted, #999);
+  border-radius: 3px;
+  color: var(--text-muted, #999);
+  font-size: 0.7rem;
+  padding: 1px 5px;
+  cursor: pointer;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.4;
+}
+
+.tts-speed:hover {
+  color: var(--link-color, #268bd2);
+  border-color: var(--link-color, #268bd2);
 }
 
 .tts-bar-track {

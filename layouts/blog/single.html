@@ -32,7 +32,10 @@
       <span id="tts-label">Listen to this post</span>
     </button>
     <div class="tts-bar" id="tts-bar" style="display:none">
-      <span class="tts-time" id="tts-time">0:00 / 0:00</span>
+      <div>
+        <span class="tts-time" id="tts-time">0:00 / 0:00</span>
+        <button class="tts-speed" id="tts-speed" title="Playback speed">1x</button>
+      </div>
       <div class="tts-bar-track" id="tts-bar-track">
         <div class="tts-bar-fill" id="tts-bar-fill"></div>
         <div class="tts-bar-handle" id="tts-bar-handle"></div>
@@ -82,6 +85,7 @@
   var pauseIcon = document.getElementById('tts-pause-icon');
   var stopIcon = document.getElementById('tts-stop-icon');
   var timeEl = document.getElementById('tts-time');
+  var speedBtn = document.getElementById('tts-speed');
 
   if (!btn) return;
 
@@ -94,6 +98,8 @@
   var generation = 0;
   var totalDurationSec = 0;
   var bestVoice = null;
+  var speeds = [1, 1.25, 1.5, 2];
+  var speedIdx = 0;
 
   // If no pre-generated audio and no speechSynthesis, hide TTS
   if (!audioSrc && !synth) {
@@ -193,6 +199,7 @@
         setTimeout(function() { setUI('idle'); }, 500);
       });
     }
+    audio.playbackRate = speeds[speedIdx];
     audio.play();
     setUI('playing');
   }
@@ -207,7 +214,7 @@
     var offset = charIndex;
     var utt = new SpeechSynthesisUtterance(text);
     if (bestVoice) utt.voice = bestVoice;
-    utt.rate = 0.95;
+    utt.rate = 0.95 * speeds[speedIdx];
     utt.pitch = 1.0;
     utt.onend = function() {
       if (myGen !== generation) return;
@@ -286,6 +293,14 @@
       }
       setUI('playing');
     }
+  });
+
+  // Speed control
+  speedBtn.addEventListener('click', function() {
+    speedIdx = (speedIdx + 1) % speeds.length;
+    var rate = speeds[speedIdx];
+    speedBtn.textContent = rate + 'x';
+    if (audio) audio.playbackRate = rate;
   });
 
   // Click on track to seek
