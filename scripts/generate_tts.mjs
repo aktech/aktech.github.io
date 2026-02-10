@@ -86,7 +86,7 @@ function splitChunks(text) {
   const chunks = [];
   let buf = "";
   for (const part of expanded) {
-    if (buf && buf.length + part.length + 1 > 200) {
+    if (buf && buf.length + part.length + 1 > 500) {
       chunks.push(buf);
       buf = part;
     } else {
