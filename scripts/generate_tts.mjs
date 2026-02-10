@@ -1,42 +1,33 @@
 #!/usr/bin/env node
 /**
- * Generate TTS audio files for all blog posts using Kokoro TTS.
+ * Generate TTS audio files for blog posts using Kokoro TTS.
  *
- * Usage: node scripts/generate_tts.mjs [--force] [--shard N --total-shards M] [--concurrency C]
- *
- * Reads markdown files from content/blog/, extracts text,
- * generates audio with kokoro-js, and saves WAV files to static/audio/.
- * Skips posts that already have audio unless --force is passed.
- *
- * For parallel CI: use --shard 0 --total-shards 6 to process only
- * shard 0 of 6. Each shard gets a deterministic subset of posts.
- *
- * Within a shard, uses child_process.fork() with --concurrency to
- * generate multiple posts in parallel (default: 2).
+ * Modes:
+ *   --plan          Output JSON list of posts needing generation (for CI matrix)
+ *   --slug <slug>   Generate audio for a single post by slug
+ *   (no flags)      Generate all posts that need audio (local dev)
+ *   --force         Regenerate even if audio exists and content unchanged
  */
 
 import { readdir, readFile, writeFile, mkdir, access } from "node:fs/promises";
 import { join, basename } from "node:path";
-import { fork } from "node:child_process";
-import { fileURLToPath } from "node:url";
+import { createHash } from "node:crypto";
 
 const CONTENT_DIR = "content/blog";
 const OUTPUT_DIR = "static/audio";
 const MODEL_ID = "onnx-community/Kokoro-82M-v1.0-ONNX";
-const VOICE = "am_michael";
+const VOICE = "am_eric";
 const FORCE = process.argv.includes("--force");
+const PLAN = process.argv.includes("--plan");
+const LIST_SLUGS = process.argv.includes("--list-slugs");
 
-function getIntArg(name, fallback) {
+function getStringArg(name) {
   const idx = process.argv.indexOf(name);
-  if (idx !== -1 && process.argv[idx + 1]) {
-    return parseInt(process.argv[idx + 1], 10);
-  }
-  return fallback;
+  if (idx !== -1 && process.argv[idx + 1]) return process.argv[idx + 1];
+  return null;
 }
 
-const SHARD = getIntArg("--shard", 0);
-const TOTAL_SHARDS = getIntArg("--total-shards", 1);
-const CONCURRENCY = getIntArg("--concurrency", 2);
+const SLUG_ARG = getStringArg("--slug");
 
 /** Extract the slug from front matter (url: or permalink:) or filename */
 function getSlug(frontMatter, filename) {
@@ -133,26 +124,144 @@ async function fileExists(path) {
   }
 }
 
-// --------------- Child Process: generate a single post ---------------
-if (process.env.TTS_CHILD === "1") {
-  const post = JSON.parse(process.env.TTS_POST);
+/** Scan all posts and return those needing generation */
+async function scanPosts() {
+  const files = (await readdir(CONTENT_DIR)).filter((f) => f.endsWith(".md"));
+  files.sort();
 
-  async function generatePost() {
-    const { KokoroTTS } = await import("kokoro-js");
-    const tts = await KokoroTTS.from_pretrained(process.env.TTS_MODEL, {
-      dtype: "q8",
-      device: "cpu",
-    });
+  const needsGeneration = [];
+  let skipped = 0;
 
-    const { slug, text, outPath } = post;
+  for (const file of files) {
+    const raw = await readFile(join(CONTENT_DIR, file), "utf-8");
+    const fmMatch = raw.match(/^---\n([\s\S]*?)\n---\n([\s\S]*)$/);
+    if (!fmMatch) { skipped++; continue; }
+
+    const frontMatter = fmMatch[1];
+    const content = fmMatch[2];
+    const slug = getSlug(frontMatter, file);
+    const text = markdownToText(content);
+
+    if (text.length < 100) { skipped++; continue; }
+
+    const contentHash = createHash("sha256")
+      .update(`v1:${VOICE}:${MODEL_ID}\n${text}`)
+      .digest("hex");
+    const outPath = join(OUTPUT_DIR, `${slug}.wav`);
+    const hashPath = join(OUTPUT_DIR, `${slug}.sha256`);
+
+    if (!FORCE && (await fileExists(outPath)) && (await fileExists(hashPath))) {
+      const storedHash = (await readFile(hashPath, "utf-8")).trim();
+      if (storedHash === contentHash) { skipped++; continue; }
+    }
+
+    needsGeneration.push({ slug, text, outPath, contentHash, hashPath });
+  }
+
+  return { needsGeneration, skipped, totalFiles: files.length };
+}
+
+/** Generate audio for a single post */
+async function generateOne(post) {
+  const { slug, text, outPath, contentHash, hashPath } = post;
+
+  const { KokoroTTS } = await import("kokoro-js");
+  console.log("Loading Kokoro TTS model...");
+  const tts = await KokoroTTS.from_pretrained(MODEL_ID, { dtype: "q8", device: "cpu" });
+  console.log("Model loaded.\n");
+
+  console.log(`  [gen] ${slug} (${text.length} chars)`);
+  const chunks = splitChunks(text);
+  const audioResults = [];
+
+  for (let i = 0; i < chunks.length; i++) {
+    process.stdout.write(`\r        chunk ${i + 1}/${chunks.length}`);
+    const audio = await tts.generate(chunks[i], { voice: VOICE });
+    audioResults.push(audio);
+  }
+  process.stdout.write("\r        " + " ".repeat(30) + "\r");
+
+  let totalLen = 0;
+  for (const a of audioResults) totalLen += a.audio.length;
+  const combined = new Float32Array(totalLen);
+  let offset = 0;
+  for (const a of audioResults) {
+    combined.set(a.audio, offset);
+    offset += a.audio.length;
+  }
+
+  const wav = encodeWAV(combined, audioResults[0].sampling_rate);
+  await mkdir(OUTPUT_DIR, { recursive: true });
+  await writeFile(outPath, wav);
+  await writeFile(hashPath, contentHash);
+  const sizeMB = (wav.length / 1024 / 1024).toFixed(1);
+  const durationSec = (combined.length / audioResults[0].sampling_rate).toFixed(0);
+  console.log(`        -> ${outPath} (${sizeMB} MB, ${durationSec}s)`);
+}
+
+async function main() {
+  await mkdir(OUTPUT_DIR, { recursive: true });
+  const { needsGeneration, skipped, totalFiles } = await scanPosts();
+
+  // --list-slugs mode: output all valid slugs (for downloading from live site)
+  if (LIST_SLUGS) {
+    const files = (await readdir(CONTENT_DIR)).filter((f) => f.endsWith(".md"));
+    for (const file of files) {
+      const raw = await readFile(join(CONTENT_DIR, file), "utf-8");
+      const fmMatch = raw.match(/^---\n([\s\S]*?)\n---\n([\s\S]*)$/);
+      if (!fmMatch) continue;
+      const slug = getSlug(fmMatch[1], file);
+      const text = markdownToText(fmMatch[2]);
+      if (text.length >= 100) console.log(slug);
+    }
+    return;
+  }
+
+  // --plan mode: output JSON for CI matrix and exit
+  if (PLAN) {
+    const matrix = needsGeneration.map((p) => ({ slug: p.slug }));
+    // GitHub Actions needs a non-empty matrix; output empty array if nothing to do
+    console.log(JSON.stringify(matrix));
+    return;
+  }
+
+  // --slug mode: generate a single post
+  if (SLUG_ARG) {
+    const post = needsGeneration.find((p) => p.slug === SLUG_ARG);
+    if (!post) {
+      console.log(`Post "${SLUG_ARG}" not found or already up to date.`);
+      return;
+    }
+    await generateOne(post);
+    return;
+  }
+
+  // Default: generate all needed posts sequentially (local dev)
+  console.log(`Found ${totalFiles} blog posts. ${needsGeneration.length} need generation, ${skipped} skipped.\n`);
+
+  if (needsGeneration.length === 0) {
+    console.log("Nothing to generate.");
+    return;
+  }
+
+  const { KokoroTTS } = await import("kokoro-js");
+  console.log("Loading Kokoro TTS model...");
+  const tts = await KokoroTTS.from_pretrained(MODEL_ID, { dtype: "q8", device: "cpu" });
+  console.log("Model loaded.\n");
+
+  let generated = 0;
+
+  for (const { slug, text, outPath, contentHash, hashPath } of needsGeneration) {
+    console.log(`  [gen] ${slug} (${text.length} chars)`);
     const chunks = splitChunks(text);
     const audioResults = [];
 
     for (let i = 0; i < chunks.length; i++) {
-      process.send({ type: "progress", slug, chunk: i + 1, total: chunks.length });
-      const audio = await tts.generate(chunks[i], { voice: process.env.TTS_VOICE });
+      process.stdout.write(`\r        chunk ${i + 1}/${chunks.length}`);
+      const audio = await tts.generate(chunks[i], { voice: VOICE });
       audioResults.push(audio);
     }
+    process.stdout.write("\r        " + " ".repeat(30) + "\r");
 
     let totalLen = 0;
     for (const a of audioResults) totalLen += a.audio.length;
@@ -165,146 +274,17 @@ if (process.env.TTS_CHILD === "1") {
 
     const wav = encodeWAV(combined, audioResults[0].sampling_rate);
     await writeFile(outPath, wav);
+    await writeFile(hashPath, contentHash);
     const sizeMB = (wav.length / 1024 / 1024).toFixed(1);
     const durationSec = (combined.length / audioResults[0].sampling_rate).toFixed(0);
-    process.send({ type: "done", slug, outPath, sizeMB, durationSec });
+    console.log(`        -> ${outPath} (${sizeMB} MB, ${durationSec}s)`);
+    generated++;
   }
 
-  generatePost().catch((e) => {
-    process.send({ type: "error", slug: post.slug, msg: e.message });
-    process.exit(1);
-  });
-} else {
-  // --------------- Main Process ---------------
-  async function main() {
-    await mkdir(OUTPUT_DIR, { recursive: true });
-
-    // Read and filter blog posts
-    const files = (await readdir(CONTENT_DIR)).filter((f) => f.endsWith(".md"));
-    files.sort();
-    console.log(`Found ${files.length} blog posts.`);
-
-    const postsToGenerate = [];
-    let skipped = 0;
-
-    for (const file of files) {
-      const raw = await readFile(join(CONTENT_DIR, file), "utf-8");
-      const fmMatch = raw.match(/^---\n([\s\S]*?)\n---\n([\s\S]*)$/);
-      if (!fmMatch) {
-        console.log(`  [skip] ${file} (no front matter)`);
-        skipped++;
-        continue;
-      }
-
-      const frontMatter = fmMatch[1];
-      const content = fmMatch[2];
-      const slug = getSlug(frontMatter, file);
-      const outPath = join(OUTPUT_DIR, `${slug}.wav`);
-
-      if (!FORCE && (await fileExists(outPath))) {
-        console.log(`  [skip] ${slug} (already exists)`);
-        skipped++;
-        continue;
-      }
-
-      const text = markdownToText(content);
-      if (text.length < 100) {
-        console.log(`  [skip] ${slug} (too short: ${text.length} chars)`);
-        skipped++;
-        continue;
-      }
-
-      postsToGenerate.push({ slug, text, outPath });
-    }
-
-    // Apply sharding
-    const shardPosts = postsToGenerate.filter(
-      (_, i) => i % TOTAL_SHARDS === SHARD
-    );
-
-    if (TOTAL_SHARDS > 1) {
-      console.log(
-        `\nShard ${SHARD + 1}/${TOTAL_SHARDS}: ${shardPosts.length} posts to generate (${postsToGenerate.length} total need generation)`
-      );
-    }
-
-    if (shardPosts.length === 0) {
-      console.log(`\nNothing to generate for this shard. Skipped: ${skipped}`);
-      return;
-    }
-
-    // Pre-cache model so child processes load from disk
-    console.log("\nPre-caching Kokoro TTS model...");
-    const { KokoroTTS } = await import("kokoro-js");
-    await KokoroTTS.from_pretrained(MODEL_ID, { dtype: "q8", device: "cpu" });
-    console.log("Model cached.");
-
-    const actual = Math.min(CONCURRENCY, shardPosts.length);
-    console.log(`\nGenerating ${shardPosts.length} posts with concurrency ${actual}...\n`);
-
-    const scriptPath = fileURLToPath(import.meta.url);
-    let totalGenerated = 0;
-
-    // Process posts with bounded concurrency using a worker pool
-    let nextIdx = 0;
-
-    function spawnNext() {
-      if (nextIdx >= shardPosts.length) return null;
-      const post = shardPosts[nextIdx++];
-
-      return new Promise((resolve, reject) => {
-        const child = fork(scriptPath, [], {
-          env: {
-            ...process.env,
-            TTS_CHILD: "1",
-            TTS_POST: JSON.stringify(post),
-            TTS_VOICE: VOICE,
-            TTS_MODEL: MODEL_ID,
-          },
-          stdio: ["pipe", "inherit", "inherit", "ipc"],
-        });
-
-        child.on("message", (msg) => {
-          if (msg.type === "progress") {
-            console.log(`  [${msg.slug}] chunk ${msg.chunk}/${msg.total}`);
-          } else if (msg.type === "done") {
-            console.log(`  [${msg.slug}] -> ${msg.outPath} (${msg.sizeMB} MB, ${msg.durationSec}s)`);
-            totalGenerated++;
-          } else if (msg.type === "error") {
-            console.error(`  [${msg.slug}] Error: ${msg.msg}`);
-          }
-        });
-
-        child.on("error", reject);
-        child.on("exit", (code) => {
-          if (code !== 0) {
-            reject(new Error(`Child for ${post.slug} exited with code ${code}`));
-          } else {
-            resolve();
-          }
-        });
-      });
-    }
-
-    // Run worker pool
-    async function runPool() {
-      async function worker() {
-        while (true) {
-          const task = spawnNext();
-          if (!task) break;
-          await task;
-        }
-      }
-      await Promise.all(Array.from({ length: actual }, () => worker()));
-    }
-
-    await runPool();
-
-    console.log(`\nDone! Generated: ${totalGenerated}, Skipped: ${skipped}`);
-  }
-
-  main().catch((e) => {
-    console.error("Fatal:", e);
-    process.exit(1);
-  });
+  console.log(`\nDone! Generated: ${generated}, Skipped: ${skipped}`);
 }
+
+main().catch((e) => {
+  console.error("Fatal:", e);
+  process.exit(1);
+});

@@ -19,11 +19,11 @@ defaults:
     shell: bash
 
 jobs:
-  generate-tts:
+  plan-tts:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        shard: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
+    outputs:
+      matrix: ${{ steps.plan.outputs.matrix }}
+      has_posts: ${{ steps.plan.outputs.has_posts }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -33,30 +33,78 @@ jobs:
         with:
           node-version: "22"
 
-      - name: Cache TTS audio files
-        id: tts-cache
-        uses: actions/cache@v4
+      - name: Download existing audio from live site
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p static/audio
+          SITE_URL=$(gh api "repos/${{ github.repository }}/pages" --jq '.html_url' 2>/dev/null || echo "")
+          if [ -z "$SITE_URL" ]; then
+            echo "Could not determine Pages URL, skipping"
+            exit 0
+          fi
+          SITE_URL="${SITE_URL%/}"
+          echo "Live site: $SITE_URL"
+          for slug in $(node scripts/generate_tts.mjs --list-slugs); do
+            if curl -sf --max-time 10 "$SITE_URL/audio/$slug.wav" -o "static/audio/$slug.wav" 2>/dev/null && \
+               curl -sf --max-time 5 "$SITE_URL/audio/$slug.sha256" -o "static/audio/$slug.sha256" 2>/dev/null; then
+              echo "  fetched $slug"
+            else
+              rm -f "static/audio/$slug.wav" "static/audio/$slug.sha256"
+            fi
+          done
+          echo "Downloaded $(ls static/audio/*.wav 2>/dev/null | wc -l) audio files"
+
+      - name: Plan TTS generation
+        id: plan
+        run: |
+          MATRIX=$(node scripts/generate_tts.mjs --plan)
+          echo "matrix={\"include\":$MATRIX}" >> "$GITHUB_OUTPUT"
+          if [ "$MATRIX" = "[]" ]; then
+            echo "has_posts=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "has_posts=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Upload cached audio
+        uses: actions/upload-artifact@v4
         with:
-          path: static/audio
-          key: tts-audio-shard-${{ matrix.shard }}-${{ hashFiles('content/blog/**/*.md', 'scripts/generate_tts.mjs') }}
-          restore-keys: |
-            tts-audio-shard-${{ matrix.shard }}-
+          name: tts-audio-cached
+          path: static/audio/
+          if-no-files-found: ignore
+
+  generate-tts:
+    runs-on: ubuntu-latest
+    needs: plan-tts
+    if: needs.plan-tts.outputs.has_posts == 'true'
+    strategy:
+      fail-fast: false
+      matrix: ${{ fromJson(needs.plan-tts.outputs.matrix) }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
 
       - name: Generate TTS audio
         run: |
           npm install kokoro-js@1.2.1
-          node scripts/generate_tts.mjs --shard ${{ matrix.shard }} --total-shards 15 --concurrency 2
+          node scripts/generate_tts.mjs --slug "${{ matrix.slug }}"
 
       - name: Upload audio artifact
         uses: actions/upload-artifact@v4
         with:
-          name: tts-audio-shard-${{ matrix.shard }}
+          name: tts-audio-${{ matrix.slug }}
           path: static/audio/
-          if-no-files-found: ignore
+          if-no-files-found: error
 
   build:
     runs-on: ubuntu-latest
-    needs: generate-tts
+    needs: [plan-tts, generate-tts]
+    if: always() && needs.plan-tts.result == 'success'
     env:
       HUGO_VERSION: 0.152.0
     steps:
@@ -71,11 +119,19 @@ jobs:
           submodules: recursive
           fetch-depth: 0
 
-      - name: Download all TTS audio shards
+      - name: Download cached audio
+        uses: actions/download-artifact@v4
+        with:
+          name: tts-audio-cached
+          path: static/audio
+        continue-on-error: true
+
+      - name: Download generated audio
+        if: needs.generate-tts.result == 'success'
         uses: actions/download-artifact@v4
         with:
           path: static/audio
-          pattern: tts-audio-shard-*
+          pattern: tts-audio-*
           merge-multiple: true
 
       - name: Install uv
