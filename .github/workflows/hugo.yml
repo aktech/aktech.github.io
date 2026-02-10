@@ -19,8 +19,44 @@ defaults:
     shell: bash
 
 jobs:
+  generate-tts:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        shard: [0, 1, 2, 3, 4, 5]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Cache TTS audio files
+        id: tts-cache
+        uses: actions/cache@v4
+        with:
+          path: static/audio
+          key: tts-audio-shard-${{ matrix.shard }}-${{ hashFiles('content/blog/**/*.md', 'scripts/generate_tts.mjs') }}
+          restore-keys: |
+            tts-audio-shard-${{ matrix.shard }}-
+
+      - name: Generate TTS audio
+        run: |
+          npm install kokoro-js@1.2.1
+          node scripts/generate_tts.mjs --shard ${{ matrix.shard }} --total-shards 6
+
+      - name: Upload audio artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: tts-audio-shard-${{ matrix.shard }}
+          path: static/audio/
+          if-no-files-found: ignore
+
   build:
     runs-on: ubuntu-latest
+    needs: generate-tts
     env:
       HUGO_VERSION: 0.152.0
     steps:
@@ -35,6 +71,13 @@ jobs:
           submodules: recursive
           fetch-depth: 0
 
+      - name: Download all TTS audio shards
+        uses: actions/download-artifact@v4
+        with:
+          path: static/audio
+          pattern: tts-audio-shard-*
+          merge-multiple: true
+
       - name: Install uv
         uses: astral-sh/setup-uv@eac588ad8def6316056a12d4907a9d4d84ff7a3b # v7.3.0
         with:
@@ -42,24 +85,6 @@ jobs:
 
       - name: Generate OG base image
         run: uv run scripts/generate_og_base.py
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: "22"
-
-      - name: Cache TTS audio files
-        uses: actions/cache@v4
-        with:
-          path: static/audio
-          key: tts-audio-${{ hashFiles('content/blog/**/*.md', 'scripts/generate_tts.mjs') }}
-          restore-keys: |
-            tts-audio-
-
-      - name: Generate TTS audio
-        run: |
-          npm install kokoro-js@1.2.1
-          node scripts/generate_tts.mjs
 
       - name: Setup Pages
         id: pages
