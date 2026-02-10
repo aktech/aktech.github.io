@@ -40,6 +40,7 @@ tmp/
 # Generated assets
 assets/og_base.png
 assets/og_title_canvas.png
+static/audio/
 
 # htmltest
 tmp/

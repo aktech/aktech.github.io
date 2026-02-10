@@ -43,6 +43,24 @@ jobs:
       - name: Generate OG base image
         run: uv run scripts/generate_og_base.py
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Cache TTS audio files
+        uses: actions/cache@v4
+        with:
+          path: static/audio
+          key: tts-audio-${{ hashFiles('content/blog/**/*.md', 'scripts/generate_tts.mjs') }}
+          restore-keys: |
+            tts-audio-
+
+      - name: Generate TTS audio
+        run: |
+          npm install kokoro-js@1.2.1
+          node scripts/generate_tts.mjs
+
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5

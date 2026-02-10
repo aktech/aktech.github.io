@@ -21,8 +21,11 @@
       {{ end }}
   </span>
 
+  {{- $slug := path.Base .RelPermalink -}}
+  {{- $audioFile := printf "audio/%s.wav" $slug -}}
+  {{- $hasAudio := fileExists (printf "static/%s" $audioFile) -}}
   <div class="tts-wrap" id="tts-wrap">
-    <button id="tts-btn" class="tts-btn" aria-label="Listen to this post">
+    <button id="tts-btn" class="tts-btn" aria-label="Listen to this post"{{ if $hasAudio }} data-audio="/{{ $audioFile }}"{{ end }}>
       <svg id="tts-play-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
       <svg id="tts-pause-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
       <svg id="tts-stop-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none"><rect x="3" y="3" width="18" height="18" rx="2"/></svg>
@@ -78,32 +81,37 @@
   var playIcon = document.getElementById('tts-play-icon');
   var pauseIcon = document.getElementById('tts-pause-icon');
   var stopIcon = document.getElementById('tts-stop-icon');
+  var timeEl = document.getElementById('tts-time');
 
-  if (!btn || !window.speechSynthesis) {
-    if (btn) btn.parentElement.style.display = 'none';
-    return;
-  }
+  if (!btn) return;
 
+  var audioSrc = btn.dataset.audio; // Pre-generated audio path (if available)
+  var audio = null; // HTMLAudioElement for pre-generated audio
   var synth = window.speechSynthesis;
   var fullText = '';
   var state = 'idle';
   var currentCharIndex = 0;
   var generation = 0;
-  var timeEl = document.getElementById('tts-time');
   var totalDurationSec = 0;
   var bestVoice = null;
 
+  // If no pre-generated audio and no speechSynthesis, hide TTS
+  if (!audioSrc && !synth) {
+    btn.parentElement.style.display = 'none';
+    return;
+  }
+
+  // --- Browser Voice ---
   function pickVoice() {
+    if (!synth) return null;
     var voices = synth.getVoices();
     if (!voices.length) return null;
     var en = voices.filter(function(v) { return v.lang.startsWith('en'); });
     if (!en.length) en = voices;
-    // Prefer premium/enhanced voices (macOS labels them)
     var premium = en.filter(function(v) {
       return /premium|enhanced|natural/i.test(v.name);
     });
     if (premium.length) return premium[0];
-    // Prefer known good voices
     var preferred = ['Samantha', 'Karen', 'Daniel', 'Moira', 'Tessa', 'Rishi', 'Google UK English Female', 'Google US English'];
     for (var i = 0; i < preferred.length; i++) {
       for (var j = 0; j < en.length; j++) {
@@ -113,10 +121,11 @@
     return en[0];
   }
 
-  // Voices load async in some browsers
-  bestVoice = pickVoice();
-  if (synth.onvoiceschanged !== undefined) {
-    synth.onvoiceschanged = function() { bestVoice = pickVoice(); };
+  if (synth) {
+    bestVoice = pickVoice();
+    if (synth.onvoiceschanged !== undefined) {
+      synth.onvoiceschanged = function() { bestVoice = pickVoice(); };
+    }
   }
 
   function getPostText() {
@@ -129,6 +138,7 @@
     return clone.textContent.replace(/\s+/g, ' ').trim();
   }
 
+  // --- Shared UI ---
   function formatTime(sec) {
     var m = Math.floor(sec / 60);
     var s = Math.floor(sec % 60);
@@ -166,6 +176,28 @@
     }
   }
 
+  // --- Pre-generated audio playback ---
+  function playAudio() {
+    if (!audio) {
+      audio = new Audio(audioSrc);
+      audio.addEventListener('loadedmetadata', function() {
+        totalDurationSec = audio.duration;
+        updateTime(0);
+      });
+      audio.addEventListener('timeupdate', function() {
+        if (!audio.duration) return;
+        setProgress((audio.currentTime / audio.duration) * 100);
+      });
+      audio.addEventListener('ended', function() {
+        setProgress(100);
+        setTimeout(function() { setUI('idle'); }, 500);
+      });
+    }
+    audio.play();
+    setUI('playing');
+  }
+
+  // --- Browser TTS playback ---
   function speakFrom(charIndex) {
     generation++;
     var myGen = generation;
@@ -197,9 +229,31 @@
     setUI('playing');
   }
 
+  function browserPlay() {
+    if (!synth) return;
+    fullText = getPostText();
+    if (!fullText) return;
+    var wordCount = fullText.split(/\s+/).length;
+    totalDurationSec = (wordCount / 150) * 60;
+    updateTime(0);
+    speakFrom(0);
+  }
+
+  // --- Seek ---
   function seekTo(pct) {
+    if (audio) {
+      if (audio.duration) {
+        audio.currentTime = (pct / 100) * audio.duration;
+        setProgress(pct);
+        if (state === 'paused') {
+          audio.play();
+          setUI('playing');
+        }
+      }
+      return;
+    }
+    // Browser TTS seek
     var charIndex = Math.floor((pct / 100) * fullText.length);
-    // Snap to nearest word boundary
     while (charIndex > 0 && fullText[charIndex] !== ' ') charIndex--;
     if (charIndex > 0) charIndex++;
     currentCharIndex = charIndex;
@@ -209,20 +263,27 @@
     }
   }
 
+  // --- Controls ---
   btn.addEventListener('click', function() {
     if (state === 'idle') {
-      fullText = getPostText();
-      if (!fullText) return;
-      // Estimate duration: ~150 words per minute at rate 1
-      var wordCount = fullText.split(/\s+/).length;
-      totalDurationSec = (wordCount / 150) * 60;
-      updateTime(0);
-      speakFrom(0);
+      if (audioSrc) {
+        playAudio();
+      } else {
+        browserPlay();
+      }
     } else if (state === 'playing') {
-      synth.pause();
+      if (audio) {
+        audio.pause();
+      } else if (synth) {
+        synth.pause();
+      }
       setUI('paused');
     } else if (state === 'paused') {
-      synth.resume();
+      if (audio) {
+        audio.play();
+      } else if (synth) {
+        synth.resume();
+      }
       setUI('playing');
     }
   });
@@ -233,9 +294,6 @@
     var rect = track.getBoundingClientRect();
     var pct = ((e.clientX - rect.left) / rect.width) * 100;
     seekTo(pct);
-    if (state === 'paused') {
-      speakFrom(currentCharIndex);
-    }
   });
 
   // Drag handle to seek
@@ -257,12 +315,9 @@
     var rect = track.getBoundingClientRect();
     var pct = Math.min(Math.max(((e.clientX - rect.left) / rect.width) * 100, 0), 100);
     seekTo(pct);
-    if (state === 'paused') {
-      speakFrom(currentCharIndex);
-    }
   });
 
-  // Touch support for mobile
+  // Touch support
   handle.addEventListener('touchstart', function(e) {
     if (state === 'idle') return;
     dragging = true;
@@ -282,12 +337,12 @@
     var touch = e.changedTouches[0];
     var pct = Math.min(Math.max(((touch.clientX - rect.left) / rect.width) * 100, 0), 100);
     seekTo(pct);
-    if (state === 'paused') {
-      speakFrom(currentCharIndex);
-    }
   });
 
-  window.addEventListener('beforeunload', function() { synth.cancel(); });
+  window.addEventListener('beforeunload', function() {
+    if (audio) audio.pause();
+    if (synth) synth.cancel();
+  });
 })();
 </script>
 {{ end }}
