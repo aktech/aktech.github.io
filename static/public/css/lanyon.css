@@ -362,6 +362,7 @@ a.sidebar-nav-item:focus {
   margin-bottom: 0rem;
   color: var(--meta-color);
   font-size: 18px;
+  text-transform: lowercase;
 }
 
 .timeline {
