@@ -38,11 +38,11 @@
 :root {
   /* Font stacks - change these to update fonts site-wide */
   --font-primary: "Crimson Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  --font-content: "Lora", Georgia, serif;
+  --font-content: Charter, "Bitstream Charter", "Lora", Georgia, serif;
   --font-code: "Fira Code", Menlo, Monaco, "Courier New", monospace;
 
   /* Light theme colors (default) */
-  --bg-color: #fff;
+  --bg-color: #fcf9f2;
   --text-color: #515151;
   --text-strong: #303030;
   --heading-color: #313131;
