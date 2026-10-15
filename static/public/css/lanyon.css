@@ -689,6 +689,66 @@ a.pagination-item:hover {
   color: #aaa;
 }
 
+/* Travel map (layouts/partials/travel-map.html, static/maps/travel-map.mjs).
+   Sea is the container background, land and visited countries are the vendored borders. */
+@font-face { font-family: 'Fira Sans'; font-weight: 500; src: url('../../maps/fonts/FiraSans-Medium.ttf') format('truetype'); }
+@font-face { font-family: 'Fira Sans'; font-weight: 600; src: url('../../maps/fonts/FiraSans-SemiBold.ttf') format('truetype'); }
+
+.travel-map {
+  --tm-sea: #eceeed;
+  --tm-land: #f7f8f7;
+  --tm-border: #cdd3d7;
+  --tm-visited: #a8d2e2;
+  --tm-accent: #0e4b6c;
+  --tm-landmark: #a3acb2;
+  height: 450px;
+  margin: 2em 0;
+  border-radius: 14px;
+}
+
+/* .leaflet-container also sets a background and font, and leaflet.css loads after this file */
+.travel-map.leaflet-container {
+  background: var(--tm-sea);
+  font-family: 'Fira Sans', sans-serif;
+}
+
+[data-theme="dark"] .travel-map {
+  --tm-sea: #1b1f24;
+  --tm-land: #262b31;
+  --tm-border: #3a4249;
+  --tm-visited: #24546b;
+  --tm-accent: #a8d2e2;
+  --tm-landmark: #6f7982;
+}
+
+.travel-map .tm-country { fill: var(--tm-land); fill-opacity: 1; stroke: var(--tm-border); stroke-width: 1.2; }
+.travel-map .tm-visited { fill: var(--tm-visited); stroke: var(--tm-accent); stroke-width: 1.6; }
+
+.tm-dot {
+  position: absolute; left: -5px; top: -5px; width: 10px; height: 10px; box-sizing: border-box;
+  border-radius: 50%; background: var(--tm-visited); border: 2px solid var(--tm-accent); transition: transform .15s;
+}
+.tm-dot:hover { transform: scale(1.5); }
+
+/* Names default to below their dot; data-side (set by travel-map.mjs) moves or hides them */
+.tm-label {
+  position: absolute; left: 50%; top: 7px; transform: translateX(-50%); white-space: nowrap; pointer-events: none;
+  font-weight: 600; font-size: 13px; line-height: 16px; color: var(--tm-accent);
+  text-shadow: 0 0 3px var(--tm-land), 0 0 3px var(--tm-land), 0 0 2px var(--tm-land);
+}
+.tm-place[data-side="right"] .tm-label { left: 9px; top: -8px; transform: none; }
+.tm-place[data-side="left"] .tm-label { left: auto; right: 9px; top: -8px; transform: none; }
+.tm-place[data-side="above"] .tm-label { top: auto; bottom: 7px; }
+.tm-place[data-side="center"] .tm-label { top: -8px; }
+.tm-place[data-side="hidden"] .tm-label { visibility: hidden; }
+.tm-landmark .tm-label { font-weight: 500; font-size: 12px; color: var(--tm-landmark); text-shadow: none; }
+
+.travel-map .tm-tip { font: 500 13px 'Fira Sans', sans-serif; color: var(--tm-accent); background: var(--tm-land); padding: 4px 10px; border: none; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
+.travel-map .tm-tip::before { border-top-color: var(--tm-land); }
+.travel-map .leaflet-control-attribution { font-size: 10px; background: color-mix(in srgb, var(--tm-land) 80%, transparent); color: var(--tm-landmark); }
+.travel-map .leaflet-bar a { background: var(--tm-land); color: var(--tm-accent); border-bottom-color: var(--tm-border); }
+.travel-map .leaflet-bar { border-color: var(--tm-border); }
+
 /*
  * Timeline
  *

@@ -21,6 +21,9 @@ jobs:
           submodules: recursive
           fetch-depth: 0
 
+      - name: Test travel map layout
+        run: node --test tests/travel-map-layout.test.mjs
+
       - name: Build with Hugo
         env:
           HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
